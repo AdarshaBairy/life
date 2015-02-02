@@ -24,7 +24,7 @@ public class SimpleSlickGame extends BasicGame
 
 	@Override
 	public void init(GameContainer gc) throws SlickException {
-		background = new Image("C:/Images/u0.png");
+		background = new Image("src/u0.png");
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class SimpleSlickGame extends BasicGame
 				yPosition > 125)
 		{
 			state = "instructions";
-			background = new Image("C:/Images/u1.png");
+			background = new Image("src/u1.png");
 		}
 		else if(
 				state.equals("instructions") &&
@@ -54,7 +54,7 @@ public class SimpleSlickGame extends BasicGame
 				yPosition > 20)
 		{
 			state = "start";
-			background = new Image("C:/Images/u0.png");
+			background = new Image("src/u0.png");
 		}
 		else if(
 				state.equals("start") &&
@@ -65,8 +65,8 @@ public class SimpleSlickGame extends BasicGame
 				yPosition > 50)
 		{
 			state = "game";
-			background = new Image("C:/Images/u2.png");
-			Image board = new Image("C:/Images/board.png");
+			background = new Image("src/u2.png");
+			//Image board = new Image("/Slick2dTest/src/image.png");
 			//gc.drawImage(board, 0, 0);
 		}
 		
