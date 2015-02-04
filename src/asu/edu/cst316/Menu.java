@@ -1,3 +1,4 @@
+package asu.edu.cst316;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,7 +23,7 @@ public class Menu extends BasicGameState{
 
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		background = new Image("src/u0.png");
+		background = new Image("images/u0.png");
 	}
 
 	@Override
@@ -39,11 +40,16 @@ public class Menu extends BasicGameState{
 				yPosition > 125)
 		{
 			sbg.enterState(1);
-			System.out.println("hit");
-			//state = "instructions";
-			//background = new Image("src/u1.png");
 		}
-		
+		else if(
+				input.isMouseButtonDown(0) &&
+				xPosition > 250 &&
+				xPosition < 550 &&
+				yPosition < 100 &&
+				yPosition > 50)
+		{
+			sbg.enterState(2);
+		}		
 		
 	}
 
@@ -68,7 +74,7 @@ public class Menu extends BasicGameState{
 			yPosition > 20)
 	{
 		state = "start";
-		background = new Image("src/u0.png");
+		background = new Image("images/u0.png");
 	}
 	else if(
 			state.equals("start") &&
@@ -79,8 +85,8 @@ public class Menu extends BasicGameState{
 			yPosition > 50)
 	{
 		state = "game";
-		background = new Image("src/u2.png");
-		//Image board = new Image("/Slick2dTest/src/image.png");
+		background = new Image("images/u2.png");
+		//Image board = new Image("/Slick2dTest/images/image.png");
 		//gc.drawImage(board, 0, 0);
 	}
 	*/

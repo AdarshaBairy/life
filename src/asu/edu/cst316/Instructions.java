@@ -1,3 +1,4 @@
+package asu.edu.cst316;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,7 +25,7 @@ public class Instructions extends BasicGameState{
 
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		background = new Image("src/u1.png");
+		background = new Image("images/u1.png");
 	}
 
 	@Override
