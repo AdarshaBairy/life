@@ -14,6 +14,7 @@ public class GameMain extends BasicGameState{
 	public Image background;
 	public Image gameBoard;
 	public Image gameBoardZoom;
+	public Image player;
 	private int playerX = 750;
 	private int playerY = 900;
 	
@@ -24,6 +25,7 @@ public class GameMain extends BasicGameState{
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		background = new Image("images/u2.png");
 		gameBoard = new Image("images/board3.png");
+		player = new Image("images/player.png");
 		gameBoardZoom = gameBoard.getSubImage(playerX, playerY, 680, 300);
 	}
 
@@ -54,6 +56,7 @@ public class GameMain extends BasicGameState{
 		g.drawImage(background, 0, 0);
 		g.drawImage(gameBoardZoom, 65, 60);
 		g.drawString(mouse, 10, 10);
+		g.drawImage(player, 336, 136);
 	}
 	
 	public int getID(){
