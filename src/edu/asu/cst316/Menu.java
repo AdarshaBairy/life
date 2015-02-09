@@ -28,7 +28,7 @@ public class Menu extends BasicGameState{
 		Input input = gc.getInput();
 		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
 		if(
-				input.isMouseButtonDown(0) &&
+				input.isMousePressed(0) &&
 				xPosition > 250 &&
 				xPosition < 550 &&
 				yPosition < 175 &&
@@ -36,8 +36,8 @@ public class Menu extends BasicGameState{
 		{
 			sbg.enterState(1);
 		}
-		else if(
-				input.isMouseButtonDown(0) &&
+		if(
+				input.isMousePressed(0) &&
 				xPosition > 250 &&
 				xPosition < 550 &&
 				yPosition < 100 &&
@@ -57,35 +57,5 @@ public class Menu extends BasicGameState{
 	public int getID(){
 		return 0;
 	}
-	
-	
-	/*
-	else if(
-			state.equals("instructions") &&
-			input.isMouseButtonDown(0) &&
-			xPosition > 20 &&
-			xPosition < 170 &&
-			yPosition < 60 &&
-			yPosition > 20)
-	{
-		state = "start";
-		background = new Image("images/u0.png");
-	}
-	else if(
-			state.equals("start") &&
-			input.isMouseButtonDown(0) &&
-			xPosition > 250 &&
-			xPosition < 550 &&
-			yPosition < 100 &&
-			yPosition > 50)
-	{
-		state = "game";
-		background = new Image("images/u2.png");
-		//Image board = new Image("/Slick2dTest/images/image.png");
-		//gc.drawImage(board, 0, 0);
-	}
-	*/
-	
-	
 	
 }

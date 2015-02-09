@@ -12,16 +12,16 @@ import org.newdawn.slick.state.StateBasedGame;
 
 
 
-public class Instructions extends BasicGameState{
+public class EventNotification extends BasicGameState{
 	public String mouse = "";
 	public Image background;
 	
-	public Instructions(int state){
+	public EventNotification(int state){
 	}
 
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		background = new Image("images/u1.png");
+		background = new Image("images/event.png");
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class Instructions extends BasicGameState{
 				yPosition < 60 &&
 				yPosition > 20)
 		{
-			sbg.enterState(0);
+			sbg.enterState(2);
 		}
 		
 	}
@@ -49,7 +49,7 @@ public class Instructions extends BasicGameState{
 	}
 	
 	public int getID(){
-		return 1;
+		return 3;
 	}
 	
 }

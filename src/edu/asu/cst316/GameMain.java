@@ -16,8 +16,8 @@ public class GameMain extends BasicGameState{
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
-	private int playerX = 0;
-	private int playerY = 564;
+	private int playerX = -416;
+	private int playerY = 464;
 	
 	public GameMain(int state){
 	}
@@ -26,9 +26,14 @@ public class GameMain extends BasicGameState{
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		background = new Image("images/u2.png");
 		gameBoard = new Image("images/board5.png");
-		player = new Image("images/player.png");
+		
+		
+		player = new Image("images/player.png").getScaledCopy((float) .5);
 		spinner = new Image("images/spinner.png");
-		gameBoardZoom = gameBoard.getSubImage(playerX, playerY, 686, 312);
+		
+		//Take the game board, resize it to game board view size, and then zoom out for better view
+		gameBoardZoom = gameBoard.getSubImage(playerX, playerY, 1372, 624).getScaledCopy((float) .5); //686 312
+		
 	}
 
 	@Override
@@ -38,7 +43,7 @@ public class GameMain extends BasicGameState{
 		Input input = gc.getInput();
 		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
 		if(
-				input.isMouseButtonDown(0) &&
+				input.isMousePressed(0) &&
 				xPosition > 20 &&
 				xPosition < 170 &&
 				yPosition < 60 &&
@@ -54,6 +59,7 @@ public class GameMain extends BasicGameState{
 				yPosition > 20
 		){
 			updateBoardView(128, 0);
+			sbg.enterState(3);
 		}
 	}
 
@@ -70,7 +76,7 @@ public class GameMain extends BasicGameState{
 	}
 	
 	public void updateBoardView(int x, int y){
-		gameBoardZoom = gameBoard.getSubImage(playerX+x, playerY+y, 686, 312);
+		gameBoardZoom = gameBoard.getSubImage(playerX+x, playerY+y, 1372, 624).getScaledCopy((float) .5); 
 		playerX += x;
 		playerY += y;
 	}
