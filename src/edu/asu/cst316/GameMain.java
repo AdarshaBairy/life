@@ -14,9 +14,10 @@ public class GameMain extends BasicGameState{
 	public Image background;
 	public Image gameBoard;
 	public Image gameBoardZoom;
+	public Image spinner;
 	public Image player;
-	private int playerX = 120;
-	private int playerY = 520;
+	private int playerX = 0;
+	private int playerY = 564;
 	
 	public GameMain(int state){
 	}
@@ -26,7 +27,8 @@ public class GameMain extends BasicGameState{
 		background = new Image("images/u2.png");
 		gameBoard = new Image("images/board5.png");
 		player = new Image("images/player.png");
-		gameBoardZoom = gameBoard.getSubImage(playerX, playerY, 680, 300);
+		spinner = new Image("images/spinner.png");
+		gameBoardZoom = gameBoard.getSubImage(playerX, playerY, 686, 312);
 	}
 
 	@Override
@@ -45,16 +47,20 @@ public class GameMain extends BasicGameState{
 			sbg.enterState(0);
 		}
 		if(
-				input.isMouseButtonDown(0)
+				input.isMousePressed(0) &&
+				xPosition > 333 &&
+				xPosition < 490 &&
+				yPosition < 180 &&
+				yPosition > 20
 		){
-			updateBoardView(50, 0);
+			updateBoardView(128, 0);
 		}
 	}
 
 	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		g.drawImage(background, 0, 0);
-		g.drawImage(gameBoardZoom, 65, 60);
+		g.drawImage(gameBoardZoom, 62, 53);
 		g.drawString(mouse, 10, 10);
 		g.drawImage(player, 336, 136);
 	}
@@ -64,8 +70,9 @@ public class GameMain extends BasicGameState{
 	}
 	
 	public void updateBoardView(int x, int y){
-		gameBoardZoom = gameBoard.getSubImage(playerX+x, playerY+y, 680, 300);
+		gameBoardZoom = gameBoard.getSubImage(playerX+x, playerY+y, 686, 312);
 		playerX += x;
 		playerY += y;
 	}
+	
 }
