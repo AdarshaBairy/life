@@ -43,15 +43,6 @@ public class GameMain extends BasicGameState{
 		Input input = gc.getInput();
 		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
 		if(
-				input.isMouseButtonDown(0) &&
-				xPosition > 20 &&
-				xPosition < 170 &&
-				yPosition < 60 &&
-				yPosition > 20
-		){
-			sbg.enterState(0);
-		}
-		if(
 				input.isMousePressed(0) &&
 				xPosition > 333 &&
 				xPosition < 490 &&
@@ -59,7 +50,16 @@ public class GameMain extends BasicGameState{
 				yPosition > 20
 		){
 			updateBoardView(128, 0);
-			sbg.enterState(3);
+			//sbg.enterState(3);
+		}
+		if(
+				input.isMouseButtonDown(0) &&
+				xPosition > 564 &&
+				xPosition < 715 &&
+				yPosition < 215 &&
+				yPosition > 180
+		){
+			sbg.enterState(4);
 		}
 	}
 
