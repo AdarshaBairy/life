@@ -31,7 +31,7 @@ public class Instructions extends BasicGameState{
 		Input input = gc.getInput();
 		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
 		if(
-				input.isMousePressed(0) &&
+				input.isMouseButtonDown(0) &&
 				xPosition > 20 &&
 				xPosition < 170 &&
 				yPosition < 60 &&

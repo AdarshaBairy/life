@@ -32,10 +32,10 @@ public class EventNotification extends BasicGameState{
 		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
 		if(
 				input.isMousePressed(0) &&
-				xPosition > 20 &&
-				xPosition < 170 &&
-				yPosition < 60 &&
-				yPosition > 20)
+				xPosition > 0 &&
+				xPosition < 100 &&
+				yPosition < 100 &&
+				yPosition > 0)
 		{
 			sbg.enterState(2);
 		}

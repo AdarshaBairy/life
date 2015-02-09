@@ -27,8 +27,9 @@ public class Menu extends BasicGameState{
 		int yPosition = Mouse.getY();
 		Input input = gc.getInput();
 		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
+		
 		if(
-				input.isMousePressed(0) &&
+				input.isMouseButtonDown(0) &&
 				xPosition > 250 &&
 				xPosition < 550 &&
 				yPosition < 175 &&
@@ -36,8 +37,9 @@ public class Menu extends BasicGameState{
 		{
 			sbg.enterState(1);
 		}
+		
 		if(
-				input.isMousePressed(0) &&
+				input.isMouseButtonDown(0) &&
 				xPosition > 250 &&
 				xPosition < 550 &&
 				yPosition < 100 &&
