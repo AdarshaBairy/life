@@ -1,5 +1,7 @@
 package edu.asu.cst316;
 
+import java.util.Random;
+
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -49,7 +51,8 @@ public class GameMain extends BasicGameState{
 				yPosition < 180 &&
 				yPosition > 20
 		){
-			updateBoardView(128, 0);
+			int random = new Random().nextInt(6 - 1 + 1) + 1;
+			updateBoardView(128*random, 0);
 			//sbg.enterState(3);
 		}
 		if(
