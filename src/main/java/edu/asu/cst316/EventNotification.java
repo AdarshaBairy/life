@@ -1,4 +1,4 @@
-package edu.asu.cst316;
+package main.java.edu.asu.cst316;
 
 
 import org.lwjgl.input.Mouse;
@@ -19,12 +19,12 @@ public class EventNotification extends BasicGameState{
 	public EventNotification(int state){
 	}
 
-	@Override
+	//@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		background = new Image("images/event.png");
 	}
 
-	@Override
+	//@Override
 	public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
 		int xPosition = Mouse.getX();
 		int yPosition = Mouse.getY();
@@ -42,7 +42,7 @@ public class EventNotification extends BasicGameState{
 		
 	}
 
-	@Override
+	//@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		g.drawImage(background, 0, 0);
 		g.drawString(mouse, 10, 10);
