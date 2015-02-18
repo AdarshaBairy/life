@@ -1,10 +1,13 @@
-package edu.asu.cst316;
+package main.java.edu.asu.cst316.gameboard;
 
 public class GameBoard {
-	static class GameSpace {
-		String type = "";
-		int size = (Integer) null;
-		GameSpace nextSpace = null;
-		GameSpace alternativeSpace = null;
-	};
+	
+	private static GameSpace playerSpace;
+	
+	public static void createGameBoard(){
+		playerSpace = new GameSpace("start", 3, null, null);
+		playerSpace.setNextSpace(new GameSpace("neutral", 2, null, null));
+		
+	}
+	
 }
