@@ -11,6 +11,10 @@ import java.util.ArrayList;
 
 public class ButtonArray extends ArrayList<Button> {
 
+    public ButtonArray(Image[] i, int startX, int startY, GameContainer gameContainer, StateBasedGame stateBasedGame) {
+        this(i, startX, startY, gameContainer, stateBasedGame, false);
+    }
+
     public ButtonArray(Image[] i, int startX, int startY, GameContainer gameContainer, StateBasedGame stateBasedGame, boolean horizontal) {
         int displacementX = 1;
         int displacementY = 1;
