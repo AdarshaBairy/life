@@ -1,4 +1,4 @@
-package main.java.edu.asu.cst316;
+package edu.asu.cst316;
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
