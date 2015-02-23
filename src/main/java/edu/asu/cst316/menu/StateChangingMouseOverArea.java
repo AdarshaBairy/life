@@ -1,4 +1,4 @@
-package main.java.edu.asu.cst316.menu;
+package edu.asu.cst316.menu;
 
 import org.newdawn.slick.Image;
 import org.newdawn.slick.geom.Shape;
