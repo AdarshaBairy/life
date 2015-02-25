@@ -37,9 +37,14 @@ public class GameBoard {
 		for(int i = 11; i >= 7; --i){
 			redSpaces5[i] = new GameSpace("green", 2, redSpaces5[i+1], null, endX-128, endY);
 		}
-		greenSpaces5[6] = new GameSpace("green", 2, redSpaces5[7], null, endX-128, endY);
+		greenSpaces5[6] = new GameSpace("payday", 2, redSpaces5[7], null, endX-128, endY);
 		
-		GameSpace[] mergeJoinSpace = new GameSpace[11];
+		
+		
+		GameSpace[] mergeJoinSpaces = new GameSpace[11];
+		mergeJoinSpaces[10] = new GameSpace("merge", 3, redSpaces5[0], greenSpaces5[0], 500, 500);
+		
+		
 	}
 	
 }
