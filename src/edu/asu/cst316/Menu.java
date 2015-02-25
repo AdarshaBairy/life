@@ -45,7 +45,7 @@ public class Menu extends BasicGameState{
 				yPosition < 100 &&
 				yPosition > 50)
 		{
-			sbg.enterState(2);
+			sbg.enterState(5);
 		}		
 		
 	}

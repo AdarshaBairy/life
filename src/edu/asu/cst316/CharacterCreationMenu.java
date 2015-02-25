@@ -40,7 +40,32 @@ public class CharacterCreationMenu extends BasicGameState{
 		int xPosition = Mouse.getX();
 		int yPosition = Mouse.getY();
 		Input input = gc.getInput();
-		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;	
+		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;
+		
+		//creat text fields and combo boxes to get info
+		
+		//back button
+		if(
+				input.isMouseButtonDown(0) &&
+				xPosition > 22 &&
+				xPosition < 172 &&
+				yPosition < 64 &&
+				yPosition > 18)
+		{
+			sbg.enterState(0);
+		}
+		//next button
+		if(
+				input.isMouseButtonDown(0) &&
+				xPosition > 621 &&
+				xPosition < 773 &&
+				yPosition < 64 &&
+				yPosition > 18)
+		{
+			//run a character/player constructor with info from comboboxes and 
+			//text fields
+			sbg.enterState(2);
+		}
 		
 	}
 
@@ -49,5 +74,7 @@ public class CharacterCreationMenu extends BasicGameState{
 		// TODO Auto-generated method stub
 		return 5;
 	}
+	
+	
 
 }
