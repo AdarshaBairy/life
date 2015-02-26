@@ -1,8 +1,8 @@
-package test.java.edu.asu.cst316;
+package edu.asu.cst316;
 
 //import static org.junit.Assert.*;
 
-import main.java.edu.asu.cst316.FullBoard;
+import edu.asu.cst316.FullBoard;
 
 import org.junit.Before;
 import org.junit.BeforeClass;

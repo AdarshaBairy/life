@@ -2,13 +2,15 @@ package edu.asu.cst316.gameboard;
 
 public class GameBoard {
 	
+	private static GameBoard gameboard = new GameBoard();
+	
 	private static GameSpace playerSpace;
 	private static GameSpace endSpace;
 	
 	private static int endX;
 	private static int endY;
 	
-	public GameBoard(){
+	private GameBoard(){
 		
 		endSpace = new GameSpace("end", 2, null, null, endX, endY);
 		//short red path
@@ -47,4 +49,11 @@ public class GameBoard {
 		
 	}
 	
+	public static GameBoard getInstance(){
+		return gameboard;
+	}
+	
+	public GameSpace getCurrentSpace(){
+		return playerSpace;
+	}
 }
