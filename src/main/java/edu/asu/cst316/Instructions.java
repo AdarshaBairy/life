@@ -1,4 +1,4 @@
-package edu.asu.cst316;
+package main.java.edu.asu.cst316;
 
 
 import org.lwjgl.input.Mouse;

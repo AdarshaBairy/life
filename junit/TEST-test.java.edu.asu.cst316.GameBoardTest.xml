@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="Moo-PC" name="test.java.edu.asu.cst316.GameBoardTest" skipped="0" tests="1" time="0.027" timestamp="2015-03-03T09:54:37">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="env.PROMPT" value="$P$G" />
+    <property name="os.name" value="Windows 7" />
+    <property name="env.FP_NO_HOST_CHECK" value="NO" />
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\real_jdk_1.8.0_25\lib\resources.jar;C:\Program Files\Java\real_jdk_1.8.0_25\lib\rt.jar;C:\Program Files\Java\real_jdk_1.8.0_25\lib\sunrsasign.jar;C:\Program Files\Java\real_jdk_1.8.0_25\lib\jsse.jar;C:\Program Files\Java\real_jdk_1.8.0_25\lib\jce.jar;C:\Program Files\Java\real_jdk_1.8.0_25\lib\charsets.jar;C:\Program Files\Java\real_jdk_1.8.0_25\lib\jfr.jar;C:\Program Files\Java\real_jdk_1.8.0_25\classes" />
+    <property name="env.COMPUTERNAME" value="MOO-PC" />
+    <property name="env.CommonProgramW6432" value="C:\Program Files\Common Files" />
+    <property name="env.ALLUSERSPROFILE" value="C:\ProgramData" />
+    <property name="sun.desktop" value="windows" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="E:\Downloads\eclipse-java-luna-SR1a-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.2.v201404171502" />
+    <property name="java.runtime.version" value="1.8.0_25-b18" />
+    <property name="env.HOMEPATH" value="\Users\Moo" />
+    <property name="env.sourcesdk" value="E:\Steam\steamapps\common\SourceSDK" />
+    <property name="user.name" value="Moo" />
+    <property name="env.OPENSSL_CONF" value="C:\OpenSSL-Win64\bin\openssl.cfg" />
+    <property name="user.language" value="en" />
+    <property name="env.VProject" value="E:\Steam\SteamApps\common\Source SDK Base 2013 Multiplayer\hl2mp" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\real_jdk_1.8.0_25\bin" />
+    <property name="ant.project.default-target" value="build" />
+    <property name="ant.project.name" value="gameoflife" />
+    <property name="java.version" value="1.8.0_25" />
+    <property name="env.PROCESSOR_IDENTIFIER" value="Intel64 Family 6 Model 60 Stepping 3, GenuineIntel" />
+    <property name="user.timezone" value="America/Phoenix" />
+    <property name="env.SER422_LAB1_HOME" value="C:\ser422\lab1" />
+    <property name="env.TEMP" value="C:\Users\Moo\AppData\Local\Temp" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="env.APR_ICONV_PATH" value="C:\Program Files (x86)\Subversion\iconv" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\real_jdk_1.8.0_25\lib\endorsed" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="env.HOMEDRIVE" value="C:" />
+    <property name="sun.jnu.encoding" value="MS932" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="\" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="52.0" />
+    <property name="user.country" value="US" />
+    <property name="java.home" value="C:\Program Files\Java\real_jdk_1.8.0_25" />
+    <property name="env.PSModulePath" value="C:\Windows\system32\WindowsPowerShell\v1.0\Modules\" />
+    <property name="env.APPDATA" value="C:\Users\Moo\AppData\Roaming" />
+    <property name="env.PUBLIC" value="C:\Users\Public" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="env.CATALINA_HOME" value="C:\ApacheTomcat7" />
+    <property name="env.ComSpec" value="C:\Windows\system32\cmd.exe" />
+    <property name="env.OS" value="Windows_NT" />
+    <property name="env.CommonProgramFiles" value="C:\Program Files\Common Files" />
+    <property name="ant.file" value="C:\Users\Moo\cst316\gameoflife\build.xml" />
+    <property name="os.version" value="6.1" />
+    <property name="env.ProgramW6432" value="C:\Program Files" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.version" value="25.25-b02" />
+    <property name="env.USERPROFILE" value="C:\Users\Moo" />
+    <property name="user.variant" value="" />
+    <property name="ant.library.dir" value="E:\Downloads\eclipse-java-luna-SR1a-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.2.v201404171502\lib" />
+    <property name="junit.output.dir" value="junit" />
+    <property name="env.JAVA_HOME" value="C:\Program Files\Java\jdk1.8.0_25" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="env.TMP" value="C:\Users\Moo\AppData\Local\Temp" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="user.script" value="" />
+    <property name="user.home" value="C:\Users\Moo" />
+    <property name="target" value="1.8" />
+    <property name="env.ProgramData" value="C:\ProgramData" />
+    <property name="env.SESSIONNAME" value="Console" />
+    <property name="env.ProgramFiles(x86)" value="C:\Program Files (x86)" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.library.path" value="C:\Program Files\Java\real_jdk_1.8.0_25\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/real_jdk_1.8.0_25/bin/server;C:/Program Files/Java/real_jdk_1.8.0_25/bin;C:/Program Files/Java/real_jdk_1.8.0_25/lib/amd64;C:\Perl64\site\bin;C:\Perl64\bin;C:\ProgramData\Oracle\Java\javapath;C:\Python34\;C:\Python34\Scripts;E:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\system32\wbem;C:\Program Files\Common Files\MICROSOFT SHARED\WINDOWS LIVE;C:\PROGRAM FILES (X86)\INTEL\ICLS CLIENT;C:\PROGRAM FILES\INTEL\ICLS CLIENT;C:\Windows\SYSTEM32\WINDOWSPOWERSHELL\V1.0;C:\PROGRAM FILES\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\DAL;C:\PROGRAM FILES\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\IPT;C:\PROGRAM FILES (X86)\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\DAL;C:\PROGRAM FILES (X86)\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\IPT;C:\PROGRAM FILES (X86)\INTEL\OPENCL SDK\3.0\BIN\X86;C:\PROGRAM FILES (X86)\INTEL\OPENCL SDK\3.0\BIN\X64;C:\dev\apache-ant-1.9.2\BIN;C:\PROGRAM FILES (X86)\QUICKTIME\QTSYSTEM;C:\dev\Apache Software Foundation\Tomcat 8.0\BIN;C:\dev\jaxws-ri-2.2.8\jaxws-ri\BIN;C:\Program Files\WIDCOMM\Bluetooth Software;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files\Java\jdk1.8.0_25\bin;E:\Program Files\MongoDB 2.6 Standard\bin;E:\Downloads\apache-maven-3.2.5-bin\apache-maven-3.2.5\bin;C:\Apache24\bin;C:\ApacheTomcat7\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Users\Moo\Downloads\svn-win32-1.7.0\svn-win32-1.7.0\bin;C:\Program Files\nodejs\;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\GNUstep\bin;C:\GNUstep\GNUstep\System\Tools;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;C:\Users\Moo\AppData\Roaming\npm;E:\Downloads\eclipse-java-luna-SR1a-win32-x86_64\eclipse;;." />
+    <property name="env.NUMBER_OF_PROCESSORS" value="4" />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.9.2 compiled on July 8 2013" />
+    <property name="java.class.path" value="C:\Users\Moo\cst316\gameoflife\bin;C:\Users\Moo\cst316\gameoflife\slick\lib\ibxm.jar;C:\Users\Moo\cst316\gameoflife\slick\lib\jinput.jar;C:\Users\Moo\cst316\gameoflife\slick\lib\jnlp.jar;C:\Users\Moo\cst316\gameoflife\slick\lib\jogg-0.0.7.jar;C:\Users\Moo\cst316\gameoflife\slick\lib\jorbis-0.0.15.jar;C:\Users\Moo\cst316\gameoflife\slick\lib\lwjgl_util_applet.jar;C:\Users\Moo\cst316\gameoflife\slick\lib\lwjgl_util.jar;C:\Users\Moo\cst316\gameoflife\slick\lib\lwjgl.jar;C:\Users\Moo\cst316\gameoflife\slick\lib\natives-linux.jar;C:\Users\Moo\cst316\gameoflife\slick\lib\natives-mac.jar;C:\Users\Moo\cst316\gameoflife\slick\lib\natives-windows.jar;C:\Users\Moo\cst316\gameoflife\slick\lib\slick-examples.jar;C:\Users\Moo\cst316\gameoflife\slick\lib\slick.jar;C:\Users\Moo\cst316\gameoflife\slick\lib\tinylinepp.jar;C:\Users\Moo\cst316\gameoflife\jar\junit.jar;E:\Downloads\eclipse-java-luna-SR1a-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.2.v201404171502\lib\ant-launcher.jar;E:\Downloads\eclipse-java-luna-SR1a-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.2.v201404171502\lib\ant.jar;E:\Downloads\eclipse-java-luna-SR1a-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.2.v201404171502\lib\ant-junit.jar;E:\Downloads\eclipse-java-luna-SR1a-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.2.v201404171502\lib\ant-junit4.jar" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner test.java.edu.asu.cst316.GameBoardTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Moo\cst316\gameoflife\junit\TEST-test.java.edu.asu.cst316.GameBoardTest.xml crashfile=C:\Users\Moo\cst316\gameoflife\junitvmwatcher5361479169799354222.properties propsfile=C:\Users\Moo\cst316\gameoflife\junit288980295448035631.properties" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="env.CATALINA_BASE" value="C:\ApacheTomcat7" />
+    <property name="env.LOGONSERVER" value="\\MOO-PC" />
+    <property name="env.windir" value="C:\Windows" />
+    <property name="env.PROCESSOR_ARCHITECTURE" value="AMD64" />
+    <property name="java.vm.specification.version" value="1.8" />
+    <property name="sun.os.patch.level" value="" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="debuglevel" value="source,lines,vars" />
+    <property name="env.ProgramFiles" value="C:\Program Files" />
+    <property name="env.ANT_HOME" value="E:\Downloads\eclipse-java-luna-SR1a-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.2.v201404171502" />
+    <property name="java.io.tmpdir" value="C:\Users\Moo\AppData\Local\Temp\" />
+    <property name="env.PROCESSOR_REVISION" value="3c03" />
+    <property name="env.CommonProgramFiles(x86)" value="C:\Program Files (x86)\Common Files" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="ant.file.gameoflife" value="C:\Users\Moo\cst316\gameoflife\build.xml" />
+    <property name="env.SystemRoot" value="C:\Windows" />
+    <property name="env.JAXWS_HOME" value="C:\dev\jaxws-ri-2.2.8\jaxws-ri" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="ant.file.type.gameoflife" value="file" />
+    <property name="java.ext.dirs" value="C:\Program Files\Java\real_jdk_1.8.0_25\lib\ext;C:\Windows\Sun\Java\lib\ext" />
+    <property name="user.dir" value="C:\Users\Moo\cst316\gameoflife" />
+    <property name="env.LOCALAPPDATA" value="C:\Users\Moo\AppData\Local" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="env.PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY" />
+    <property name="env.Path" value="C:/Program Files/Java/real_jdk_1.8.0_25/bin/server;C:/Program Files/Java/real_jdk_1.8.0_25/bin;C:/Program Files/Java/real_jdk_1.8.0_25/lib/amd64;C:\Perl64\site\bin;C:\Perl64\bin;C:\ProgramData\Oracle\Java\javapath;C:\Python34\;C:\Python34\Scripts;E:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\system32\wbem;C:\Program Files\Common Files\MICROSOFT SHARED\WINDOWS LIVE;C:\PROGRAM FILES (X86)\INTEL\ICLS CLIENT;C:\PROGRAM FILES\INTEL\ICLS CLIENT;C:\Windows\SYSTEM32\WINDOWSPOWERSHELL\V1.0;C:\PROGRAM FILES\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\DAL;C:\PROGRAM FILES\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\IPT;C:\PROGRAM FILES (X86)\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\DAL;C:\PROGRAM FILES (X86)\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\IPT;C:\PROGRAM FILES (X86)\INTEL\OPENCL SDK\3.0\BIN\X86;C:\PROGRAM FILES (X86)\INTEL\OPENCL SDK\3.0\BIN\X64;C:\dev\apache-ant-1.9.2\BIN;C:\PROGRAM FILES (X86)\QUICKTIME\QTSYSTEM;C:\dev\Apache Software Foundation\Tomcat 8.0\BIN;C:\dev\jaxws-ri-2.2.8\jaxws-ri\BIN;C:\Program Files\WIDCOMM\Bluetooth Software;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files\Java\jdk1.8.0_25\bin;E:\Program Files\MongoDB 2.6 Standard\bin;E:\Downloads\apache-maven-3.2.5-bin\apache-maven-3.2.5\bin;C:\Apache24\bin;C:\ApacheTomcat7\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Users\Moo\Downloads\svn-win32-1.7.0\svn-win32-1.7.0\bin;C:\Program Files\nodejs\;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\GNUstep\bin;C:\GNUstep\GNUstep\System\Tools;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;C:\Users\Moo\AppData\Roaming\npm;E:\Downloads\eclipse-java-luna-SR1a-win32-x86_64\eclipse;" />
+    <property name="basedir" value="C:\Users\Moo\cst316\gameoflife" />
+    <property name="ant.java.version" value="1.8" />
+    <property name="ant.core.lib" value="E:\Downloads\eclipse-java-luna-SR1a-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.2.v201404171502\lib\ant.jar" />
+    <property name="env.USERNAME" value="Moo" />
+    <property name="env.SystemDrive" value="C:" />
+    <property name="source" value="1.8" />
+    <property name="file.encoding" value="MS932" />
+    <property name="env.USERDOMAIN" value="Moo-PC" />
+    <property name="java.specification.version" value="1.8" />
+    <property name="ant.project.invoked-targets" value="junit" />
+    <property name="env.PROCESSOR_LEVEL" value="6" />
+    <property name="env.VBOX_MSI_INSTALL_PATH" value="c:\Program Files\Oracle\VirtualBox\" />
+  </properties>
+  <testcase classname="test.java.edu.asu.cst316.GameBoardTest" name="testBoardState" time="0.001" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

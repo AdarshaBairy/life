@@ -1,11 +1,9 @@
-package edu.asu.cst316;
+package main.java.edu.asu.cst316;
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
 public class Game extends StateBasedGame{
-	
-	
 	
 	public static final String gamename = "Game of Life";
 	public static final int menu = 0;

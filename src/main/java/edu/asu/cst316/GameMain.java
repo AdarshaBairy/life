@@ -1,6 +1,8 @@
-package edu.asu.cst316;
+package main.java.edu.asu.cst316;
 
 import java.util.Random;
+
+import main.java.edu.asu.cst316.gameboard.GameBoard;
 
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.GameContainer;
@@ -21,10 +23,12 @@ public class GameMain extends BasicGameState{
 	private int playerX = -416;
 	private int playerY = 464;
 	
+	GameBoard gameboard = GameBoard.getInstance();
+	
 	public GameMain(int state){
 	}
 
-	//@Override
+	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		background = new Image("images/u2.png");
 		gameBoard = new Image("images/board5.png");
@@ -38,7 +42,7 @@ public class GameMain extends BasicGameState{
 		
 	}
 
-	//@Override
+	@Override
 	public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
 		int xPosition = Mouse.getX();
 		int yPosition = Mouse.getY();
@@ -66,7 +70,7 @@ public class GameMain extends BasicGameState{
 		}
 	}
 
-	//@Override
+	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		g.drawImage(background, 0, 0);
 		g.drawImage(gameBoardZoom, 62, 53);

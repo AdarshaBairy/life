@@ -1,53 +1,71 @@
-package edu.asu.cst316.gameboard;
+package main.java.edu.asu.cst316.gameboard;
 
 public class GameBoard {
+	
+	private static final int SPACESIZE = 64;
 	
 	private static GameBoard gameboard = new GameBoard();
 	
 	private static GameSpace playerSpace;
-	private static GameSpace endSpace;
-	
-	private static int endX;
-	private static int endY;
+		
+	private GameSpace endSpace;
+	private	GameSpace[] forkSpaces = new GameSpace[6];
+	private	GameSpace[] joinSpaces = new GameSpace[6];
+	private	GameSpace[][] redSpaces = new GameSpace[6][];
+	private	GameSpace[][] greenSpaces = new GameSpace[6][];
+	private	GameSpace[][] commonSpaces = new GameSpace[6][];
+	private	GameSpace startSpace;
 	
 	private GameBoard(){
+
+		redSpaces[0] = new GameSpace[5];
+		redSpaces[1] = new GameSpace[8];
+		redSpaces[2] = new GameSpace[7];
+		redSpaces[3] = new GameSpace[7];
+		redSpaces[4] = new GameSpace[7];
+		redSpaces[5] = new GameSpace[7];
 		
-		endSpace = new GameSpace("end", 2, null, null, endX, endY);
-		//short red path
-		GameSpace[] redSpaces5 = new GameSpace[7];
-		redSpaces5[6] = new GameSpace("red", 2, endSpace, null, endX-128, endY);
+		greenSpaces[0] = new GameSpace[12];
+		greenSpaces[1] = new GameSpace[17];
+		greenSpaces[2] = new GameSpace[17];
+		greenSpaces[3] = new GameSpace[17];
+		greenSpaces[4] = new GameSpace[17];
+		greenSpaces[5] = new GameSpace[17];
 		
-		int lastX = endX-128;
-		int lastY = endY;
-		
-		for(int i = 5; i >= 0; --i){
-			redSpaces5[i] = new GameSpace("red", 2, redSpaces5[i+1], null, lastX-128, lastY);
-		}
-		
+		commonSpaces[0] = new GameSpace[2];
+		commonSpaces[1] = new GameSpace[7];
+		commonSpaces[2] = new GameSpace[3];
+		commonSpaces[3] = new GameSpace[1];
+		commonSpaces[4] = new GameSpace[4];
+		commonSpaces[5] = new GameSpace[3];
 	
-		//long greenpath
-		GameSpace[] greenSpaces5 = new GameSpace[17];
-		greenSpaces5[16] = new GameSpace("green", 2, endSpace, null, endX, endY-128);
-		
-		lastX = endX;
-		lastY = endY - 128;
-		
-		for(int i = 15; i >= 13; --i){
-			redSpaces5[i] = new GameSpace("green", 2, redSpaces5[i+1], null, endX-128, endY);
+		endSpace = new GameSpace("end", null, null);
+		attachSpaces(redSpaces, "red");
+		attachSpaces(commonSpaces, "common");
+		attachSpaces(greenSpaces, "green");
+
+		for(int i = 0; i < forkSpaces.length; ++i){
+			forkSpaces[i] = new GameSpace("fork", redSpaces[i][0], greenSpaces[i][0]);
 		}
-		greenSpaces5[12] = new GameSpace("green", 2, redSpaces5[13], null, endX, endY-64);
-		for(int i = 11; i >= 7; --i){
-			redSpaces5[i] = new GameSpace("green", 2, redSpaces5[i+1], null, endX-128, endY);
+		
+		for(int i = 0; i < joinSpaces.length-1; ++i){
+			joinSpaces[i] = new GameSpace("join", commonSpaces[i+1][0], null);
 		}
-		greenSpaces5[6] = new GameSpace("payday", 2, redSpaces5[7], null, endX-128, endY);
+		joinSpaces[joinSpaces.length-1] = new GameSpace("join", endSpace, null);
+				
+		attachSpaces2(greenSpaces, joinSpaces);
+		attachSpaces2(redSpaces, joinSpaces);
+		attachSpaces2(commonSpaces, forkSpaces);
 		
+		startSpace = new GameSpace("start", commonSpaces[0][0], null);
 		
-		
-		GameSpace[] mergeJoinSpaces = new GameSpace[11];
-		mergeJoinSpaces[10] = new GameSpace("merge", 3, redSpaces5[0], greenSpaces5[0], 500, 500);
+		startSpace.setPosition(0, 0);
+	
+		playerSpace = startSpace;
 		
 		
 	}
+	
 	
 	public static GameBoard getInstance(){
 		return gameboard;
@@ -56,4 +74,26 @@ public class GameBoard {
 	public GameSpace getCurrentSpace(){
 		return playerSpace;
 	}
+	
+	public void movePlayer(int moveAmount){
+		for(int i = 0; i < moveAmount; ++i){
+			playerSpace = playerSpace.getNextSpace();
+		}
+	}
+	
+	public static void attachSpaces(GameSpace[][] spaces, String type){
+		for(int index = 0; index < spaces.length; ++index){
+			spaces[index][spaces[index].length-1] = new GameSpace(type, null, null);
+			for(int i = spaces[index].length-1; i > 0; --i){
+				spaces[index][i-1] = new GameSpace(type, spaces[index][i], null);
+			}
+		}
+	}
+	
+	public static void attachSpaces2(GameSpace[][] spaces, GameSpace[] nextSpace){
+		for(int i = 0; i < spaces.length; ++i){
+			spaces[i][spaces[i].length-1].setNextSpace(nextSpace[i]);
+		}
+	}
+	
 }

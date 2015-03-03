@@ -1,7 +1,7 @@
-# life
+Ant Build Instructions
 
-## To run in Windows enter the following two commands:
+//Run the program
+ant life
 
-set MAVEN_OPTS="-Djava.library.path=target/natives"
-
-mvn compile exec:java -Dexec.mainClass=edu.asu.cst316.Game
+//Run junit tests
+ant junit
