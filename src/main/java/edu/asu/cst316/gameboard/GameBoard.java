@@ -14,7 +14,8 @@ public class GameBoard {
 	private	GameSpace[][] redSpaces = new GameSpace[6][];
 	private	GameSpace[][] greenSpaces = new GameSpace[6][];
 	private	GameSpace[][] commonSpaces = new GameSpace[6][];
-	private	GameSpace startSpace;
+	private	final GameSpace startSpace;
+	GameSpace currentSpace;
 	
 	private GameBoard(){
 
@@ -52,17 +53,20 @@ public class GameBoard {
 			joinSpaces[i] = new GameSpace("join", commonSpaces[i+1][0], null);
 		}
 		joinSpaces[joinSpaces.length-1] = new GameSpace("join", endSpace, null);
-				
+		
 		attachSpaces2(greenSpaces, joinSpaces);
 		attachSpaces2(redSpaces, joinSpaces);
 		attachSpaces2(commonSpaces, forkSpaces);
 		
 		startSpace = new GameSpace("start", commonSpaces[0][0], null);
+		currentSpace = new GameSpace("start", commonSpaces[0][0], null);
 		
-		startSpace.setPosition(0, 0);
-	
+		startSpace.setPosition(-256, 470);
+		//System.out.println(startSpace.getPosX());
+		//System.out.println(startSpace.getPosY());
+		assignPositions(-256, 470);
+		
 		playerSpace = startSpace;
-		
 		
 	}
 	
@@ -79,6 +83,47 @@ public class GameBoard {
 		for(int i = 0; i < moveAmount; ++i){
 			playerSpace = playerSpace.getNextSpace();
 		}
+	}
+	
+	public static void assignPositions2(int x, int y, int length, String direction){
+		for(int i = 0; i < length; i++){
+			playerSpace.setPosition(x, y);
+			playerSpace = playerSpace.getNextSpace();
+			x += 128;
+		}
+	}
+	
+	public void assignPositions(int x, int y){ 
+		currentSpace = startSpace.getNextSpace();
+		for(int i = 0; i < 28; i++){
+			x += 128;
+			currentSpace.setPosition(x, y);
+			currentSpace = currentSpace.getNextSpace();
+		}
+		
+		for(int i = 0; i < 4; i++){
+			y += 128;
+			currentSpace.setPosition(x, y);
+			currentSpace = currentSpace.getNextSpace();
+		}
+		
+		for(int i = 0; i < 23; i++){
+			x -= 128;
+			currentSpace.setPosition(x, y);
+			currentSpace = currentSpace.getNextSpace();
+		}
+		
+		for(int i = 0; i < 8; i++){
+			y += 128;
+			currentSpace.setPosition(x, y);
+			currentSpace = currentSpace.getNextSpace();
+		}
+		
+		for(int i = 0; i < 11; i++){
+			x += 128;
+			currentSpace.setPosition(x, y);
+			currentSpace = currentSpace.getNextSpace();
+		}	
 	}
 	
 	public static void attachSpaces(GameSpace[][] spaces, String type){
