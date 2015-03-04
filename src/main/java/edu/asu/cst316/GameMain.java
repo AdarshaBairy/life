@@ -28,7 +28,7 @@ public class GameMain extends BasicGameState{
 	public GameMain(int state){
 	}
 
-	@Override
+	//@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		background = new Image("images/u2.png");
 		gameBoard = new Image("images/board5.png");
@@ -42,7 +42,7 @@ public class GameMain extends BasicGameState{
 		
 	}
 
-	@Override
+	//@Override
 	public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
 		int xPosition = Mouse.getX();
 		int yPosition = Mouse.getY();
@@ -70,7 +70,7 @@ public class GameMain extends BasicGameState{
 		}
 	}
 
-	@Override
+	//@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		g.drawImage(background, 0, 0);
 		g.drawImage(gameBoardZoom, 62, 53);
