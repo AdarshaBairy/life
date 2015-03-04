@@ -39,5 +39,13 @@ public class GameBoardTest extends TestCase {
 		assertNull(gameboard.getCurrentSpace().getAlternativeSpace());
 		
 	}
-	
+
+	public void testPosition() {
+		GameBoard gameboard = GameBoard.getInstance();
+		System.out.println(gameboard.getCurrentSpace().getPosX());
+		gameboard.movePlayer(1);
+		System.out.println(gameboard.getCurrentSpace().getPosX());
+		gameboard.movePlayer(1);
+		System.out.println(gameboard.getCurrentSpace().getPosX());
+	}
 }

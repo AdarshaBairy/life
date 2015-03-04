@@ -2,6 +2,8 @@ package main.java.edu.asu.cst316;
 
 import java.util.Random;
 
+import main.java.edu.asu.cst316.gameboard.GameBoard;
+
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.GameContainer;
@@ -20,8 +22,10 @@ public class GameMain extends BasicGameState{
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
-	private int playerX = -416;
+	private int playerX = -256;
 	private int playerY = 464;
+
+	GameBoard gameboard = GameBoard.getInstance();
 	
 	Image wheel , wheelHover, spinFlipper, wheel1, wheel2, wheel3, wheel4, wheel5, wheel6, wheelSpinning;
 	Animation spinningAnimation, flipperAnimation;
@@ -69,7 +73,8 @@ public class GameMain extends BasicGameState{
 				yPosition < 180 &&
 				yPosition > 20
 		){
-			updateBoardView(128, 0);
+			gameboard.movePlayer(1);
+			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
 			//sbg.enterState(3);
 		}
 		if(
@@ -96,12 +101,17 @@ public class GameMain extends BasicGameState{
 		if (spinAnimation){
 			spinCount += (delta);
 		}
-		
+		boolean updatePlayer = false;
 		if (spinCount > 3000){
 			spinCount = 0;
 			spinAnimation = false;
+			updatePlayer = true;
 		}
-		
+		if(updatePlayer){
+			gameboard.movePlayer(spinNum);
+			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+			updatePlayer = false;
+		}
 	}
 
 	//@Override
@@ -185,9 +195,9 @@ public class GameMain extends BasicGameState{
 	}
 	
 	public void updateBoardView(int x, int y){
-		gameBoardZoom = gameBoard.getSubImage(playerX+x, playerY+y, 1372, 624).getScaledCopy((float) .5); 
-		playerX += x;
-		playerY += y;
+		gameBoardZoom = gameBoard.getSubImage(x, y, 1372, 624).getScaledCopy((float) .5); 
+		playerX = x;
+		playerY = y;
 	}
 	
 	int getSpinNum(int sNum) {
@@ -196,9 +206,9 @@ public class GameMain extends BasicGameState{
 	} catch(InterruptedException ex) {
 	    Thread.currentThread().interrupt();
 	}
-	Random rand = new Random();
-	sNum = (rand.nextInt(6))+1;
-	return sNum;
+		Random rand = new Random();
+		sNum = (rand.nextInt(6))+1;
+		return sNum;
 	}
 	
 }

@@ -7,6 +7,7 @@ public class GameSpace {
 	private GameSpace alternativeSpace = null;
 	private int posX;
 	private int posY;
+	public GameSpace newSpace;
 	
 	public GameSpace(String type, GameSpace nextSpace, GameSpace alternativeSpace, int posX, int posY){
 		this.type = type;
@@ -22,13 +23,17 @@ public class GameSpace {
 		this.alternativeSpace = alternativeSpace;
 	}
 	
+	public GameSpace(GameSpace copySpace){
+		newSpace = copySpace.newSpace;
+	}
+	
 	public String getType(){
 		return type;
 	}
 	public int getPosX(){
 		return posX;
 	}
-	public int gePosX(){
+	public int getPosY(){
 		return posY;
 	}
 	public GameSpace getNextSpace(){
