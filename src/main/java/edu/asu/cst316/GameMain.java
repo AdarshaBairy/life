@@ -170,24 +170,24 @@ public class GameMain extends BasicGameState{
 			}
 				
 		// keeps background image
-		g.drawImage(wheel, 200, 130);
-		g.drawImage(spinFlipper, 355, 180);
+		g.drawImage(wheel, 306, 375);
+		g.drawImage(spinFlipper, 460, 420);
 		
 		//once the spin is clicked do the animation
 		if (spinAnimation){
-			spinningAnimation.draw(223,172);
-			flipperAnimation.draw(355,180);
+			spinningAnimation.draw(329, 415);
+			flipperAnimation.draw(460, 420);
 		//animation is complete now set the number spun	
 		} else{
 		wheelSpinning.setRotation(360-(60*(spinNum-1)));
-		g.drawImage(wheelSpinning, 222, 172);
-		g.drawImage(spinFlipper, 355, 180);
+		g.drawImage(wheelSpinning, 329, 415);
+		g.drawImage(spinFlipper, 460, 420);
 		spinAnimation = false;
 		spinClicked = false;
 		} // end else 
 		
 		if (mouseOverSpin){
-			g.drawImage(wheelHover, 200, 130);
+			g.drawImage(wheelHover, 306, 375);
 		}		
 		
 }//end render
