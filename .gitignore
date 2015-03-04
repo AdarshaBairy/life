@@ -1,7 +1,5 @@
 /bin
 /.idea
-/Slick2dTest.iml
-/.project
 /target
-/.settings
-/.classpath
+/.metadata
+/junit

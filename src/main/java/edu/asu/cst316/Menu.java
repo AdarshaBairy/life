@@ -1,4 +1,4 @@
-package edu.asu.cst316;
+package main.java.edu.asu.cst316;
 
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.GameContainer;
@@ -45,7 +45,7 @@ public class Menu extends BasicGameState{
 				yPosition < 100 &&
 				yPosition > 50)
 		{
-			sbg.enterState(2);
+			sbg.enterState(5);
 		}		
 		
 	}
