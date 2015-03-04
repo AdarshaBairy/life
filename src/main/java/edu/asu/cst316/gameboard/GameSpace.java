@@ -28,7 +28,7 @@ public class GameSpace {
 	public int getPosX(){
 		return posX;
 	}
-	public int gePosX(){
+	public int getPosY(){
 		return posY;
 	}
 	public GameSpace getNextSpace(){

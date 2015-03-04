@@ -37,7 +37,27 @@ public class GameBoardTest extends TestCase {
 		gameboard.movePlayer(5);
 		assertTrue(gameboard.getCurrentSpace().getType().equals("join"));
 		assertNull(gameboard.getCurrentSpace().getAlternativeSpace());
-		
 	}
 	
+	@Test
+	public void testBoardState() {
+		GameBoard gameboard = GameBoard.getInstance();
+		assertTrue(gameboard.getCurrentSpace().getType().equals("start"));
+		
+		gameboard.movePlayer(1);
+		assertTrue(gameboard.getCurrentSpace().getType().equals("common"));
+		
+		gameboard.movePlayer(1);
+		assertTrue(gameboard.getCurrentSpace().getType().equals("common"));
+		
+		gameboard.movePlayer(1);
+		assertTrue(gameboard.getCurrentSpace().getType().equals("fork"));
+		
+		gameboard.movePlayer(1);
+		assertTrue(gameboard.getCurrentSpace().getType().equals("red"));
+		
+		gameboard.movePlayer(5);
+		assertTrue(gameboard.getCurrentSpace().getType().equals("join"));
+		assertNull(gameboard.getCurrentSpace().getAlternativeSpace());
+	}
 }

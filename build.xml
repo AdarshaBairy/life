@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?eclipse.ant.import?>
-<project basedir="." default="build" name="gameoflife">
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="life">
     <property environment="env"/>
-    <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.8"/>
-    <property name="source" value="1.8"/>
-    <path id="gameoflife.classpath">
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="life.classpath">
         <pathelement location="bin"/>
         <pathelement location="slick/lib/ibxm.jar"/>
         <pathelement location="slick/lib/jinput.jar"/>
@@ -42,7 +44,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <classpath refid="gameoflife.classpath"/>
+            <classpath refid="life.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -59,43 +61,14 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="GameBoardTest.setUpBeforeClass">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="test.java.edu.asu.cst316.GameBoardTest" todir="${junit.output.dir}"/>
-            <classpath refid="gameoflife.classpath"/>
-        </junit>
-    </target>
-    <target name="GameBoardTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="test.java.edu.asu.cst316.GameBoardTest" todir="${junit.output.dir}"/>
-            <classpath refid="gameoflife.classpath"/>
-        </junit>
-    </target>
-    <target name="junit">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="test.java.edu.asu.cst316.FullBoardTest" todir="${junit.output.dir}"/>
-            <test name="test.java.edu.asu.cst316.GameBoardTest" todir="${junit.output.dir}"/>
-            <classpath refid="gameoflife.classpath"/>
-        </junit>
-    </target>
-    <target name="life">
+    <target name="Game (1)">
         <java classname="main.java.edu.asu.cst316.Game" failonerror="true" fork="yes">
-            <classpath refid="gameoflife.classpath"/>
-        	<sysproperty key="java.library.path" path="slick"/>
+            <classpath refid="life.classpath"/>
         </java>
     </target>
-    <target name="junitreport">
-        <junitreport todir="${junit.output.dir}">
-            <fileset dir="${junit.output.dir}">
-                <include name="TEST-*.xml"/>
-            </fileset>
-            <report format="frames" todir="${junit.output.dir}"/>
-        </junitreport>
+    <target name="Game">
+        <java classname="edu.asu.cst316.Game" failonerror="true" fork="yes">
+            <classpath refid="life.classpath"/>
+        </java>
     </target>
 </project>

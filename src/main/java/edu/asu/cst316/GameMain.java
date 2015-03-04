@@ -20,7 +20,7 @@ public class GameMain extends BasicGameState{
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
-	private int playerX = -416;
+	private int playerX = -288;
 	private int playerY = 464;
 	
 	GameBoard gameboard = GameBoard.getInstance();
@@ -56,7 +56,14 @@ public class GameMain extends BasicGameState{
 				yPosition > 20
 		){
 			int random = new Random().nextInt(6 - 1 + 1) + 1;
-			updateBoardView(128*random, 0);
+			
+			gameboard.movePlayer(1);
+			int x = gameboard.getCurrentSpace().getPosX();
+			int y = gameboard.getCurrentSpace().getPosY();
+			
+			updateBoardView(x, y);
+			
+			
 			//sbg.enterState(3);
 		}
 		if(
