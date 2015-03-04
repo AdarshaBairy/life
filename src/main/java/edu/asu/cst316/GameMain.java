@@ -153,12 +153,6 @@ public class GameMain extends BasicGameState{
 		centerOfImageX = (wheelSpinning.getWidth()/2);
 		centerOfImageY = (wheelSpinning.getHeight()/2);
 		wheelSpinning.setCenterOfRotation(centerOfImageX, centerOfImageY);
-		
-		//keep the default image until something is clicked
-		//if (defaultImage){
-		//	g.drawImage(wheel, 200, 130);
-		//	g.drawImage(spinFlipper, 355, 180);
-		//}
 
 		//if the wheel is clicked do what we need it to do
 		if (spinClicked){
@@ -168,10 +162,6 @@ public class GameMain extends BasicGameState{
 				//System.out.println(spinNum);
 				spinAnimation = true;
 			}
-				
-		// keeps background image
-		//g.drawImage(wheel, 306, 375);
-		//g.drawImage(spinFlipper, 460, 420);
 		
 		//once the spin is clicked do the animation
 		if (spinAnimation){
