@@ -155,10 +155,10 @@ public class GameMain extends BasicGameState{
 		wheelSpinning.setCenterOfRotation(centerOfImageX, centerOfImageY);
 		
 		//keep the default image until something is clicked
-		if (defaultImage){
-			g.drawImage(wheel, 200, 130);
-			g.drawImage(spinFlipper, 355, 180);
-		}
+		//if (defaultImage){
+		//	g.drawImage(wheel, 200, 130);
+		//	g.drawImage(spinFlipper, 355, 180);
+		//}
 
 		//if the wheel is clicked do what we need it to do
 		if (spinClicked){
@@ -170,8 +170,8 @@ public class GameMain extends BasicGameState{
 			}
 				
 		// keeps background image
-		g.drawImage(wheel, 306, 375);
-		g.drawImage(spinFlipper, 460, 420);
+		//g.drawImage(wheel, 306, 375);
+		//g.drawImage(spinFlipper, 460, 420);
 		
 		//once the spin is clicked do the animation
 		if (spinAnimation){
