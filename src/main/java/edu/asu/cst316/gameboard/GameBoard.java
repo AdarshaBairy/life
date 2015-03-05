@@ -61,10 +61,12 @@ public class GameBoard {
 		startSpace = new GameSpace("start", commonSpaces[0][0], null);
 		currentSpace = new GameSpace("start", commonSpaces[0][0], null);
 		
+
 		startSpace.setPosition(-256, 470);
 		//System.out.println(startSpace.getPosX());
 		//System.out.println(startSpace.getPosY());
 		assignPositions(-256, 470);
+
 		
 		playerSpace = startSpace;
 		
@@ -85,7 +87,8 @@ public class GameBoard {
 		}
 	}
 	
-	public static void assignPositions2(int x, int y, int length, String direction){
+
+	public void assignPositions2(int x, int y, int length, String direction){
 		for(int i = 0; i < length; i++){
 			playerSpace.setPosition(x, y);
 			playerSpace = playerSpace.getNextSpace();
@@ -93,6 +96,7 @@ public class GameBoard {
 		}
 	}
 	
+
 	public void assignPositions(int x, int y){ 
 		currentSpace = startSpace.getNextSpace();
 		for(int i = 0; i < 28; i++){

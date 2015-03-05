@@ -37,7 +37,6 @@ public class GameBoardTest extends TestCase {
 		gameboard.movePlayer(5);
 		assertTrue(gameboard.getCurrentSpace().getType().equals("join"));
 		assertNull(gameboard.getCurrentSpace().getAlternativeSpace());
-		
 	}
 
 	public void testPosition() {
@@ -47,5 +46,6 @@ public class GameBoardTest extends TestCase {
 		System.out.println(gameboard.getCurrentSpace().getPosX());
 		gameboard.movePlayer(1);
 		System.out.println(gameboard.getCurrentSpace().getPosX());
+
 	}
 }

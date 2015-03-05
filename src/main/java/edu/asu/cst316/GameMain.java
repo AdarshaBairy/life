@@ -75,8 +75,10 @@ public class GameMain extends BasicGameState{
 				yPosition < 180 &&
 				yPosition > 20
 		){
+
 			gameboard.movePlayer(1);
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+
 			//sbg.enterState(3);
 		}
 		if(
