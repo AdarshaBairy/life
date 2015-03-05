@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse.ant.import?>
+<project basedir="." default="build" name="life">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+
+    <path id="life.classpath">
+
+        <pathelement location="bin"/>
+        <pathelement location="slick/lib/ibxm.jar"/>
+        <pathelement location="slick/lib/jinput.jar"/>
+        <pathelement location="slick/lib/jnlp.jar"/>
+        <pathelement location="slick/lib/jogg-0.0.7.jar"/>
+        <pathelement location="slick/lib/jorbis-0.0.15.jar"/>
+        <pathelement location="slick/lib/lwjgl_util_applet.jar"/>
+        <pathelement location="slick/lib/lwjgl_util.jar"/>
+        <pathelement location="slick/lib/lwjgl.jar"/>
+        <pathelement location="slick/lib/natives-linux.jar"/>
+        <pathelement location="slick/lib/natives-mac.jar"/>
+        <pathelement location="slick/lib/natives-windows.jar"/>
+        <pathelement location="slick/lib/slick-examples.jar"/>
+        <pathelement location="slick/lib/slick.jar"/>
+        <pathelement location="slick/lib/tinylinepp.jar"/>
+        <pathelement location="jar/junit.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="life.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="life" depends="build">
+        <java classname="main.java.edu.asu.cst316.Game" failonerror="true" fork="yes">
+            <classpath refid="life.classpath"/>
+			<sysproperty key="java.library.path" value="slick"/>
+        </java>
+    </target>
+</project>
