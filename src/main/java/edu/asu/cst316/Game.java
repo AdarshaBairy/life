@@ -13,6 +13,7 @@ public class Game extends StateBasedGame{
 	public static final int fullboard = 4;
 	public static final int charCreation = 5;
 	public static final int historyCards = 6;
+
 	
 	
 	public Game(String gamename){
@@ -34,7 +35,6 @@ public class Game extends StateBasedGame{
 		this.getState(fullboard).init(gc, this);
 		this.getState(charCreation).init(gc, this);
 		this.getState(historyCards).init(gc, this);
-		
 		this.enterState(menu);
 	}
 	
