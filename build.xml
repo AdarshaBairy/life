@@ -60,7 +60,7 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="life">
+    <target name="life" depends="build">
         <java classname="main.java.edu.asu.cst316.Game" failonerror="true" fork="yes">
             <classpath refid="life.classpath"/>
 			<sysproperty key="java.library.path" value="slick"/>
