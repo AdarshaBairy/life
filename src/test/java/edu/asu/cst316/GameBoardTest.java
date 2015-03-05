@@ -53,11 +53,8 @@ public class GameBoardTest extends TestCase {
 			gameboard.movePlayer(1); lastX += 128;
 			assertTrue(gameboard.getCurrentSpace().getPosX() == lastX);
 			assertTrue(gameboard.getCurrentSpace().getPosY() == lastY);
-			System.out.println(lastX);
 		}	
-		System.out.println("");
 		for(int i = 0; i < 4; ++i){
-			System.out.println(gameboard.getCurrentSpace().getPosX());
 			assertTrue(gameboard.getCurrentSpace().getPosX() == lastX);
 			assertTrue(gameboard.getCurrentSpace().getPosY() == lastY);
 			gameboard.movePlayer(1);

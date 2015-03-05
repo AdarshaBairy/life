@@ -69,11 +69,11 @@ public class GameMain extends BasicGameState{
 		Input input = gc.getInput();
 		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
 		if(
-				input.isMousePressed(0) &&
-				xPosition > 333 &&
-				xPosition < 490 &&
-				yPosition < 180 &&
-				yPosition > 20
+			input.isMousePressed(0) &&
+			xPosition > 333 &&
+			xPosition < 490 &&
+			yPosition < 180 &&
+			yPosition > 20
 		){
 
 			gameboard.movePlayer(1);
@@ -82,11 +82,11 @@ public class GameMain extends BasicGameState{
 			//sbg.enterState(3);
 		}
 		if(
-				input.isMouseButtonDown(0) &&
-				xPosition > 564 &&
-				xPosition < 715 &&
-				yPosition < 215 &&
-				yPosition > 180
+			input.isMouseButtonDown(0) &&
+			xPosition > 564 &&
+			xPosition < 715 &&
+			yPosition < 215 &&
+			yPosition > 180
 		){
 			sbg.enterState(4);
 		}
