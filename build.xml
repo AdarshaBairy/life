@@ -4,8 +4,8 @@
     <property environment="env"/>
     <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.8"/>
-    <property name="source" value="1.8"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
     <path id="gameoflife.classpath">
         <pathelement location="bin"/>
         <pathelement location="slick/lib/ibxm.jar"/>
