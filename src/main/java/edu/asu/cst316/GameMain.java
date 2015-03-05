@@ -61,7 +61,9 @@ public class GameMain extends BasicGameState{
 	}
 
 	//@Override
+
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
+
 		int xPosition = Mouse.getX();
 		int yPosition = Mouse.getY();
 		Input input = gc.getInput();
