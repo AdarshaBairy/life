@@ -83,13 +83,6 @@ public class GameBoard {
 		}
 	}
 	
-	public void assignPositions2(int x, int y, int length, String direction){
-		for(int i = 0; i < length; i++){
-			playerSpace.setPosition(x, y);
-			playerSpace = playerSpace.getNextSpace();
-			x += SPACESIZE;
-		}
-	}
 	
 	public void assignPositions(int x, int y){ 
 		currentSpace = startSpace.getNextSpace();
@@ -126,7 +119,6 @@ public class GameBoard {
 	}
 
 	//TODO: Debug this
-	
 	/*
 	public void assignPositions2(int x, int y){ 
 		currentSpace = startSpace.getNextSpace();

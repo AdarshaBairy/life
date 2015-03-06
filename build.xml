@@ -128,6 +128,8 @@
 
     <delete dir="${build.jacocoreport.dir}"/>
     <mkdir dir="${build.jacocoreport.dir}"/> 
+	<delete dir="${build.junitreport.dir}"/>
+    <mkdir dir="${build.junitreport.dir}"/> 
     <!-- Run the tests -->
     <echo message="JUnit testing is running..."/>
     <jacoco:coverage>
