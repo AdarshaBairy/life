@@ -60,6 +60,5 @@ public class GameBoardTest extends TestCase {
 			gameboard.movePlayer(1);
 			lastY += 128;
 		}
-
 	}
 }

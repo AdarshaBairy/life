@@ -60,7 +60,7 @@ public class GameBoard {
 		//System.out.println(startSpace.getPosY());
 		assignPositions(-256, 470);
 
-		
+		//TODO: Attach positions to forked green spaces
 		playerSpace = startSpace;
 		
 	}
@@ -124,7 +124,10 @@ public class GameBoard {
 			currentSpace = currentSpace.getNextSpace();
 		}	
 	}
+
+	//TODO: Debug this
 	
+	/*
 	public void assignPositions2(int x, int y){ 
 		currentSpace = startSpace.getNextSpace();
 		
@@ -211,7 +214,7 @@ public class GameBoard {
 			currentSpace = currentSpace.getNextSpace();
 		}			
 	}
-	
+	*/
 	
 	//used for attaching the entered chunk of spaces together
 	public static void attachSpaces(GameSpace[][] spaces, String type){
