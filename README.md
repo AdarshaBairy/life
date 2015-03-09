@@ -1,7 +1,8 @@
-Ant Build Instructions
+#Ant Targets 
 
-//Run the program
+ant clean
+ant prepare
+ant compile
 ant life
-
-//Run junit tests
 ant junit
+ant junitreport

@@ -61,28 +61,32 @@ public class GameMain extends BasicGameState{
 	}
 
 	//@Override
+
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
+
 		int xPosition = Mouse.getX();
 		int yPosition = Mouse.getY();
 		Input input = gc.getInput();
 		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
 		if(
-				input.isMousePressed(0) &&
-				xPosition > 333 &&
-				xPosition < 490 &&
-				yPosition < 180 &&
-				yPosition > 20
+			input.isMousePressed(0) &&
+			xPosition > 333 &&
+			xPosition < 490 &&
+			yPosition < 180 &&
+			yPosition > 20
 		){
+
 			gameboard.movePlayer(1);
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+
 			//sbg.enterState(3);
 		}
 		if(
-				input.isMouseButtonDown(0) &&
-				xPosition > 564 &&
-				xPosition < 715 &&
-				yPosition < 215 &&
-				yPosition > 180
+			input.isMouseButtonDown(0) &&
+			xPosition > 564 &&
+			xPosition < 715 &&
+			yPosition < 215 &&
+			yPosition > 180
 		){
 			sbg.enterState(4);
 		}
@@ -112,6 +116,21 @@ public class GameMain extends BasicGameState{
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
 			updatePlayer = false;
 		}
+		
+		//checks for user clicking in the cards icon to display its card history.
+		if(
+				input.isMouseButtonDown(0) &&
+				xPosition >= 660 &&
+				xPosition <= 745 &&
+				yPosition >= 50 &&
+				yPosition <= 155
+		){
+			sbg.enterState(6);
+		}
+		
+		
+		
+		
 	}
 
 	//@Override
