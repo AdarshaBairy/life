@@ -11,19 +11,25 @@ public class GameBoard {
 	private static GameSpace endSpace;
 	private	GameSpace[] forkSpaces = new GameSpace[6];
 	private GameSpace[] joinSpaces = new GameSpace[6];
-	private GameSpace[][] redSpaces = new GameSpace[6][];
-	private GameSpace[][] greenSpaces = new GameSpace[6][];
-	private GameSpace[][] commonSpaces = new GameSpace[6][];
+	private static GameSpace[][] redSpaces;
+	private static GameSpace[][] greenSpaces;
+	private static GameSpace[][] commonSpaces;
 	private static GameSpace startSpace;
 	private static GameSpace currentSpace;
 	
 	private GameBoard(){
 
+		greenSpaces = new GameSpace[6][];
+		commonSpaces = new GameSpace[6][];
+		redSpaces = new GameSpace[6][];
+		
+		
 		//Instantiate the space arrays for each chunk of spaces on the board
 		for(int i = 0; i < redSpaces.length; ++i){
 			redSpaces[i] = new GameSpace[7];
 		}
-		for(int i = 0; i < greenSpaces.length; ++i){
+		System.out.println(6);
+		for(int i = 0; i < 6; ++i){
 			greenSpaces[i] = new GameSpace[17];
 		}
 		commonSpaces[0] = new GameSpace[2];
@@ -153,9 +159,6 @@ public class GameBoard {
 		currentSpace = currentSpace.getAlternativeSpace();
 		assignPositionToGreenChunk(x, y, -1);	
 		
-		
-		
-		
 		for(int i = 0; i < 4; i++){
 			x += SPACESIZE;
 			currentSpace = currentSpace.getNextSpace();
@@ -229,7 +232,7 @@ public class GameBoard {
 			spaces[i][spaces[i].length-1].setNextSpace(nextSpace[i]);
 		}
 	}
-	/* TODO: implement this with the board without breaking it
+	//TODO: implement this with the board without breaking it
 	//Used for assigning payday type to the appropriate spaces
 	public static void assignPaydayType(){
 		for(int i = 0; i < greenSpaces.length; ++i){
@@ -244,5 +247,5 @@ public class GameBoard {
 		commonSpaces[3][0].setType("milestone");
 		commonSpaces[4][0].setType("milestone");	
 	}
-	*/
+	
 }
