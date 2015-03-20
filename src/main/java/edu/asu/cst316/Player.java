@@ -15,19 +15,19 @@ public class Player {
 	 * @param savedMoney
 	 * @param heldCards
 	 */
-	public Player(String name, String career, double salary, double savedMoney) {
+	public Player(String name, String career, int income, int savedMoney) {
 		super();
 		this.name = name;
 		this.career = career;
-		this.salary = salary;
+		this.income = income;
 		this.savedMoney = savedMoney;
 		this.heldCards = new Object[10];
 	}
 	
 	private String name;
 	private String career;
-	private double salary;
-	private double savedMoney;
+	private int income;
+	private int savedMoney;
 	//todo held cards. replace with card object when ready
 	private Object[] heldCards;
 	/**
@@ -57,26 +57,30 @@ public class Player {
 	/**
 	 * @return the salary
 	 */
-	public double getSalary() {
-		return salary;
+	public double getIncome() {
+		return income;
 	}
 	/**
 	 * @param salary the salary to set
 	 */
-	public void setSalary(double salary) {
-		this.salary = salary;
+	public void setIncome(int income) {
+		this.income = income;
 	}
 	/**
 	 * @return the savedMoney
 	 */
-	public double getSavedMoney() {
+	public int getSavedMoney() {
 		return savedMoney;
 	}
 	/**
 	 * @param savedMoney the savedMoney to set
 	 */
-	public void setSavedMoney(double savedMoney) {
+	public void setSavedMoney(int savedMoney) {
 		this.savedMoney = savedMoney;
+	}
+	
+	private void payDay(){
+		savedMoney = savedMoney + income;
 	}
 
 }
