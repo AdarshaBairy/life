@@ -115,15 +115,23 @@ public class GameMain extends BasicGameState{
 			gameboard.movePlayer(spinNum);
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
 			updatePlayer = false;
+			
 		}
+		
+		
+		
+		
+		
+		
+		
 		
 		//checks for user clicking in the cards icon to display its card history.
 		if(
-				input.isMouseButtonDown(0) &&
-				xPosition >= 660 &&
-				xPosition <= 745 &&
-				yPosition >= 50 &&
-				yPosition <= 155
+			input.isMouseButtonDown(0) &&
+			xPosition >= 660 &&
+			xPosition <= 745 &&
+			yPosition >= 50 &&
+			yPosition <= 155
 		){
 			sbg.enterState(6);
 		}

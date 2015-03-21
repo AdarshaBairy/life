@@ -83,10 +83,23 @@ public class GameBoard {
 		return playerSpace;
 	}
 	
+	
+	//Moves the player across the board
+	//Stops is the space is a fork, milestone, payday, or end space
 	public void movePlayer(int moveAmount){
 		for(int i = 0; i < moveAmount; ++i){
 			playerSpace = playerSpace.getNextSpace();
+			if(playerSpace.getType().equals("fork") &&
+			playerSpace.getType().equals("milestone") &&
+			playerSpace.getType().equals("payday") &&
+			playerSpace.getType().equals("end")){
+				i = moveAmount;
+			}
 		}
+	}
+	
+	public void movePlayerToAlternativeRoute(){
+		playerSpace = playerSpace.getAlternativeSpace();
 	}
 	
 	public void assignPositions2(int x, int y, int length, String direction){
@@ -104,7 +117,6 @@ public class GameBoard {
 			currentSpace.setPosition(x, y);
 			currentSpace = currentSpace.getNextSpace();
 		}
-		
 		
 		for(int i = 0; i < 4; i++){
 			y += SPACESIZE;
