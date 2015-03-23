@@ -64,8 +64,10 @@ public class GameBoard {
 		//System.out.println(startSpace.getPosX());
 		//System.out.println(startSpace.getPosY());
 		assignPositions(-256, 470);
+
 		assignPositions2(-256, 470);
 		
+
 		playerSpace = startSpace;
 		
 	}
@@ -97,6 +99,7 @@ public class GameBoard {
 		}
 	}
 	
+
 	//Player moves to a green space from a fork space
 	public void movePlayerToAlternativeRoute(){
 		playerSpace = playerSpace.getAlternativeSpace();
@@ -111,6 +114,7 @@ public class GameBoard {
 		}
 	}
 	*/
+
 	
 	public void assignPositions(int x, int y){ 
 		currentSpace = startSpace.getNextSpace();
@@ -144,6 +148,7 @@ public class GameBoard {
 			currentSpace = currentSpace.getNextSpace();
 		}	
 	}
+
 	
 	public void assignPositions2(int x, int y){ 
 		currentSpace = startSpace.getNextSpace();

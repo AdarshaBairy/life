@@ -1,8 +1,18 @@
-<project basedir="." name="life">
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="life" xmlns:jacoco="antlib:org.jacoco.ant">
 	<property name="src" value="src"/>
 	<property name="bin" value="bin"/>
+	<property name="slick" value="slick"/>
+	<property name="jacoco-report" value="jacoco-report"/>
+	<property name="junit-report" value="junit-report"/>
+	<property name="build.junitreport.dir" value="jacoco-report"/>
+	<property name="build.jacocoreport.dir" value="junit-report"/>
 	<property name="jar" value="jar"/>
 
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+		<classpath path="${jar}/jacocoant.jar"/>
+    </taskdef>
+	
 	<path id="all.classpath">
 		<path refid="bin.classpath"/>
 		<path refid="slick.classpath"/>
@@ -43,7 +53,8 @@
 	
 	<target name="clean">
         <delete dir="bin"/>
-		<delete dir="junit"/>
+		<delete dir="junit-report"/>
+		<delete dir="jacoco-report"/>
     </target>
 		
     <target name="life" depends="compile">
@@ -53,29 +64,66 @@
         </java>
     </target>
 	
+<!--	
 	<target name="junit" depends="compile">
-		<mkdir dir="junit"/>
-		<junit fork="yes" printsummary="withOutAndErr" haltonfailure="no">
-			<classpath refid="all.classpath"/>	
-			<formatter type="plain"/>
-			<batchtest todir="junit">
-				<fileset dir="src">
-					<include name="**/*Test*.java"/>
-				</fileset>
-			</batchtest>
-		</junit>
-	</target>
-
-	<target name="junitreport">
-		<junitreport todir="junit">
-			<fileset dir="junit">
-				<include name="TEST-*.xml"/>
+		<delete dir="junit-report"/>
+		<mkdir dir="junit-report"/>
+		<delete dir="jacoco-report"/>
+		<mkdir dir="jacoco-report"/> 
+		
+		<jacoco:coverage>
+			<junit fork="yes" printsummary="withOutAndErr" haltonfailure="no">
+				<classpath refid="all.classpath"/>	
+				<formatter type="xml"/>
+				<batchtest todir="junit-report">
+					<fileset dir="src">
+						<include name="**/*Test*.java"/>
+					</fileset>
+				</batchtest>
+			</junit>
+		</jacoco:coverage>  
+		
+	
+		<junitreport todir="junit-report">
+			<fileset dir="junit-report">
+			   <include name="TEST-*.xml"/>
 			</fileset>
-			<report format="frames" todir="$junit"/>
+			<report format="frames" styledir="." todir="junit-report" />
 		</junitreport>
+		
+		
+		<echo message="JUnit results in complete"/>
+		<jacoco:report>
+		  <executiondata>
+			<file file="jacoco-report/jacoco.exec"/>
+		  </executiondata>
+		  <structure name="Life">
+			<classfiles>
+			   <pathelement location="bin"/>
+			</classfiles>
+			<sourcefiles encoding="UTF-8">
+			   <fileset dir="src"/>
+			</sourcefiles>
+		  </structure>
+		  <html destdir="jacoco-report"/>
+		  <xml destfile="jacoco-report"/>
+		  <csv destfile="jacoco-report"/>
+		</jacoco:report>
+
 	</target>
+-->
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
 	<property name="findbugs.home" value="/opt/findbugs-3.0.1" />
 	<target name="findbugs" depends="build">
 	  <findbugs home="${findbugs.home}"
@@ -101,8 +149,82 @@
     				<param name="linkPrefix" value="http://pmd.sourceforge.net/xref/"/>
   			</formatter>
   			<fileset dir="${src}">
-   				<include name="banking/server/*.java"/>
+   				<include name="**/*.java"/>
   			</fileset>
  		</pmd>
 	</target>
+
+
+	<target name="junit" depends="compile">
+
+
+
+    <delete dir="${build.jacocoreport.dir}"/>
+    <mkdir dir="${build.jacocoreport.dir}"/> 
+	<delete dir="${build.junitreport.dir}"/>
+    <mkdir dir="${build.junitreport.dir}"/> 
+
+    <echo message="JUnit testing is running..."/>
+    <jacoco:coverage>
+      <junit printsummary="withOutAndErr" haltonfailure="no" fork="on">      
+        <sysproperty key="java.library.path" value="slick"/>
+		<classpath refid="all.classpath"/>
+        <formatter type="xml"/>
+        <batchtest todir="${build.junitreport.dir}">
+            <fileset dir="${src}">
+                <include name="**/*Test.java"/>
+            </fileset>
+        </batchtest>
+      </junit>
+    </jacoco:coverage>  
+
+    <junitreport todir="${build.junitreport.dir}">
+        <fileset dir="${build.junitreport.dir}">
+           <include name="TEST-*.xml"/>
+        </fileset>
+        <report todir="${build.junitreport.dir}" />
+    </junitreport>
+	</target>
+
+	
+
+	<target name="jacoco" depends="compile">
+
+		<jacoco:coverage destfile="jacoco.exec">
+			<java classname="main.java.edu.asu.cst316.Game" fork="true">
+				<classpath path="slick" />
+				<classpath path="bin/main/java/edu/asu/cst316" />
+				<classpath path="bin/main/java/edu/asu/cst316/GameBoard" />
+				<classpath path="bin/main/java/edu/asu/cst316/MenuSystem" />
+				<classpath path="slick/lib" />
+				<classpath path="jar" />
+			</java>
+		</jacoco:coverage>
+
+		<jacoco:report>
+
+
+			<executiondata>
+				<file file="jacoco.exec" />
+			</executiondata>
+
+
+			<structure name="JaCoCo Ant Example">
+				<classfiles>
+					<fileset dir="bin/main/java/edu/asu/cst316" />
+				</classfiles>
+			</structure>
+
+
+			<html destdir="jacoco-report" />
+			<csv destfile="jacoco-report/report.csv" />
+			<xml destfile="jacoco-report/report.xml" />
+		</jacoco:report>
+	</target>
+	
+
+	
+  
+
+
 </project>

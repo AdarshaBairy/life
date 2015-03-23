@@ -22,11 +22,7 @@ public class GameSpace {
 		this.nextSpace = nextSpace;
 		this.alternativeSpace = alternativeSpace;
 	}
-	
-	public GameSpace(GameSpace copySpace){
-		newSpace = copySpace.newSpace;
-	}
-	
+		
 	public String getType(){
 		return type;
 	}
