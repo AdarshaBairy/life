@@ -28,7 +28,6 @@ public class GameBoard {
 		for(int i = 0; i < redSpaces.length; ++i){
 			redSpaces[i] = new GameSpace[7];
 		}
-		System.out.println(6);
 		for(int i = 0; i < 6; ++i){
 			greenSpaces[i] = new GameSpace[17];
 		}
@@ -148,44 +147,66 @@ public class GameBoard {
 	
 	public void assignPositions2(int x, int y){ 
 		currentSpace = startSpace.getNextSpace();
-		
-		for(int i = 0; i < 3; i++){
+		System.out.println(currentSpace.getType());
+		for(int i = 0; i < 2; i++){
 			x += SPACESIZE;
 			currentSpace = currentSpace.getNextSpace();
+			System.out.println(currentSpace.getType());
 		}		
 		//set green spaces
+		
 		currentSpace = currentSpace.getAlternativeSpace();
+		System.out.println(currentSpace.getType());
 		assignPositionToGreenChunk(x, y, 1);
 		
 		
-		for(int i = 0; i < 4; i++){
+		for(int i = 0; i < 9; i++){
 			x += SPACESIZE;
 			currentSpace = currentSpace.getNextSpace();
+			System.out.println(currentSpace.getType());
 		}
+		
 		//set green spaces
 		currentSpace = currentSpace.getAlternativeSpace();
+		System.out.println(currentSpace.getType());
 		assignPositionToGreenChunk(x, y, 1);
 
-		//set green spaces
-		currentSpace = currentSpace.getNextSpace();
-		assignPositionToGreenChunk(x, y, -1);	
+		for(int i = 0; i < 4; i++){
+			y += SPACESIZE;
+			currentSpace = currentSpace.getNextSpace();
+			System.out.println(currentSpace.getType());
+		}
 		
 		//set green spaces
 		currentSpace = currentSpace.getAlternativeSpace();
+		System.out.println(currentSpace.getType());
 		assignPositionToGreenChunk(x, y, -1);	
 		
-		for(int i = 0; i < 4; i++){
-			x += SPACESIZE;
+		for(int i = 0; i < 2; i++){
+			x -= SPACESIZE;
 			currentSpace = currentSpace.getNextSpace();
+			System.out.println(currentSpace.getType());
 		}
 		//set green spaces
 		currentSpace = currentSpace.getAlternativeSpace();
+		System.out.println(currentSpace.getType());
+		
+		assignPositionToGreenChunk(x, y, -1);	
+		
+		for(int i = 0; i < 5; i++){
+			x += SPACESIZE;
+			currentSpace = currentSpace.getNextSpace();
+			System.out.println(currentSpace.getType());
+		}
+		//set green spaces
+		currentSpace = currentSpace.getAlternativeSpace();
+		System.out.println(currentSpace.getType());
 		assignPositionToGreenChunk(x, y, 0);	
 		
 		
 		
 		
-		for(int i = 0; i < 4; i++){
+		for(int i = 0; i < 5; i++){
 			x += SPACESIZE;
 			currentSpace = currentSpace.getNextSpace();
 		}
@@ -209,6 +230,7 @@ public class GameBoard {
 			else if (direction == -2) y += SPACESIZE;
 			currentSpace.setPosition(x, y);
 			currentSpace = currentSpace.getNextSpace();
+			System.out.println(currentSpace.getType());
 		}
 		for(int i = 0; i < 8; i++){
 			//move position across
@@ -218,6 +240,7 @@ public class GameBoard {
 			else if (direction == -2) x += SPACESIZE;
 			currentSpace.setPosition(x, y);
 			currentSpace = currentSpace.getNextSpace();
+			System.out.println(currentSpace.getType());
 		}
 		for(int i = 0; i < 4; i++){
 			//move position down
@@ -227,6 +250,7 @@ public class GameBoard {
 			else if (direction == -1) y -= SPACESIZE;
 			currentSpace.setPosition(x, y);
 			currentSpace = currentSpace.getNextSpace();
+			System.out.println(currentSpace.getType());
 		}			
 	}
 	
