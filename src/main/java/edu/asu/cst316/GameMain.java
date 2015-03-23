@@ -18,7 +18,8 @@ import org.newdawn.slick.state.StateBasedGame;
 public class GameMain extends BasicGameState{
 	public String mouse = "";
 	public Image background;
-	public Image gameBoard;
+	public Image gameBoard;	
+	public Image notification;
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
@@ -27,13 +28,24 @@ public class GameMain extends BasicGameState{
 
 	GameBoard gameboard = GameBoard.getInstance();
 	
-	Image wheel , wheelHover, spinFlipper, wheel1, wheel2, wheel3, wheel4, wheel5, wheel6, wheelSpinning;
+	Image wheel; 
+	Image wheelHover;
+	Image spinFlipper;
+	Image wheel1; 
+	Image wheel2;
+	Image wheel3; 
+	Image wheel4;
+	Image wheel5; 
+	Image wheel6; 
+	Image wheelSpinning;
+	
 	Animation spinningAnimation, flipperAnimation;
 	SpriteSheet spinning, flipperAnim;
 	int spinNum = 0, sNum =0, centerOfImageX = 0, centerOfImageY = 0, spinCount =0;
 	float mouseX, mouseY;
 	boolean mouseOverSpin = false, spinClicked = false, spun = false, shouldSpin = false, 
 			defaultImage = true, spinAnimation = false;
+	boolean showNotification = false;
 	
 	public GameMain(int state){
 	}
@@ -42,6 +54,7 @@ public class GameMain extends BasicGameState{
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		background = new Image("images/u2.png");
 		gameBoard = new Image("images/board5.png");
+		notification = new Image("images/notification_window.png");
 		
 		
 		player = new Image("images/player.png").getScaledCopy((float) .5);
@@ -117,9 +130,30 @@ public class GameMain extends BasicGameState{
 			updatePlayer = false;
 			
 		}
-		
-		
-		
+		if(gameboard.getCurrentSpace().getType().equals("fork")){
+			showNotification = true;
+			//If the player clicks on safe
+			if(input.isMouseButtonDown(0) &&
+			xPosition > 175 &&
+			xPosition < 300 &&
+			yPosition < 370 &&
+			yPosition > 330){
+				gameboard.movePlayerToAlternativeRoute();
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+			}
+			//If the player clicks on risky
+			if(input.isMouseButtonDown(0) &&
+			xPosition > 500 &&
+			xPosition < 630 &&
+			yPosition < 370 &&
+			yPosition > 330){
+				gameboard.movePlayer(1);
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+			}
+		}else{
+			showNotification = false;
+			
+		}
 		
 		
 		
@@ -147,6 +181,9 @@ public class GameMain extends BasicGameState{
 		g.drawImage(gameBoardZoom, 62, 53);
 		g.drawString(mouse, 10, 10);
 		g.drawImage(player, 336, 136);
+		if(showNotification){
+			g.drawImage(notification, 0, 0);
+		}
 		
 		//declare the images used
 		wheel = new Image("res/spinwheeldefault.png");
@@ -169,12 +206,12 @@ public class GameMain extends BasicGameState{
 		}	
 		
 		if (spinClicked == true){
-				defaultImage = false;
-				spinClicked =false;
-				spinNum = getSpinNum(sNum);
-				System.out.println(spinNum);
-				spinAnimation = true;
-			}
+			defaultImage = false;
+			spinClicked =false;
+			spinNum = getSpinNum(sNum);
+			System.out.println(spinNum);
+			spinAnimation = true;
+		}
 						
 		if (spinAnimation){
 			spinningAnimation.draw(329, 415);
@@ -228,11 +265,11 @@ public class GameMain extends BasicGameState{
 	}
 	
 	int getSpinNum(int sNum) {
-	try {
-	    Thread.sleep(250);                 //1000 milliseconds is one second.
-	} catch(InterruptedException ex) {
-	    Thread.currentThread().interrupt();
-	}
+		try {
+		    Thread.sleep(250);                 //1000 milliseconds is one second.
+		} catch(InterruptedException ex) {
+		    Thread.currentThread().interrupt();
+		}
 		Random rand = new Random();
 		sNum = (rand.nextInt(6))+1;
 		return sNum;
