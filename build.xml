@@ -34,7 +34,9 @@
 			<classpath refid="all.classpath"/>
 		</javac>
 	</target>
-
+	
+	<target name="build" depends="compile"></target>
+	
 	<target name="targets">
 		<echo message="Targets: are clean, prepare, compile, life, junit, junitreport"/>
 	</target>
@@ -78,7 +80,7 @@
 	<target name="findbugs" depends="build">
 	  <findbugs home="${findbugs.home}"
               output="xml"
-              outputFile="findbugs.xml" >
+              outputFile="CST316a.xml" >
 	    <sourcePath path="${src}" />
 	    <!--<class location="${classes}" />-->
 		<classpath refid="all.classpath"/>	
