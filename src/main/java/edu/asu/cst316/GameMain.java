@@ -130,6 +130,8 @@ public class GameMain extends BasicGameState{
 			updatePlayer = false;
 			
 		}
+		//When the player lands on a fork space they will see a window giving 
+		//of which way they want to go
 		if(gameboard.getCurrentSpace().getType().equals("fork")){
 			showNotification = true;
 			//If the player clicks on safe

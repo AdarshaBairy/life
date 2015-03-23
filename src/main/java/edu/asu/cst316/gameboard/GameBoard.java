@@ -154,11 +154,12 @@ public class GameBoard {
 			System.out.println(currentSpace.getType());
 		}		
 		//set green spaces
-		
 		currentSpace = currentSpace.getAlternativeSpace();
+		x += SPACESIZE;
 		System.out.println(currentSpace.getType());
 		assignPositionToGreenChunk(x, y, 1);
-		
+		x = currentSpace.getPosX();
+		y = currentSpace.getPosY();
 		
 		for(int i = 0; i < 9; i++){
 			x += SPACESIZE;
@@ -170,7 +171,9 @@ public class GameBoard {
 		currentSpace = currentSpace.getAlternativeSpace();
 		System.out.println(currentSpace.getType());
 		assignPositionToGreenChunk(x, y, 1);
-
+		x = currentSpace.getPosX();
+		y = currentSpace.getPosY();
+		
 		for(int i = 0; i < 4; i++){
 			y += SPACESIZE;
 			currentSpace = currentSpace.getNextSpace();
@@ -181,6 +184,8 @@ public class GameBoard {
 		currentSpace = currentSpace.getAlternativeSpace();
 		System.out.println(currentSpace.getType());
 		assignPositionToGreenChunk(x, y, -1);	
+		x = currentSpace.getPosX();
+		y = currentSpace.getPosY();
 		
 		for(int i = 0; i < 2; i++){
 			x -= SPACESIZE;
@@ -190,11 +195,12 @@ public class GameBoard {
 		//set green spaces
 		currentSpace = currentSpace.getAlternativeSpace();
 		System.out.println(currentSpace.getType());
-		
 		assignPositionToGreenChunk(x, y, -1);	
+		x = currentSpace.getPosX();
+		y = currentSpace.getPosY();
 		
 		for(int i = 0; i < 5; i++){
-			x += SPACESIZE;
+			x -= SPACESIZE;
 			currentSpace = currentSpace.getNextSpace();
 			System.out.println(currentSpace.getType());
 		}
@@ -202,7 +208,8 @@ public class GameBoard {
 		currentSpace = currentSpace.getAlternativeSpace();
 		System.out.println(currentSpace.getType());
 		assignPositionToGreenChunk(x, y, 0);	
-		
+		x = currentSpace.getPosX();
+		y = currentSpace.getPosY();
 		
 		
 		
@@ -213,6 +220,8 @@ public class GameBoard {
 		//set green spaces
 		currentSpace = currentSpace.getAlternativeSpace();
 		assignPositionToGreenChunk(x, y, -2);
+		x = currentSpace.getPosX();
+		y = currentSpace.getPosY();
 	
 	}
 	
@@ -221,7 +230,7 @@ public class GameBoard {
 	// 0 = Left
 	//-1 = Down
 	//-2 = DownRight
-	public static void assignPositionToGreenChunk(int x, int y, int direction){
+	public static int[] assignPositionToGreenChunk(int x, int y, int direction){
 		for(int i = 0; i < 5; i++){
 			//move position up
 			if (direction == 1) y -= SPACESIZE;
@@ -247,11 +256,15 @@ public class GameBoard {
 			if (direction == 1) y += SPACESIZE;
 			else if (direction == 0) x += SPACESIZE;
 			else if (direction == -1) y -= SPACESIZE;
-			else if (direction == -1) y -= SPACESIZE;
+			else if (direction == -2) y -= SPACESIZE;
 			currentSpace.setPosition(x, y);
 			currentSpace = currentSpace.getNextSpace();
 			System.out.println(currentSpace.getType());
-		}			
+		}	
+		int[] positions = new int[2];
+		positions[0] = x;
+		positions[1] = y;
+		return positions;
 	}
 	
 	
