@@ -73,4 +73,34 @@
 		</junitreport>
 	</target>
 	
+	
+	<property name="findbugs.home" value="/opt/findbugs-3.0.1" />
+	<target name="findbugs" depends="build">
+	  <findbugs home="${findbugs.home}"
+              output="xml"
+              outputFile="findbugs.xml" >
+	    <sourcePath path="${src}" />
+	    <!--<class location="${classes}" />-->
+		<classpath refid="all.classpath"/>	
+	  </findbugs>
+	</target>
+	
+	<property name="pmd.home" location="/opt/pmd-bin-5.1.0" />
+	<path id="pmd.classpath">
+	    	<fileset dir="${pmd.home}/lib" includes="*.jar" />
+	</path>
+	<taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
+	<target name="pmd">
+ 		<pmd shortFilenames="true">
+  			<sourceLanguage name="java" version="1.8"/>
+  			<ruleset>rulesets/java/design.xml</ruleset>
+  			<ruleset>java-basic</ruleset>
+  			<formatter type="html" toFile="pmd_report_fromant.html">
+    				<param name="linkPrefix" value="http://pmd.sourceforge.net/xref/"/>
+  			</formatter>
+  			<fileset dir="${src}">
+   				<include name="banking/server/*.java"/>
+  			</fileset>
+ 		</pmd>
+	</target>
 </project>
