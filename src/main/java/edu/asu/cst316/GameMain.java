@@ -16,6 +16,9 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class GameMain extends BasicGameState{
+	
+	GameBoard gameboard = GameBoard.getInstance();
+	
 	public String mouse = "";
 	public Image background;
 	public Image gameBoard;	
@@ -23,10 +26,15 @@ public class GameMain extends BasicGameState{
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
+	
 	private int playerX = -256;
 	private int playerY = 464;
 
-	GameBoard gameboard = GameBoard.getInstance();
+	int spinNum = 0; 
+	int	sNum = 0; 
+	int	centerOfImageX = 0; 
+	int	centerOfImageY = 0; 
+	int	spinCount = 0;
 	
 	Image wheel; 
 	Image wheelHover;
@@ -39,12 +47,21 @@ public class GameMain extends BasicGameState{
 	Image wheel6; 
 	Image wheelSpinning;
 	
-	Animation spinningAnimation, flipperAnimation;
-	SpriteSheet spinning, flipperAnim;
-	int spinNum = 0, sNum =0, centerOfImageX = 0, centerOfImageY = 0, spinCount =0;
-	float mouseX, mouseY;
-	boolean mouseOverSpin = false, spinClicked = false, spun = false, shouldSpin = false, 
-			defaultImage = true, spinAnimation = false;
+	Animation spinningAnimation;
+	Animation flipperAnimation;
+	
+	SpriteSheet spinning;
+	SpriteSheet flipperAnim;
+	
+	float mouseX; 
+	float mouseY;
+	
+	boolean mouseOverSpin = false; 
+	boolean	spinClicked = false; 
+	boolean	spun = false; 
+	boolean	shouldSpin = false; 
+	boolean	defaultImage = true; 
+	boolean	spinAnimation = false;
 	boolean showNotification = false;
 	
 	public GameMain(int state){
@@ -157,7 +174,30 @@ public class GameMain extends BasicGameState{
 			
 		}
 		
-		
+		if(gameboard.getCurrentSpace().getType().equals("end")){
+			showNotification = true;
+			//If the player clicks on safe
+			if(input.isMouseButtonDown(0) &&
+			xPosition > 175 &&
+			xPosition < 300 &&
+			yPosition < 370 &&
+			yPosition > 330){
+				gameboard.movePlayerToAlternativeRoute();
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+			}
+			//If the player clicks on risky
+			if(input.isMouseButtonDown(0) &&
+			xPosition > 500 &&
+			xPosition < 630 &&
+			yPosition < 370 &&
+			yPosition > 330){
+				gameboard.movePlayer(1);
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+			}
+		}else{
+			showNotification = false;
+			
+		}
 		
 		
 		
@@ -259,6 +299,12 @@ public class GameMain extends BasicGameState{
 	public int getID(){
 		return 2;
 	}
+	
+	
+	//This function is used for displaying the gameboard map to the viewer
+	//X and Y starting corners of where to take the sub image of the entire gameboard image
+	//the values 1372 and 624 were for creating the size of the gameboard window
+	//Then it gets scaled by .5 making the size of the window into 686 by 312
 	
 	public void updateBoardView(int x, int y){
 		gameBoardZoom = gameBoard.getSubImage(x, y, 1372, 624).getScaledCopy((float) .5); 
