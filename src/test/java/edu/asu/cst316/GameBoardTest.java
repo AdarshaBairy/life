@@ -70,7 +70,7 @@ public class GameBoardTest extends TestCase {
 		assertTrue(gameboard.getCurrentSpace().getType().equals("start"));
 		gameboard.movePlayer(3);
 
-		System.out.println(gameboard.getCurrentSpace().getAlternativeSpace().getType());
+		//System.out.println(gameboard.getCurrentSpace().getAlternativeSpace().getType());
 		
 		gameboard.reset();
 	}

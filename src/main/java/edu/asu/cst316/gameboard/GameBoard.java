@@ -61,8 +61,8 @@ public class GameBoard {
 		
 
 		startSpace.setPosition(-256, 470);
-		//System.out.println(startSpace.getPosX());
-		//System.out.println(startSpace.getPosY());
+		////System.out.println(startSpace.getPosX());
+		////System.out.println(startSpace.getPosY());
 		assignPositions(-256, 470);
 
 		assignPositions2(-256, 470);
@@ -152,16 +152,16 @@ public class GameBoard {
 	
 	public void assignPositions2(int x, int y){ 
 		currentSpace = startSpace.getNextSpace();
-		System.out.println(currentSpace.getType());
+		////System.out.println(currentSpace.getType());
 		for(int i = 0; i < 2; i++){
 			x += SPACESIZE;
 			currentSpace = currentSpace.getNextSpace();
-			System.out.println(currentSpace.getType());
+			//System.out.println(currentSpace.getType());
 		}		
 		//set green spaces
 		currentSpace = currentSpace.getAlternativeSpace();
 		x += SPACESIZE;
-		System.out.println(currentSpace.getType());
+		//System.out.println(currentSpace.getType());
 		assignPositionToGreenChunk(x, y, 1);
 		x = currentSpace.getPosX();
 		y = currentSpace.getPosY();
@@ -169,12 +169,12 @@ public class GameBoard {
 		for(int i = 0; i < 9; i++){
 			x += SPACESIZE;
 			currentSpace = currentSpace.getNextSpace();
-			System.out.println(currentSpace.getType());
+			//System.out.println(currentSpace.getType());
 		}
 		
 		//set green spaces
 		currentSpace = currentSpace.getAlternativeSpace();
-		System.out.println(currentSpace.getType());
+		//System.out.println(currentSpace.getType());
 		assignPositionToGreenChunk(x, y, 1);
 		x = currentSpace.getPosX();
 		y = currentSpace.getPosY();
@@ -182,12 +182,12 @@ public class GameBoard {
 		for(int i = 0; i < 4; i++){
 			y += SPACESIZE;
 			currentSpace = currentSpace.getNextSpace();
-			System.out.println(currentSpace.getType());
+			//System.out.println(currentSpace.getType());
 		}
 		
 		//set green spaces
 		currentSpace = currentSpace.getAlternativeSpace();
-		System.out.println(currentSpace.getType());
+		//System.out.println(currentSpace.getType());
 		assignPositionToGreenChunk(x, y, -1);	
 		x = currentSpace.getPosX();
 		y = currentSpace.getPosY();
@@ -195,11 +195,11 @@ public class GameBoard {
 		for(int i = 0; i < 2; i++){
 			x -= SPACESIZE;
 			currentSpace = currentSpace.getNextSpace();
-			System.out.println(currentSpace.getType());
+			//System.out.println(currentSpace.getType());
 		}
 		//set green spaces
 		currentSpace = currentSpace.getAlternativeSpace();
-		System.out.println(currentSpace.getType());
+		//System.out.println(currentSpace.getType());
 		assignPositionToGreenChunk(x, y, -1);	
 		x = currentSpace.getPosX();
 		y = currentSpace.getPosY();
@@ -207,11 +207,11 @@ public class GameBoard {
 		for(int i = 0; i < 5; i++){
 			x -= SPACESIZE;
 			currentSpace = currentSpace.getNextSpace();
-			System.out.println(currentSpace.getType());
+			//System.out.println(currentSpace.getType());
 		}
 		//set green spaces
 		currentSpace = currentSpace.getAlternativeSpace();
-		System.out.println(currentSpace.getType());
+		//System.out.println(currentSpace.getType());
 		assignPositionToGreenChunk(x, y, 0);	
 		x = currentSpace.getPosX();
 		y = currentSpace.getPosY();
@@ -244,7 +244,7 @@ public class GameBoard {
 			else if (direction == -2) y += SPACESIZE;
 			currentSpace.setPosition(x, y);
 			currentSpace = currentSpace.getNextSpace();
-			System.out.println(currentSpace.getType());
+			//System.out.println(currentSpace.getType());
 		}
 		for(int i = 0; i < 8; i++){
 			//move position across
@@ -254,7 +254,7 @@ public class GameBoard {
 			else if (direction == -2) x += SPACESIZE;
 			currentSpace.setPosition(x, y);
 			currentSpace = currentSpace.getNextSpace();
-			System.out.println(currentSpace.getType());
+			//System.out.println(currentSpace.getType());
 		}
 		for(int i = 0; i < 4; i++){
 			//move position down
@@ -264,7 +264,7 @@ public class GameBoard {
 			else if (direction == -2) y -= SPACESIZE;
 			currentSpace.setPosition(x, y);
 			currentSpace = currentSpace.getNextSpace();
-			System.out.println(currentSpace.getType());
+			//System.out.println(currentSpace.getType());
 		}	
 		int[] positions = new int[2];
 		positions[0] = x;
