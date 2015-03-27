@@ -191,7 +191,7 @@
 	<target name="jacoco" depends="compile">
 
 		<jacoco:coverage destfile="jacoco.exec">
-			<java classname="main.java.edu.asu.cst316.Game" fork="true">
+			<java classname="main.java.edu.asu.cst316.GameMain" fork="true">
 				<classpath path="slick" />
 				<classpath path="bin/main/java/edu/asu/cst316" />
 				<classpath path="bin/main/java/edu/asu/cst316/GameBoard" />
