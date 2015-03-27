@@ -22,6 +22,9 @@ public class GameMain extends BasicGameState{
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
+	public Image blueCard;
+	public Image greenCard;
+	public Image redCard;
 	Image wheel; 
 	Image wheelHover;
 	Image spinFlipper;
@@ -45,6 +48,7 @@ public class GameMain extends BasicGameState{
 	boolean shouldSpin = false; 
 	boolean defaultImage = true;
 	boolean spinAnimation = false;
+	String cardText;
 
 	GameBoard gameboard = GameBoard.getInstance();
 	
@@ -71,6 +75,10 @@ public class GameMain extends BasicGameState{
 		spinningAnimation = new Animation (spinning, 100);
 		flipperAnimation = new Animation (flipperAnim, 75);
 		
+		//assigns the cards to their proper image
+		blueCard = new Image("images/bluecard.png");
+		//greenCard = new Image("images/greencard.png");
+		//redCard = new Image("images/redcard.png");
 	}
 
 	//@Override
@@ -139,6 +147,11 @@ public class GameMain extends BasicGameState{
 			updatePlayer = false;
 		}
 		
+		// if player lands on "color" space draw that card
+		CardText CT = new CardText();
+		cardText = CT.getCardText();
+		
+		
 		//checks for user clicking in the cards icon to display its card history.
 		if(
 				input.isMouseButtonDown(0) &&
@@ -149,10 +162,6 @@ public class GameMain extends BasicGameState{
 		){
 			sbg.enterState(6);
 		}
-		
-		
-		
-		
 	}
 
 	//@Override
@@ -161,6 +170,11 @@ public class GameMain extends BasicGameState{
 		g.drawImage(gameBoardZoom, 62, 53);
 		g.drawString(mouse, 10, 10);
 		g.drawImage(player, 336, 136);
+		
+		
+		//Display the cards
+		g.drawImage(blueCard, 10, 20);
+		g.drawString(cardText, 40, 40);
 		
 		//declare the images used
 		wheel = new Image("res/spinwheeldefault.png");

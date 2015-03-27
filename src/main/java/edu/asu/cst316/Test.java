@@ -69,8 +69,8 @@ public class Test {
 //            stmt.close();
 
             // Make a stack of cards.
-            CardStack cs = new CardStack();
-            System.out.println(cs);
+           // CardStack cs = new CardStack();
+           // System.out.println(cs);
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);

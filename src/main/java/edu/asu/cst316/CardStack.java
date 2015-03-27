@@ -8,8 +8,11 @@ package main.java.edu.asu.cst316;
 
 import java.util.Stack;
 
-public class CardStack extends Stack<Card> {
-    public CardStack() {
+public class CardStack {//extends Stack<Card> {
+
+	
+	
+/*	public CardStack() {
         CardGenerator cg = new CardGenerator();
         int i = 0;
         while (i < 50) {
@@ -25,5 +28,5 @@ public class CardStack extends Stack<Card> {
             s.append(System.getProperty("line.separator"));
         }
         return s.toString();
-    }
-}
+*/    }
+
