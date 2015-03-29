@@ -121,12 +121,18 @@ public class GameMain extends BasicGameState{
 			sbg.enterState(4);
 		}
 		
-		if((xPosition > 340 && xPosition < 470) && (yPosition > 190 && yPosition < 220)){
+		if(xPosition > 340 && 
+		xPosition < 470 && 
+		yPosition > 190 && yPosition < 220){
 			mouseOverSpin = true;
 			if(Mouse.isButtonDown(0)){
 				spinClicked = true;
-			}else spinClicked = false;		
-		}else mouseOverSpin = false;
+			}else {
+				spinClicked = false;		
+			}
+		}else {
+			mouseOverSpin = false;
+		}
 		
 		if(spinClicked == true){
 			spinningAnimation.update(delta);
@@ -135,12 +141,15 @@ public class GameMain extends BasicGameState{
 		if (spinAnimation){
 			spinCount += (delta);
 		}
+		
 		boolean updatePlayer = false;
+		
 		if (spinCount > 3000){
 			spinCount = 0;
 			spinAnimation = false;
 			updatePlayer = true;
 		}
+		
 		if(updatePlayer){
 			gameboard.movePlayer(spinNum);
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
