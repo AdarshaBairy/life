@@ -1,8 +1,8 @@
-package main.java.edu.asu.cst316;
+package main.java.edu.asu.cst316.cards;
 
 import java.util.Random;
 
-public class BlueCardText {
+public class GreenCardText {
 
 	private String cardText;
 	

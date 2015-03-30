@@ -4,7 +4,7 @@
  * Created by Doug Greenbaum on 11/30/2014.
  */
 
-package main.java.edu.asu.cst316;
+package main.java.edu.asu.cst316.cards;
 
 import java.util.Stack;
 

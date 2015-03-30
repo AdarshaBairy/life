@@ -1,12 +1,10 @@
-package main.java.edu.asu.cst316;
+package main.java.edu.asu.cst316.cards;
 
 import java.util.Random;
 
-public class CardText {
-	
+public class BlueCardText {
+
 	private String cardText;
-	//card = (String cardtext, int cardValue);
-	//allCards = blueCards[], greenCArds[], redCards[];
 	
 	public String getCardText(){
 		Random rand = new Random();
@@ -22,4 +20,3 @@ public class CardText {
 			"whats up dog",
 	};
 }
-

@@ -2,6 +2,7 @@ package main.java.edu.asu.cst316;
 
 import java.util.Random;
 
+import main.java.edu.asu.cst316.cards.CardText;
 import main.java.edu.asu.cst316.gameboard.GameBoard;
 
 import org.lwjgl.input.Mouse;
