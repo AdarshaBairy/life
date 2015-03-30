@@ -38,7 +38,7 @@ public class GameMain extends BasicGameState{
 	public GameMain(int state){
 	}
 
-	//@Override
+	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		background = new Image("images/u2.png");
 		gameBoard = new Image("images/board5.png");

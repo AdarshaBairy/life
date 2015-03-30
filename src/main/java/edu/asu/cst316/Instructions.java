@@ -15,6 +15,7 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Instructions extends BasicGameState{
 	public String mouse = "";
 	public Image background;
+	public Image instructions;
 	
 	public Instructions(int state){
 	}
@@ -22,6 +23,8 @@ public class Instructions extends BasicGameState{
 	//@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		background = new Image("images/u1.png");
+		instructions = new Image("images/instructions");
+		
 	}
 
 	//@Override
@@ -39,6 +42,16 @@ public class Instructions extends BasicGameState{
 		{
 			sbg.enterState(0);
 		}
+		/*if(
+				input.isMouseButtonDown(0) &&
+				xPosition > 20 &&
+				xPosition < 170 &&
+				yPosition < 60 &&
+				yPosition > 20)
+		{
+			updateBoardView(instructions.getCurrentSpace().getPosX(), instructions.getCurrentSpace().getPosY());
+		}
+		**/		
 		
 	}
 
@@ -52,4 +65,10 @@ public class Instructions extends BasicGameState{
 		return 1;
 	}
 	
+	/*public void updateBoardView(int x, int y){
+		instructions.getSubImage(x, y, 1372, 624).getScaledCopy((float) .5); 
+		//playerX = x;
+		//playerY = y;
+	}
+	**/
 }
