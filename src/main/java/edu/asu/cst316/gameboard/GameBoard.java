@@ -36,7 +36,7 @@ public class GameBoard {
 		//Attach the spaces of each chunk with the rest of the spaces in their chunk
 		endSpace = new GameSpace("end", null, null);
 		attachSpaces(redSpaces, "red");
-		attachSpaces(commonSpaces, "common");
+		attachSpaces(commonSpaces, "common"); //Blue spaces
 		attachSpaces(greenSpaces, "green");
 		for(int i = 0; i < forkSpaces.length; ++i){
 			forkSpaces[i] = new GameSpace("fork", redSpaces[i][0], greenSpaces[i][0]);

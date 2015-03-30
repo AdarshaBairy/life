@@ -29,6 +29,7 @@ public class GameMain extends BasicGameState{
 	Image wheelHover;
 	Image spinFlipper;
 	Image wheelSpinning;
+	Image cardColor;
 	Animation spinningAnimation;
 	Animation flipperAnimation;
 	SpriteSheet spinning;
@@ -147,9 +148,26 @@ public class GameMain extends BasicGameState{
 			updatePlayer = false;
 		}
 		
+		/////NEED to know if player information provides space landed on.
+		/////MAKE all colors one class
+		////Color methods are in gameboard and gamespace
+		////MAKE an array to store the cards
+		////NEED to store value with card
 		// if player lands on "color" space draw that card
+		//if playerSpaceColor == blue
+		cardColor = blueCard;
 		CardText CT = new CardText();
 		cardText = CT.getCardText();
+		
+		//if playerSpaceColor == green
+		//cardColor = greenCard;
+		//GreenCardText CT = new GreenCardText();
+		//cardText = CT.getCardText();
+		
+		//if playerSpaceColor == red
+		//cardColor = redCard;
+		//RedCardText CT = new RedCardText();
+		//cardText = CT.getCardText();
 		
 		
 		//checks for user clicking in the cards icon to display its card history.
@@ -171,11 +189,6 @@ public class GameMain extends BasicGameState{
 		g.drawString(mouse, 10, 10);
 		g.drawImage(player, 336, 136);
 		
-		
-		//Display the cards
-		g.drawImage(blueCard, 10, 20);
-		g.drawString(cardText, 40, 40);
-		
 		//declare the images used
 		wheel = new Image("res/spinwheeldefault.png");
 		wheelHover = new Image("res/spinwheelhover.png");
@@ -187,12 +200,17 @@ public class GameMain extends BasicGameState{
 		centerOfImageY = (wheelSpinning.getHeight()/2);
 		wheelSpinning.setCenterOfRotation(centerOfImageX, centerOfImageY);
 
+		
+		//Display the card the player draws when he lands on a space
+		g.drawImage(cardColor, 200, 20);
+		g.drawString(cardText, 250, 40);
+		
+		
 		//if the wheel is clicked do what we need it to do
 		if (spinClicked){
 				defaultImage = false;
 				spinClicked = false;
 				spinNum = getSpinNum(sNum);
-				//System.out.println(spinNum);
 				spinAnimation = true;
 			}
 		
