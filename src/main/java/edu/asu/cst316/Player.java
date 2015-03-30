@@ -1,13 +1,24 @@
 /**
  * 
  */
+
 package main.java.edu.asu.cst316;
+import java.util.*;
 
 /**
  * @author Owner
  *
  */
 public class Player {
+	
+	private String name;
+	private String career;
+	private int income;
+	private int savedMoney;
+	private int risk;
+	//todo held cards. replace with card object when ready
+	private Object[] heldCards;
+	
 	/**
 	 * @param name
 	 * @param career
@@ -16,20 +27,26 @@ public class Player {
 	 * @param heldCards
 	 */
 	public Player(String name, String career, int income, int savedMoney) {
-		super();
 		this.name = name;
 		this.career = career;
 		this.income = income;
+		this.risk = 1;
 		this.savedMoney = savedMoney;
 		this.heldCards = new Object[10];
 	}
 	
-	private String name;
-	private String career;
-	private int income;
-	private int savedMoney;
-	//todo held cards. replace with card object when ready
-	private Object[] heldCards;
+	public Player(String name){
+		if (name.compareToIgnoreCase("venture 1") == 1){
+			this.name = name;
+			this.career = "venture 1";
+			this.income = 1000;
+			this.savedMoney = 5000;
+			
+		}
+		
+	}
+	
+	
 	/**
 	 * @return the name
 	 */
@@ -80,7 +97,13 @@ public class Player {
 	}
 	
 	private void payDay(){
-		savedMoney = savedMoney + income;
+		Random rand = new Random();
+		savedMoney = savedMoney + (income/(risk/2)) + (income *(rand.nextInt(risk) + 1 ));
+
 	}
+	
+	private void addCard(Object card){
+	}
+	
 
 }
