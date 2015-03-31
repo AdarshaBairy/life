@@ -27,6 +27,7 @@ public class GameMain extends BasicGameState{
 	public Image background;
 	public Image gameBoard;	
 	public Image notification;
+	public Image eventWindow;
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
@@ -81,7 +82,7 @@ public class GameMain extends BasicGameState{
 		background = new Image("images/u2.png");
 		gameBoard = new Image("images/board5.png");
 		notification = new Image("images/notification_window.png");
-		
+		eventWindow = new Image("images/event_window.png");
 		
 		player = new Image("images/player.png").getScaledCopy((float) .5);
 		spinner = new Image("images/spinner.png");
@@ -211,34 +212,9 @@ public class GameMain extends BasicGameState{
 		}else{
 			showNotification = false;
 		}
+
 		
-		if(gameboard.getCurrentSpace().getType().equals("end")){
-			showNotification = true;
-			//If the player clicks on safe
-			if(input.isMouseButtonDown(0) &&
-			xPosition > 175 &&
-			xPosition < 300 &&
-			yPosition < 370 &&
-			yPosition > 330){
-				gameboard.movePlayerToAlternativeRoute();
-				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-			}
-			//If the player clicks on risky
-			if(input.isMouseButtonDown(0) &&
-			xPosition > 500 &&
-			xPosition < 630 &&
-			yPosition < 370 &&
-			yPosition > 330){
-				gameboard.movePlayer(1);
-				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-			}
-		}else{
-			showNotification = false;
-			
-		}
-		
-		
-		
+				
 		/////NEED to know if player information provides space landed on.
 		////Color methods are in gameboard and gamespace
 		////MAKE an array to store the cards
@@ -266,13 +242,11 @@ public class GameMain extends BasicGameState{
 		//}
 		
 		//checks for user clicking in the cards icon to display its card history.
-		if(
-			input.isMouseButtonDown(0) &&
-			xPosition >= 660 &&
-			xPosition <= 745 &&
-			yPosition >= 50 &&
-			yPosition <= 155
-		){
+		if(input.isMouseButtonDown(0) &&
+		xPosition >= 660 &&
+		xPosition <= 745 &&
+		yPosition >= 50 &&
+		yPosition <= 155){
 			sbg.enterState(6);
 		}
 	}
@@ -301,8 +275,8 @@ public class GameMain extends BasicGameState{
 		//Display the card the player draws when he lands on a space
 		//if(playerSpaceColor == "redSpaces"){
 		if (cardGenerated) {
-		g.drawImage(cardColor, 200, 20);
-		g.drawString(cardText, 250, 40);
+			g.drawImage(eventWindow, 0, 0);
+			g.drawString(cardText, 250, 40);
 	    }
 		
 		
