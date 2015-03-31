@@ -44,7 +44,9 @@
 			<classpath refid="all.classpath"/>
 		</javac>
 	</target>
-
+	
+	<target name="build" depends="compile"></target>
+	
 	<target name="targets">
 		<echo message="Targets: are clean, prepare, compile, life, junit, junitreport"/>
 	</target>
@@ -121,16 +123,47 @@
 	
 	
 	
+
+	<property name="findbugs.home" value="/opt/findbugs-3.0.1" />
+	<target name="findbugs" depends="build">
+	  <findbugs home="${findbugs.home}"
+              output="xml"
+              outputFile="CST316a.xml" >
+	    <sourcePath path="${src}" />
+	    <!--<class location="${classes}" />-->
+		<classpath refid="all.classpath"/>	
+	  </findbugs>
+	</target>
 	
+	<property name="pmd.home" location="/opt/pmd-bin-5.1.0" />
+	<path id="pmd.classpath">
+	    	<fileset dir="${pmd.home}/lib" includes="*.jar" />
+	</path>
+	<taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
+	<target name="pmd">
+ 		<pmd shortFilenames="true">
+  			<sourceLanguage name="java" version="1.8"/>
+  			<ruleset>rulesets/java/design.xml</ruleset>
+  			<ruleset>java-basic</ruleset>
+  			<formatter type="html" toFile="pmd_report_fromant.html">
+    				<param name="linkPrefix" value="http://pmd.sourceforge.net/xref/"/>
+  			</formatter>
+  			<fileset dir="${src}">
+   				<include name="**/*.java"/>
+  			</fileset>
+ 		</pmd>
+	</target>
+
+
 	<target name="junit" depends="compile">
 
-    <!-- First, clean the junit directory. -->
+
 
     <delete dir="${build.jacocoreport.dir}"/>
     <mkdir dir="${build.jacocoreport.dir}"/> 
 	<delete dir="${build.junitreport.dir}"/>
     <mkdir dir="${build.junitreport.dir}"/> 
-    <!-- Run the tests -->
+
     <echo message="JUnit testing is running..."/>
     <jacoco:coverage>
       <junit printsummary="withOutAndErr" haltonfailure="no" fork="on">      
@@ -144,7 +177,7 @@
         </batchtest>
       </junit>
     </jacoco:coverage>  
-    	<!-- Generate a report on the results. -->
+
     <junitreport todir="${build.junitreport.dir}">
         <fileset dir="${build.junitreport.dir}">
            <include name="TEST-*.xml"/>
@@ -156,9 +189,9 @@
 	
 
 	<target name="jacoco" depends="compile">
-		<!-- Step 2: Wrap test execution with the JaCoCo coverage task -->
+
 		<jacoco:coverage destfile="jacoco.exec">
-			<java classname="main.java.edu.asu.cst316.Game" fork="true">
+			<java classname="main.java.edu.asu.cst316.GameMain" fork="true">
 				<classpath path="slick" />
 				<classpath path="bin/main/java/edu/asu/cst316" />
 				<classpath path="bin/main/java/edu/asu/cst316/GameBoard" />
@@ -167,22 +200,22 @@
 				<classpath path="jar" />
 			</java>
 		</jacoco:coverage>
-		<!-- Step 3: Create coverage report -->
+
 		<jacoco:report>
 
-			<!-- This task needs the collected execution data and ... -->
+
 			<executiondata>
 				<file file="jacoco.exec" />
 			</executiondata>
 
-			<!-- the class files and optional source files ... -->
+
 			<structure name="JaCoCo Ant Example">
 				<classfiles>
 					<fileset dir="bin/main/java/edu/asu/cst316" />
 				</classfiles>
 			</structure>
 
-			<!-- to produce reports in different formats. -->
+
 			<html destdir="jacoco-report" />
 			<csv destfile="jacoco-report/report.csv" />
 			<xml destfile="jacoco-report/report.xml" />
@@ -192,5 +225,6 @@
 
 	
   
+
 
 </project>

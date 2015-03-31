@@ -13,6 +13,7 @@ public class Game extends StateBasedGame{
 	public static final int fullboard = 4;
 	public static final int charCreation = 5;
 	public static final int historyCards = 6;
+	public static final int notification = 9;
 
 	
 	

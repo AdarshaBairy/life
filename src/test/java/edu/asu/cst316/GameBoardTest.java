@@ -62,4 +62,16 @@ public class GameBoardTest extends TestCase {
 		}
 
 	}
+	
+	
+	@Test
+	public void testGreenSpaces() {
+		gameboard.reset();
+		assertTrue(gameboard.getCurrentSpace().getType().equals("start"));
+		gameboard.movePlayer(3);
+
+		//System.out.println(gameboard.getCurrentSpace().getAlternativeSpace().getType());
+		
+		gameboard.reset();
+	}
 }
