@@ -180,7 +180,6 @@ public class GameMain extends BasicGameState{
 			}
 		}else{
 			showNotification = false;
-			
 		}
 		
 		if(gameboard.getCurrentSpace().getType().equals("end")){
@@ -269,41 +268,41 @@ public class GameMain extends BasicGameState{
 			flipperAnimation.draw(460, 420);
 		} else{
 		
-		if (spinNum == 1){
-			wheelSpinning.setRotation(0);
-			g.drawImage(wheelSpinning, 329, 415);
-			g.drawImage(spinFlipper, 460, 420);
-		}	
-		if (spinNum == 2){
-			wheelSpinning.setRotation(330);
-			g.drawImage(wheelSpinning, 329, 415);
-			g.drawImage(spinFlipper, 460, 420);
-		}
-		if (spinNum == 3){
-			wheelSpinning.setRotation(275);
-			g.drawImage(wheelSpinning, 329, 415);
-			g.drawImage(spinFlipper, 460, 420);
-		}		
-		if (spinNum == 4){
-			wheelSpinning.setRotation(180);
-			g.drawImage(wheelSpinning, 329, 415);
-			g.drawImage(spinFlipper, 460, 420);
-		}
-		if (spinNum == 5){
-			wheelSpinning.setRotation(120);
-			g.drawImage(wheelSpinning, 329, 415);
-			g.drawImage(spinFlipper, 460, 420);
-		}		
-		if (spinNum == 6){
-			wheelSpinning.setRotation(90);
-			g.drawImage(wheelSpinning, 329, 415);
-			g.drawImage(spinFlipper, 460, 420);
-		}		
-		spinAnimation = false;
-		spinClicked = false;
-	} // end else 
+			if (spinNum == 1){
+				wheelSpinning.setRotation(0);
+				g.drawImage(wheelSpinning, 329, 415);
+				g.drawImage(spinFlipper, 460, 420);
+			}	
+			if (spinNum == 2){
+				wheelSpinning.setRotation(330);
+				g.drawImage(wheelSpinning, 329, 415);
+				g.drawImage(spinFlipper, 460, 420);
+			}
+			if (spinNum == 3){
+				wheelSpinning.setRotation(275);
+				g.drawImage(wheelSpinning, 329, 415);
+				g.drawImage(spinFlipper, 460, 420);
+			}		
+			if (spinNum == 4){
+				wheelSpinning.setRotation(180);
+				g.drawImage(wheelSpinning, 329, 415);
+				g.drawImage(spinFlipper, 460, 420);
+			}
+			if (spinNum == 5){
+				wheelSpinning.setRotation(120);
+				g.drawImage(wheelSpinning, 329, 415);
+				g.drawImage(spinFlipper, 460, 420);
+			}		
+			if (spinNum == 6){
+				wheelSpinning.setRotation(90);
+				g.drawImage(wheelSpinning, 329, 415);
+				g.drawImage(spinFlipper, 460, 420);
+			}		
+			spinAnimation = false;
+			spinClicked = false;
+		} // end else 
 		
-}
+	}
 	
 	public int getID(){
 		return 2;
