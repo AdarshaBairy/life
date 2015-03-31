@@ -6,7 +6,9 @@ public class GameBoard {
 	
 	private static GameBoard gameboard = new GameBoard();
 	
+	//private static GameSpace playerSpace;
 	private static GameSpace playerSpace;
+	//public String playerLandSpace;
 		
 	private static GameSpace endSpace;
 	private	GameSpace[] forkSpaces = new GameSpace[6];
@@ -15,7 +17,8 @@ public class GameBoard {
 	private GameSpace[][] greenSpaces = new GameSpace[6][];
 	private GameSpace[][] commonSpaces = new GameSpace[6][];
 	private static GameSpace startSpace;
-	private static GameSpace currentSpace;
+	public static GameSpace currentSpace;
+	
 	
 	private GameBoard(){
 

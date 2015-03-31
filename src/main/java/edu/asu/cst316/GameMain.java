@@ -2,8 +2,10 @@ package main.java.edu.asu.cst316;
 
 import java.util.Random;
 
+import main.java.edu.asu.cst316.cards.CardGenerator;
 import main.java.edu.asu.cst316.cards.CardText;
 import main.java.edu.asu.cst316.gameboard.GameBoard;
+import main.java.edu.asu.cst316.gameboard.GameSpace;
 
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Animation;
@@ -51,6 +53,7 @@ public class GameMain extends BasicGameState{
 	boolean defaultImage = true;
 	boolean spinAnimation = false;
 	String cardText;
+	public static String playerSpaceColor;
 
 	GameBoard gameboard = GameBoard.getInstance();
 	
@@ -79,8 +82,8 @@ public class GameMain extends BasicGameState{
 		
 		//assigns the cards to their proper image
 		blueCard = new Image("images/bluecard.png");
-		//greenCard = new Image("images/greencard.png");
-		//redCard = new Image("images/redcard.png");
+		greenCard = new Image("images/greencard.png");
+		redCard = new Image("images/redcard.png");
 	}
 
 	//@Override
@@ -150,26 +153,28 @@ public class GameMain extends BasicGameState{
 		}
 		
 		/////NEED to know if player information provides space landed on.
-		/////MAKE all colors one class
 		////Color methods are in gameboard and gamespace
 		////MAKE an array to store the cards
 		////NEED to store value with card
 		// if player lands on "color" space draw that card
-		//if playerSpaceColor == blue
-		cardColor = blueCard;
-		CardText CT = new CardText();
-		cardText = CT.getCardText();
+		playerSpaceColor = GameSpace.getType();
+		System.out.println(playerSpaceColor);
+		//CardGenerator cardgenerator = new CardGenerator();
 		
+		//if (playerSpaceColor == "blueSpaces"){
+		//cardColor = blueCard.getScaledCopy((float) .8);
+		//cardText = cardgenerator.getBlueCardText();
+	//	}
 		//if playerSpaceColor == green
-		//cardColor = greenCard;
-		//GreenCardText CT = new GreenCardText();
-		//cardText = CT.getCardText();
-		
+		//if (playerSpaceColor == "greenSpaces"){
+		//cardColor = greenCard.getScaledCopy((float) .8);
+		//cardText = cardgenerator.getGreenCardText();
+	//	}
 		//if playerSpaceColor == red
-		//cardColor = redCard;
-		//RedCardText CT = new RedCardText();
-		//cardText = CT.getCardText();
-		
+		//if (playerSpaceColor == "redSpaces"){
+		//cardColor = redCard.getScaledCopy((float) .8);
+		//cardText = cardgenerator.getRedCardText();
+		//}
 		
 		//checks for user clicking in the cards icon to display its card history.
 		if(
@@ -203,9 +208,10 @@ public class GameMain extends BasicGameState{
 
 		
 		//Display the card the player draws when he lands on a space
-		g.drawImage(cardColor, 200, 20);
-		g.drawString(cardText, 250, 40);
-		
+		//if(playerSpaceColor == "redSpaces"){
+		//g.drawImage(cardColor, 200, 20);
+		//g.drawString(cardText, 250, 40);
+		//}
 		
 		//if the wheel is clicked do what we need it to do
 		if (spinClicked){
