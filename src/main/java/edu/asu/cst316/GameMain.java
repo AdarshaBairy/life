@@ -71,6 +71,7 @@ public class GameMain extends BasicGameState{
 	boolean	defaultImage = true; 
 	boolean	spinAnimation = false;
 	boolean showNotification = false;
+	boolean showEventWindow = false;
 	boolean cardGenerated = false;
 	boolean cardSelected = false;
 	
@@ -120,7 +121,6 @@ public class GameMain extends BasicGameState{
 		yPosition > 20){
 			gameboard.movePlayer(1);
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-			//sbg.enterState(3);
 		}
 		
 		if(input.isMouseButtonDown(0) &&
@@ -174,7 +174,12 @@ public class GameMain extends BasicGameState{
 		}
 		
 		if(updatePlayer){
-			gameboard.movePlayer(spinNum);
+			for(int i = 0; i < spinNum; i++){
+				gameboard.movePlayer(1);
+				if( "fork".equals(gameboard.getCurrentSpace().getType()) ){
+					i = spinNum;
+				}
+			}
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
 			updatePlayer = false;
 			
@@ -260,6 +265,9 @@ public class GameMain extends BasicGameState{
 		if(showNotification){
 			g.drawImage(notification, 0, 0);
 		}
+		if(showEventWindow){
+			g.drawImage(eventWindow, 0, 0);
+		}
 		
 		//declare the images used
 		wheel = new Image("res/spinwheeldefault.png");
@@ -282,16 +290,16 @@ public class GameMain extends BasicGameState{
 		
 		//if the wheel is clicked do what we need it to do
 		if (spinClicked){
-				defaultImage = false;
-				spinClicked = false;
-				spinNum = getSpinNum(sNum);
-				spinAnimation = true;
-			}
+			defaultImage = false;
+			spinClicked = false;
+			spinNum = getSpinNum(sNum);
+			spinAnimation = true;
+		}
 		
 		//once the spin is clicked do the animation
 		if (spinClicked == true){
 			defaultImage = false;
-			spinClicked =false;
+			spinClicked = false;
 			spinNum = getSpinNum(sNum);
 			System.out.println(spinNum);
 			spinAnimation = true;
@@ -303,11 +311,11 @@ public class GameMain extends BasicGameState{
 		//animation is complete now set the number spun	
 		} else{
 
-		wheelSpinning.setRotation(360-(60*(spinNum-1)));
-		g.drawImage(wheelSpinning, 329, 415);
-		g.drawImage(spinFlipper, 460, 420);
-		spinAnimation = false;
-		spinClicked = false;
+			wheelSpinning.setRotation(360-(60*(spinNum-1)));
+			g.drawImage(wheelSpinning, 329, 415);
+			g.drawImage(spinFlipper, 460, 420);
+			spinAnimation = false;
+			spinClicked = false;
 		} // end else 
 		
 		if (mouseOverSpin){
