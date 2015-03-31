@@ -6,7 +6,9 @@ public class GameBoard {
 	
 	private static GameBoard gameboard = new GameBoard();
 	
+	//private static GameSpace playerSpace;
 	private static GameSpace playerSpace;
+	//public String playerLandSpace;
 		
 	private static GameSpace endSpace;
 	private	GameSpace[] forkSpaces = new GameSpace[6];
@@ -15,7 +17,8 @@ public class GameBoard {
 	private static GameSpace[][] greenSpaces;
 	private static GameSpace[][] commonSpaces;
 	private static GameSpace startSpace;
-	private static GameSpace currentSpace;
+	public static GameSpace currentSpace;
+	
 	
 	private GameBoard(){
 
@@ -41,7 +44,7 @@ public class GameBoard {
 		//Attach the spaces of each chunk with the rest of the spaces in their chunk
 		endSpace = new GameSpace("end", null, null);
 		attachSpaces(redSpaces, "red");
-		attachSpaces(commonSpaces, "common");
+		attachSpaces(commonSpaces, "common"); //Blue spaces
 		attachSpaces(greenSpaces, "green");
 		for(int i = 0; i < forkSpaces.length; ++i){
 			forkSpaces[i] = new GameSpace("fork", redSpaces[i][0], greenSpaces[i][0]);

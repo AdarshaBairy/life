@@ -2,7 +2,10 @@ package main.java.edu.asu.cst316;
 
 import java.util.Random;
 
+import main.java.edu.asu.cst316.cards.CardGenerator;
+import main.java.edu.asu.cst316.cards.CardText;
 import main.java.edu.asu.cst316.gameboard.GameBoard;
+import main.java.edu.asu.cst316.gameboard.GameSpace;
 
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Animation;
@@ -20,32 +23,36 @@ public class GameMain extends BasicGameState{
 	GameBoard gameboard = GameBoard.getInstance();
 	
 	public String mouse = "";
+	public String cardType = "";
 	public Image background;
 	public Image gameBoard;	
 	public Image notification;
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
-	
+	public Image blueCard;
+	public Image greenCard;
+	public Image redCard;
+
 	private int playerX = -256;
 	private int playerY = 464;
+
+	String cardText;
+	public static String playerSpaceColor;
 
 	int spinNum = 0; 
 	int	sNum = 0; 
 	int	centerOfImageX = 0; 
 	int	centerOfImageY = 0; 
 	int	spinCount = 0;
+	int cardValue = 0;
+	int cardDisplayTime = 0;
 	
 	Image wheel; 
 	Image wheelHover;
 	Image spinFlipper;
-	Image wheel1; 
-	Image wheel2;
-	Image wheel3; 
-	Image wheel4;
-	Image wheel5; 
-	Image wheel6; 
 	Image wheelSpinning;
+	Image cardColor;
 	
 	Animation spinningAnimation;
 	Animation flipperAnimation;
@@ -63,6 +70,8 @@ public class GameMain extends BasicGameState{
 	boolean	defaultImage = true; 
 	boolean	spinAnimation = false;
 	boolean showNotification = false;
+	boolean cardGenerated = false;
+	boolean cardSelected = false;
 	
 	public GameMain(int state){
 	}
@@ -88,6 +97,10 @@ public class GameMain extends BasicGameState{
 		spinningAnimation = new Animation (spinning, 100);
 		flipperAnimation = new Animation (flipperAnim, 75);
 		
+		//assigns the cards to their proper image
+		blueCard = new Image("images/bluecard.png");
+		greenCard = new Image("images/greencard.png");
+		redCard = new Image("images/redcard.png");
 	}
 
 	//@Override
@@ -98,56 +111,65 @@ public class GameMain extends BasicGameState{
 		int yPosition = Mouse.getY();
 		Input input = gc.getInput();
 		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
-		if(
-			input.isMousePressed(0) &&
-			xPosition > 333 &&
-			xPosition < 490 &&
-			yPosition < 180 &&
-			yPosition > 20
-		){
-
+		
+		if(input.isMousePressed(0) &&
+		xPosition > 333 &&
+		xPosition < 490 &&
+		yPosition < 180 &&
+		yPosition > 20){
 			gameboard.movePlayer(1);
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-
 			//sbg.enterState(3);
 		}
-		if(
-			input.isMouseButtonDown(0) &&
-			xPosition > 564 &&
-			xPosition < 715 &&
-			yPosition < 215 &&
-			yPosition > 180
-		){
+		
+		if(input.isMouseButtonDown(0) &&
+		xPosition > 564 &&
+		xPosition < 715 &&
+		yPosition < 215 &&
+		yPosition > 180){
 			sbg.enterState(4);
 		}
 		
+		//recognize if the mouse is over spin and if spin is clicked
 		if(xPosition > 340 && 
 		xPosition < 470 && 
 		yPosition > 190 && yPosition < 220){
 			mouseOverSpin = true;
 			if(Mouse.isButtonDown(0)){
 				spinClicked = true;
+				cardSelected = true;
 			}else {
-				spinClicked = false;		
+				spinClicked = false;
+				cardSelected = false;
 			}
 		}else {
 			mouseOverSpin = false;
 		}
 		
-		if(spinClicked == true){
+		if(spinClicked){
 			spinningAnimation.update(delta);
 		}
 	
 		if (spinAnimation){
 			spinCount += (delta);
-		}
+	    }
 		
 		boolean updatePlayer = false;
 		
 		if (spinCount > 3000){
 			spinCount = 0;
 			spinAnimation = false;
+			cardGenerated = true;
 			updatePlayer = true;
+		}
+		
+		if(cardGenerated){
+			cardDisplayTime += (delta);
+		}
+		
+		if (cardDisplayTime > 2000){
+			cardDisplayTime = 0;
+			cardGenerated = false;
 		}
 		
 		if(updatePlayer){
@@ -156,6 +178,14 @@ public class GameMain extends BasicGameState{
 			updatePlayer = false;
 			
 		}
+		
+		//if player clicks spin generate card text	
+		if (cardSelected) {
+			CardGenerator cardgenerator = new CardGenerator(cardType, cardText, cardValue);
+			cardColor = blueCard.getScaledCopy((float) .8);
+			cardText = cardgenerator.getFinalCardText();
+		}
+		
 		//When the player lands on a fork space they will see a window giving 
 		//of which way they want to go
 		if(gameboard.getCurrentSpace().getType().equals("fork")){
@@ -209,6 +239,32 @@ public class GameMain extends BasicGameState{
 		
 		
 		
+		/////NEED to know if player information provides space landed on.
+		////Color methods are in gameboard and gamespace
+		////MAKE an array to store the cards
+		////NEED to store value with card
+		// if player lands on "color" space draw that card
+		//playerSpaceColor = GameSpace.getType();
+		//System.out.println(playerSpaceColor);
+		//if (cardGenerated ==true) {
+		//CardGenerator cardgenerator = new CardGenerator(cardType, cardText, cardValue);
+		//if (playerSpaceColor == "blueSpaces"){
+	
+		//cardColor = blueCard.getScaledCopy((float) .8);
+		//cardText = cardgenerator.getCommonCardText();
+		//}else cardGenerated = false;
+	//	}
+		//if playerSpaceColor is green
+		//if (playerSpaceColor == "greenSpaces"){
+		//cardColor = greenCard.getScaledCopy((float) .8);
+		//cardText = cardgenerator.getGreenCardText();
+	//	}
+		//if playerSpaceColor is red
+		//if (playerSpaceColor == "redSpaces"){
+		//cardColor = redCard.getScaledCopy((float) .8);
+		//cardText = cardgenerator.getRedCardText();
+		//}
+		
 		//checks for user clicking in the cards icon to display its card history.
 		if(
 			input.isMouseButtonDown(0) &&
@@ -219,10 +275,6 @@ public class GameMain extends BasicGameState{
 		){
 			sbg.enterState(6);
 		}
-		
-		
-		
-		
 	}
 
 	//@Override
@@ -245,16 +297,24 @@ public class GameMain extends BasicGameState{
 		centerOfImageX = (wheelSpinning.getWidth()/2);
 		centerOfImageY = (wheelSpinning.getHeight()/2);
 		wheelSpinning.setCenterOfRotation(centerOfImageX, centerOfImageY);
-		
-		if (defaultImage == true){
-			g.drawImage(wheel, 306, 375);
-			g.drawImage(spinFlipper, 460, 420);
-		}
 
-		if (mouseOverSpin == true){
-			g.drawImage(wheelHover, 306, 375);
-		}	
+		//Display the card the player draws when he lands on a space
+		//if(playerSpaceColor == "redSpaces"){
+		if (cardGenerated) {
+		g.drawImage(cardColor, 200, 20);
+		g.drawString(cardText, 250, 40);
+	    }
 		
+		
+		//if the wheel is clicked do what we need it to do
+		if (spinClicked){
+				defaultImage = false;
+				spinClicked = false;
+				spinNum = getSpinNum(sNum);
+				spinAnimation = true;
+			}
+		
+		//once the spin is clicked do the animation
 		if (spinClicked == true){
 			defaultImage = false;
 			spinClicked =false;
@@ -266,43 +326,22 @@ public class GameMain extends BasicGameState{
 		if (spinAnimation){
 			spinningAnimation.draw(329, 415);
 			flipperAnimation.draw(460, 420);
+		//animation is complete now set the number spun	
 		} else{
-		
-			if (spinNum == 1){
-				wheelSpinning.setRotation(0);
-				g.drawImage(wheelSpinning, 329, 415);
-				g.drawImage(spinFlipper, 460, 420);
-			}	
-			if (spinNum == 2){
-				wheelSpinning.setRotation(330);
-				g.drawImage(wheelSpinning, 329, 415);
-				g.drawImage(spinFlipper, 460, 420);
-			}
-			if (spinNum == 3){
-				wheelSpinning.setRotation(275);
-				g.drawImage(wheelSpinning, 329, 415);
-				g.drawImage(spinFlipper, 460, 420);
-			}		
-			if (spinNum == 4){
-				wheelSpinning.setRotation(180);
-				g.drawImage(wheelSpinning, 329, 415);
-				g.drawImage(spinFlipper, 460, 420);
-			}
-			if (spinNum == 5){
-				wheelSpinning.setRotation(120);
-				g.drawImage(wheelSpinning, 329, 415);
-				g.drawImage(spinFlipper, 460, 420);
-			}		
-			if (spinNum == 6){
-				wheelSpinning.setRotation(90);
-				g.drawImage(wheelSpinning, 329, 415);
-				g.drawImage(spinFlipper, 460, 420);
-			}		
-			spinAnimation = false;
-			spinClicked = false;
+
+		wheelSpinning.setRotation(360-(60*(spinNum-1)));
+		g.drawImage(wheelSpinning, 329, 415);
+		g.drawImage(spinFlipper, 460, 420);
+		spinAnimation = false;
+		spinClicked = false;
 		} // end else 
 		
-	}
+		if (mouseOverSpin){
+			g.drawImage(wheelHover, 306, 375);
+		}		
+		
+}//end render
+
 	
 	public int getID(){
 		return 2;

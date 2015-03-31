@@ -21,6 +21,7 @@
 	
 	<path id="bin.classpath">    
 		<pathelement location="bin"/>
+
     </path>
 	
 	<path id="slick.classpath">
