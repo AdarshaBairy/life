@@ -23,43 +23,20 @@ public class GameMain extends BasicGameState{
 	GameBoard gameboard = GameBoard.getInstance();
 	
 	public String mouse = "";
+	public String cardType = "";
 	public Image background;
 	public Image gameBoard;	
 	public Image notification;
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
-//<<<<<<< HEAD
 	public Image blueCard;
 	public Image greenCard;
 	public Image redCard;
-	//Image wheel; 
-	//Image wheelHover;
-	//Image spinFlipper;
-	//Image wheelSpinning;
-	//Image cardColor;
-	//Animation spinningAnimation;
-	//Animation flipperAnimation;
-	//SpriteSheet spinning;
-	//SpriteSheet flipperAnim;
-//=======
-	
-//>>>>>>> master
+
 	private int playerX = -256;
 	private int playerY = 464;
-	//int spinNum = 0;
-	//int sNum =0;
-	//int centerOfImageX = 0;
-	//int centerOfImageY = 0;
-	//int spinCount =0;
-	//float mouseX;
-	//float mouseY;
-	//boolean mouseOverSpin = false;
-	//boolean spinClicked = false;
-	//boolean spun = false;
-	//boolean shouldSpin = false; 
-	//boolean defaultImage = true;
-	//boolean spinAnimation = false;
+
 	String cardText;
 	public static String playerSpaceColor;
 
@@ -68,17 +45,14 @@ public class GameMain extends BasicGameState{
 	int	centerOfImageX = 0; 
 	int	centerOfImageY = 0; 
 	int	spinCount = 0;
+	int cardValue = 0;
+	int cardDisplayTime = 0;
 	
 	Image wheel; 
 	Image wheelHover;
 	Image spinFlipper;
-	Image wheel1; 
-	Image wheel2;
-	Image wheel3; 
-	Image wheel4;
-	Image wheel5; 
-	Image wheel6; 
 	Image wheelSpinning;
+	Image cardColor;
 	
 	Animation spinningAnimation;
 	Animation flipperAnimation;
@@ -86,8 +60,6 @@ public class GameMain extends BasicGameState{
 	SpriteSheet spinning;
 	SpriteSheet flipperAnim;
 	
-//<<<<<<< HEAD
-//=======
 	float mouseX; 
 	float mouseY;
 	
@@ -98,8 +70,9 @@ public class GameMain extends BasicGameState{
 	boolean	defaultImage = true; 
 	boolean	spinAnimation = false;
 	boolean showNotification = false;
+	boolean cardGenerated = false;
+	boolean cardSelected = false;
 	
-//>>>>>>> master
 	public GameMain(int state){
 	}
 
@@ -161,59 +134,46 @@ public class GameMain extends BasicGameState{
 			sbg.enterState(4);
 		}
 		
-//<<<<<<< HEAD
 		//recognize if the mouse is over spin and if spin is clicked
-		if((xPosition > 340 && xPosition < 470) && (yPosition > 190 && yPosition < 220)){
-				mouseOverSpin = true;
-				if(Mouse.isButtonDown(0)){
-					spinClicked = true;
-				}else spinClicked = false;		
-			}else mouseOverSpin = false;
-			
-			//update spinningAnimation
-			if(spinClicked){
-				spinningAnimation.update(delta);
-			}
-
-			//update spinCount
-			if (spinAnimation){
-				spinCount += (delta);
-			}
-			
-			//set the duration of the spin animation
-			if (spinCount > 3000){
-				spinCount = 0;
-				spinAnimation = false;
-			}
-//=======
 		if(xPosition > 340 && 
 		xPosition < 470 && 
 		yPosition > 190 && yPosition < 220){
 			mouseOverSpin = true;
 			if(Mouse.isButtonDown(0)){
 				spinClicked = true;
+				cardSelected = true;
 			}else {
-				spinClicked = false;		
+				spinClicked = false;
+				cardSelected = false;
 			}
 		}else {
 			mouseOverSpin = false;
 		}
 		
-		if(spinClicked == true){
+		if(spinClicked){
 			spinningAnimation.update(delta);
 		}
 	
 		if (spinAnimation){
 			spinCount += (delta);
-		}
+	    }
 		
-//>>>>>>> master
 		boolean updatePlayer = false;
 		
 		if (spinCount > 3000){
 			spinCount = 0;
 			spinAnimation = false;
+			cardGenerated = true;
 			updatePlayer = true;
+		}
+		
+		if(cardGenerated){
+			cardDisplayTime += (delta);
+		}
+		
+		if (cardDisplayTime > 2000){
+			cardDisplayTime = 0;
+			cardGenerated = false;
 		}
 		
 		if(updatePlayer){
@@ -222,6 +182,14 @@ public class GameMain extends BasicGameState{
 			updatePlayer = false;
 			
 		}
+		
+		//if player clicks spin generate card text	
+		if (cardSelected) {
+			CardGenerator cardgenerator = new CardGenerator(cardType, cardText, cardValue);
+			cardColor = blueCard.getScaledCopy((float) .8);
+			cardText = cardgenerator.getFinalCardText();
+		}
+		
 		//When the player lands on a fork space they will see a window giving 
 		//of which way they want to go
 		if(gameboard.getCurrentSpace().getType().equals("fork")){
@@ -281,20 +249,22 @@ public class GameMain extends BasicGameState{
 		////MAKE an array to store the cards
 		////NEED to store value with card
 		// if player lands on "color" space draw that card
-		playerSpaceColor = GameSpace.getType();
-		System.out.println(playerSpaceColor);
-		//CardGenerator cardgenerator = new CardGenerator();
-		
+		//playerSpaceColor = GameSpace.getType();
+		//System.out.println(playerSpaceColor);
+		//if (cardGenerated ==true) {
+		//CardGenerator cardgenerator = new CardGenerator(cardType, cardText, cardValue);
 		//if (playerSpaceColor == "blueSpaces"){
+	
 		//cardColor = blueCard.getScaledCopy((float) .8);
-		//cardText = cardgenerator.getBlueCardText();
+		//cardText = cardgenerator.getCommonCardText();
+		//}else cardGenerated = false;
 	//	}
-		//if playerSpaceColor == green
+		//if playerSpaceColor is green
 		//if (playerSpaceColor == "greenSpaces"){
 		//cardColor = greenCard.getScaledCopy((float) .8);
 		//cardText = cardgenerator.getGreenCardText();
 	//	}
-		//if playerSpaceColor == red
+		//if playerSpaceColor is red
 		//if (playerSpaceColor == "redSpaces"){
 		//cardColor = redCard.getScaledCopy((float) .8);
 		//cardText = cardgenerator.getRedCardText();
@@ -333,13 +303,13 @@ public class GameMain extends BasicGameState{
 		centerOfImageY = (wheelSpinning.getHeight()/2);
 		wheelSpinning.setCenterOfRotation(centerOfImageX, centerOfImageY);
 
-		
-//<<<<<<< HEAD
 		//Display the card the player draws when he lands on a space
 		//if(playerSpaceColor == "redSpaces"){
-		//g.drawImage(cardColor, 200, 20);
-		//g.drawString(cardText, 250, 40);
-		//}
+		if (cardGenerated) {
+		g.drawImage(cardColor, 200, 20);
+		g.drawString(cardText, 250, 40);
+	    }
+		
 		
 		//if the wheel is clicked do what we need it to do
 		if (spinClicked){
@@ -350,7 +320,6 @@ public class GameMain extends BasicGameState{
 			}
 		
 		//once the spin is clicked do the animation
-//=======
 		if (spinClicked == true){
 			defaultImage = false;
 			spinClicked =false;
@@ -359,7 +328,6 @@ public class GameMain extends BasicGameState{
 			spinAnimation = true;
 		}
 						
-//>>>>>>> master
 		if (spinAnimation){
 			spinningAnimation.draw(329, 415);
 			flipperAnimation.draw(460, 420);
