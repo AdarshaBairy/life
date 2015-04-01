@@ -14,6 +14,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+import main.java.edu.asu.cst316.player.*;
 
 public class GameMain extends BasicGameState{
 	
@@ -231,6 +232,12 @@ public class GameMain extends BasicGameState{
 		g.drawImage(background, 0, 0);
 		g.drawImage(gameBoardZoom, 62, 53);
 		g.drawString(mouse, 10, 10);
+		//todo status initial render
+		g.drawString(entrP.getName(), 120, 200);
+		g.drawString(str, 145, 150);
+		g.drawString(str, 135, 110);
+		g.drawString(str, 195, 70);
+		
 		g.drawImage(player, 336, 136);
 		if(showNotification){
 			g.drawImage(notification, 0, 0);
