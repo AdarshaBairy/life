@@ -230,8 +230,8 @@ public class GameMain extends BasicGameState{
 		////MAKE an array to store the cards
 		////NEED to store value with card
 		// if player lands on "color" space draw that card
-		//playerSpaceColor = GameSpace.getType();
-		//System.out.println(playerSpaceColor);
+		playerSpaceColor = gameboard.getCurrentSpace().getType();
+		System.out.println(playerSpaceColor);
 		//if (cardGenerated ==true) {
 		//CardGenerator cardgenerator = new CardGenerator(cardType, cardText, cardValue);
 		//if (playerSpaceColor == "blueSpaces"){
