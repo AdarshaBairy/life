@@ -16,7 +16,7 @@ public class Player {
 	private int income;
 	private int savedMoney;
 	private int risk;
-	private static Player player;
+	private static Player player = new Player();
 	
 	private Player(){
 		setName(this.name);
@@ -72,7 +72,7 @@ public class Player {
 	/**
 	 * @return the salary
 	 */
-	public double getIncome() {
+	public int getIncome() {
 		return income;
 	}
 	/**
@@ -101,7 +101,8 @@ public class Player {
 	public void payDay(){
 		
 	Random rand = new Random();
-	savedMoney = savedMoney + (income/(risk/2)) + (income *(rand.nextInt(risk) + 1 ));
+	int modifiedIncome = income/(risk/2);
+	savedMoney = savedMoney + (modifiedIncome *(rand.nextInt(risk) + 1 ));
 	
 	}
 }
