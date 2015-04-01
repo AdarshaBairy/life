@@ -3,6 +3,7 @@ package main.java.edu.asu.cst316;
 import java.awt.Font;
 import java.util.Random;
 
+import main.java.edu.asu.cst316.cards.Card;
 import main.java.edu.asu.cst316.cards.CardGenerator;
 import main.java.edu.asu.cst316.cards.CardText;
 import main.java.edu.asu.cst316.cards.Deck;
@@ -207,21 +208,26 @@ public class GameMain extends BasicGameState{
 				Deck deck = Deck.getInstance();
 				System.out.println(playerObj.getSavedMoney());
 				if(gameboard.getCurrentSpace().getType().equals("common")){
-					cardText = deck.getCommonCard().getText();
-					System.out.println(cardText);
+					Card newCard = deck.getCommonCard();
+					cardText = newCard.getText();
+					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
-					playerObj.setSavedMoney(currentMoney+deck.getCommonCard().getValue());
+					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
 				}else if(gameboard.getCurrentSpace().getType().equals("red")){
-					cardText = deck.getRedCard().getText();
+					Card newCard = deck.getRedCard();
+					cardText = newCard.getText();
+					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
-					playerObj.setSavedMoney(currentMoney+deck.getRedCard().getValue());
+					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
 				}else if(gameboard.getCurrentSpace().getType().equals("green")){
-					cardText = deck.getGreenCard().getText();
+					Card newCard = deck.getGreenCard();
+					cardText = newCard.getText();
+					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
-					playerObj.setSavedMoney(currentMoney+deck.getGreenCard().getValue());
+					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
 				}
-				
 				System.out.println(cardText);
+				System.out.println(playerObj.getSavedMoney());
 			}
 			updatePlayer = false;
 		}
@@ -261,20 +267,26 @@ public class GameMain extends BasicGameState{
 				Deck deck = Deck.getInstance();
 				System.out.println(playerObj.getSavedMoney());
 				if(gameboard.getCurrentSpace().getType().equals("common")){
-					cardText = deck.getCommonCard().getText();
-					System.out.println(cardText);
+					Card newCard = deck.getCommonCard();
+					cardText = newCard.getText();
+					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
-					playerObj.setSavedMoney(currentMoney+deck.getCommonCard().getValue());
+					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
 				}else if(gameboard.getCurrentSpace().getType().equals("red")){
-					cardText = deck.getRedCard().getText();
+					Card newCard = deck.getRedCard();
+					cardText = newCard.getText();
+					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
-					playerObj.setSavedMoney(currentMoney+deck.getRedCard().getValue());
+					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
 				}else if(gameboard.getCurrentSpace().getType().equals("green")){
-					cardText = deck.getGreenCard().getText();
+					Card newCard = deck.getGreenCard();
+					cardText = newCard.getText();
+					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
-					playerObj.setSavedMoney(currentMoney+deck.getGreenCard().getValue());
+					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
 				}
 				System.out.println(cardText);
+				System.out.println(playerObj.getSavedMoney());
 			}
 			//If the player clicks on risky
 			if(input.isMouseButtonDown(0) &&
@@ -287,21 +299,28 @@ public class GameMain extends BasicGameState{
 			
 				showEventWindow = true;
 				Deck deck = Deck.getInstance();
+				System.out.println(playerObj.getSavedMoney());
 				if(gameboard.getCurrentSpace().getType().equals("common")){
-					cardText = deck.getCommonCard().getText();
-					System.out.println(cardText);
+					Card newCard = deck.getCommonCard();
+					cardText = newCard.getText();
+					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
-					playerObj.setSavedMoney(currentMoney+deck.getCommonCard().getValue());
+					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
 				}else if(gameboard.getCurrentSpace().getType().equals("red")){
-					cardText = deck.getRedCard().getText();
+					Card newCard = deck.getRedCard();
+					cardText = newCard.getText();
+					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
-					playerObj.setSavedMoney(currentMoney+deck.getRedCard().getValue());
+					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
 				}else if(gameboard.getCurrentSpace().getType().equals("green")){
-					cardText = deck.getGreenCard().getText();
+					Card newCard = deck.getGreenCard();
+					cardText = newCard.getText();
+					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
-					playerObj.setSavedMoney(currentMoney+deck.getGreenCard().getValue());
+					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
 				}
 				System.out.println(cardText);
+				System.out.println(playerObj.getSavedMoney());
 			}
 		}else{
 			showNotification = false;
@@ -427,19 +446,23 @@ public class GameMain extends BasicGameState{
 		
 		//if the wheel is clicked do what we need it to do
 		if (spinClicked){
-			defaultImage = false;
-			spinClicked = false;
-			spinNum = getSpinNum(sNum);
-			spinAnimation = true;
+			if(!showEndGameWindow){
+				defaultImage = false;
+				spinClicked = false;
+				spinNum = getSpinNum(sNum);
+				spinAnimation = true;
+			}
 		}
 		
 		//once the spin is clicked do the animation
 		if (spinClicked == true){
-			defaultImage = false;
-			spinClicked = false;
-			spinNum = getSpinNum(sNum);
-			System.out.println(spinNum);
-			spinAnimation = true;
+			if(!showEndGameWindow){
+				defaultImage = false;
+				spinClicked = false;
+				spinNum = getSpinNum(sNum);
+				System.out.println(spinNum);
+				spinAnimation = true;
+			}
 		}
 						
 		if (spinAnimation){

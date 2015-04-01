@@ -68,7 +68,7 @@ public class HighScores {
 		Collections.sort(highScoreList, new Comparator<PlayerRecord>() {
 			@Override
 			public int compare(PlayerRecord pr1, PlayerRecord pr2) {
-				return  pr1.getScore() > pr2.getScore() ? 1 : -1;
+				return  pr1.getScore() < pr2.getScore() ? 1 : -1;
 			}
 		});
 	}

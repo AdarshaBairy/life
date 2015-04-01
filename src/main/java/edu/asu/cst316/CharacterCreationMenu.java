@@ -74,7 +74,7 @@ public class CharacterCreationMenu extends BasicGameState{
 		
 		
 		//create text fields and combo boxes to get info
-		
+		careerName.setFocus(false);
 		//back button
 		if(input.isMouseButtonDown(0) &&
 		xPosition > 22 &&
@@ -98,6 +98,7 @@ public class CharacterCreationMenu extends BasicGameState{
 		xPosition < 415 &&
 		yPosition < 285 &&
 		yPosition > 250){
+			
 			System.out.println(careerName.getText());
 			entrP.setName(careerName.getText());
 			entrP.setCareer("venture 1");
@@ -112,6 +113,7 @@ public class CharacterCreationMenu extends BasicGameState{
 		xPosition < 415 &&
 		yPosition < 235 &&
 		yPosition > 200){
+			System.out.println(careerName.getText());
 			entrP.setName(careerName.getText());
 			entrP.setCareer("venture 2");
 			entrP.setIncome(15000);
@@ -125,6 +127,7 @@ public class CharacterCreationMenu extends BasicGameState{
 		xPosition < 415 &&
 		yPosition < 185 &&
 		yPosition > 150){
+			System.out.println(careerName.getText());
 			entrP.setName(careerName.getText());
 			entrP.setCareer("venture 3");
 			entrP.setIncome(20000);
@@ -132,7 +135,7 @@ public class CharacterCreationMenu extends BasicGameState{
 			entrP.setRisk(8);
 			background = new Image("images/charCreationInt3.png");
 		}
-		
+		careerName.setFocus(true);
 	}
 
 	@Override
