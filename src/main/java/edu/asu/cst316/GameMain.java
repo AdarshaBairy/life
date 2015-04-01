@@ -400,11 +400,14 @@ public class GameMain extends BasicGameState{
 		g.drawImage(background, 0, 0);
 		g.drawImage(gameBoardZoom, 62, 53);
 		g.drawString(mouse, 10, 10);
+		
 		//todo status initial render
+
 		g.drawString(playerObj.getName(), 120, 410);
 		g.drawString(playerObj.getCareer(), 145, 448);
 		g.drawString(Integer.toString(playerObj.getIncome()), 135, 490);
 		g.drawString(Integer.toString(playerObj.getSavedMoney()), 195, 530);
+
 		
 		g.drawImage(player, 336, 136);
 		if(showNotification){

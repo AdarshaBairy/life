@@ -91,8 +91,10 @@ public class Player {
 	public int payDay(){
 		
 		Random rand = new Random();
-		int incomeValue = (income/(risk/2)) + (income *(rand.nextInt(risk) + 1 ));
-		savedMoney = savedMoney + incomeValue;
-		return incomeValue;
+		int modifiedIncome = income/(risk/2);
+		int result = (modifiedIncome *(rand.nextInt(risk) + 1 ));
+		savedMoney = savedMoney + result;
+		return result;
+
 	}
 }
