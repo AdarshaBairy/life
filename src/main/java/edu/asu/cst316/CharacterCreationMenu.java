@@ -33,7 +33,7 @@ public class CharacterCreationMenu extends BasicGameState{
 	//@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		background = new Image("images/charCreationInt.png");
-		Font font = new Font("Verdana", Font.PLAIN, 24);
+		Font font = new Font("Verdana", Font.PLAIN, 26);
 		TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
 		//font = new UnicodeFont(new java.awt.Font("Arial", java.awt.Font.ITALIC,26));
 		careerName = new TextField(gc, trueTypeFont, 330, 210, 290, 45);
@@ -50,10 +50,16 @@ public class CharacterCreationMenu extends BasicGameState{
 		g.drawString(mouse, 10, 10);
 		careerName.render(gc, g);
 		careerName.setFocus(true);
-		g.drawString("Venture 1", 330, 300);
-		g.drawString("Venture 2", 330, 350);
-		g.drawString("Venture 3", 330, 405);
-		g.drawString("Select Business Venture", 50, 300);
+		
+		Font font = new Font("Verdana", Font.PLAIN, 26);
+		TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
+		
+		trueTypeFont.drawString(333, 316, "Venture 1");
+		trueTypeFont.drawString(333, 366, "Venture 2");
+		trueTypeFont.drawString(333, 416, "Venture 3");
+		//g.drawString("Venture 2", 330, 350);
+		//g.drawString("Venture 3", 330, 405);
+		//g.drawString("Select Business Venture", 50, 300);
 
 	}
 
@@ -90,41 +96,41 @@ public class CharacterCreationMenu extends BasicGameState{
 		if(input.isMouseButtonDown(0) &&
 		xPosition > 330 &&
 		xPosition < 415 &&
-		yPosition < 300 &&
-		yPosition > 285){
+		yPosition < 285 &&
+		yPosition > 250){
 			System.out.println(careerName.getText());
 			entrP.setName(careerName.getText());
 			entrP.setCareer("venture 1");
 			entrP.setIncome(10000);
 			entrP.setSavedMoney(50000);
 			entrP.setRisk(4);
-			//sbg.enterState(2);			
+			background = new Image("images/charCreationInt1.png");
 		}
 		//venture 2
 		if(input.isMouseButtonDown(0) &&
 		xPosition > 330 &&
 		xPosition < 415 &&
-		yPosition < 245 &&
-		yPosition > 230){
+		yPosition < 235 &&
+		yPosition > 200){
 			entrP.setName(careerName.getText());
 			entrP.setCareer("venture 2");
 			entrP.setIncome(15000);
 			entrP.setSavedMoney(50000);
 			entrP.setRisk(6);
-			//sbg.enterState(2);			
+			background = new Image("images/charCreationInt2.png");	
 		}
 		//venture 3
 		if(input.isMouseButtonDown(0) &&
 		xPosition > 330 &&
 		xPosition < 415 &&
-		yPosition < 190 &&
-		yPosition > 175){
+		yPosition < 185 &&
+		yPosition > 150){
 			entrP.setName(careerName.getText());
 			entrP.setCareer("venture 3");
 			entrP.setIncome(20000);
 			entrP.setSavedMoney(50000);
 			entrP.setRisk(8);
-			//sbg.enterState(2);			
+			background = new Image("images/charCreationInt3.png");
 		}
 		
 	}

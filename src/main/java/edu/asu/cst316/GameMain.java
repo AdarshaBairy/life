@@ -1,22 +1,28 @@
 package main.java.edu.asu.cst316;
 
+import java.awt.Font;
 import java.util.Random;
 
 import main.java.edu.asu.cst316.cards.CardGenerator;
 import main.java.edu.asu.cst316.cards.CardText;
+import main.java.edu.asu.cst316.cards.Deck;
 import main.java.edu.asu.cst316.gameboard.GameBoard;
 import main.java.edu.asu.cst316.gameboard.GameSpace;
 
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Animation;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
+import org.newdawn.slick.TrueTypeFont;
+import org.newdawn.slick.gui.TextField;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+
 import main.java.edu.asu.cst316.player.*;
 
 public class GameMain extends BasicGameState{
@@ -25,6 +31,7 @@ public class GameMain extends BasicGameState{
 	Player playerObj = Player.getInstance();
 	
 	public String mouse = "";
+	public String cardText;
 	public String cardType = "";
 	public Image background;
 	public Image gameBoard;	
@@ -40,7 +47,7 @@ public class GameMain extends BasicGameState{
 	private int playerX = -256;
 	private int playerY = 464;
 
-	String cardText;
+	
 	public static String playerSpaceColor;
 
 	int spinNum = 0; 
@@ -176,6 +183,9 @@ public class GameMain extends BasicGameState{
 			cardGenerated = false;
 		}
 		
+		/*
+			Once the spinner has finished spinning the player space updates
+		*/
 		if(updatePlayer){
 			for(int i = 0; i < spinNum; i++){
 				gameboard.movePlayer(1);
@@ -188,8 +198,25 @@ public class GameMain extends BasicGameState{
 			//cardColor = blueCard.getScaledCopy((float) .8);
 			//cardText = cardgenerator.getFinalCardText();
 			
-			
-			showEventWindow = true;
+			if(!gameboard.getCurrentSpace().getType().equals("fork")){
+				showEventWindow = true;
+				Deck deck = Deck.getInstance();
+				if(gameboard.getCurrentSpace().getType().equals("common")){
+					cardText = deck.getCommonCard().getText();
+					System.out.println(cardText);
+					int currentMoney = playerObj.getSavedMoney();
+					playerObj.setSavedMoney(currentMoney+deck.getCommonCard().getValue());
+				}else if(gameboard.getCurrentSpace().getType().equals("red")){
+					cardText = deck.getRedCard().getText();
+					int currentMoney = playerObj.getSavedMoney();
+					playerObj.setSavedMoney(currentMoney+deck.getRedCard().getValue());
+				}else if(gameboard.getCurrentSpace().getType().equals("green")){
+					cardText = deck.getGreenCard().getText();
+					int currentMoney = playerObj.getSavedMoney();
+					playerObj.setSavedMoney(currentMoney+deck.getGreenCard().getValue());
+				}
+				System.out.println(cardText);
+			}
 			updatePlayer = false;
 		}
 		
@@ -237,6 +264,17 @@ public class GameMain extends BasicGameState{
 			showNotification = false;
 		}
 
+		if(showEventWindow){
+			//If the player clicks on close
+			if(input.isMouseButtonDown(0) &&
+			xPosition > 500 &&
+			xPosition < 630 &&
+			yPosition < 370 &&
+			yPosition > 330){
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+				showEventWindow = false;
+			}
+		}
 		
 		//checks for user clicking in the cards icon to display its card history.
 		if(input.isMouseButtonDown(0) &&
@@ -266,8 +304,15 @@ public class GameMain extends BasicGameState{
 		if(showEventWindow){
 			g.drawImage(eventWindow, 0, 0);
 			g.drawString(cardText, 250, 40);
+			Font font = new Font("Verdana", Font.PLAIN, 20);
+			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
+			TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 100, 420, 120);
+			cardTextBox.setText(cardText);
+			cardTextBox.setBorderColor(new Color(0, 0, 0, 0));
+			cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
+			cardTextBox.render(gc, g);
 		}
-		
+
 		//declare the images used
 		wheel = new Image("res/spinwheeldefault.png");
 		wheelHover = new Image("res/spinwheelhover.png");
