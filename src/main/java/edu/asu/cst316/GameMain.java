@@ -199,6 +199,7 @@ public class GameMain extends BasicGameState{
 		if (cardSelected) {
 			CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
 			cardType = gameboard.getCurrentSpace().getType();
+			/*
 			if (cardType == "common"){
 			cardColor = blueCard.getScaledCopy((float) .8);}
 			else if (cardType == "red"){
@@ -206,7 +207,7 @@ public class GameMain extends BasicGameState{
 			else if (cardType == "green"){
 				cardColor = greenCard.getScaledCopy((float) .8);}
 			else{cardType = "fail";}
-
+			*/
 			cardText = cardgenerator.getFinalCardText();
 		}
 		
@@ -236,33 +237,6 @@ public class GameMain extends BasicGameState{
 			showNotification = false;
 		}
 
-
-		if(gameboard.getCurrentSpace().getType().equals("end")){
-			showNotification = true;
-			//If the player clicks on safe
-			if(input.isMouseButtonDown(0) &&
-			xPosition > 175 &&
-			xPosition < 300 &&
-			yPosition < 370 &&
-			yPosition > 330){
-				gameboard.movePlayerToAlternativeRoute();
-				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-			}
-			//If the player clicks on risky
-			if(input.isMouseButtonDown(0) &&
-			xPosition > 500 &&
-			xPosition < 630 &&
-			yPosition < 370 &&
-			yPosition > 330){
-				gameboard.movePlayer(1);
-				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-			}
-		}else{
-			showNotification = false;
-			
-		}
-				
-		gameboard.getCurrentSpace();
 		
 		//checks for user clicking in the cards icon to display its card history.
 		if(input.isMouseButtonDown(0) &&
@@ -280,10 +254,10 @@ public class GameMain extends BasicGameState{
 		g.drawImage(gameBoardZoom, 62, 53);
 		g.drawString(mouse, 10, 10);
 		//todo status initial render
-		g.drawString(playerObj.getName(), 120, 200);
-		g.drawString(playerObj.getCareer(), 145, 150);
-		g.drawString(playerObj.getIncome(), 135, 110);
-		g.drawString(playerObj.getSavedMoney(), 195, 70);
+		g.drawString(playerObj.getName(), 120, 410);
+		g.drawString(playerObj.getCareer(), 145, 448);
+		g.drawString(Integer.toString(playerObj.getIncome()), 135, 490);
+		g.drawString(Integer.toString(playerObj.getSavedMoney()), 195, 530);
 		
 		g.drawImage(player, 336, 136);
 		if(showNotification){
@@ -307,8 +281,8 @@ public class GameMain extends BasicGameState{
 
 		//Display the card the player draws when he lands on a space
 		if (cardGenerated && cardType != "fail") {
-		g.drawImage(cardColor, 200, 20);
-		g.drawString(cardText, 250, 40);
+//			g.drawImage(cardColor, 200, 20);
+//			g.drawString(cardText, 250, 40);
 	    }
 		
 		//if the wheel is clicked do what we need it to do
@@ -345,7 +319,7 @@ public class GameMain extends BasicGameState{
 			g.drawImage(wheelHover, 306, 375);
 		}		
 		
-}//end render
+	}//end render
 
 	
 	public int getID(){

@@ -1,4 +1,4 @@
-/*package test.java.edu.asu.cst316;
+package test.java.edu.asu.cst316;
 
 import junit.framework.TestCase;
 
@@ -75,4 +75,3 @@ public class GameBoardTest extends TestCase {
 		gameboard.reset();
 	}
 }
-**/

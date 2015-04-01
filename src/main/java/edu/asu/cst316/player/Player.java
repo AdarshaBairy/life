@@ -16,14 +16,10 @@ public class Player {
 	private int income;
 	private int savedMoney;
 	private int risk;
-	private static Player player;
+	private static Player player = new Player();
 	
 	private Player(){
-		setName(this.name);
-		setCareer(this.career);
-		setIncome(this.income);
-		setSavedMoney(this.savedMoney);
-		setRisk(this.risk);
+
 	}
 	
 	/**
@@ -33,13 +29,6 @@ public class Player {
 	 * @param savedMoney
 	 * @param heldCards
 	 */
-	public Player(String name, String career, int income, int savedMoney, int risk) {
-		this.name = name;
-		this.career = career;
-		this.income = income;
-		this.risk = risk;
-		this.savedMoney = savedMoney;
-	}
 	
 	public static Player getInstance(){
 		return player;		
@@ -55,6 +44,7 @@ public class Player {
 	 * @param name the name to set
 	 */
 	public void setName(String name) {
+		System.out.println(name);
 		this.name = name;
 	}
 	/**
@@ -72,7 +62,7 @@ public class Player {
 	/**
 	 * @return the salary
 	 */
-	public double getIncome() {
+	public int getIncome() {
 		return income;
 	}
 	/**
@@ -100,8 +90,8 @@ public class Player {
 	
 	public void payDay(){
 		
-	Random rand = new Random();
-	savedMoney = savedMoney + (income/(risk/2)) + (income *(rand.nextInt(risk) + 1 ));
-	
+		Random rand = new Random();
+		savedMoney = savedMoney + (income/(risk/2)) + (income *(rand.nextInt(risk) + 1 ));
+		
 	}
 }

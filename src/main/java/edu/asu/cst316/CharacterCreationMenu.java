@@ -21,6 +21,7 @@ import main.java.edu.asu.cst316.player.*;
 
 public class CharacterCreationMenu extends BasicGameState{
 	public String mouse = "";
+	
 	public Image background;
 	public UnicodeFont font;
 	public TextField careerName;
@@ -38,7 +39,7 @@ public class CharacterCreationMenu extends BasicGameState{
 		careerName = new TextField(gc, trueTypeFont, 330, 210, 290, 45);
 		careerName.setBackgroundColor(new Color(20, 25, 34));
 		careerName.setTextColor(new Color(234, 226, 217));
-		
+		careerName.setText("newPlayer");
 	}
 
 	//@Override
@@ -69,69 +70,61 @@ public class CharacterCreationMenu extends BasicGameState{
 		//create text fields and combo boxes to get info
 		
 		//back button
-		if(
-				input.isMouseButtonDown(0) &&
-				xPosition > 22 &&
-				xPosition < 172 &&
-				yPosition < 64 &&
-				yPosition > 18)
-		{
+		if(input.isMouseButtonDown(0) &&
+		xPosition > 22 &&
+		xPosition < 172 &&
+		yPosition < 64 &&
+		yPosition > 18){
 			sbg.enterState(0);
 		}
-		/*next button
-		if(
-				input.isMouseButtonDown(0) &&
-				xPosition > 621 &&
-				xPosition < 773 &&
-				yPosition < 64 &&
-				yPosition > 18)
-		{
-			//to do: run a character/player constructor with info from comboboxes and 
-			//text fields
+		//next button
+		if(input.isMouseButtonDown(0) &&
+		xPosition > 621 &&
+		xPosition < 773 &&
+		yPosition < 64 &&
+		yPosition > 18){
 			sbg.enterState(2);
-		}*/
+		}
 		
 		//venture 1
-		if(
-				input.isMouseButtonDown(0) &&
-				xPosition > 330 &&
-				xPosition < 415 &&
-				yPosition < 300 &&
-				yPosition > 285){
+		if(input.isMouseButtonDown(0) &&
+		xPosition > 330 &&
+		xPosition < 415 &&
+		yPosition < 300 &&
+		yPosition > 285){
+			System.out.println(careerName.getText());
 			entrP.setName(careerName.getText());
 			entrP.setCareer("venture 1");
 			entrP.setIncome(10000);
 			entrP.setSavedMoney(50000);
 			entrP.setRisk(4);
-			sbg.enterState(2);			
+			//sbg.enterState(2);			
 		}
 		//venture 2
-		if(
-				input.isMouseButtonDown(0) &&
-				xPosition > 330 &&
-				xPosition < 415 &&
-				yPosition < 245 &&
-				yPosition > 230){
+		if(input.isMouseButtonDown(0) &&
+		xPosition > 330 &&
+		xPosition < 415 &&
+		yPosition < 245 &&
+		yPosition > 230){
 			entrP.setName(careerName.getText());
 			entrP.setCareer("venture 2");
 			entrP.setIncome(15000);
 			entrP.setSavedMoney(50000);
 			entrP.setRisk(6);
-			sbg.enterState(2);			
+			//sbg.enterState(2);			
 		}
 		//venture 3
-		if(
-				input.isMouseButtonDown(0) &&
-				xPosition > 330 &&
-				xPosition < 415 &&
-				yPosition < 190 &&
-				yPosition > 175){
+		if(input.isMouseButtonDown(0) &&
+		xPosition > 330 &&
+		xPosition < 415 &&
+		yPosition < 190 &&
+		yPosition > 175){
 			entrP.setName(careerName.getText());
 			entrP.setCareer("venture 3");
 			entrP.setIncome(20000);
 			entrP.setSavedMoney(50000);
 			entrP.setRisk(8);
-			sbg.enterState(2);			
+			//sbg.enterState(2);			
 		}
 		
 	}

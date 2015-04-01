@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." name="life" xmlns:jacoco="antlib:org.jacoco.ant">
 	<property name="src" value="src"/>
