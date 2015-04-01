@@ -16,24 +16,53 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class GameMain extends BasicGameState{
+	
+	GameBoard gameboard = GameBoard.getInstance();
+	
 	public String mouse = "";
 	public Image background;
-	public Image gameBoard;
+	public Image gameBoard;	
+	public Image notification;
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
+	
 	private int playerX = -256;
 	private int playerY = 464;
 
-	GameBoard gameboard = GameBoard.getInstance();
+	int spinNum = 0; 
+	int	sNum = 0; 
+	int	centerOfImageX = 0; 
+	int	centerOfImageY = 0; 
+	int	spinCount = 0;
 	
-	Image wheel , wheelHover, spinFlipper, wheel1, wheel2, wheel3, wheel4, wheel5, wheel6, wheelSpinning;
-	Animation spinningAnimation, flipperAnimation;
-	SpriteSheet spinning, flipperAnim;
-	int spinNum = 0, sNum =0, centerOfImageX = 0, centerOfImageY = 0, spinCount =0;
-	float mouseX, mouseY;
-	boolean mouseOverSpin = false, spinClicked = false, spun = false, shouldSpin = false, 
-			defaultImage = true, spinAnimation = false;
+	Image wheel; 
+	Image wheelHover;
+	Image spinFlipper;
+	Image wheel1; 
+	Image wheel2;
+	Image wheel3; 
+	Image wheel4;
+	Image wheel5; 
+	Image wheel6; 
+	Image wheelSpinning;
+	
+	Animation spinningAnimation;
+	Animation flipperAnimation;
+	
+	SpriteSheet spinning;
+	SpriteSheet flipperAnim;
+	
+	float mouseX; 
+	float mouseY;
+	
+	boolean mouseOverSpin = false; 
+	boolean	spinClicked = false; 
+	boolean	spun = false; 
+	boolean	shouldSpin = false; 
+	boolean	defaultImage = true; 
+	boolean	spinAnimation = false;
+	boolean showNotification = false;
 	
 	public GameMain(int state){
 	}
@@ -42,6 +71,7 @@ public class GameMain extends BasicGameState{
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		background = new Image("images/u2.png");
 		gameBoard = new Image("images/board5.png");
+		notification = new Image("images/notification_window.png");
 		
 		
 		player = new Image("images/player.png").getScaledCopy((float) .5);
@@ -91,12 +121,18 @@ public class GameMain extends BasicGameState{
 			sbg.enterState(4);
 		}
 		
-		if((xPosition > 340 && xPosition < 470) && (yPosition > 190 && yPosition < 220)){
+		if(xPosition > 340 && 
+		xPosition < 470 && 
+		yPosition > 190 && yPosition < 220){
 			mouseOverSpin = true;
 			if(Mouse.isButtonDown(0)){
 				spinClicked = true;
-			}else spinClicked = false;		
-		}else mouseOverSpin = false;
+			}else {
+				spinClicked = false;		
+			}
+		}else {
+			mouseOverSpin = false;
+		}
 		
 		if(spinClicked == true){
 			spinningAnimation.update(delta);
@@ -105,25 +141,82 @@ public class GameMain extends BasicGameState{
 		if (spinAnimation){
 			spinCount += (delta);
 		}
+		
 		boolean updatePlayer = false;
+		
 		if (spinCount > 3000){
 			spinCount = 0;
 			spinAnimation = false;
 			updatePlayer = true;
 		}
+		
 		if(updatePlayer){
 			gameboard.movePlayer(spinNum);
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
 			updatePlayer = false;
+			
 		}
+		//When the player lands on a fork space they will see a window giving 
+		//of which way they want to go
+		if(gameboard.getCurrentSpace().getType().equals("fork")){
+			showNotification = true;
+			//If the player clicks on safe
+			if(input.isMouseButtonDown(0) &&
+			xPosition > 175 &&
+			xPosition < 300 &&
+			yPosition < 370 &&
+			yPosition > 330){
+				gameboard.movePlayerToAlternativeRoute();
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+			}
+			//If the player clicks on risky
+			if(input.isMouseButtonDown(0) &&
+			xPosition > 500 &&
+			xPosition < 630 &&
+			yPosition < 370 &&
+			yPosition > 330){
+				gameboard.movePlayer(1);
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+			}
+		}else{
+			showNotification = false;
+			
+		}
+		
+		if(gameboard.getCurrentSpace().getType().equals("end")){
+			showNotification = true;
+			//If the player clicks on safe
+			if(input.isMouseButtonDown(0) &&
+			xPosition > 175 &&
+			xPosition < 300 &&
+			yPosition < 370 &&
+			yPosition > 330){
+				gameboard.movePlayerToAlternativeRoute();
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+			}
+			//If the player clicks on risky
+			if(input.isMouseButtonDown(0) &&
+			xPosition > 500 &&
+			xPosition < 630 &&
+			yPosition < 370 &&
+			yPosition > 330){
+				gameboard.movePlayer(1);
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+			}
+		}else{
+			showNotification = false;
+			
+		}
+		
+		
 		
 		//checks for user clicking in the cards icon to display its card history.
 		if(
-				input.isMouseButtonDown(0) &&
-				xPosition >= 660 &&
-				xPosition <= 745 &&
-				yPosition >= 50 &&
-				yPosition <= 155
+			input.isMouseButtonDown(0) &&
+			xPosition >= 660 &&
+			xPosition <= 745 &&
+			yPosition >= 50 &&
+			yPosition <= 155
 		){
 			sbg.enterState(6);
 		}
@@ -139,6 +232,9 @@ public class GameMain extends BasicGameState{
 		g.drawImage(gameBoardZoom, 62, 53);
 		g.drawString(mouse, 10, 10);
 		g.drawImage(player, 336, 136);
+		if(showNotification){
+			g.drawImage(notification, 0, 0);
+		}
 		
 		//declare the images used
 		wheel = new Image("res/spinwheeldefault.png");
@@ -161,12 +257,12 @@ public class GameMain extends BasicGameState{
 		}	
 		
 		if (spinClicked == true){
-				defaultImage = false;
-				spinClicked =false;
-				spinNum = getSpinNum(sNum);
-				System.out.println(spinNum);
-				spinAnimation = true;
-			}
+			defaultImage = false;
+			spinClicked =false;
+			spinNum = getSpinNum(sNum);
+			System.out.println(spinNum);
+			spinAnimation = true;
+		}
 						
 		if (spinAnimation){
 			spinningAnimation.draw(329, 415);
@@ -213,6 +309,12 @@ public class GameMain extends BasicGameState{
 		return 2;
 	}
 	
+	
+	//This function is used for displaying the gameboard map to the viewer
+	//X and Y starting corners of where to take the sub image of the entire gameboard image
+	//the values 1372 and 624 were for creating the size of the gameboard window
+	//Then it gets scaled by .5 making the size of the window into 686 by 312
+	
 	public void updateBoardView(int x, int y){
 		gameBoardZoom = gameBoard.getSubImage(x, y, 1372, 624).getScaledCopy((float) .5); 
 		playerX = x;
@@ -220,11 +322,11 @@ public class GameMain extends BasicGameState{
 	}
 	
 	int getSpinNum(int sNum) {
-	try {
-	    Thread.sleep(250);                 //1000 milliseconds is one second.
-	} catch(InterruptedException ex) {
-	    Thread.currentThread().interrupt();
-	}
+		try {
+		    Thread.sleep(250);                 //1000 milliseconds is one second.
+		} catch(InterruptedException ex) {
+		    Thread.currentThread().interrupt();
+		}
 		Random rand = new Random();
 		sNum = (rand.nextInt(6))+1;
 		return sNum;

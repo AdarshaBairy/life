@@ -1,6 +1,7 @@
 package main.java.edu.asu.cst316;
 
 import org.lwjgl.input.Mouse;
+import org.newdawn.slick.TrueTypeFont;
 import org.newdawn.slick.UnicodeFont;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -11,6 +12,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.gui.*;
 import org.newdawn.slick.Color;
+
 import java.awt.Font;
 
 
@@ -26,10 +28,12 @@ public class CharacterCreationMenu extends BasicGameState{
 	//@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		background = new Image("images/charCreationInt.png");
-		font = new UnicodeFont(new java.awt.Font("Arial", java.awt.Font.ITALIC,26));
-		careerName = new TextField(gc, font, 330, 210, 300, 50);
-		careerName.setBackgroundColor(new Color(255, 226, 201));
-		
+		Font font = new Font("Verdana", Font.PLAIN, 24);
+		TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
+		//font = new UnicodeFont(new java.awt.Font("Arial", java.awt.Font.ITALIC,26));
+		careerName = new TextField(gc, trueTypeFont, 330, 210, 290, 45);
+		careerName.setBackgroundColor(new Color(20, 25, 34));
+		careerName.setTextColor(new Color(234, 226, 217));
 		
 	}
 
@@ -40,8 +44,8 @@ public class CharacterCreationMenu extends BasicGameState{
 		g.drawImage(background, 0, 0);
 		g.drawString(mouse, 10, 10);
 		careerName.render(gc, g);
-			
-		
+		careerName.setFocus(true);
+
 	}
 
 	//@Override
