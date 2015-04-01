@@ -12,7 +12,17 @@ import java.util.Comparator;
 
 public class HighScores {
 
+	private static HighScores highScores = new HighScores();
+	
 	private List<PlayerRecord> highScoreList;
+	
+	private HighScores(){
+		highScoreList = new ArrayList<PlayerRecord>();
+	};
+	
+	public static HighScores getInstance(){
+		return highScores;
+	}
 	
 	//Read the high score list to a file
 	@SuppressWarnings("unchecked")
@@ -61,5 +71,9 @@ public class HighScores {
 				return  pr1.getScore() > pr2.getScore() ? 1 : -1;
 			}
 		});
+	}
+	
+	public List<PlayerRecord> getHighScoreList(){
+		return highScoreList;
 	}
 }

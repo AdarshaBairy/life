@@ -8,6 +8,7 @@ import main.java.edu.asu.cst316.cards.CardText;
 import main.java.edu.asu.cst316.cards.Deck;
 import main.java.edu.asu.cst316.gameboard.GameBoard;
 import main.java.edu.asu.cst316.gameboard.GameSpace;
+import main.java.edu.asu.cst316.highscore.HighScores;
 
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Animation;
@@ -131,7 +132,7 @@ public class GameMain extends BasicGameState{
 		xPosition < 490 &&
 		yPosition < 180 &&
 		yPosition > 20){
-			gameboard.movePlayer(10);
+			gameboard.movePlayer(1);
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
 			System.out.println(gameboard.getCurrentSpace().getType());
 		}
@@ -204,6 +205,7 @@ public class GameMain extends BasicGameState{
 			if(!gameboard.getCurrentSpace().getType().equals("fork")){
 				showEventWindow = true;
 				Deck deck = Deck.getInstance();
+				System.out.println(playerObj.getSavedMoney());
 				if(gameboard.getCurrentSpace().getType().equals("common")){
 					cardText = deck.getCommonCard().getText();
 					System.out.println(cardText);
@@ -218,6 +220,7 @@ public class GameMain extends BasicGameState{
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+deck.getGreenCard().getValue());
 				}
+				
 				System.out.println(cardText);
 			}
 			updatePlayer = false;
@@ -227,7 +230,7 @@ public class GameMain extends BasicGameState{
 		////NEED to store value with card
 		//if player clicks spin generate card text and type
 		if (cardSelected) {
-			CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
+			//CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
 			cardType = gameboard.getCurrentSpace().getType();
 			/*
 			if (cardType == "common"){
@@ -253,6 +256,25 @@ public class GameMain extends BasicGameState{
 			yPosition > 330){
 				gameboard.movePlayerToAlternativeRoute();
 				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+				
+				showEventWindow = true;
+				Deck deck = Deck.getInstance();
+				System.out.println(playerObj.getSavedMoney());
+				if(gameboard.getCurrentSpace().getType().equals("common")){
+					cardText = deck.getCommonCard().getText();
+					System.out.println(cardText);
+					int currentMoney = playerObj.getSavedMoney();
+					playerObj.setSavedMoney(currentMoney+deck.getCommonCard().getValue());
+				}else if(gameboard.getCurrentSpace().getType().equals("red")){
+					cardText = deck.getRedCard().getText();
+					int currentMoney = playerObj.getSavedMoney();
+					playerObj.setSavedMoney(currentMoney+deck.getRedCard().getValue());
+				}else if(gameboard.getCurrentSpace().getType().equals("green")){
+					cardText = deck.getGreenCard().getText();
+					int currentMoney = playerObj.getSavedMoney();
+					playerObj.setSavedMoney(currentMoney+deck.getGreenCard().getValue());
+				}
+				System.out.println(cardText);
 			}
 			//If the player clicks on risky
 			if(input.isMouseButtonDown(0) &&
@@ -262,6 +284,24 @@ public class GameMain extends BasicGameState{
 			yPosition > 330){
 				gameboard.movePlayer(1);
 				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+			
+				showEventWindow = true;
+				Deck deck = Deck.getInstance();
+				if(gameboard.getCurrentSpace().getType().equals("common")){
+					cardText = deck.getCommonCard().getText();
+					System.out.println(cardText);
+					int currentMoney = playerObj.getSavedMoney();
+					playerObj.setSavedMoney(currentMoney+deck.getCommonCard().getValue());
+				}else if(gameboard.getCurrentSpace().getType().equals("red")){
+					cardText = deck.getRedCard().getText();
+					int currentMoney = playerObj.getSavedMoney();
+					playerObj.setSavedMoney(currentMoney+deck.getRedCard().getValue());
+				}else if(gameboard.getCurrentSpace().getType().equals("green")){
+					cardText = deck.getGreenCard().getText();
+					int currentMoney = playerObj.getSavedMoney();
+					playerObj.setSavedMoney(currentMoney+deck.getGreenCard().getValue());
+				}
+				System.out.println(cardText);
 			}
 		}else{
 			showNotification = false;
@@ -275,6 +315,7 @@ public class GameMain extends BasicGameState{
 			xPosition < 510 &&
 			yPosition < 290 &&
 			yPosition > 235){
+				recordPlayerScore();
 				showEndGameWindow = false;
 				gameboard.reset();
 				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
@@ -285,16 +326,18 @@ public class GameMain extends BasicGameState{
 			xPosition < 510 &&
 			yPosition < 215 &&
 			yPosition > 160){
+				recordPlayerScore();
 				showEndGameWindow = false;
 				gameboard.reset();
 				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-				sbg.enterState(7);
+				sbg.enterState(9);
 			}
 			if(input.isMouseButtonDown(0) &&
 			xPosition > 285 &&
 			xPosition < 510 &&
 			yPosition < 145 &&
 			yPosition > 90){
+				recordPlayerScore();
 				System.exit(0);
 			}
 
@@ -305,8 +348,8 @@ public class GameMain extends BasicGameState{
 		if(showEventWindow){
 			//If the player clicks on close
 			if(input.isMouseButtonDown(0) &&
-			xPosition > 500 &&
-			xPosition < 630 &&
+			xPosition > 333 &&
+			xPosition < 450 &&
 			yPosition < 370 &&
 			yPosition > 330){
 				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
@@ -448,5 +491,17 @@ public class GameMain extends BasicGameState{
 		sNum = (rand.nextInt(6))+1;
 		return sNum;
 	}
+	
+	public void recordPlayerScore(){
+		HighScores highScores = HighScores.getInstance();
+		highScores.init();
+		try{
+			highScores.deSerialize();
+		}catch(Exception e){
+			System.out.println("No highscore file saved");
+		}
+		highScores.addPlayerRecord(playerObj.getName(), playerObj.getSavedMoney());
+	}
+	
 	
 }

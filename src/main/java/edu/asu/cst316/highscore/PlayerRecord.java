@@ -1,6 +1,8 @@
 package main.java.edu.asu.cst316.highscore;
 
-public class PlayerRecord {
+import java.io.Serializable;
+
+public class PlayerRecord implements Serializable {
 	private String playerName;
 	private int score;
 	

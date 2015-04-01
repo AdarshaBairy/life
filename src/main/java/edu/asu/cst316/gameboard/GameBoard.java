@@ -91,6 +91,9 @@ public class GameBoard {
 	//Moves the player across the board
 	//Stops is the space is a fork, milestone, payday, or end space
 	public void movePlayer(int moveAmount){
+		if(playerSpace.getType().equals("end")){
+			moveAmount = 0;
+		}
 		for(int i = 0; i < moveAmount; ++i){
 			playerSpace = playerSpace.getNextSpace();
 			if(playerSpace.getType().equals("fork") &&
