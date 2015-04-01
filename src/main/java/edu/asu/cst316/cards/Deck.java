@@ -20,7 +20,7 @@ public class Deck {
 		commonCards[1] = new Card("Blue Space: You lose -3500", -3500);
 		commonCards[2] = new Card("Blue Space: You lose -4000", -4000);
 		commonCards[3] = new Card("Blue Space: You gain 3500", 3500);
-		commonCards[4] = new Card("Blue Space: You gain 5000", -5000);
+		commonCards[4] = new Card("Blue Space: You lose -5000", -5000);
 		commonCards[5] = new Card("Blue Space: You lose -3000", -3000);
 		commonCards[6] = new Card("Blue Space: You gain 4000", 4000);
 		commonCards[7] = new Card("Blue Space: You lose -2000", -2000);
@@ -39,13 +39,13 @@ public class Deck {
 		redCards[9] = new Card("Red Space: You lose -8000", -8000);
 		
 		greenCards[0] = new Card("Green Space: You gain 2000", 2000);
-		greenCards[1] = new Card("Green Space: You gain 1000", -1000);
+		greenCards[1] = new Card("Green Space: You lose -1000", -1000);
 		greenCards[2] = new Card("Green Space: You lose -1000", -1000);
 		greenCards[3] = new Card("Green Space: You gain 2000", 2000);
 		greenCards[4] = new Card("Green Space: You lose -2500", -2500);
 		greenCards[5] = new Card("Green Space: You gain 3000", 3000);
 		greenCards[6] = new Card("Green Space: You lose -500", -500);
-		greenCards[7] = new Card("Green Space: You gain 1500", -1500);
+		greenCards[7] = new Card("Green Space: You lose -1500", -1500);
 		greenCards[8] = new Card("Green Space: You gain 3000", 3000);
 		greenCards[9] = new Card("Green Space: You lose -2000", -2000);
 	}
