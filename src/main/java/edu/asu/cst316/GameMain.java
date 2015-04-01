@@ -244,6 +244,7 @@ public class GameMain extends BasicGameState{
 		
 		
 		
+		gameboard.getCurrentSpace();
 		/////NEED to know if player information provides space landed on.
 		////Color methods are in gameboard and gamespace
 		////MAKE an array to store the cards
