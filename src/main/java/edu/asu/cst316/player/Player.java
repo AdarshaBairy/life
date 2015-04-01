@@ -16,6 +16,7 @@ public class Player {
 	private int income;
 	private int savedMoney;
 	private int risk;
+	private Player player = new Player (this.name, this.career, this.income, this.savedMoney, this.risk);
 	/**
 	 * @param name
 	 * @param career
@@ -29,7 +30,11 @@ public class Player {
 		this.income = income;
 		this.risk = risk;
 		this.savedMoney = savedMoney;
-	}	
+	}
+	
+	public Player getInstance(){
+		return player;		
+	}
 	
 	/**
 	 * @return the name

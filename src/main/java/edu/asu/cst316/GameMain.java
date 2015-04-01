@@ -19,6 +19,7 @@ import main.java.edu.asu.cst316.player.*;
 public class GameMain extends BasicGameState{
 	
 	GameBoard gameboard = GameBoard.getInstance();
+	Player playerObj = entrP.getInstance();
 	
 	public String mouse = "";
 	public Image background;
