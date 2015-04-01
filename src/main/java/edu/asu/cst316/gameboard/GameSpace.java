@@ -2,7 +2,7 @@ package main.java.edu.asu.cst316.gameboard;
 
 public class GameSpace {
 	
-	public static String type = "";
+	public String type = "";
 	private GameSpace nextSpace = null;
 	private GameSpace alternativeSpace = null;
 	private int posX;
@@ -23,7 +23,7 @@ public class GameSpace {
 		this.alternativeSpace = alternativeSpace;
 	}
 		
-	public static String getType(){
+	public String getType(){
 		return type;
 	}
 	public int getPosX(){

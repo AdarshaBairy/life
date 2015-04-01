@@ -27,6 +27,7 @@ public class GameMain extends BasicGameState{
 	public Image background;
 	public Image gameBoard;	
 	public Image notification;
+	public Image eventWindow;
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
@@ -70,6 +71,7 @@ public class GameMain extends BasicGameState{
 	boolean	defaultImage = true; 
 	boolean	spinAnimation = false;
 	boolean showNotification = false;
+	boolean showEventWindow = false;
 	boolean cardGenerated = false;
 	boolean cardSelected = false;
 	
@@ -81,7 +83,7 @@ public class GameMain extends BasicGameState{
 		background = new Image("images/u2.png");
 		gameBoard = new Image("images/board5.png");
 		notification = new Image("images/notification_window.png");
-		
+		eventWindow = new Image("images/event_window.png");
 		
 		player = new Image("images/player.png").getScaledCopy((float) .5);
 		spinner = new Image("images/spinner.png");
@@ -111,26 +113,21 @@ public class GameMain extends BasicGameState{
 		int yPosition = Mouse.getY();
 		Input input = gc.getInput();
 		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
-		if(
-			input.isMousePressed(0) &&
-			xPosition > 333 &&
-			xPosition < 490 &&
-			yPosition < 180 &&
-			yPosition > 20
-		){
-
+		
+		if(input.isMousePressed(0) &&
+		xPosition > 333 &&
+		xPosition < 490 &&
+		yPosition < 180 &&
+		yPosition > 20){
 			gameboard.movePlayer(1);
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-
-			//sbg.enterState(3);
 		}
-		if(
-			input.isMouseButtonDown(0) &&
-			xPosition > 564 &&
-			xPosition < 715 &&
-			yPosition < 215 &&
-			yPosition > 180
-		){
+		
+		if(input.isMouseButtonDown(0) &&
+		xPosition > 564 &&
+		xPosition < 715 &&
+		yPosition < 215 &&
+		yPosition > 180){
 			sbg.enterState(4);
 		}
 		
@@ -177,21 +174,41 @@ public class GameMain extends BasicGameState{
 		}
 		
 		if(updatePlayer){
-			gameboard.movePlayer(spinNum);
+			for(int i = 0; i < spinNum; i++){
+				gameboard.movePlayer(1);
+				if( "fork".equals(gameboard.getCurrentSpace().getType()) ){
+					i = spinNum;
+				}
+			}
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-			updatePlayer = false;
+			//CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
+			//cardColor = blueCard.getScaledCopy((float) .8);
+			//cardText = cardgenerator.getFinalCardText();
 			
+			
+			showEventWindow = true;
+			updatePlayer = false;
 		}
 		
 		//if player clicks spin generate card text	
 		if (cardSelected) {
 			CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
-			if (gameboard.getCurrentSpace().getType() == "common"){
+
+			//if (gameboard.getCurrentSpace().getType() == "common"){
+			//cardColor = blueCard.getScaledCopy((float) .8);}
+			//if (gameboard.getCurrentSpace().getType() == "red"){
+			//	cardColor = redCard.getScaledCopy((float) .8);}
+			//if (gameboard.getCurrentSpace().getType() == "green"){
+			//	cardColor = greenCard.getScaledCopy((float) .8);}
+			cardType = gameboard.getCurrentSpace().getType();
+			if (cardType == "common"){
 			cardColor = blueCard.getScaledCopy((float) .8);}
-			if (gameboard.getCurrentSpace().getType() == "red"){
+			else if (cardType == "red"){
 				cardColor = redCard.getScaledCopy((float) .8);}
-			if (gameboard.getCurrentSpace().getType() == "green"){
+			else if (cardType == "green"){
 				cardColor = greenCard.getScaledCopy((float) .8);}
+			else{cardType = "fail";}
+
 			cardText = cardgenerator.getFinalCardText();
 		}
 		
@@ -219,9 +236,9 @@ public class GameMain extends BasicGameState{
 			}
 		}else{
 			showNotification = false;
-			
 		}
-		
+
+
 		if(gameboard.getCurrentSpace().getType().equals("end")){
 			showNotification = true;
 			//If the player clicks on safe
@@ -250,12 +267,13 @@ public class GameMain extends BasicGameState{
 		
 		
 		gameboard.getCurrentSpace();
+
 		/////NEED to know if player information provides space landed on.
 		////Color methods are in gameboard and gamespace
 		////MAKE an array to store the cards
 		////NEED to store value with card
 		// if player lands on "color" space draw that card
-		//playerSpaceColor = GameSpace.getType();
+		//playerSpaceColor = gameboard.getCurrentSpace().getType();
 		//System.out.println(playerSpaceColor);
 		//if (cardGenerated ==true) {
 		//CardGenerator cardgenerator = new CardGenerator(cardType, cardText, cardValue);
@@ -277,13 +295,11 @@ public class GameMain extends BasicGameState{
 		//}
 		
 		//checks for user clicking in the cards icon to display its card history.
-		if(
-			input.isMouseButtonDown(0) &&
-			xPosition >= 660 &&
-			xPosition <= 745 &&
-			yPosition >= 50 &&
-			yPosition <= 155
-		){
+		if(input.isMouseButtonDown(0) &&
+		xPosition >= 660 &&
+		xPosition <= 745 &&
+		yPosition >= 50 &&
+		yPosition <= 155){
 			sbg.enterState(6);
 		}
 	}
@@ -296,6 +312,10 @@ public class GameMain extends BasicGameState{
 		g.drawImage(player, 336, 136);
 		if(showNotification){
 			g.drawImage(notification, 0, 0);
+		}
+		if(showEventWindow){
+			g.drawImage(eventWindow, 0, 0);
+			g.drawString(cardText, 250, 40);
 		}
 		
 		//declare the images used
@@ -311,24 +331,27 @@ public class GameMain extends BasicGameState{
 
 		//Display the card the player draws when he lands on a space
 		//if(playerSpaceColor == "redSpaces"){
-		if (cardGenerated) {
+		//if (cardGenerated) {
+		//	g.drawImage(eventWindow, 0, 0);
+		//	g.drawString(cardText, 250, 40);
+	    //}
+		if (cardGenerated && cardType != "fail") {
 		g.drawImage(cardColor, 200, 20);
 		g.drawString(cardText, 250, 40);
 	    }
 		
-		
 		//if the wheel is clicked do what we need it to do
 		if (spinClicked){
-				defaultImage = false;
-				spinClicked = false;
-				spinNum = getSpinNum(sNum);
-				spinAnimation = true;
-			}
+			defaultImage = false;
+			spinClicked = false;
+			spinNum = getSpinNum(sNum);
+			spinAnimation = true;
+		}
 		
 		//once the spin is clicked do the animation
 		if (spinClicked == true){
 			defaultImage = false;
-			spinClicked =false;
+			spinClicked = false;
 			spinNum = getSpinNum(sNum);
 			System.out.println(spinNum);
 			spinAnimation = true;
@@ -339,11 +362,12 @@ public class GameMain extends BasicGameState{
 			flipperAnimation.draw(460, 420);
 		//animation is complete now set the number spun	
 		} else{
-		wheelSpinning.setRotation(360-(60*(spinNum-1)));
-		g.drawImage(wheelSpinning, 329, 415);
-		g.drawImage(spinFlipper, 460, 420);
-		spinAnimation = false;
-		spinClicked = false;
+
+			wheelSpinning.setRotation(360-(60*(spinNum-1)));
+			g.drawImage(wheelSpinning, 329, 415);
+			g.drawImage(spinFlipper, 460, 420);
+			spinAnimation = false;
+			spinClicked = false;
 		} // end else 
 		
 		if (mouseOverSpin){
@@ -351,6 +375,7 @@ public class GameMain extends BasicGameState{
 		}		
 		
 }//end render
+
 	
 	public int getID(){
 		return 2;
