@@ -181,9 +181,9 @@ public class GameMain extends BasicGameState{
 				}
 			}
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-			CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
-			cardColor = blueCard.getScaledCopy((float) .8);
-			cardText = cardgenerator.getFinalCardText();
+			//CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
+			//cardColor = blueCard.getScaledCopy((float) .8);
+			//cardText = cardgenerator.getFinalCardText();
 			
 			
 			showEventWindow = true;
@@ -191,11 +191,18 @@ public class GameMain extends BasicGameState{
 		}
 		
 		//if player clicks spin generate card text	
-		//if (cardSelected) {
-		//	CardGenerator cardgenerator = new CardGenerator(cardType, cardText, cardValue);
-		//	cardColor = blueCard.getScaledCopy((float) .8);
-		//	cardText = cardgenerator.getFinalCardText();
-		//}
+		if (cardSelected) {
+			CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
+			cardType = gameboard.getCurrentSpace().getType();
+			if (cardType == "common"){
+			cardColor = blueCard.getScaledCopy((float) .8);}
+			else if (cardType == "red"){
+				cardColor = redCard.getScaledCopy((float) .8);}
+			else if (cardType == "green"){
+				cardColor = greenCard.getScaledCopy((float) .8);}
+			else{cardType = "fail";}
+			cardText = cardgenerator.getFinalCardText();
+		}
 		
 		//When the player lands on a fork space they will see a window giving 
 		//of which way they want to go
@@ -292,7 +299,10 @@ public class GameMain extends BasicGameState{
 		//	g.drawImage(eventWindow, 0, 0);
 		//	g.drawString(cardText, 250, 40);
 	    //}
-		
+		if (cardGenerated && cardType != "fail") {
+		g.drawImage(cardColor, 200, 20);
+		g.drawString(cardText, 250, 40);
+	    }
 		
 		//if the wheel is clicked do what we need it to do
 		if (spinClicked){
