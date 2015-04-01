@@ -182,21 +182,31 @@ public class GameMain extends BasicGameState{
 				}
 			}
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-			CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
-			cardColor = blueCard.getScaledCopy((float) .8);
-			cardText = cardgenerator.getFinalCardText();
+			//CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
+			//cardColor = blueCard.getScaledCopy((float) .8);
+			//cardText = cardgenerator.getFinalCardText();
 			
 			
 			showEventWindow = true;
 			updatePlayer = false;
 		}
 		
-		//if player clicks spin generate card text	
-		//if (cardSelected) {
-		//	CardGenerator cardgenerator = new CardGenerator(cardType, cardText, cardValue);
-		//	cardColor = blueCard.getScaledCopy((float) .8);
-		//	cardText = cardgenerator.getFinalCardText();
-		//}
+		////MAKE an array to store the cards
+		////NEED to store value with card
+		//if player clicks spin generate card text and type
+		if (cardSelected) {
+			CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
+			cardType = gameboard.getCurrentSpace().getType();
+			if (cardType == "common"){
+			cardColor = blueCard.getScaledCopy((float) .8);}
+			else if (cardType == "red"){
+				cardColor = redCard.getScaledCopy((float) .8);}
+			else if (cardType == "green"){
+				cardColor = greenCard.getScaledCopy((float) .8);}
+			else{cardType = "fail";}
+
+			cardText = cardgenerator.getFinalCardText();
+		}
 		
 		//When the player lands on a fork space they will see a window giving 
 		//of which way they want to go
@@ -224,33 +234,33 @@ public class GameMain extends BasicGameState{
 			showNotification = false;
 		}
 
-		
+
+		if(gameboard.getCurrentSpace().getType().equals("end")){
+			showNotification = true;
+			//If the player clicks on safe
+			if(input.isMouseButtonDown(0) &&
+			xPosition > 175 &&
+			xPosition < 300 &&
+			yPosition < 370 &&
+			yPosition > 330){
+				gameboard.movePlayerToAlternativeRoute();
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+			}
+			//If the player clicks on risky
+			if(input.isMouseButtonDown(0) &&
+			xPosition > 500 &&
+			xPosition < 630 &&
+			yPosition < 370 &&
+			yPosition > 330){
+				gameboard.movePlayer(1);
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+			}
+		}else{
+			showNotification = false;
+			
+		}
 				
-		/////NEED to know if player information provides space landed on.
-		////Color methods are in gameboard and gamespace
-		////MAKE an array to store the cards
-		////NEED to store value with card
-		// if player lands on "color" space draw that card
-		//playerSpaceColor = GameSpace.getType();
-		//System.out.println(playerSpaceColor);
-		//if (cardGenerated ==true) {
-		//CardGenerator cardgenerator = new CardGenerator(cardType, cardText, cardValue);
-		//if (playerSpaceColor == "blueSpaces"){
-	
-		//cardColor = blueCard.getScaledCopy((float) .8);
-		//cardText = cardgenerator.getCommonCardText();
-		//}else cardGenerated = false;
-	//	}
-		//if playerSpaceColor is green
-		//if (playerSpaceColor == "greenSpaces"){
-		//cardColor = greenCard.getScaledCopy((float) .8);
-		//cardText = cardgenerator.getGreenCardText();
-	//	}
-		//if playerSpaceColor is red
-		//if (playerSpaceColor == "redSpaces"){
-		//cardColor = redCard.getScaledCopy((float) .8);
-		//cardText = cardgenerator.getRedCardText();
-		//}
+		gameboard.getCurrentSpace();
 		
 		//checks for user clicking in the cards icon to display its card history.
 		if(input.isMouseButtonDown(0) &&
@@ -288,12 +298,10 @@ public class GameMain extends BasicGameState{
 		wheelSpinning.setCenterOfRotation(centerOfImageX, centerOfImageY);
 
 		//Display the card the player draws when he lands on a space
-		//if(playerSpaceColor == "redSpaces"){
-		//if (cardGenerated) {
-		//	g.drawImage(eventWindow, 0, 0);
-		//	g.drawString(cardText, 250, 40);
-	    //}
-		
+		if (cardGenerated && cardType != "fail") {
+		g.drawImage(cardColor, 200, 20);
+		g.drawString(cardText, 250, 40);
+	    }
 		
 		//if the wheel is clicked do what we need it to do
 		if (spinClicked){
