@@ -12,7 +12,7 @@ import java.util.Comparator;
 
 public class HighScores {
 
-	List<PlayerRecord> highScoreList;
+	private List<PlayerRecord> highScoreList;
 	
 	//Read the high score list to a file
 	@SuppressWarnings("unchecked")
