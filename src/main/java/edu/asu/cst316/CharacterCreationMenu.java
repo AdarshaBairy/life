@@ -24,7 +24,7 @@ public class CharacterCreationMenu extends BasicGameState{
 	public Image background;
 	public UnicodeFont font;
 	public TextField careerName;
-	public Player entrP;
+	public Player entrP = Player.getInstance();
 	
 	public CharacterCreationMenu(int state){
 	}
@@ -98,7 +98,11 @@ public class CharacterCreationMenu extends BasicGameState{
 				xPosition < 415 &&
 				yPosition < 300 &&
 				yPosition > 285){
-			entrP = new Player(careerName.getText(), "venture 1", 10000, 50000, 4);
+			entrP.setName(careerName.getText());
+			entrP.setCareer("venture 1");
+			entrP.setIncome(10000);
+			entrP.setSavedMoney(50000);
+			entrP.setRisk(4);
 			sbg.enterState(2);			
 		}
 		//venture 2
@@ -108,7 +112,11 @@ public class CharacterCreationMenu extends BasicGameState{
 				xPosition < 415 &&
 				yPosition < 245 &&
 				yPosition > 230){
-			entrP = new Player(careerName.getText(), "venture 1", 15000, 50000, 6);
+			entrP.setName(careerName.getText());
+			entrP.setCareer("venture 2");
+			entrP.setIncome(15000);
+			entrP.setSavedMoney(50000);
+			entrP.setRisk(6);
 			sbg.enterState(2);			
 		}
 		//venture 3
@@ -118,7 +126,11 @@ public class CharacterCreationMenu extends BasicGameState{
 				xPosition < 415 &&
 				yPosition < 190 &&
 				yPosition > 175){
-			entrP = new Player(careerName.getText(), "venture 1", 20000, 50000, 8);
+			entrP.setName(careerName.getText());
+			entrP.setCareer("venture 3");
+			entrP.setIncome(20000);
+			entrP.setSavedMoney(50000);
+			entrP.setRisk(8);
 			sbg.enterState(2);			
 		}
 		

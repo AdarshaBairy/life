@@ -19,7 +19,7 @@ import main.java.edu.asu.cst316.player.*;
 public class GameMain extends BasicGameState{
 	
 	GameBoard gameboard = GameBoard.getInstance();
-	Player playerObj = entrP.getInstance();
+	Player playerObj = Player.getInstance();
 	
 	public String mouse = "";
 	public Image background;
@@ -234,10 +234,10 @@ public class GameMain extends BasicGameState{
 		g.drawImage(gameBoardZoom, 62, 53);
 		g.drawString(mouse, 10, 10);
 		//todo status initial render
-		g.drawString(entrP.getName(), 120, 200);
-		g.drawString(str, 145, 150);
-		g.drawString(str, 135, 110);
-		g.drawString(str, 195, 70);
+		g.drawString(playerObj.getName(), 120, 200);
+		g.drawString(playerObj.getCareer(), 145, 150);
+		g.drawString(playerObj.getIncome(), 135, 110);
+		g.drawString(playerObj.getSavedMoney(), 195, 70);
 		
 		g.drawImage(player, 336, 136);
 		if(showNotification){

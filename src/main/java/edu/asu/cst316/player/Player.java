@@ -16,7 +16,16 @@ public class Player {
 	private int income;
 	private int savedMoney;
 	private int risk;
-	private Player player = new Player (this.name, this.career, this.income, this.savedMoney, this.risk);
+	private static Player player;
+	
+	private Player(){
+		setName(this.name);
+		setCareer(this.career);
+		setIncome(this.income);
+		setSavedMoney(this.savedMoney);
+		setRisk(this.risk);
+	}
+	
 	/**
 	 * @param name
 	 * @param career
@@ -32,7 +41,7 @@ public class Player {
 		this.savedMoney = savedMoney;
 	}
 	
-	public Player getInstance(){
+	public static Player getInstance(){
 		return player;		
 	}
 	
@@ -83,6 +92,10 @@ public class Player {
 	 */
 	public void setSavedMoney(int savedMoney) {
 		this.savedMoney = savedMoney;
+	}
+	
+	public void setRisk(int risk){
+		this.risk = risk;
 	}
 	
 	public void payDay(){
