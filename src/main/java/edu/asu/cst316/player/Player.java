@@ -2,7 +2,7 @@
  * 
  */
 
-package main.java.edu.asu.cst316;
+package main.java.edu.asu.cst316.player;
 import java.util.*;
 
 /**
@@ -16,9 +16,6 @@ public class Player {
 	private int income;
 	private int savedMoney;
 	private int risk;
-	//todo held cards. replace with card object when ready
-	private Object[] heldCards;
-	
 	/**
 	 * @param name
 	 * @param career
@@ -32,20 +29,7 @@ public class Player {
 		this.income = income;
 		this.risk = 1;
 		this.savedMoney = savedMoney;
-		this.heldCards = new Object[10];
-	}
-	
-	public Player(String name){
-		if (name.compareToIgnoreCase("venture 1") == 1){
-			this.name = name;
-			this.career = "venture 1";
-			this.income = 1000;
-			this.savedMoney = 5000;
-			
-		}
-		
-	}
-	
+	}	
 	
 	/**
 	 * @return the name
@@ -96,14 +80,11 @@ public class Player {
 		this.savedMoney = savedMoney;
 	}
 	
-	private void payDay(){
-		Random rand = new Random();
-		savedMoney = savedMoney + (income/(risk/2)) + (income *(rand.nextInt(risk) + 1 ));
-
+	public void payDay(){
+		
+	Random rand = new Random();
+	savedMoney = savedMoney + (income/(risk/2)) + (income *(rand.nextInt(risk) + 1 ));
+	
 	}
 	
-	private void addCard(Object card){
-	}
-	
-
 }
