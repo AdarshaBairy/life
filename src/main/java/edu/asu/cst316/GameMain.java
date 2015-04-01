@@ -121,6 +121,7 @@ public class GameMain extends BasicGameState{
 		yPosition > 20){
 			gameboard.movePlayer(1);
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+			System.out.println(gameboard.getCurrentSpace().getType());
 		}
 		
 		if(input.isMouseButtonDown(0) &&
