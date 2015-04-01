@@ -181,16 +181,21 @@ public class GameMain extends BasicGameState{
 				}
 			}
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-			updatePlayer = false;
+			CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
+			cardColor = blueCard.getScaledCopy((float) .8);
+			cardText = cardgenerator.getFinalCardText();
 			
+			
+			showEventWindow = true;
+			updatePlayer = false;
 		}
 		
 		//if player clicks spin generate card text	
-		if (cardSelected) {
-			CardGenerator cardgenerator = new CardGenerator(cardType, cardText, cardValue);
-			cardColor = blueCard.getScaledCopy((float) .8);
-			cardText = cardgenerator.getFinalCardText();
-		}
+		//if (cardSelected) {
+		//	CardGenerator cardgenerator = new CardGenerator(cardType, cardText, cardValue);
+		//	cardColor = blueCard.getScaledCopy((float) .8);
+		//	cardText = cardgenerator.getFinalCardText();
+		//}
 		
 		//When the player lands on a fork space they will see a window giving 
 		//of which way they want to go
@@ -267,6 +272,7 @@ public class GameMain extends BasicGameState{
 		}
 		if(showEventWindow){
 			g.drawImage(eventWindow, 0, 0);
+			g.drawString(cardText, 250, 40);
 		}
 		
 		//declare the images used
@@ -282,10 +288,10 @@ public class GameMain extends BasicGameState{
 
 		//Display the card the player draws when he lands on a space
 		//if(playerSpaceColor == "redSpaces"){
-		if (cardGenerated) {
-			g.drawImage(eventWindow, 0, 0);
-			g.drawString(cardText, 250, 40);
-	    }
+		//if (cardGenerated) {
+		//	g.drawImage(eventWindow, 0, 0);
+		//	g.drawString(cardText, 250, 40);
+	    //}
 		
 		
 		//if the wheel is clicked do what we need it to do
