@@ -37,6 +37,7 @@ public class GameMain extends BasicGameState{
 	public Image gameBoard;	
 	public Image notification;
 	public Image eventWindow;
+	public Image endGameWindow;
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
@@ -81,6 +82,7 @@ public class GameMain extends BasicGameState{
 	boolean	spinAnimation = false;
 	boolean showNotification = false;
 	boolean showEventWindow = false;
+	boolean showEndGameWindow = false;
 	boolean cardGenerated = false;
 	boolean cardSelected = false;
 	
@@ -93,6 +95,7 @@ public class GameMain extends BasicGameState{
 		gameBoard = new Image("images/board5.png");
 		notification = new Image("images/notification_window.png");
 		eventWindow = new Image("images/event_window.png");
+		endGameWindow = new Image("images/endGame.png");
 		
 		player = new Image("images/player.png").getScaledCopy((float) .5);
 		spinner = new Image("images/spinner.png");
@@ -123,7 +126,7 @@ public class GameMain extends BasicGameState{
 		Input input = gc.getInput();
 		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
 		
-		if(input.isMousePressed(0) &&
+		if(input.isMousePressed(0) && !gameboard.getCurrentSpace().getType().equals("end") &&
 		xPosition > 333 &&
 		xPosition < 490 &&
 		yPosition < 180 &&
@@ -264,6 +267,41 @@ public class GameMain extends BasicGameState{
 			showNotification = false;
 		}
 
+		
+		if(gameboard.getCurrentSpace().getType().equals("end")){
+			showEndGameWindow = true;
+			if(input.isMouseButtonDown(0) &&
+			xPosition > 285 &&
+			xPosition < 510 &&
+			yPosition < 290 &&
+			yPosition > 235){
+				showEndGameWindow = false;
+				gameboard.reset();
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+				sbg.enterState(0);
+			}
+			if(input.isMouseButtonDown(0) &&
+			xPosition > 285 &&
+			xPosition < 510 &&
+			yPosition < 215 &&
+			yPosition > 160){
+				showEndGameWindow = false;
+				gameboard.reset();
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+				sbg.enterState(7);
+			}
+			if(input.isMouseButtonDown(0) &&
+			xPosition > 285 &&
+			xPosition < 510 &&
+			yPosition < 145 &&
+			yPosition > 90){
+				System.exit(0);
+			}
+
+			System.out.println(gameboard.getCurrentSpace().getType());
+		}
+		
+		
 		if(showEventWindow){
 			//If the player clicks on close
 			if(input.isMouseButtonDown(0) &&
@@ -275,6 +313,9 @@ public class GameMain extends BasicGameState{
 				showEventWindow = false;
 			}
 		}
+		
+		
+		
 		
 		//checks for user clicking in the cards icon to display its card history.
 		if(input.isMouseButtonDown(0) &&
@@ -312,7 +353,12 @@ public class GameMain extends BasicGameState{
 			cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
 			cardTextBox.render(gc, g);
 		}
-
+		if(showEndGameWindow){
+			g.drawImage(endGameWindow, 0, 0);
+		}
+		
+		
+		
 		//declare the images used
 		wheel = new Image("res/spinwheeldefault.png");
 		wheelHover = new Image("res/spinwheelhover.png");
@@ -352,16 +398,19 @@ public class GameMain extends BasicGameState{
 			flipperAnimation.draw(460, 420);
 		//animation is complete now set the number spun	
 		} else{
-
-			wheelSpinning.setRotation(360-(60*(spinNum-1)));
-			g.drawImage(wheelSpinning, 329, 415);
-			g.drawImage(spinFlipper, 460, 420);
-			spinAnimation = false;
-			spinClicked = false;
+			if(!showEndGameWindow){
+				wheelSpinning.setRotation(360-(60*(spinNum-1)));
+				g.drawImage(wheelSpinning, 329, 415);
+				g.drawImage(spinFlipper, 460, 420);
+				spinAnimation = false;
+				spinClicked = false;
+			}
 		} // end else 
 		
 		if (mouseOverSpin){
-			g.drawImage(wheelHover, 306, 375);
+			if(!showEndGameWindow){
+				g.drawImage(wheelHover, 306, 375);
+			}
 		}		
 		
 	}//end render
