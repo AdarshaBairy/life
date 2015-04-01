@@ -432,6 +432,13 @@ public class GameMain extends BasicGameState{
 		}
 		if(showEndGameWindow){
 			g.drawImage(endGameWindow, 0, 0);
+			Font font = new Font("Verdana", Font.PLAIN, 20);
+			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
+			TextField cardTextBox = new TextField(gc, trueTypeFont, 380, 240, 420, 120);
+			cardTextBox.setText(Integer.toString(playerObj.getSavedMoney()));
+			cardTextBox.setBorderColor(new Color(0, 0, 0, 0));
+			cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
+			cardTextBox.render(gc, g);
 		}
 		
 		
