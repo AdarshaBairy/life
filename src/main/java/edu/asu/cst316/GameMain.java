@@ -185,8 +185,13 @@ public class GameMain extends BasicGameState{
 		
 		//if player clicks spin generate card text	
 		if (cardSelected) {
-			CardGenerator cardgenerator = new CardGenerator(cardType, cardText, cardValue);
-			cardColor = blueCard.getScaledCopy((float) .8);
+			CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
+			if (gameboard.getCurrentSpace().getType() == "common"){
+			cardColor = blueCard.getScaledCopy((float) .8);}
+			if (gameboard.getCurrentSpace().getType() == "red"){
+				cardColor = redCard.getScaledCopy((float) .8);}
+			if (gameboard.getCurrentSpace().getType() == "green"){
+				cardColor = greenCard.getScaledCopy((float) .8);}
 			cardText = cardgenerator.getFinalCardText();
 		}
 		
