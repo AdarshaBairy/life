@@ -15,6 +15,8 @@ import org.newdawn.slick.Color;
 
 import java.awt.Font;
 
+import main.java.edu.asu.cst316.player.*;
+
 
 
 public class CharacterCreationMenu extends BasicGameState{
@@ -22,6 +24,8 @@ public class CharacterCreationMenu extends BasicGameState{
 	public Image background;
 	public UnicodeFont font;
 	public TextField careerName;
+	public Player entrP = Player.getInstance();
+	
 	public CharacterCreationMenu(int state){
 	}
 	
@@ -45,6 +49,10 @@ public class CharacterCreationMenu extends BasicGameState{
 		g.drawString(mouse, 10, 10);
 		careerName.render(gc, g);
 		careerName.setFocus(true);
+		g.drawString("Venture 1", 330, 300);
+		g.drawString("Venture 2", 330, 350);
+		g.drawString("Venture 3", 330, 405);
+		g.drawString("Select Business Venture", 50, 300);
 
 	}
 
@@ -70,7 +78,7 @@ public class CharacterCreationMenu extends BasicGameState{
 		{
 			sbg.enterState(0);
 		}
-		//next button
+		/*next button
 		if(
 				input.isMouseButtonDown(0) &&
 				xPosition > 621 &&
@@ -81,6 +89,49 @@ public class CharacterCreationMenu extends BasicGameState{
 			//to do: run a character/player constructor with info from comboboxes and 
 			//text fields
 			sbg.enterState(2);
+		}*/
+		
+		//venture 1
+		if(
+				input.isMouseButtonDown(0) &&
+				xPosition > 330 &&
+				xPosition < 415 &&
+				yPosition < 300 &&
+				yPosition > 285){
+			entrP.setName(careerName.getText());
+			entrP.setCareer("venture 1");
+			entrP.setIncome(10000);
+			entrP.setSavedMoney(50000);
+			entrP.setRisk(4);
+			sbg.enterState(2);			
+		}
+		//venture 2
+		if(
+				input.isMouseButtonDown(0) &&
+				xPosition > 330 &&
+				xPosition < 415 &&
+				yPosition < 245 &&
+				yPosition > 230){
+			entrP.setName(careerName.getText());
+			entrP.setCareer("venture 2");
+			entrP.setIncome(15000);
+			entrP.setSavedMoney(50000);
+			entrP.setRisk(6);
+			sbg.enterState(2);			
+		}
+		//venture 3
+		if(
+				input.isMouseButtonDown(0) &&
+				xPosition > 330 &&
+				xPosition < 415 &&
+				yPosition < 190 &&
+				yPosition > 175){
+			entrP.setName(careerName.getText());
+			entrP.setCareer("venture 3");
+			entrP.setIncome(20000);
+			entrP.setSavedMoney(50000);
+			entrP.setRisk(8);
+			sbg.enterState(2);			
 		}
 		
 	}
