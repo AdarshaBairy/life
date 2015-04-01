@@ -233,7 +233,6 @@ public class GameMain extends BasicGameState{
 			showNotification = false;
 		}
 
-
 		if(gameboard.getCurrentSpace().getType().equals("end")){
 			showNotification = true;
 			//If the player clicks on safe
