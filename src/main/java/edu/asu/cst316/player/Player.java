@@ -23,11 +23,11 @@ public class Player {
 	 * @param savedMoney
 	 * @param heldCards
 	 */
-	public Player(String name, String career, int income, int savedMoney) {
+	public Player(String name, String career, int income, int savedMoney, int risk) {
 		this.name = name;
 		this.career = career;
 		this.income = income;
-		this.risk = 1;
+		this.risk = risk;
 		this.savedMoney = savedMoney;
 	}	
 	
@@ -86,5 +86,4 @@ public class Player {
 	savedMoney = savedMoney + (income/(risk/2)) + (income *(rand.nextInt(risk) + 1 ));
 	
 	}
-	
 }
