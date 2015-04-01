@@ -131,7 +131,7 @@ public class GameMain extends BasicGameState{
 		xPosition < 490 &&
 		yPosition < 180 &&
 		yPosition > 20){
-			gameboard.movePlayer(1);
+			gameboard.movePlayer(10);
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
 			System.out.println(gameboard.getCurrentSpace().getType());
 		}
@@ -238,7 +238,7 @@ public class GameMain extends BasicGameState{
 				cardColor = greenCard.getScaledCopy((float) .8);}
 			else{cardType = "fail";}
 			*/
-			cardText = cardgenerator.getFinalCardText();
+			//cardText = cardgenerator.getFinalCardText();
 		}
 		
 		//When the player lands on a fork space they will see a window giving 
@@ -341,10 +341,16 @@ public class GameMain extends BasicGameState{
 		g.drawImage(player, 336, 136);
 		if(showNotification){
 			g.drawImage(notification, 0, 0);
+			Font font = new Font("Verdana", Font.PLAIN, 28);
+			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
+			TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 100, 420, 120);
+			cardTextBox.setText("You have a decision to make!");
+			cardTextBox.setBorderColor(new Color(0, 0, 0, 0));
+			cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
+			cardTextBox.render(gc, g);
 		}
 		if(showEventWindow){
 			g.drawImage(eventWindow, 0, 0);
-			g.drawString(cardText, 250, 40);
 			Font font = new Font("Verdana", Font.PLAIN, 20);
 			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
 			TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 100, 420, 120);

@@ -98,7 +98,11 @@ public class GameBoard {
 			playerSpace.getType().equals("payday") &&
 			playerSpace.getType().equals("end")){
 				i = moveAmount;
-			}
+			}	
+		}
+		
+		if(playerSpace.getType().equals("join")){
+			playerSpace = playerSpace.getNextSpace();
 		}
 	}
 	
