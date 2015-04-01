@@ -95,15 +95,7 @@ public class HighScoresPage extends BasicGameState{
 			System.out.println(entrP.getName());
 			System.out.println(entrP.getSavedMoney());
 			*/
-			HighScores highScores = HighScores.getInstance();
-			List<PlayerRecord> playerRecords = highScores.getHighScoreList();
-			playerRecordEntries = new String[playerRecords.size()];
 			
-			for (int i = 0; i < playerRecords.size() && i < 10; i++) {
-				playerRecordEntries[i] = (i+1)+". "+playerRecords.get(i).getPlayerName()
-						+"    "+playerRecords.get(i).getScore();
-			}
-			highScores.serialize();
 			
 			System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 			isThisState = false;
@@ -122,6 +114,20 @@ public class HighScoresPage extends BasicGameState{
 			g.drawString(playerRecordEntries[i], 100, 200 + i*30);
 		}
 	}
+	
+	@Override
+	public void enter(GameContainer container, StateBasedGame game) {
+		HighScores highScores = HighScores.getInstance();
+		List<PlayerRecord> playerRecords = highScores.getHighScoreList();
+		playerRecordEntries = new String[playerRecords.size()];
+		
+		for (int i = 0; i < playerRecords.size() && i < 10; i++) {
+			playerRecordEntries[i] = (i+1)+". "+playerRecords.get(i).getPlayerName()
+					+"    "+playerRecords.get(i).getScore();
+		}
+		highScores.serialize();
+	}
+	
 	
 	//id for the class instructions
 	public int getID(){
