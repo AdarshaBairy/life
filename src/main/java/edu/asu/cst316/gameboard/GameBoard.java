@@ -70,7 +70,7 @@ public class GameBoard {
 
 		assignPositions2(-256, 470);
 		
-
+		assignPaydayType();
 		playerSpace = startSpace;
 		
 	}

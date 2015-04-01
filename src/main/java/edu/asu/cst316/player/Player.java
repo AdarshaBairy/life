@@ -88,10 +88,11 @@ public class Player {
 		this.risk = risk;
 	}
 	
-	public void payDay(){
+	public int payDay(){
 		
 		Random rand = new Random();
-		savedMoney = savedMoney + (income/(risk/2)) + (income *(rand.nextInt(risk) + 1 ));
-		
+		int incomeValue = (income/(risk/2)) + (income *(rand.nextInt(risk) + 1 ));
+		savedMoney = savedMoney + incomeValue;
+		return incomeValue;
 	}
 }

@@ -194,7 +194,8 @@ public class GameMain extends BasicGameState{
 		if(updatePlayer){
 			for(int i = 0; i < spinNum; i++){
 				gameboard.movePlayer(1);
-				if( "fork".equals(gameboard.getCurrentSpace().getType()) ){
+				if( "fork".equals(gameboard.getCurrentSpace().getType()) ||
+				"payday".equals(gameboard.getCurrentSpace().getType()) ){
 					i = spinNum;
 				}
 			}
@@ -225,6 +226,11 @@ public class GameMain extends BasicGameState{
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+				}else if(gameboard.getCurrentSpace().getType().equals("payday")){
+					//Card newCard = deck.getGreenCard();
+					cardText = "Payday!";
+					int incomeValue = playerObj.payDay();
+					cardText += " You earn "+incomeValue;
 				}
 				System.out.println(cardText);
 				System.out.println(playerObj.getSavedMoney());
