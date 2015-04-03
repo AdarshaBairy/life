@@ -13,7 +13,7 @@ public class Game extends StateBasedGame{
 	public static final int fullboard = 4;
 	public static final int charCreation = 5;
 	public static final int historyCards = 6;
-	public static final int notification = 9;
+	public static final int highScores = 9;
 
 	
 	
@@ -26,6 +26,7 @@ public class Game extends StateBasedGame{
 		this.addState(new FullBoard(fullboard));
 		this.addState(new CharacterCreationMenu(charCreation));
 		this.addState(new HistoryCards(historyCards));
+		this.addState(new HighScoresPage(highScores));
 	}
 	
 	public void initStatesList(GameContainer gc) throws SlickException{
@@ -36,6 +37,7 @@ public class Game extends StateBasedGame{
 		this.getState(fullboard).init(gc, this);
 		this.getState(charCreation).init(gc, this);
 		this.getState(historyCards).init(gc, this);
+		this.getState(highScores).init(gc, this);
 		this.enterState(menu);
 	}
 	
