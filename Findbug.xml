@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="1" timestamp="1427883794142" analysisTimestamp="1427883737982" release="">
-  <Project projectName="gameoflife">
-    <Jar>C:\Users\Owner\Desktop\cst316\project\316Life\life\bin</Jar>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\bin</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\slick\lib\jinput.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\slick\lib\lwjgl.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\slick\lib\lwjgl_util.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\slick\lib\slick.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\ibxm.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\jinput.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\jnlp.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\jogg-0.0.7.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\jorbis-0.0.15.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\lwjgl_util_applet.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\lwjgl_util.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\lwjgl.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\natives-linux.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\natives-mac.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\natives-windows.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\Pack200Task.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\slick-examples.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\slick.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Desktop\cst316\project\316Life\life\slick\lib\tinylinepp.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\eclipse\plugins\org.junit_4.11.0.v201303080030\junit.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\eclipse\plugins\org.hamcrest.core_1.3.0.v201303031735.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Owner\Java\jre7\lib\rt.jar</AuxClasspathEntry>
-    <SrcDir>C:\Users\Owner\Desktop\cst316\project\316Life\life\src</SrcDir>
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="1" timestamp="1428110555978" analysisTimestamp="1428110553701" release="">
+  <Project projectName="life">
+    <Jar>C:\Users\Moo\cst316\life\bin</Jar>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\ibxm.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\jinput.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\jnlp.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\jogg-0.0.7.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\jorbis-0.0.15.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\lwjgl_util_applet.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\lwjgl_util.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\lwjgl.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\natives-linux.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\natives-mac.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\natives-windows.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\Pack200Task.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\slick-examples.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\slick.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\slick\lib\tinylinepp.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\jar\jacocoagent.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\jar\jacocoant.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\jar\junit.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\jar\org.jacoco.agent-0.7.4.201502262128.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\jar\org.jacoco.ant-0.7.4.201502262128.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\jar\org.jacoco.core-0.7.4.201502262128.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Moo\cst316\life\jar\org.jacoco.report-0.7.4.201502262128.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jdk1.8.0_25\jre\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\Moo\cst316\life\src</SrcDir>
     <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
   </Project>
   <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="17" abbrev="UuF" category="STYLE" first="1">
@@ -34,21 +35,49 @@
       <SourceLine classname="main.java.edu.asu.cst316.CharacterCreationMenu" sourcefile="CharacterCreationMenu.java" sourcepath="main/java/edu/asu/cst316/CharacterCreationMenu.java"/>
     </Class>
     <Field classname="main.java.edu.asu.cst316.CharacterCreationMenu" name="font" signature="Lorg/newdawn/slick/UnicodeFont;" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.CharacterCreationMenu" start="25" end="25" startBytecode="0" endBytecode="0" sourcefile="CharacterCreationMenu.java" sourcepath="main/java/edu/asu/cst316/CharacterCreationMenu.java"/>
+      <SourceLine classname="main.java.edu.asu.cst316.CharacterCreationMenu" start="26" end="26" startBytecode="0" endBytecode="0" sourcefile="CharacterCreationMenu.java" sourcepath="main/java/edu/asu/cst316/CharacterCreationMenu.java"/>
     </Field>
+  </BugInstance>
+  <BugInstance type="DM_EXIT" priority="2" rank="16" abbrev="Dm" category="BAD_PRACTICE" first="1">
+    <Class classname="main.java.edu.asu.cst316.GameMain">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Class>
+    <Method classname="main.java.edu.asu.cst316.GameMain" name="update" signature="(Lorg/newdawn/slick/GameContainer;Lorg/newdawn/slick/state/StateBasedGame;I)V" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="126" end="396" startBytecode="0" endBytecode="3187" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Method>
+    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="366" end="366" startBytecode="1731" endBytecode="1731" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="366" end="366" startBytecode="1731" endBytecode="1731" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
   </BugInstance>
   <BugInstance type="IP_PARAMETER_IS_DEAD_BUT_OVERWRITTEN" priority="2" rank="8" abbrev="IP" category="CORRECTNESS" first="1">
     <Class classname="main.java.edu.asu.cst316.GameMain">
       <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
     </Class>
     <Method classname="main.java.edu.asu.cst316.GameMain" name="getSpinNum" signature="(I)I" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="335" end="341" startBytecode="0" endBytecode="17" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="525" end="531" startBytecode="0" endBytecode="17" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
     </Method>
     <LocalVariable name="sNum" register="1" pc="33" role="LOCAL_VARIABLE_NAMED"/>
     <Field classname="main.java.edu.asu.cst316.GameMain" name="sNum" signature="I" isStatic="false" role="FIELD_DID_YOU_MEAN">
       <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
     </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="340" end="340" startBytecode="32" endBytecode="32" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="530" end="530" startBytecode="32" endBytecode="32" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="main.java.edu.asu.cst316.GameMain">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Class>
+    <Field classname="main.java.edu.asu.cst316.GameMain" name="cardValue" signature="I" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="61" end="61" startBytecode="71" endBytecode="71" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="main.java.edu.asu.cst316.GameMain">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Class>
+    <Field classname="main.java.edu.asu.cst316.GameMain" name="defaultImage" signature="Z" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="83" end="83" startBytecode="101" endBytecode="101" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
   </BugInstance>
   <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
     <Class classname="main.java.edu.asu.cst316.GameMain">
@@ -57,7 +86,7 @@
     <Field classname="main.java.edu.asu.cst316.GameMain" name="shouldSpin" signature="Z" isStatic="false">
       <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
     </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="64" end="64" startBytecode="80" endBytecode="80" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="82" end="82" startBytecode="96" endBytecode="96" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
   </BugInstance>
   <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
     <Class classname="main.java.edu.asu.cst316.GameMain">
@@ -66,7 +95,52 @@
     <Field classname="main.java.edu.asu.cst316.GameMain" name="spun" signature="Z" isStatic="false">
       <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
     </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="63" end="63" startBytecode="75" endBytecode="75" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="81" end="81" startBytecode="91" endBytecode="91" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="main.java.edu.asu.cst316.GameMain">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Class>
+    <Field classname="main.java.edu.asu.cst316.GameMain" name="wheel" signature="Lorg/newdawn/slick/Image;" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="447" end="447" startBytecode="485" endBytecode="485" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" first="1">
+    <Class classname="main.java.edu.asu.cst316.GameMain">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Class>
+    <Field classname="main.java.edu.asu.cst316.GameMain" name="blueCard" signature="Lorg/newdawn/slick/Image;" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="117" end="117" startBytecode="206" endBytecode="206" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" first="1">
+    <Class classname="main.java.edu.asu.cst316.GameMain">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Class>
+    <Field classname="main.java.edu.asu.cst316.GameMain" name="cardType" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="37" end="37" startBytecode="27" endBytecode="27" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" first="1">
+    <Class classname="main.java.edu.asu.cst316.GameMain">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Class>
+    <Field classname="main.java.edu.asu.cst316.GameMain" name="greenCard" signature="Lorg/newdawn/slick/Image;" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="118" end="118" startBytecode="219" endBytecode="219" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" first="1">
+    <Class classname="main.java.edu.asu.cst316.GameMain">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Class>
+    <Field classname="main.java.edu.asu.cst316.GameMain" name="redCard" signature="Lorg/newdawn/slick/Image;" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="119" end="119" startBytecode="232" endBytecode="232" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
   </BugInstance>
   <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" first="1">
     <Class classname="main.java.edu.asu.cst316.GameMain">
@@ -75,14 +149,22 @@
     <Field classname="main.java.edu.asu.cst316.GameMain" name="spinner" signature="Lorg/newdawn/slick/Image;" isStatic="false">
       <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
     </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="80" end="80" startBytecode="67" endBytecode="67" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="103" end="103" startBytecode="93" endBytecode="93" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="main.java.edu.asu.cst316.GameMain">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Class>
+    <Field classname="main.java.edu.asu.cst316.GameMain" name="cardColor" signature="Lorg/newdawn/slick/Image;" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="68" end="68" startBytecode="0" endBytecode="0" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    </Field>
   </BugInstance>
   <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
     <Class classname="main.java.edu.asu.cst316.GameMain">
       <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
     </Class>
     <Field classname="main.java.edu.asu.cst316.GameMain" name="mouseX" signature="F" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="58" end="58" startBytecode="0" endBytecode="0" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="76" end="76" startBytecode="0" endBytecode="0" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
     </Field>
   </BugInstance>
   <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
@@ -90,67 +172,135 @@
       <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
     </Class>
     <Field classname="main.java.edu.asu.cst316.GameMain" name="mouseY" signature="F" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="59" end="59" startBytecode="0" endBytecode="0" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="77" end="77" startBytecode="0" endBytecode="0" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
     </Field>
   </BugInstance>
-  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
+  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="17" abbrev="UuF" category="STYLE" first="1">
     <Class classname="main.java.edu.asu.cst316.GameMain">
       <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
     </Class>
-    <Field classname="main.java.edu.asu.cst316.GameMain" name="wheel1" signature="Lorg/newdawn/slick/Image;" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="44" end="44" startBytecode="0" endBytecode="0" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    <Field classname="main.java.edu.asu.cst316.GameMain" name="playerSpaceColor" signature="Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="54" end="54" startBytecode="0" endBytecode="0" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
     </Field>
   </BugInstance>
-  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
-    <Class classname="main.java.edu.asu.cst316.GameMain">
-      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+  <BugInstance type="NP_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="14" abbrev="NP" category="STYLE" first="1">
+    <Class classname="main.java.edu.asu.cst316.HighScoresPage">
+      <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
     </Class>
-    <Field classname="main.java.edu.asu.cst316.GameMain" name="wheel2" signature="Lorg/newdawn/slick/Image;" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="45" end="45" startBytecode="0" endBytecode="0" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    <Method classname="main.java.edu.asu.cst316.HighScoresPage" name="updateBoardView" signature="(II)V" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" start="139" end="140" startBytecode="0" endBytecode="85" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
+    </Method>
+    <Field classname="main.java.edu.asu.cst316.HighScoresPage" name="instructions" signature="Lorg/newdawn/slick/Image;" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
     </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" start="139" end="139" startBytecode="13" endBytecode="13" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" start="139" end="139" startBytecode="13" endBytecode="13" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
   </BugInstance>
-  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
-    <Class classname="main.java.edu.asu.cst316.GameMain">
-      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="main.java.edu.asu.cst316.HighScoresPage">
+      <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
     </Class>
-    <Field classname="main.java.edu.asu.cst316.GameMain" name="wheel3" signature="Lorg/newdawn/slick/Image;" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="46" end="46" startBytecode="0" endBytecode="0" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    <Field classname="main.java.edu.asu.cst316.HighScoresPage" name="x" signature="I" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
     </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" start="31" end="31" startBytecode="22" endBytecode="22" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
   </BugInstance>
-  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
-    <Class classname="main.java.edu.asu.cst316.GameMain">
-      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="main.java.edu.asu.cst316.HighScoresPage">
+      <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
     </Class>
-    <Field classname="main.java.edu.asu.cst316.GameMain" name="wheel4" signature="Lorg/newdawn/slick/Image;" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="47" end="47" startBytecode="0" endBytecode="0" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    <Field classname="main.java.edu.asu.cst316.HighScoresPage" name="y" signature="I" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
     </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" start="30" end="30" startBytecode="17" endBytecode="17" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
   </BugInstance>
-  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
-    <Class classname="main.java.edu.asu.cst316.GameMain">
-      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" first="1">
+    <Class classname="main.java.edu.asu.cst316.HighScoresPage">
+      <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
     </Class>
-    <Field classname="main.java.edu.asu.cst316.GameMain" name="wheel5" signature="Lorg/newdawn/slick/Image;" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="48" end="48" startBytecode="0" endBytecode="0" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    <Field classname="main.java.edu.asu.cst316.HighScoresPage" name="entrP" signature="Lmain/java/edu/asu/cst316/player/Player;" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
     </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" start="33" end="33" startBytecode="29" endBytecode="29" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
   </BugInstance>
-  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
-    <Class classname="main.java.edu.asu.cst316.GameMain">
-      <SourceLine classname="main.java.edu.asu.cst316.GameMain" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" first="1">
+    <Class classname="main.java.edu.asu.cst316.HighScoresPage">
+      <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
     </Class>
-    <Field classname="main.java.edu.asu.cst316.GameMain" name="wheel6" signature="Lorg/newdawn/slick/Image;" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.GameMain" start="49" end="49" startBytecode="0" endBytecode="0" sourcefile="GameMain.java" sourcepath="main/java/edu/asu/cst316/GameMain.java"/>
+    <Field classname="main.java.edu.asu.cst316.HighScoresPage" name="instruc" signature="Lorg/newdawn/slick/Image;" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
     </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" start="139" end="139" startBytecode="16" endBytecode="16" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
+  </BugInstance>
+  <BugInstance type="UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="17" abbrev="UwF" category="STYLE" first="1">
+    <Class classname="main.java.edu.asu.cst316.HighScoresPage">
+      <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
+    </Class>
+    <Field classname="main.java.edu.asu.cst316.HighScoresPage" name="instructions" signature="Lorg/newdawn/slick/Image;" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
+    </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.HighScoresPage" start="139" end="139" startBytecode="2" endBytecode="2" sourcefile="HighScoresPage.java" sourcepath="main/java/edu/asu/cst316/HighScoresPage.java"/>
+  </BugInstance>
+  <BugInstance type="UC_USELESS_VOID_METHOD" priority="2" rank="17" abbrev="UC" category="STYLE" first="1">
+    <Class classname="main.java.edu.asu.cst316.Test">
+      <SourceLine classname="main.java.edu.asu.cst316.Test" sourcefile="Test.java" sourcepath="main/java/edu/asu/cst316/Test.java"/>
+    </Class>
+    <Method classname="main.java.edu.asu.cst316.Test" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="main.java.edu.asu.cst316.Test" start="13" end="78" startBytecode="0" endBytecode="114" sourcefile="Test.java" sourcepath="main/java/edu/asu/cst316/Test.java"/>
+    </Method>
+    <SourceLine classname="main.java.edu.asu.cst316.Test" start="78" end="78" startBytecode="16" endBytecode="16" sourcefile="Test.java" sourcepath="main/java/edu/asu/cst316/Test.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.Test" start="78" end="78" startBytecode="16" endBytecode="16" sourcefile="Test.java" sourcepath="main/java/edu/asu/cst316/Test.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" first="1">
+    <Class classname="main.java.edu.asu.cst316.cards.CardGenerator">
+      <SourceLine classname="main.java.edu.asu.cst316.cards.CardGenerator" sourcefile="CardGenerator.java" sourcepath="main/java/edu/asu/cst316/cards/CardGenerator.java"/>
+    </Class>
+    <Field classname="main.java.edu.asu.cst316.cards.CardGenerator" name="finalCardText" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.cards.CardGenerator" sourcefile="CardGenerator.java" sourcepath="main/java/edu/asu/cst316/cards/CardGenerator.java"/>
+    </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.cards.CardGenerator" start="11" end="11" startBytecode="19" endBytecode="19" sourcefile="CardGenerator.java" sourcepath="main/java/edu/asu/cst316/cards/CardGenerator.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" first="1">
+    <Class classname="main.java.edu.asu.cst316.cards.CardGenerator">
+      <SourceLine classname="main.java.edu.asu.cst316.cards.CardGenerator" sourcefile="CardGenerator.java" sourcepath="main/java/edu/asu/cst316/cards/CardGenerator.java"/>
+    </Class>
+    <Field classname="main.java.edu.asu.cst316.cards.CardGenerator" name="finalCardType" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.cards.CardGenerator" sourcefile="CardGenerator.java" sourcepath="main/java/edu/asu/cst316/cards/CardGenerator.java"/>
+    </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.cards.CardGenerator" start="12" end="12" startBytecode="25" endBytecode="25" sourcefile="CardGenerator.java" sourcepath="main/java/edu/asu/cst316/cards/CardGenerator.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="18" abbrev="UrF" category="STYLE" first="1">
+    <Class classname="main.java.edu.asu.cst316.cards.CardGenerator">
+      <SourceLine classname="main.java.edu.asu.cst316.cards.CardGenerator" sourcefile="CardGenerator.java" sourcepath="main/java/edu/asu/cst316/cards/CardGenerator.java"/>
+    </Class>
+    <Field classname="main.java.edu.asu.cst316.cards.CardGenerator" name="finalCardValue" signature="I" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.cards.CardGenerator" sourcefile="CardGenerator.java" sourcepath="main/java/edu/asu/cst316/cards/CardGenerator.java"/>
+    </Field>
+    <SourceLine classname="main.java.edu.asu.cst316.cards.CardGenerator" start="18" end="18" startBytecode="72" endBytecode="72" sourcefile="CardGenerator.java" sourcepath="main/java/edu/asu/cst316/cards/CardGenerator.java"/>
+  </BugInstance>
+  <BugInstance type="UR_UNINIT_READ" priority="1" rank="1" abbrev="UR" category="CORRECTNESS" first="1">
+    <Class classname="main.java.edu.asu.cst316.cards.CardGenerator">
+      <SourceLine classname="main.java.edu.asu.cst316.cards.CardGenerator" sourcefile="CardGenerator.java" sourcepath="main/java/edu/asu/cst316/cards/CardGenerator.java"/>
+    </Class>
+    <Method classname="main.java.edu.asu.cst316.cards.CardGenerator" name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;I)V" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.cards.CardGenerator" start="15" end="19" startBytecode="0" endBytecode="199" sourcefile="CardGenerator.java" sourcepath="main/java/edu/asu/cst316/cards/CardGenerator.java"/>
+    </Method>
+    <Field classname="main.java.edu.asu.cst316.cards.CardGenerator" name="cardValue" signature="I" isStatic="false">
+      <SourceLine classname="main.java.edu.asu.cst316.cards.CardGenerator" sourcefile="CardGenerator.java" sourcepath="main/java/edu/asu/cst316/cards/CardGenerator.java"/>
+    </Field>
+    <LocalVariable name="finalCardValue" register="3" pc="0" role="LOCAL_VARIABLE_DID_YOU_MEAN"/>
+    <SourceLine classname="main.java.edu.asu.cst316.cards.CardGenerator" start="18" end="18" startBytecode="69" endBytecode="69" sourcefile="CardGenerator.java" sourcepath="main/java/edu/asu/cst316/cards/CardGenerator.java"/>
   </BugInstance>
   <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
     <Class classname="main.java.edu.asu.cst316.gameboard.GameBoard">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Class>
     <Method classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="assignPositions2" signature="(II)V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="154" end="231" startBytecode="0" endBytecode="154" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="164" end="241" startBytecode="0" endBytecode="154" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Method>
     <LocalVariable name="x" register="1" pc="352" role="LOCAL_VARIABLE_NAMED"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="228" end="228" startBytecode="351" endBytecode="351" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="228" end="228" startBytecode="351" endBytecode="351" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="238" end="238" startBytecode="351" endBytecode="351" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="238" end="238" startBytecode="351" endBytecode="351" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.BASE_VALUE" value="true"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.IS_PARAMETER" value="true"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="x"/>
@@ -162,172 +312,128 @@
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Class>
     <Method classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="assignPositions2" signature="(II)V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="154" end="231" startBytecode="0" endBytecode="154" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="164" end="241" startBytecode="0" endBytecode="154" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Method>
     <LocalVariable name="y" register="2" pc="359" role="LOCAL_VARIABLE_NAMED"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="229" end="229" startBytecode="358" endBytecode="358" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="229" end="229" startBytecode="358" endBytecode="358" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="239" end="239" startBytecode="358" endBytecode="358" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="239" end="239" startBytecode="358" endBytecode="358" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.BASE_VALUE" value="true"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.IS_PARAMETER" value="true"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="y"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.MANY_STORES" value="true"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
   </BugInstance>
+  <BugInstance type="MS_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" first="1">
+    <Class classname="main.java.edu.asu.cst316.gameboard.GameBoard">
+      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    </Class>
+    <Field classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="currentSpace" signature="Lmain/java/edu/asu/cst316/gameboard/GameSpace;" isStatic="true">
+      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="20" end="20" startBytecode="0" endBytecode="0" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    </Field>
+  </BugInstance>
   <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="1" rank="15" abbrev="ST" category="STYLE" first="1">
     <Class classname="main.java.edu.asu.cst316.gameboard.GameBoard">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Class>
     <Method classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="assignPositions" signature="(II)V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="120" end="150" startBytecode="0" endBytecode="427" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="130" end="160" startBytecode="0" endBytecode="427" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Method>
     <Field classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="currentSpace" signature="Lmain/java/edu/asu/cst316/gameboard/GameSpace;" isStatic="true">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="120" end="120" startBytecode="6" endBytecode="6" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="120" end="120" startBytecode="6" endBytecode="6" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="130" end="130" startBytecode="6" endBytecode="6" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="130" end="130" startBytecode="6" endBytecode="6" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
   </BugInstance>
   <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="1" rank="15" abbrev="ST" category="STYLE" first="1">
     <Class classname="main.java.edu.asu.cst316.gameboard.GameBoard">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Class>
     <Method classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="assignPositions2" signature="(II)V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="154" end="231" startBytecode="0" endBytecode="704" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="164" end="241" startBytecode="0" endBytecode="704" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Method>
     <Field classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="currentSpace" signature="Lmain/java/edu/asu/cst316/gameboard/GameSpace;" isStatic="true">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="154" end="154" startBytecode="6" endBytecode="6" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="154" end="154" startBytecode="6" endBytecode="6" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="164" end="164" startBytecode="6" endBytecode="6" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="164" end="164" startBytecode="6" endBytecode="6" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
   </BugInstance>
   <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="1" rank="15" abbrev="ST" category="STYLE" first="1">
     <Class classname="main.java.edu.asu.cst316.gameboard.GameBoard">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Class>
     <Method classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="movePlayer" signature="(I)V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="91" end="100" startBytecode="0" endBytecode="190" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="94" end="110" startBytecode="0" endBytecode="249" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Method>
     <Field classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="playerSpace" signature="Lmain/java/edu/asu/cst316/gameboard/GameSpace;" isStatic="true">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="92" end="92" startBytecode="11" endBytecode="11" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="92" end="92" startBytecode="11" endBytecode="11" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="98" end="98" startBytecode="27" endBytecode="27" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="98" end="98" startBytecode="27" endBytecode="27" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
   </BugInstance>
   <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="1" rank="15" abbrev="ST" category="STYLE" first="1">
     <Class classname="main.java.edu.asu.cst316.gameboard.GameBoard">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Class>
     <Method classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="movePlayerToAlternativeRoute" signature="()V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="105" end="106" startBytecode="0" endBytecode="55" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="115" end="116" startBytecode="0" endBytecode="55" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Method>
     <Field classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="playerSpace" signature="Lmain/java/edu/asu/cst316/gameboard/GameSpace;" isStatic="true">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="105" end="105" startBytecode="6" endBytecode="6" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="105" end="105" startBytecode="6" endBytecode="6" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="115" end="115" startBytecode="6" endBytecode="6" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="115" end="115" startBytecode="6" endBytecode="6" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
   </BugInstance>
   <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="1" rank="15" abbrev="ST" category="STYLE" first="1">
     <Class classname="main.java.edu.asu.cst316.gameboard.GameBoard">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Class>
     <Method classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="reset" signature="()V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="76" end="77" startBytecode="0" endBytecode="52" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="79" end="80" startBytecode="0" endBytecode="52" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Method>
     <Field classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="playerSpace" signature="Lmain/java/edu/asu/cst316/gameboard/GameSpace;" isStatic="true">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="76" end="76" startBytecode="3" endBytecode="3" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="76" end="76" startBytecode="3" endBytecode="3" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="79" end="79" startBytecode="3" endBytecode="3" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="79" end="79" startBytecode="3" endBytecode="3" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
   </BugInstance>
   <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="2" rank="17" abbrev="ST" category="STYLE" first="1">
     <Class classname="main.java.edu.asu.cst316.gameboard.GameBoard">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Class>
     <Method classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="&lt;init&gt;" signature="()V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="20" end="73" startBytecode="0" endBytecode="674" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="23" end="76" startBytecode="0" endBytecode="679" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Method>
     <Field classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="commonSpaces" signature="[[Lmain/java/edu/asu/cst316/gameboard/GameSpace;" isStatic="true">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="23" end="23" startBytecode="35" endBytecode="35" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="23" end="23" startBytecode="35" endBytecode="35" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="26" end="26" startBytecode="35" endBytecode="35" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="26" end="26" startBytecode="35" endBytecode="35" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
   </BugInstance>
   <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="2" rank="17" abbrev="ST" category="STYLE" first="1">
     <Class classname="main.java.edu.asu.cst316.gameboard.GameBoard">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Class>
     <Method classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="&lt;init&gt;" signature="()V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="20" end="73" startBytecode="0" endBytecode="674" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="23" end="76" startBytecode="0" endBytecode="679" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Method>
     <Field classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="greenSpaces" signature="[[Lmain/java/edu/asu/cst316/gameboard/GameSpace;" isStatic="true">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="22" end="22" startBytecode="27" endBytecode="27" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="22" end="22" startBytecode="27" endBytecode="27" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="25" end="25" startBytecode="27" endBytecode="27" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="25" end="25" startBytecode="27" endBytecode="27" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
   </BugInstance>
   <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="2" rank="17" abbrev="ST" category="STYLE" first="1">
     <Class classname="main.java.edu.asu.cst316.gameboard.GameBoard">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Class>
     <Method classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="&lt;init&gt;" signature="()V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="20" end="73" startBytecode="0" endBytecode="674" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="23" end="76" startBytecode="0" endBytecode="679" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Method>
     <Field classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="redSpaces" signature="[[Lmain/java/edu/asu/cst316/gameboard/GameSpace;" isStatic="true">
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
     </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="24" end="24" startBytecode="43" endBytecode="43" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="24" end="24" startBytecode="43" endBytecode="43" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-  </BugInstance>
-  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="3" rank="20" abbrev="ST" category="STYLE" first="1">
-    <Class classname="main.java.edu.asu.cst316.gameboard.GameBoard">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    </Class>
-    <Method classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="&lt;init&gt;" signature="()V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="20" end="73" startBytecode="0" endBytecode="674" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    </Method>
-    <Field classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="currentSpace" signature="Lmain/java/edu/asu/cst316/gameboard/GameSpace;" isStatic="true">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="60" end="60" startBytecode="371" endBytecode="371" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="60" end="60" startBytecode="371" endBytecode="371" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-  </BugInstance>
-  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="3" rank="20" abbrev="ST" category="STYLE" first="1">
-    <Class classname="main.java.edu.asu.cst316.gameboard.GameBoard">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    </Class>
-    <Method classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="&lt;init&gt;" signature="()V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="20" end="73" startBytecode="0" endBytecode="674" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    </Method>
-    <Field classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="endSpace" signature="Lmain/java/edu/asu/cst316/gameboard/GameSpace;" isStatic="true">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="42" end="42" startBytecode="162" endBytecode="162" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="42" end="42" startBytecode="162" endBytecode="162" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-  </BugInstance>
-  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="3" rank="20" abbrev="ST" category="STYLE" first="1">
-    <Class classname="main.java.edu.asu.cst316.gameboard.GameBoard">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    </Class>
-    <Method classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="&lt;init&gt;" signature="()V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="20" end="73" startBytecode="0" endBytecode="674" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    </Method>
-    <Field classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="playerSpace" signature="Lmain/java/edu/asu/cst316/gameboard/GameSpace;" isStatic="true">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="71" end="71" startBytecode="409" endBytecode="409" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="71" end="71" startBytecode="409" endBytecode="409" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-  </BugInstance>
-  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="3" rank="20" abbrev="ST" category="STYLE" first="1">
-    <Class classname="main.java.edu.asu.cst316.gameboard.GameBoard">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    </Class>
-    <Method classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="&lt;init&gt;" signature="()V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="20" end="73" startBytecode="0" endBytecode="674" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    </Method>
-    <Field classname="main.java.edu.asu.cst316.gameboard.GameBoard" name="startSpace" signature="Lmain/java/edu/asu/cst316/gameboard/GameSpace;" isStatic="true">
-      <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="59" end="59" startBytecode="351" endBytecode="351" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
-    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="59" end="59" startBytecode="351" endBytecode="351" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="27" end="27" startBytecode="43" endBytecode="43" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
+    <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameBoard" start="27" end="27" startBytecode="43" endBytecode="43" sourcefile="GameBoard.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameBoard.java"/>
   </BugInstance>
   <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="17" abbrev="UuF" category="STYLE" first="1">
     <Class classname="main.java.edu.asu.cst316.gameboard.GameSpace">
@@ -337,74 +443,81 @@
       <SourceLine classname="main.java.edu.asu.cst316.gameboard.GameSpace" start="10" end="10" startBytecode="0" endBytecode="0" sourcefile="GameSpace.java" sourcepath="main/java/edu/asu/cst316/gameboard/GameSpace.java"/>
     </Field>
   </BugInstance>
-  <BugInstance type="SE_NO_SERIALVERSIONID" priority="3" rank="19" abbrev="SnVI" category="BAD_PRACTICE" first="1">
-    <Class classname="main.java.edu.asu.cst316.menu.ButtonArray">
-      <SourceLine classname="main.java.edu.asu.cst316.menu.ButtonArray" start="15" end="35" sourcefile="ButtonArray.java" sourcepath="main/java/edu/asu/cst316/menu/ButtonArray.java"/>
-    </Class>
-  </BugInstance>
-  <BugInstance type="UR_UNINIT_READ" priority="2" rank="3" abbrev="UR" category="CORRECTNESS" first="1">
-    <Class classname="main.java.edu.asu.cst316.player.Player">
-      <SourceLine classname="main.java.edu.asu.cst316.player.Player" sourcefile="Player.java" sourcepath="main/java/edu/asu/cst316/player/Player.java"/>
-    </Class>
-    <Method classname="main.java.edu.asu.cst316.player.Player" name="&lt;init&gt;" signature="()V" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.player.Player" start="21" end="27" startBytecode="0" endBytecode="110" sourcefile="Player.java" sourcepath="main/java/edu/asu/cst316/player/Player.java"/>
-    </Method>
-    <Field classname="main.java.edu.asu.cst316.player.Player" name="name" signature="Ljava/lang/String;" isStatic="false">
-      <SourceLine classname="main.java.edu.asu.cst316.player.Player" sourcefile="Player.java" sourcepath="main/java/edu/asu/cst316/player/Player.java"/>
-    </Field>
-    <SourceLine classname="main.java.edu.asu.cst316.player.Player" start="22" end="22" startBytecode="6" endBytecode="6" sourcefile="Player.java" sourcepath="main/java/edu/asu/cst316/player/Player.java"/>
-  </BugInstance>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Wed, 1 Apr 2015 03:12:13 -0700" total_classes="20" referenced_classes="129" total_bugs="30" total_size="997" num_packages="5" java_version="1.7.0_11" vm_version="23.6-b04" cpu_seconds="62.48" clock_seconds="667.68" peak_mbytes="298.71" alloc_mbytes="455.12" gc_seconds="5.99" priority_3="5" priority_2="20" priority_1="5">
-    <PackageStats package="main.java.edu.asu.cst316" total_bugs="13" total_types="9" total_size="519" priority_2="13">
-      <ClassStats class="main.java.edu.asu.cst316.CharacterCreationMenu" sourceFile="CharacterCreationMenu.java" interface="false" size="76" bugs="1" priority_2="1"/>
+  <FindBugsSummary timestamp="Fri, 3 Apr 2015 16:45:57 -0700" total_classes="31" referenced_classes="167" total_bugs="40" total_size="1459" num_packages="7" java_version="1.8.0_25" vm_version="25.25-b02" cpu_seconds="12.18" clock_seconds="24.20" peak_mbytes="358.98" alloc_mbytes="455.50" gc_seconds="0.04" priority_2="34" priority_1="6">
+    <PackageStats package="main.java.edu.asu.cst316" total_bugs="24" total_types="11" total_size="781" priority_2="24">
+      <ClassStats class="main.java.edu.asu.cst316.CharacterCreationMenu" sourceFile="CharacterCreationMenu.java" interface="false" size="89" bugs="1" priority_2="1"/>
       <ClassStats class="main.java.edu.asu.cst316.EventNotification" sourceFile="EventNotification.java" interface="false" size="28" bugs="0"/>
       <ClassStats class="main.java.edu.asu.cst316.FullBoard" sourceFile="FullBoard.java" interface="false" size="28" bugs="0"/>
-      <ClassStats class="main.java.edu.asu.cst316.Game" sourceFile="Game.java" interface="false" size="39" bugs="0"/>
-      <ClassStats class="main.java.edu.asu.cst316.GameMain" sourceFile="GameMain.java" interface="false" size="230" bugs="12" priority_2="12"/>
+      <ClassStats class="main.java.edu.asu.cst316.Game" sourceFile="Game.java" interface="false" size="41" bugs="0"/>
+      <ClassStats class="main.java.edu.asu.cst316.GameMain" sourceFile="GameMain.java" interface="false" size="379" bugs="16" priority_2="16"/>
+      <ClassStats class="main.java.edu.asu.cst316.HighScoresPage" sourceFile="HighScoresPage.java" interface="false" size="61" bugs="6" priority_2="6"/>
       <ClassStats class="main.java.edu.asu.cst316.HistoryCards" sourceFile="HistoryCards.java" interface="false" size="28" bugs="0"/>
-      <ClassStats class="main.java.edu.asu.cst316.Instructions" sourceFile="Instructions.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="main.java.edu.asu.cst316.Instructions" sourceFile="Instructions.java" interface="false" size="56" bugs="0"/>
       <ClassStats class="main.java.edu.asu.cst316.Menu" sourceFile="Menu.java" interface="false" size="34" bugs="0"/>
       <ClassStats class="main.java.edu.asu.cst316.Notification" sourceFile="Notification.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="main.java.edu.asu.cst316.Test" sourceFile="Test.java" interface="false" size="9" bugs="1" priority_2="1"/>
     </PackageStats>
-    <PackageStats package="main.java.edu.asu.cst316.gameboard" total_bugs="15" total_types="2" total_size="238" priority_3="4" priority_2="6" priority_1="5">
-      <ClassStats class="main.java.edu.asu.cst316.gameboard.GameBoard" sourceFile="GameBoard.java" interface="false" size="185" bugs="14" priority_3="4" priority_2="5" priority_1="5"/>
+    <PackageStats package="main.java.edu.asu.cst316.cards" total_bugs="4" total_types="5" total_size="131" priority_2="3" priority_1="1">
+      <ClassStats class="main.java.edu.asu.cst316.cards.Card" sourceFile="Card.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="main.java.edu.asu.cst316.cards.CardGenerator" sourceFile="CardGenerator.java" interface="false" size="39" bugs="4" priority_2="3" priority_1="1"/>
+      <ClassStats class="main.java.edu.asu.cst316.cards.CardText" sourceFile="CardText.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="main.java.edu.asu.cst316.cards.Deck" sourceFile="Deck.java" interface="false" size="57" bugs="0"/>
+      <ClassStats class="main.java.edu.asu.cst316.cards.PlayerCards" sourceFile="PlayerCards.java" interface="false" size="3" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="main.java.edu.asu.cst316.gameboard" total_bugs="12" total_types="2" total_size="243" priority_2="7" priority_1="5">
+      <ClassStats class="main.java.edu.asu.cst316.gameboard.GameBoard" sourceFile="GameBoard.java" interface="false" size="190" bugs="11" priority_2="6" priority_1="5"/>
       <ClassStats class="main.java.edu.asu.cst316.gameboard.GameSpace" sourceFile="GameSpace.java" interface="false" size="53" bugs="1" priority_2="1"/>
     </PackageStats>
-    <PackageStats package="main.java.edu.asu.cst316.menu" total_bugs="1" total_types="3" total_size="57" priority_3="1">
+    <PackageStats package="main.java.edu.asu.cst316.highscore" total_bugs="0" total_types="3" total_size="72">
+      <ClassStats class="main.java.edu.asu.cst316.highscore.HighScores" sourceFile="HighScores.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="main.java.edu.asu.cst316.highscore.HighScores$1" sourceFile="HighScores.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="main.java.edu.asu.cst316.highscore.PlayerRecord" sourceFile="PlayerRecord.java" interface="false" size="21" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="main.java.edu.asu.cst316.menu" total_bugs="0" total_types="3" total_size="57">
       <ClassStats class="main.java.edu.asu.cst316.menu.Button" sourceFile="Button.java" interface="false" size="14" bugs="0"/>
-      <ClassStats class="main.java.edu.asu.cst316.menu.ButtonArray" sourceFile="ButtonArray.java" interface="false" size="19" bugs="1" priority_3="1"/>
+      <ClassStats class="main.java.edu.asu.cst316.menu.ButtonArray" sourceFile="ButtonArray.java" interface="false" size="19" bugs="0"/>
       <ClassStats class="main.java.edu.asu.cst316.menu.StateChangingMouseOverArea" sourceFile="StateChangingMouseOverArea.java" interface="false" size="24" bugs="0"/>
     </PackageStats>
-    <PackageStats package="main.java.edu.asu.cst316.player" total_bugs="1" total_types="2" total_size="91" priority_2="1">
-      <ClassStats class="main.java.edu.asu.cst316.player.Player" sourceFile="Player.java" interface="false" size="55" bugs="1" priority_2="1"/>
-      <ClassStats class="main.java.edu.asu.cst316.player.PlayerTest" sourceFile="PlayerTest.java" interface="false" size="36" bugs="0"/>
+    <PackageStats package="main.java.edu.asu.cst316.player" total_bugs="0" total_types="1" total_size="44">
+      <ClassStats class="main.java.edu.asu.cst316.player.Player" sourceFile="Player.java" interface="false" size="44" bugs="0"/>
     </PackageStats>
-    <PackageStats package="test.java.edu.asu.cst316" total_bugs="0" total_types="4" total_size="92">
+    <PackageStats package="test.java.edu.asu.cst316" total_bugs="0" total_types="6" total_size="131">
       <ClassStats class="test.java.edu.asu.cst316.FullBoardTest" sourceFile="FullBoardTest.java" interface="false" size="10" bugs="0"/>
       <ClassStats class="test.java.edu.asu.cst316.GameBoardTest" sourceFile="GameBoardTest.java" interface="false" size="51" bugs="0"/>
       <ClassStats class="test.java.edu.asu.cst316.GameMainTest" sourceFile="GameMainTest.java" interface="false" size="10" bugs="0"/>
       <ClassStats class="test.java.edu.asu.cst316.GameSpaceTest" sourceFile="GameSpaceTest.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="test.java.edu.asu.cst316.PlayerTest" sourceFile="PlayerTest.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="test.java.edu.asu.cst316.TestHighScores" sourceFile="TestHighScores.java" interface="false" size="3" bugs="0"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="2377" invocations="2" avgMicrosecondsPerInvocation="1188888" maxMicrosecondsPerInvocation="1250201" standardDeviationMircosecondsPerInvocation="61322"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="1965" invocations="641" avgMicrosecondsPerInvocation="3065" maxMicrosecondsPerInvocation="642057" standardDeviationMircosecondsPerInvocation="25775"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="1048" invocations="639" avgMicrosecondsPerInvocation="1641" maxMicrosecondsPerInvocation="100398" standardDeviationMircosecondsPerInvocation="5819"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="750" invocations="129" avgMicrosecondsPerInvocation="5820" maxMicrosecondsPerInvocation="48025" standardDeviationMircosecondsPerInvocation="9146"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="689" invocations="129" avgMicrosecondsPerInvocation="5341" maxMicrosecondsPerInvocation="62461" standardDeviationMircosecondsPerInvocation="9461"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="553" invocations="380" avgMicrosecondsPerInvocation="1456" maxMicrosecondsPerInvocation="23318" standardDeviationMircosecondsPerInvocation="2155"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="419" invocations="122" avgMicrosecondsPerInvocation="3436" maxMicrosecondsPerInvocation="48929" standardDeviationMircosecondsPerInvocation="6849"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="309" invocations="123" avgMicrosecondsPerInvocation="2515" maxMicrosecondsPerInvocation="66086" standardDeviationMircosecondsPerInvocation="7574"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="304" invocations="122" avgMicrosecondsPerInvocation="2492" maxMicrosecondsPerInvocation="44302" standardDeviationMircosecondsPerInvocation="5670"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="287" invocations="122" avgMicrosecondsPerInvocation="2354" maxMicrosecondsPerInvocation="30895" standardDeviationMircosecondsPerInvocation="4780"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="280" invocations="129" avgMicrosecondsPerInvocation="2172" maxMicrosecondsPerInvocation="27161" standardDeviationMircosecondsPerInvocation="4389"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="227" invocations="122" avgMicrosecondsPerInvocation="1867" maxMicrosecondsPerInvocation="65798" standardDeviationMircosecondsPerInvocation="6138"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="215" invocations="123" avgMicrosecondsPerInvocation="1748" maxMicrosecondsPerInvocation="29574" standardDeviationMircosecondsPerInvocation="3809"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="187" invocations="122" avgMicrosecondsPerInvocation="1536" maxMicrosecondsPerInvocation="50242" standardDeviationMircosecondsPerInvocation="7393"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="346" invocations="2" avgMicrosecondsPerInvocation="173165" maxMicrosecondsPerInvocation="177980" standardDeviationMircosecondsPerInvocation="4797"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="237" invocations="850" avgMicrosecondsPerInvocation="279" maxMicrosecondsPerInvocation="39152" standardDeviationMircosecondsPerInvocation="1491"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="105" invocations="167" avgMicrosecondsPerInvocation="631" maxMicrosecondsPerInvocation="10493" standardDeviationMircosecondsPerInvocation="1266"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="98" invocations="852" avgMicrosecondsPerInvocation="115" maxMicrosecondsPerInvocation="3863" standardDeviationMircosecondsPerInvocation="195"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="81" invocations="167" avgMicrosecondsPerInvocation="488" maxMicrosecondsPerInvocation="4558" standardDeviationMircosecondsPerInvocation="823"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="77" invocations="504" avgMicrosecondsPerInvocation="152" maxMicrosecondsPerInvocation="2536" standardDeviationMircosecondsPerInvocation="266"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="76" invocations="170" avgMicrosecondsPerInvocation="450" maxMicrosecondsPerInvocation="16185" standardDeviationMircosecondsPerInvocation="1436"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="72" invocations="172" avgMicrosecondsPerInvocation="420" maxMicrosecondsPerInvocation="14242" standardDeviationMircosecondsPerInvocation="1401"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="68" invocations="170" avgMicrosecondsPerInvocation="402" maxMicrosecondsPerInvocation="23813" standardDeviationMircosecondsPerInvocation="1871"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="65" invocations="169" avgMicrosecondsPerInvocation="385" maxMicrosecondsPerInvocation="9345" standardDeviationMircosecondsPerInvocation="956"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="55" invocations="172" avgMicrosecondsPerInvocation="324" maxMicrosecondsPerInvocation="8338" standardDeviationMircosecondsPerInvocation="863"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="50" invocations="170" avgMicrosecondsPerInvocation="299" maxMicrosecondsPerInvocation="9782" standardDeviationMircosecondsPerInvocation="928"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="37" invocations="215" avgMicrosecondsPerInvocation="176" maxMicrosecondsPerInvocation="12011" standardDeviationMircosecondsPerInvocation="861"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="37" invocations="170" avgMicrosecondsPerInvocation="220" maxMicrosecondsPerInvocation="24004" standardDeviationMircosecondsPerInvocation="1832"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="35" invocations="117" avgMicrosecondsPerInvocation="300" maxMicrosecondsPerInvocation="7665" standardDeviationMircosecondsPerInvocation="781"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="34" invocations="167" avgMicrosecondsPerInvocation="207" maxMicrosecondsPerInvocation="6439" standardDeviationMircosecondsPerInvocation="561"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.StreamResourceTracker" totalMilliseconds="34" invocations="24" avgMicrosecondsPerInvocation="1434" maxMicrosecondsPerInvocation="4189" standardDeviationMircosecondsPerInvocation="1286"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="28" invocations="167" avgMicrosecondsPerInvocation="172" maxMicrosecondsPerInvocation="4072" standardDeviationMircosecondsPerInvocation="466"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="27" invocations="167" avgMicrosecondsPerInvocation="162" maxMicrosecondsPerInvocation="6698" standardDeviationMircosecondsPerInvocation="568"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="26" invocations="31" avgMicrosecondsPerInvocation="863" maxMicrosecondsPerInvocation="15981" standardDeviationMircosecondsPerInvocation="2996"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="25" invocations="167" avgMicrosecondsPerInvocation="154" maxMicrosecondsPerInvocation="8422" standardDeviationMircosecondsPerInvocation="667"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="23" invocations="170" avgMicrosecondsPerInvocation="135" maxMicrosecondsPerInvocation="3178" standardDeviationMircosecondsPerInvocation="387"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="21" invocations="806" avgMicrosecondsPerInvocation="27" maxMicrosecondsPerInvocation="612" standardDeviationMircosecondsPerInvocation="46"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>
   <History>
-    <AppVersion sequence="0" timestamp="1427883794122" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="0" timestamp="1428110555974" release="" codeSize="0" numClasses="0"/>
   </History>
 </BugCollection>
