@@ -5,3 +5,5 @@
 /junit
 jacoco.exec
 /jacoco-report
+.classpath
+highscores.list

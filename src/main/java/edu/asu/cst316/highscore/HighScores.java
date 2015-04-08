@@ -1,5 +1,6 @@
 package main.java.edu.asu.cst316.highscore;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -57,6 +58,18 @@ public class HighScores {
 	//Start new high score list
 	public void init(){
 		highScoreList = new ArrayList<PlayerRecord>();
+	}
+	
+	//Deletes the serialized high score list 
+	public boolean deleteFile(){
+		File file = new File("highscores.list");
+		return file.delete();
+	}
+	
+	//Checks to see if an existing high score list has been serialized
+	public boolean checkForExistingFile(){
+		File file = new File("highscores.list");
+		return file.exists() && !file.isDirectory();
 	}
 	
 	//Record the player's score and then sort the list by the player's score
