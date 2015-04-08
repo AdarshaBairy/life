@@ -26,4 +26,9 @@ public class GameMainTest extends TestCase {
 		
 	}
 	
+	@Test
+	public void testSpinWheel(){
+		
+	}
+	
 }
