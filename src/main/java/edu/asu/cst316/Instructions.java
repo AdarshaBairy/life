@@ -89,6 +89,7 @@ public class Instructions extends BasicGameState{
 		g.drawImage(background, 0, 0);
 		g.drawImage(instruc, 40, 175);
 		g.drawString(mouse, 10, 10);
+		
 	}
 	
 	//id for the class instructions
@@ -100,5 +101,6 @@ public class Instructions extends BasicGameState{
 	public void updateBoardView(int x, int y){
 		instruc = instructions.getSubImage(x, y, 800, 340);
 	}
-
+	
+	
 }
