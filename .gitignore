@@ -3,3 +3,5 @@
 /target
 /.metadata
 /junit
+jacoco.exec
+/jacoco-report

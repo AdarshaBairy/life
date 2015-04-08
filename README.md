@@ -1,7 +1,10 @@
-Ant Build Instructions
+#Ant Targets 
 
-//Run the program
-ant life
-
-//Run junit tests
-ant junit
+##ant clean
+##ant prepare
+##ant compile
+##ant life
+##ant junit
+##ant jacoco
+##ant pmd
+##ant findbugs

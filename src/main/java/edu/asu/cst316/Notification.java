@@ -1,6 +1,4 @@
-
 package main.java.edu.asu.cst316;
-
 
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.GameContainer;
@@ -13,16 +11,25 @@ import org.newdawn.slick.state.StateBasedGame;
 
 
 
-public class FullBoard extends BasicGameState{
+public class Notification extends BasicGameState{
+	
 	public String mouse = "";
 	public Image background;
 	
-	public FullBoard(int state){
+	public Notification(int state){
 	}
 
 	@Override
-	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		background = new Image("images/fullboard.png");
+	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException {
+		
+		background = new Image("images/HistoryCard.png");
+		
+	}
+
+	@Override
+	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+		g.drawImage(background, 0, 0);
+		g.drawString(mouse, 10, 10);
 	}
 
 	@Override
@@ -44,14 +51,9 @@ public class FullBoard extends BasicGameState{
 	}
 
 	@Override
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-		g.drawImage(background, 0, 0);
-		g.drawString(mouse, 10, 10);
+	public int getID() {
+		
+		return 9;
 	}
-	
-	public int getID(){
-		return 4;
-	}
-	
-}
 
+}

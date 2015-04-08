@@ -1,101 +1,230 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?eclipse.ant.import?>
-<project basedir="." default="build" name="gameoflife">
-    <property environment="env"/>
-    <property name="junit.output.dir" value="junit"/>
-    <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.8"/>
-    <property name="source" value="1.8"/>
-    <path id="gameoflife.classpath">
-        <pathelement location="bin"/>
-        <pathelement location="slick/lib/ibxm.jar"/>
-        <pathelement location="slick/lib/jinput.jar"/>
-        <pathelement location="slick/lib/jnlp.jar"/>
-        <pathelement location="slick/lib/jogg-0.0.7.jar"/>
-        <pathelement location="slick/lib/jorbis-0.0.15.jar"/>
-        <pathelement location="slick/lib/lwjgl_util_applet.jar"/>
-        <pathelement location="slick/lib/lwjgl_util.jar"/>
-        <pathelement location="slick/lib/lwjgl.jar"/>
-        <pathelement location="slick/lib/natives-linux.jar"/>
-        <pathelement location="slick/lib/natives-mac.jar"/>
-        <pathelement location="slick/lib/natives-windows.jar"/>
-        <pathelement location="slick/lib/slick-examples.jar"/>
-        <pathelement location="slick/lib/slick.jar"/>
-        <pathelement location="slick/lib/tinylinepp.jar"/>
-        <pathelement location="jar/junit.jar"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="life" xmlns:jacoco="antlib:org.jacoco.ant">
+	<property name="src" value="src"/>
+	<property name="bin" value="bin"/>
+	<property name="slick" value="slick"/>
+	<property name="jacoco-report" value="jacoco-report"/>
+	<property name="junit-report" value="junit-report"/>
+	<property name="build.junitreport.dir" value="jacoco-report"/>
+	<property name="build.jacocoreport.dir" value="junit-report"/>
+	<property name="jar" value="jar"/>
+
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+		<classpath path="${jar}/jacocoant.jar"/>
+    </taskdef>
+	
+	<path id="all.classpath">
+		<path refid="bin.classpath"/>
+		<path refid="slick.classpath"/>
+		<path refid="jar.classpath"/>
+	</path>
+	
+	<path id="bin.classpath">    
+		<pathelement location="bin"/>
     </path>
-    <target name="init">
-        <mkdir dir="bin"/>
-        <copy includeemptydirs="false" todir="bin">
-            <fileset dir="src">
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="clean">
+	
+	<path id="slick.classpath">
+		<fileset dir="slick/lib">
+			<include name="**/*.jar"/>
+		</fileset> 
+	</path>
+	
+	<path id="jar.classpath">    
+		<fileset dir="jar">
+			<include name="**/*.jar"/>
+		</fileset> 
+    </path>
+	
+	<target name="prepare">
+		<mkdir dir="bin" />
+	</target>
+	
+	<target name="compile" depends="prepare">
+		<javac srcdir="${src}" includeantruntime="false" destdir="bin">
+			<classpath refid="all.classpath"/>
+		</javac>
+	</target>
+	
+	<target name="build" depends="compile"></target>
+	
+	<target name="targets">
+		<echo message="Targets: are clean, prepare, compile, life, junit, junitreport"/>
+	</target>
+	
+	<target name="clean">
         <delete dir="bin"/>
+		<delete dir="junit-report"/>
+		<delete dir="jacoco-report"/>
     </target>
-    <target depends="clean" name="cleanall"/>
-    <target depends="build-subprojects,build-project" name="build"/>
-    <target name="build-subprojects"/>
-    <target depends="init" name="build-project">
-        <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
-            <src path="src"/>
-            <classpath refid="gameoflife.classpath"/>
-        </javac>
-    </target>
-    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
-        <copy todir="${ant.library.dir}">
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </copy>
-        <unzip dest="${ant.library.dir}">
-            <patternset includes="jdtCompilerAdapter.jar"/>
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </unzip>
-    </target>
-    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
-        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
-        <antcall target="build"/>
-    </target>
-    <target name="GameBoardTest.setUpBeforeClass">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="test.java.edu.asu.cst316.GameBoardTest" todir="${junit.output.dir}"/>
-            <classpath refid="gameoflife.classpath"/>
-        </junit>
-    </target>
-    <target name="GameBoardTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="test.java.edu.asu.cst316.GameBoardTest" todir="${junit.output.dir}"/>
-            <classpath refid="gameoflife.classpath"/>
-        </junit>
-    </target>
-    <target name="junit">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="test.java.edu.asu.cst316.FullBoardTest" todir="${junit.output.dir}"/>
-            <test name="test.java.edu.asu.cst316.GameBoardTest" todir="${junit.output.dir}"/>
-            <classpath refid="gameoflife.classpath"/>
-        </junit>
-    </target>
-    <target name="life">
+		
+    <target name="life" depends="compile">
         <java classname="main.java.edu.asu.cst316.Game" failonerror="true" fork="yes">
-            <classpath refid="gameoflife.classpath"/>
-        	<sysproperty key="java.library.path" path="slick"/>
+            <classpath refid="all.classpath"/>
+			<sysproperty key="java.library.path" value="slick"/>
         </java>
     </target>
-    <target name="junitreport">
-        <junitreport todir="${junit.output.dir}">
-            <fileset dir="${junit.output.dir}">
-                <include name="TEST-*.xml"/>
+	
+<!--	
+	<target name="junit" depends="compile">
+		<delete dir="junit-report"/>
+		<mkdir dir="junit-report"/>
+		<delete dir="jacoco-report"/>
+		<mkdir dir="jacoco-report"/> 
+		
+		<jacoco:coverage>
+			<junit fork="yes" printsummary="withOutAndErr" haltonfailure="no">
+				<classpath refid="all.classpath"/>	
+				<formatter type="xml"/>
+				<batchtest todir="junit-report">
+					<fileset dir="src">
+						<include name="**/*Test*.java"/>
+					</fileset>
+				</batchtest>
+			</junit>
+		</jacoco:coverage>  
+		
+	
+		<junitreport todir="junit-report">
+			<fileset dir="junit-report">
+			   <include name="TEST-*.xml"/>
+			</fileset>
+			<report format="frames" styledir="." todir="junit-report" />
+		</junitreport>
+		
+		
+		<echo message="JUnit results in complete"/>
+		<jacoco:report>
+		  <executiondata>
+			<file file="jacoco-report/jacoco.exec"/>
+		  </executiondata>
+		  <structure name="Life">
+			<classfiles>
+			   <pathelement location="bin"/>
+			</classfiles>
+			<sourcefiles encoding="UTF-8">
+			   <fileset dir="src"/>
+			</sourcefiles>
+		  </structure>
+		  <html destdir="jacoco-report"/>
+		  <xml destfile="jacoco-report"/>
+		  <csv destfile="jacoco-report"/>
+		</jacoco:report>
+
+	</target>
+-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	<property name="findbugs.home" value="/opt/findbugs-3.0.1" />
+	<target name="findbugs" depends="build">
+	  <findbugs home="${findbugs.home}"
+              output="xml"
+              outputFile="CST316a.xml" >
+	    <sourcePath path="${src}" />
+	    <!--<class location="${classes}" />-->
+		<classpath refid="all.classpath"/>	
+	  </findbugs>
+	</target>
+	
+	<property name="pmd.home" location="/opt/pmd-bin-5.1.0" />
+	<path id="pmd.classpath">
+	    	<fileset dir="${pmd.home}/lib" includes="*.jar" />
+	</path>
+	<taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
+	<target name="pmd">
+ 		<pmd shortFilenames="true">
+  			<sourceLanguage name="java" version="1.8"/>
+  			<ruleset>rulesets/java/design.xml</ruleset>
+  			<ruleset>java-basic</ruleset>
+  			<formatter type="html" toFile="pmd_report_fromant.html">
+    				<param name="linkPrefix" value="http://pmd.sourceforge.net/xref/"/>
+  			</formatter>
+  			<fileset dir="${src}">
+   				<include name="**/*.java"/>
+  			</fileset>
+ 		</pmd>
+	</target>
+
+
+	<target name="junit" depends="compile">
+
+
+
+    <delete dir="${build.jacocoreport.dir}"/>
+    <mkdir dir="${build.jacocoreport.dir}"/> 
+	<delete dir="${build.junitreport.dir}"/>
+    <mkdir dir="${build.junitreport.dir}"/> 
+
+    <echo message="JUnit testing is running..."/>
+    <jacoco:coverage>
+      <junit printsummary="withOutAndErr" haltonfailure="no" fork="on">      
+        <sysproperty key="java.library.path" value="slick"/>
+		<classpath refid="all.classpath"/>
+        <formatter type="xml"/>
+        <batchtest todir="${build.junitreport.dir}">
+            <fileset dir="${src}">
+                <include name="**/*Test.java"/>
             </fileset>
-            <report format="frames" todir="${junit.output.dir}"/>
-        </junitreport>
-    </target>
+        </batchtest>
+      </junit>
+    </jacoco:coverage>  
+
+    <junitreport todir="${build.junitreport.dir}">
+        <fileset dir="${build.junitreport.dir}">
+           <include name="TEST-*.xml"/>
+        </fileset>
+        <report todir="${build.junitreport.dir}" />
+    </junitreport>
+	</target>
+
+	
+
+	<target name="jacoco" depends="compile">
+
+		<jacoco:coverage destfile="jacoco.exec">
+			<java classname="main.java.edu.asu.cst316.GameMain" fork="true">
+				<classpath path="slick" />
+				<classpath path="bin/main/java/edu/asu/cst316" />
+				<classpath path="bin/main/java/edu/asu/cst316/GameBoard" />
+				<classpath path="bin/main/java/edu/asu/cst316/MenuSystem" />
+				<classpath path="slick/lib" />
+				<classpath path="jar" />
+			</java>
+		</jacoco:coverage>
+
+		<jacoco:report>
+
+
+			<executiondata>
+				<file file="jacoco.exec" />
+			</executiondata>
+
+
+			<structure name="JaCoCo Ant Example">
+				<classfiles>
+					<fileset dir="bin/main/java/edu/asu/cst316" />
+				</classfiles>
+			</structure>
+
+
+			<html destdir="jacoco-report" />
+			<csv destfile="jacoco-report/report.csv" />
+			<xml destfile="jacoco-report/report.xml" />
+		</jacoco:report>
+	</target>
+	
+
+	
+  
+
+
 </project>
