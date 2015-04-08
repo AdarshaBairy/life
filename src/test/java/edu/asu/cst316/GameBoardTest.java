@@ -17,11 +17,11 @@ public class GameBoardTest extends TestCase {
 		assertTrue(gameboard.getCurrentSpace().getType().equals("start"));
 		
 		testChunkOfCommonAndRedSpaces(2);
-		testChunkOfCommonAndRedSpaces(8);
+		testChunkOfCommonAndRedSpaces(7);
+		testChunkOfCommonAndRedSpaces(2);
+		testChunkOfCommonAndRedSpaces(0);
 		testChunkOfCommonAndRedSpaces(3);
-		testChunkOfCommonAndRedSpaces(1);
-		testChunkOfCommonAndRedSpaces(4);
-		testChunkOfCommonAndRedSpaces(4);
+		testChunkOfCommonAndRedSpaces(3);
 		
 		gameboard.reset();
 	}
@@ -29,7 +29,7 @@ public class GameBoardTest extends TestCase {
 	public static void testChunkOfCommonAndRedSpaces(int commonSpacesLength){
 		for(int i = 0; i < commonSpacesLength; ++i){
 			gameboard.movePlayer(1);
-			assertTrue(gameboard.getCurrentSpace().getType().equals("common"));
+			assertTrue(gameboard.getCurrentSpace().getType().equals("common"));		
 		}	
 		gameboard.movePlayer(1);
 		assertTrue(gameboard.getCurrentSpace().getType().equals("fork"));	
@@ -38,7 +38,6 @@ public class GameBoardTest extends TestCase {
 			assertTrue(gameboard.getCurrentSpace().getType().equals("red"));
 		}		
 		gameboard.movePlayer(1);
-		assertTrue(gameboard.getCurrentSpace().getType().equals("join"));
 	}
 	
 	@Test
@@ -71,6 +70,25 @@ public class GameBoardTest extends TestCase {
 		gameboard.movePlayer(3);
 
 		//System.out.println(gameboard.getCurrentSpace().getAlternativeSpace().getType());
+		
+		gameboard.reset();
+	}
+	
+	
+	
+	@Test
+	public void testReset() {
+		gameboard.reset();
+		assertTrue(gameboard.getCurrentSpace().getType().equals("start"));
+		gameboard.movePlayer(3);
+		gameboard.reset();
+		assertTrue(gameboard.getCurrentSpace().getType().equals("start"));
+		gameboard.movePlayer(100);
+		gameboard.reset();
+		assertTrue(gameboard.getCurrentSpace().getType().equals("start"));
+		gameboard.movePlayer(-3);
+		gameboard.reset();
+		assertTrue(gameboard.getCurrentSpace().getType().equals("start"));
 		
 		gameboard.reset();
 	}

@@ -95,13 +95,17 @@ public class GameBoard {
 			moveAmount = 0;
 		}
 		for(int i = 0; i < moveAmount; ++i){
-			playerSpace = playerSpace.getNextSpace();
-			if(playerSpace.getType().equals("fork") &&
-			playerSpace.getType().equals("milestone") &&
-			playerSpace.getType().equals("payday") &&
-			playerSpace.getType().equals("end")){
-				i = moveAmount;
-			}	
+			if(playerSpace.getNextSpace() != null){
+				playerSpace = playerSpace.getNextSpace();
+			}
+			if(playerSpace != null){
+				if("fork".equals(playerSpace.getType()) &&
+				"milestone".equals(playerSpace.getType()) &&
+				"payday".equals(playerSpace.getType()) &&
+				"end".equals(playerSpace.getType())){
+					i = moveAmount;
+				}	
+			}
 		}
 		
 		if(playerSpace.getType().equals("join")){
