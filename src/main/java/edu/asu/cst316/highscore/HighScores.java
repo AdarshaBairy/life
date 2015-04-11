@@ -1,5 +1,6 @@
 package main.java.edu.asu.cst316.highscore;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -12,7 +13,17 @@ import java.util.Comparator;
 
 public class HighScores {
 
+	private static HighScores highScores = new HighScores();
+	
 	private List<PlayerRecord> highScoreList;
+	
+	private HighScores(){
+		highScoreList = new ArrayList<PlayerRecord>();
+	};
+	
+	public static HighScores getInstance(){
+		return highScores;
+	}
 	
 	//Read the high score list to a file
 	@SuppressWarnings("unchecked")
@@ -49,6 +60,18 @@ public class HighScores {
 		highScoreList = new ArrayList<PlayerRecord>();
 	}
 	
+	//Deletes the serialized high score list 
+	public boolean deleteFile(){
+		File file = new File("highscores.list");
+		return file.delete();
+	}
+	
+	//Checks to see if an existing high score list has been serialized
+	public boolean checkForExistingFile(){
+		File file = new File("highscores.list");
+		return file.exists() && !file.isDirectory();
+	}
+	
 	//Record the player's score and then sort the list by the player's score
 	public void addPlayerRecord(String name, int score){
 		PlayerRecord currentPlayer = new PlayerRecord();
@@ -58,8 +81,12 @@ public class HighScores {
 		Collections.sort(highScoreList, new Comparator<PlayerRecord>() {
 			@Override
 			public int compare(PlayerRecord pr1, PlayerRecord pr2) {
-				return  pr1.getScore() > pr2.getScore() ? 1 : -1;
+				return  pr1.getScore() < pr2.getScore() ? 1 : -1;
 			}
 		});
+	}
+	
+	public List<PlayerRecord> getHighScoreList(){
+		return highScoreList;
 	}
 }
