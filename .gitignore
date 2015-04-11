@@ -5,3 +5,4 @@
 /junit
 jacoco.exec
 /jacoco-report
+.project
