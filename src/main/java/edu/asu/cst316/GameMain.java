@@ -332,7 +332,6 @@ public class GameMain extends BasicGameState{
 			showNotification = false;
 		}
 
-		
 		if(gameboard.getCurrentSpace().getType().equals("end")){
 			showEndGameWindow = true;
 			if(input.isMouseButtonDown(0) &&

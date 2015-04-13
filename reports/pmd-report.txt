@@ -1,0 +1,320 @@
+src/main/java/edu/asu/cst316/GameMain.java:6:	Avoid unused imports such as 'main.java.edu.asu.cst316.cards.CardText'
+src/main/java/edu/asu/cst316/GameMain.java:8:	Avoid unused imports such as 'main.java.edu.asu.cst316.gameboard.GameSpace'
+src/main/java/edu/asu/cst316/GameMain.java:21:	The class 'GameMain' has a Cyclomatic Complexity of 10 (Highest = 55).
+src/main/java/edu/asu/cst316/GameMain.java:21:	The class 'GameMain' has a Modified Cyclomatic Complexity of 6 (Highest = 24).
+src/main/java/edu/asu/cst316/GameMain.java:21:	The class 'GameMain' has a Standard Cyclomatic Complexity of 6 (Highest = 24).
+src/main/java/edu/asu/cst316/GameMain.java:21:	Too many fields
+src/main/java/edu/asu/cst316/GameMain.java:21:	headerCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:23:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:23:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:25:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:25:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:26:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:26:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:27:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:27:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:28:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:28:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:29:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:29:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:30:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:30:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:31:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:31:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:32:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:32:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:33:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:33:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:34:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:34:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:35:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:35:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:36:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:36:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:38:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:38:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:39:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:39:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:41:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:41:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:41:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:42:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:44:	Avoid using redundant field initializer for 'spinNum'
+src/main/java/edu/asu/cst316/GameMain.java:44:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:44:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:44:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:45:	Avoid using redundant field initializer for 'sNum'
+src/main/java/edu/asu/cst316/GameMain.java:45:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:45:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:45:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:46:	Avoid using redundant field initializer for 'centerOfImageX'
+src/main/java/edu/asu/cst316/GameMain.java:46:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:46:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:46:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:47:	Avoid using redundant field initializer for 'centerOfImageY'
+src/main/java/edu/asu/cst316/GameMain.java:47:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:47:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:47:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:48:	Avoid using redundant field initializer for 'spinCount'
+src/main/java/edu/asu/cst316/GameMain.java:48:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:48:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:48:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:49:	Avoid using redundant field initializer for 'cardValue'
+src/main/java/edu/asu/cst316/GameMain.java:49:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:49:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:49:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:50:	Avoid using redundant field initializer for 'cardDisplayTime'
+src/main/java/edu/asu/cst316/GameMain.java:50:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:50:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:50:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:52:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:52:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:52:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:53:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:53:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:53:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:54:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:54:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:54:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:55:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:55:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:55:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:56:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:56:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:56:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:58:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:58:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:58:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:59:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:59:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:59:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:61:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:61:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:61:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:62:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:62:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:62:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:64:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:64:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:65:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:65:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:67:	Avoid using redundant field initializer for 'mouseOverSpin'
+src/main/java/edu/asu/cst316/GameMain.java:67:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:67:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:67:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:68:	Avoid using redundant field initializer for 'spinClicked'
+src/main/java/edu/asu/cst316/GameMain.java:68:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:68:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:68:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:69:	Avoid using redundant field initializer for 'spun'
+src/main/java/edu/asu/cst316/GameMain.java:69:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:69:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:70:	Avoid using redundant field initializer for 'shouldSpin'
+src/main/java/edu/asu/cst316/GameMain.java:70:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:70:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:71:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:71:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:71:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:72:	Avoid using redundant field initializer for 'spinAnimation'
+src/main/java/edu/asu/cst316/GameMain.java:72:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:72:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:72:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:73:	Avoid using redundant field initializer for 'showNotification'
+src/main/java/edu/asu/cst316/GameMain.java:73:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:73:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:73:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:74:	Avoid using redundant field initializer for 'showEventWindow'
+src/main/java/edu/asu/cst316/GameMain.java:74:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:74:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:74:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:75:	Avoid using redundant field initializer for 'cardGenerated'
+src/main/java/edu/asu/cst316/GameMain.java:75:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:75:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:75:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:76:	Avoid using redundant field initializer for 'cardSelected'
+src/main/java/edu/asu/cst316/GameMain.java:76:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/GameMain.java:76:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:76:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:78:	Avoid unused constructor parameters such as 'state'.
+src/main/java/edu/asu/cst316/GameMain.java:78:	Document empty constructor
+src/main/java/edu/asu/cst316/GameMain.java:78:	It is a good practice to call super() in a constructor
+src/main/java/edu/asu/cst316/GameMain.java:78:	Parameter 'state' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:78:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:82:	Avoid variables with short names like gc
+src/main/java/edu/asu/cst316/GameMain.java:82:	Parameter 'gc' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:82:	Parameter 'sbg' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:82:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:91:	Comment is too large: Line too long
+src/main/java/edu/asu/cst316/GameMain.java:92:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:94:	Comment is too large: Line too long
+src/main/java/edu/asu/cst316/GameMain.java:110:	Avoid really long methods.
+src/main/java/edu/asu/cst316/GameMain.java:110:	Avoid variables with short names like gc
+src/main/java/edu/asu/cst316/GameMain.java:110:	Parameter 'delta' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:110:	Parameter 'gc' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:110:	Parameter 'sbg' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:110:	The method 'update' has a Cyclomatic Complexity of 55.
+src/main/java/edu/asu/cst316/GameMain.java:110:	The method 'update' has a Modified Cyclomatic Complexity of 24.
+src/main/java/edu/asu/cst316/GameMain.java:110:	The method 'update' has a Standard Cyclomatic Complexity of 24.
+src/main/java/edu/asu/cst316/GameMain.java:110:	The method update() has an NPath complexity of 1135503360
+src/main/java/edu/asu/cst316/GameMain.java:110:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:112:	Local variable 'xPosition' could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:113:	Local variable 'yPosition' could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:114:	Local variable 'input' could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:117:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/edu/asu/cst316/GameMain.java:123:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:123:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:123:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:123:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:126:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/edu/asu/cst316/GameMain.java:155:	This statement may have some unnecessary parentheses
+src/main/java/edu/asu/cst316/GameMain.java:155:	Useless parentheses.
+src/main/java/edu/asu/cst316/GameMain.java:155:	Useless parentheses.
+src/main/java/edu/asu/cst316/GameMain.java:158:	Found 'DD'-anomaly for variable 'updatePlayer' (lines '158'-'164').
+src/main/java/edu/asu/cst316/GameMain.java:160:	Avoid using Literals in Conditional Statements
+src/main/java/edu/asu/cst316/GameMain.java:168:	This statement may have some unnecessary parentheses
+src/main/java/edu/asu/cst316/GameMain.java:168:	Useless parentheses.
+src/main/java/edu/asu/cst316/GameMain.java:168:	Useless parentheses.
+src/main/java/edu/asu/cst316/GameMain.java:171:	Avoid using Literals in Conditional Statements
+src/main/java/edu/asu/cst316/GameMain.java:179:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:180:	Found 'DD'-anomaly for variable 'i' (lines '180'-'177').
+src/main/java/edu/asu/cst316/GameMain.java:183:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:183:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:183:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:183:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:184:	Comment is too large: Line too long
+src/main/java/edu/asu/cst316/GameMain.java:190:	Found 'DU'-anomaly for variable 'updatePlayer' (lines '190'-'271').
+src/main/java/edu/asu/cst316/GameMain.java:197:	Local variable 'cardgenerator' could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:197:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:198:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:199:	Avoid using Literals in Conditional Statements
+src/main/java/edu/asu/cst316/GameMain.java:199:	Use equals() to compare strings instead of '==' or '!='
+src/main/java/edu/asu/cst316/GameMain.java:201:	Avoid using Literals in Conditional Statements
+src/main/java/edu/asu/cst316/GameMain.java:201:	Use equals() to compare strings instead of '==' or '!='
+src/main/java/edu/asu/cst316/GameMain.java:203:	Avoid using Literals in Conditional Statements
+src/main/java/edu/asu/cst316/GameMain.java:203:	Use equals() to compare strings instead of '==' or '!='
+src/main/java/edu/asu/cst316/GameMain.java:207:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/edu/asu/cst316/GameMain.java:212:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:212:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:215:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/edu/asu/cst316/GameMain.java:221:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:221:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:221:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:221:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:224:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/edu/asu/cst316/GameMain.java:230:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:230:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:230:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:230:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:236:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:236:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:239:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/edu/asu/cst316/GameMain.java:245:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:245:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:245:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:245:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:248:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/edu/asu/cst316/GameMain.java:254:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:254:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:254:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:254:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:264:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/edu/asu/cst316/GameMain.java:274:	Avoid variables with short names like g
+src/main/java/edu/asu/cst316/GameMain.java:274:	Avoid variables with short names like gc
+src/main/java/edu/asu/cst316/GameMain.java:274:	Parameter 'g' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:274:	Parameter 'gc' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:274:	Parameter 'sbg' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:274:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:294:	Useless parentheses.
+src/main/java/edu/asu/cst316/GameMain.java:294:	Useless parentheses.
+src/main/java/edu/asu/cst316/GameMain.java:295:	Useless parentheses.
+src/main/java/edu/asu/cst316/GameMain.java:295:	Useless parentheses.
+src/main/java/edu/asu/cst316/GameMain.java:299:	Use equals() to compare strings instead of '==' or '!='
+src/main/java/edu/asu/cst316/GameMain.java:313:	Avoid unnecessary comparisons in boolean expressions
+src/main/java/edu/asu/cst316/GameMain.java:317:	System.out.println is used
+src/main/java/edu/asu/cst316/GameMain.java:341:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:347:	Comment is too large: Line too long
+src/main/java/edu/asu/cst316/GameMain.java:351:	Avoid variables with short names like x
+src/main/java/edu/asu/cst316/GameMain.java:351:	Avoid variables with short names like y
+src/main/java/edu/asu/cst316/GameMain.java:351:	Parameter 'x' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:351:	Parameter 'y' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:351:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/GameMain.java:352:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:357:	Avoid reassigning parameters such as 'sNum'
+src/main/java/edu/asu/cst316/GameMain.java:357:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/GameMain.java:361:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/edu/asu/cst316/GameMain.java:363:	Local variable 'rand' could be declared final
+src/main/java/edu/asu/cst316/GameMain.java:364:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/edu/asu/cst316/GameMain.java:364:	Useless parentheses.
+src/main/java/edu/asu/cst316/GameMain.java:364:	Useless parentheses.
+src/main/java/edu/asu/cst316/Menu.java:12:	Avoid short class names like Menu
+src/main/java/edu/asu/cst316/Menu.java:12:	The class 'Menu' has a Cyclomatic Complexity of 3 (Highest = 11).
+src/main/java/edu/asu/cst316/Menu.java:12:	headerCommentRequirement Required
+src/main/java/edu/asu/cst316/Menu.java:13:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/Menu.java:13:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/Menu.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/Menu.java:14:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/Menu.java:16:	Avoid unused constructor parameters such as 'state'.
+src/main/java/edu/asu/cst316/Menu.java:16:	Document empty constructor
+src/main/java/edu/asu/cst316/Menu.java:16:	It is a good practice to call super() in a constructor
+src/main/java/edu/asu/cst316/Menu.java:16:	Parameter 'state' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/Menu.java:16:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/Menu.java:20:	Avoid variables with short names like gc
+src/main/java/edu/asu/cst316/Menu.java:20:	Parameter 'gc' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/Menu.java:20:	Parameter 'sbg' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/Menu.java:20:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/Menu.java:25:	Avoid variables with short names like gc
+src/main/java/edu/asu/cst316/Menu.java:25:	Avoid variables with short names like i
+src/main/java/edu/asu/cst316/Menu.java:25:	Parameter 'gc' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/Menu.java:25:	Parameter 'i' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/Menu.java:25:	Parameter 'sbg' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/Menu.java:25:	The method 'update' has a Cyclomatic Complexity of 11.
+src/main/java/edu/asu/cst316/Menu.java:25:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/Menu.java:26:	Local variable 'xPosition' could be declared final
+src/main/java/edu/asu/cst316/Menu.java:27:	Local variable 'yPosition' could be declared final
+src/main/java/edu/asu/cst316/Menu.java:28:	Local variable 'input' could be declared final
+src/main/java/edu/asu/cst316/Menu.java:32:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/edu/asu/cst316/Menu.java:42:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/edu/asu/cst316/Menu.java:54:	Avoid variables with short names like g
+src/main/java/edu/asu/cst316/Menu.java:54:	Avoid variables with short names like gc
+src/main/java/edu/asu/cst316/Menu.java:54:	Parameter 'g' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/Menu.java:54:	Parameter 'gc' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/Menu.java:54:	Parameter 'sbg' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/Menu.java:54:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/Menu.java:59:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:5:	headerCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:7:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:7:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:8:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:9:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:9:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:11:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:12:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:13:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:13:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:15:	Avoid unused constructor parameters such as 'finalCardText'.
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:15:	Avoid unused constructor parameters such as 'finalCardType'.
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:15:	Avoid unused constructor parameters such as 'finalCardValue'.
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:15:	Parameter 'finalCardText' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:15:	Parameter 'finalCardType' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:15:	Parameter 'finalCardValue' is not assigned and could be declared final
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:15:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:22:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:28:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:34:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:42:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:43:	Local variable 'rand' could be declared final
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:44:	Local variable 'cardNum' could be declared final
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:44:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:44:	This statement may have some unnecessary parentheses
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:44:	Useless parentheses.
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:44:	Useless parentheses.
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:49:	publicMethodCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:54:	Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:54:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:54:	Use explicit scoping instead of the default package private level
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:54:	fieldCommentRequirement Required
+src/main/java/edu/asu/cst316/cards/CardGenerator.java:60:	Comment is too large: Too many lines
