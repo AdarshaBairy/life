@@ -15,7 +15,7 @@ import org.junit.rules.ExpectedException;
 public class PlayerTest {
 	Player player = Player.getInstance();
 	@BeforeClass
-	public static void setUpBeforeClass() throws Expected {
+	public static void setUpBeforeClass() throws Exception {
 	}
 
 	@AfterClass
