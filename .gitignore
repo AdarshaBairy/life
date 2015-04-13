@@ -7,3 +7,4 @@ jacoco.exec
 /jacoco-report
 .classpath
 highscores.list
+pmd_report_fromant.html
