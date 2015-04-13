@@ -11,9 +11,9 @@ public class Deck {
 	private Card greenCards[];
 	
 	private Deck(){
-		commonCards = new Card[10];
-		redCards = new Card[10];
-		greenCards = new Card[10];
+		commonCards = new Card[39];
+		redCards = new Card[39];
+		greenCards = new Card[39];
 		
 		//Populate the deck with cards
 		commonCards[0] = new Card("You find a lucky penny and it increases business sales, you gain $4000", 4000);
@@ -56,7 +56,6 @@ public class Deck {
 		commonCards[37] = new Card("Your employees are happy to work for you and their work improves, you gain $2000", 2000);
 		commonCards[38] = new Card("You helped a long lost friend move out over the weekend he paid you, you gain $3000", 3000);
 		commonCards[39] = new Card("You have a leak in the roof of you building and heavy rain is expected it costs $3000", -3000);
-		commonCards[40] = new Card("Your electricity bill for your building was under budget this month, you gain $4000", 4000);
 		
 		redCards[0] = new Card("A tornado strikes your building to fix the damage it will cost $6000", -6000);
 		redCards[1] = new Card("You find a lucky penny and it increases business sales, you gain $8000", 8000);
@@ -98,7 +97,6 @@ public class Deck {
 		redCards[37] = new Card("A French man tells you he has a great investment opportunity, you say yes and give him money, he is never seen again and scammed you. You lost $9000", -9000);
 		redCards[38] = new Card("Your company got a booth at the country’s largest convention center, you gain $7500", 7500);
 		redCards[39] = new Card("A meteorite hits your house, to fix the damage pay $8000", -8000);
-		redCards[40] = new Card("You total your car and have to buy a new one pay $8000", -8000);
 				
 		greenCards[0] = new Card("Your water bill for your building was under budget this month, you gain $2000", 2000);
 		greenCards[1] = new Card("You ate bad sushi and must buy medicine pay $1000", -1000);
@@ -140,7 +138,6 @@ public class Deck {
 		greenCards[37] = new Card("The bees knees flat screen TV just came out and you buy it for $1500", -1500);
 		greenCards[38] = new Card("Your business is booming and you are doing very well, you gain $3000", 3000);
 		greenCards[39] = new Card("You pay for the company electric bill, it costs $2000", -2000);
-		greenCards[40] = new Card("While digging a trench you find some old gold coins and sell them, you gain $2000", 2000);
 	}
 	
 	public static Deck getInstance(){
@@ -151,21 +148,21 @@ public class Deck {
 	//Get a random common card from the deck
 	public Card getCommonCard(){
 		Random randomInt = new Random();
-		int cardIndex = randomInt.nextInt(9);
+		int cardIndex = randomInt.nextInt(39);
 		return commonCards[cardIndex];
 	}
 	
 	//Get a random red card from the deck
 	public Card getRedCard(){
 		Random randomInt = new Random();
-		int cardIndex = randomInt.nextInt(9);
+		int cardIndex = randomInt.nextInt(39);
 		return redCards[cardIndex];
 	}
 	
 	//Get a random green card from the deck
 	public Card getGreenCard(){
 		Random randomInt = new Random();
-		int cardIndex = randomInt.nextInt(9);
+		int cardIndex = randomInt.nextInt(39);
 		return greenCards[cardIndex];
 	}
 }
