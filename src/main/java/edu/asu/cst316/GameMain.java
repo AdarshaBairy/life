@@ -330,7 +330,7 @@ public class GameMain extends BasicGameState{
 		playerY = y;
 	}
 	
-	int getSpinNum(int sNum) {
+	public int getSpinNum(int sNum) {
 		try {
 		    Thread.sleep(250);                 //1000 milliseconds is one second.
 		} catch(InterruptedException ex) {

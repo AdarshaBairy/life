@@ -18,6 +18,7 @@ import junit.framework.TestCase;
 public class GameMainTest extends TestCase {
 	
 	private static GameMain gameMain = new GameMain(2);
+	int test;
 	
 	@Test
 	public void testState() {
@@ -28,6 +29,10 @@ public class GameMainTest extends TestCase {
 	
 	@Test
 	public void testSpinWheel(){
+		for (int i = 0; i < 100; i++){
+		gameMain.getSpinNum(test);
+		assertTrue((test >= 1) && (test <= 6));
+		}
 		
 	}
 	
