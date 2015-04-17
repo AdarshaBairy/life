@@ -77,6 +77,13 @@ public class HighScores {
 		PlayerRecord currentPlayer = new PlayerRecord();
 		currentPlayer.setPlayerName(name);
 		currentPlayer.setScore(score);
+		//Delete the player's old score 
+		for(int i = 0; i < highScoreList.size(); ++i){
+			if(highScoreList.get(i).getPlayerName().equals(name)){
+				highScoreList.remove(i);
+			}
+		}
+		//Replace old score with new score
 		highScoreList.add(currentPlayer);
 		Collections.sort(highScoreList, new Comparator<PlayerRecord>() {
 			@Override
