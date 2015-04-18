@@ -71,6 +71,7 @@ public class GameBoard {
 		assignPositions2(-256, 470);
 		
 		assignPaydayType();
+		assignMileStoneType();
 		playerSpace = startSpace;
 		
 	}
@@ -314,7 +315,7 @@ public class GameBoard {
 	//Used for assigning milestone type to the appropriate spaces
 	public static void assignMileStoneType(){
 		commonSpaces[1][0].setType("milestone");
-		commonSpaces[1][6].setType("milestone");
+		commonSpaces[1][7].setType("milestone");
 		commonSpaces[3][0].setType("milestone");
 		commonSpaces[4][0].setType("milestone");	
 	}

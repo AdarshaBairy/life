@@ -35,7 +35,7 @@ public class HighScores {
 			oin.close();
 			fis.close();
 		}catch(IOException e){
-		     e.printStackTrace();
+		    System.out.println("Highscore list not found, creating new one");
 		}catch(ClassNotFoundException e){
 		     e.printStackTrace();
 		}

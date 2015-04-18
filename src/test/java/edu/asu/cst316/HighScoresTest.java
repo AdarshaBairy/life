@@ -10,27 +10,7 @@ import junit.framework.TestCase;
 
 
 public class HighScoresTest {
-	@Test
-	public void testHighScoreList() {
-		HighScores highScores = HighScores.getInstance();
-		assertTrue(highScores.getHighScoreList().size() == 0);
-
-		highScores.addPlayerRecord("player1", 200);
-		assertTrue(highScores.getHighScoreList().size() == 1);
-		for(int i = 0; i < 99; i++){
-			highScores.addPlayerRecord("player1", 200);
-		}
-		assertTrue(highScores.getHighScoreList().size() == 100);
-		highScores.serialize();
-		assertTrue(highScores.checkForExistingFile());
-		
-		highScores.init();
-		assertTrue(highScores.getHighScoreList().size() == 0);
-		
-		highScores.deSerialize();
-		assertTrue(highScores.getHighScoreList().size() == 100);
-		
-	}
+	
 	
 	
 	@Test
@@ -42,6 +22,34 @@ public class HighScoresTest {
 		assertTrue(highScores.deleteFile());
 		
 	}
+	
+	
+	
+	@Test
+	public void testHighScoreList() {
+		HighScores highScores = HighScores.getInstance();
+		assertTrue(highScores.getHighScoreList().size() == 0);
+
+		highScores.addPlayerRecord("player1", 200);
+		assertTrue(highScores.getHighScoreList().size() == 1);
+		
+		for(int i = 0; i < 99; i++){
+			highScores.addPlayerRecord("player1", 200);
+		}
+		assertTrue(highScores.getHighScoreList().size() == 1);
+		highScores.serialize();
+		assertTrue(highScores.checkForExistingFile());
+		
+		highScores.init();
+		assertTrue(highScores.getHighScoreList().size() == 0);
+		
+		highScores.deSerialize();
+		assertTrue(highScores.getHighScoreList().size() == 1);
+		
+	}
+	
+	
+	
 	
 	@Test
 	public void testOrder() {
