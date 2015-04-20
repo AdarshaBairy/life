@@ -1,6 +1,8 @@
-package main.java.edu.asu.cst316.cards;
+package test.java.edu.asu.cst316;
 
 import static org.junit.Assert.*;
+import main.java.edu.asu.cst316.cards.Deck;
+
 import org.junit.Test;
 
 public class DeckTest {
