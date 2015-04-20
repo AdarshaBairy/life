@@ -11,9 +11,9 @@ public class Deck {
 	private Card greenCards[];
 	
 	private Deck(){
-		commonCards = new Card[39];
-		redCards = new Card[39];
-		greenCards = new Card[39];
+		commonCards = new Card[40];
+		redCards = new Card[40];
+		greenCards = new Card[40];
 		
 		//Populate the deck with cards
 		commonCards[0] = new Card("You find a lucky penny and it increases business sales, you gain $4000", 4000);
@@ -143,7 +143,7 @@ public class Deck {
 	public static Deck getInstance(){
 		return deck;
 	}
-	
+
 	
 	//Get a random common card from the deck
 	public Card getCommonCard(){

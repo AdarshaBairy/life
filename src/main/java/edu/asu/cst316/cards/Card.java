@@ -5,6 +5,11 @@ public class Card {
 	private int value;
 	
 	public Card(String text, int value){
+		//throw exception if string is blank
+			if (text.equals(null) || text.equals(" ")){
+				throw  new IllegalArgumentException("Test must not be empty");
+			}
+
 		this.text = text;
 		this.value = value;
 	}
