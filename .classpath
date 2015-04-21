@@ -2,7 +2,14 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Slick2D"/>
+	<classpathentry kind="lib" path="jar/jacocoagent.jar"/>
+	<classpathentry kind="lib" path="jar/jacocoant.jar"/>
+	<classpathentry kind="lib" path="jar/junit.jar"/>
+	<classpathentry kind="lib" path="jar/org.jacoco.agent-0.7.4.201502262128.jar"/>
+	<classpathentry kind="lib" path="jar/org.jacoco.ant-0.7.4.201502262128.jar"/>
+	<classpathentry kind="lib" path="jar/org.jacoco.core-0.7.4.201502262128.jar"/>
+	<classpathentry kind="lib" path="jar/org.jacoco.report-0.7.4.201502262128.jar"/>
+	<classpathentry kind="lib" path="slick/lib/commons-math3-3.3.jar"/>
 	<classpathentry kind="lib" path="slick/lib/ibxm.jar"/>
 	<classpathentry kind="lib" path="slick/lib/jinput.jar"/>
 	<classpathentry kind="lib" path="slick/lib/jnlp.jar"/>
@@ -18,18 +25,9 @@
 	<classpathentry kind="lib" path="slick/lib/slick-examples.jar"/>
 	<classpathentry kind="lib" path="slick/lib/slick.jar">
 		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/Owner/Desktop/cst316/project/316Life/life/slick"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="gameoflife/slick"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="slick/lib/tinylinepp.jar"/>
-
-	<classpathentry kind="lib" path="jar/jacocoagent.jar"/>
-	<classpathentry kind="lib" path="jar/jacocoant.jar"/>
-	<classpathentry kind="lib" path="jar/junit.jar"/>
-	<classpathentry kind="lib" path="jar/org.jacoco.agent-0.7.4.201502262128.jar"/>
-	<classpathentry kind="lib" path="jar/org.jacoco.ant-0.7.4.201502262128.jar"/>
-	<classpathentry kind="lib" path="jar/org.jacoco.core-0.7.4.201502262128.jar"/>
-	<classpathentry kind="lib" path="jar/org.jacoco.report-0.7.4.201502262128.jar"/>
-
 	<classpathentry kind="output" path="bin"/>
 </classpath>
