@@ -39,7 +39,7 @@ public class CharacterCreationMenu extends BasicGameState{
 		careerName = new TextField(gc, trueTypeFont, 330, 210, 290, 45);
 		careerName.setBackgroundColor(new Color(20, 25, 34));
 		careerName.setTextColor(new Color(234, 226, 217));
-		careerName.setText("newPlayer");
+		careerName.setText("");
 	}
 
 	//@Override
@@ -89,19 +89,20 @@ public class CharacterCreationMenu extends BasicGameState{
 		xPosition < 773 &&
 		yPosition < 64 &&
 		yPosition > 18){
+			entrP.setName(careerName.getText());
 			sbg.enterState(2);
 		}
 		
 		//venture 1
 		if(input.isMouseButtonDown(0) &&
 		xPosition > 330 &&
-		xPosition < 415 &&
+		xPosition < 460 &&
 		yPosition < 285 &&
 		yPosition > 250){
 			
 			System.out.println(careerName.getText());
 			entrP.setName(careerName.getText());
-			entrP.setCareer("venture 1");
+			entrP.setCareer("Venture 1");
 			entrP.setIncome(10000);
 			entrP.setSavedMoney(50000);
 			entrP.setRisk(4);
@@ -110,12 +111,12 @@ public class CharacterCreationMenu extends BasicGameState{
 		//venture 2
 		if(input.isMouseButtonDown(0) &&
 		xPosition > 330 &&
-		xPosition < 415 &&
+		xPosition < 460 &&
 		yPosition < 235 &&
 		yPosition > 200){
 			System.out.println(careerName.getText());
 			entrP.setName(careerName.getText());
-			entrP.setCareer("venture 2");
+			entrP.setCareer("Venture 2");
 			entrP.setIncome(15000);
 			entrP.setSavedMoney(50000);
 			entrP.setRisk(6);
@@ -124,12 +125,10 @@ public class CharacterCreationMenu extends BasicGameState{
 		//venture 3
 		if(input.isMouseButtonDown(0) &&
 		xPosition > 330 &&
-		xPosition < 415 &&
+		xPosition < 460 &&
 		yPosition < 185 &&
 		yPosition > 150){
-			System.out.println(careerName.getText());
-			entrP.setName(careerName.getText());
-			entrP.setCareer("venture 3");
+			entrP.setCareer("Venture 3");
 			entrP.setIncome(20000);
 			entrP.setSavedMoney(50000);
 			entrP.setRisk(8);
