@@ -235,8 +235,8 @@ public class GameBoard {
 		//set green spaces
 		currentSpace = currentSpace.getAlternativeSpace();
 		assignPositionToGreenChunk(x, y, -2);
-		x = currentSpace.getPosX();
-		y = currentSpace.getPosY();
+		//x = currentSpace.getPosX();
+		//y = currentSpace.getPosY();
 	
 	}
 	
