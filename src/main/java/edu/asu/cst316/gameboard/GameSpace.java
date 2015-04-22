@@ -2,7 +2,7 @@ package main.java.edu.asu.cst316.gameboard;
 
 public class GameSpace {
 	
-	private String type = "";
+	public String type = "";
 	private GameSpace nextSpace = null;
 	private GameSpace alternativeSpace = null;
 	private int posX;

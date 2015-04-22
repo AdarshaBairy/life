@@ -6,7 +6,9 @@ public class GameBoard {
 	
 	private static GameBoard gameboard = new GameBoard();
 	
+	//private static GameSpace playerSpace;
 	private static GameSpace playerSpace;
+	//public String playerLandSpace;
 		
 	private static GameSpace endSpace;
 	private	GameSpace[] forkSpaces = new GameSpace[6];
@@ -15,7 +17,8 @@ public class GameBoard {
 	private static GameSpace[][] greenSpaces;
 	private static GameSpace[][] commonSpaces;
 	private static GameSpace startSpace;
-	private static GameSpace currentSpace;
+	public static GameSpace currentSpace;
+	
 	
 	private GameBoard(){
 
@@ -41,7 +44,7 @@ public class GameBoard {
 		//Attach the spaces of each chunk with the rest of the spaces in their chunk
 		endSpace = new GameSpace("end", null, null);
 		attachSpaces(redSpaces, "red");
-		attachSpaces(commonSpaces, "common");
+		attachSpaces(commonSpaces, "common"); //Blue spaces
 		attachSpaces(greenSpaces, "green");
 		for(int i = 0; i < forkSpaces.length; ++i){
 			forkSpaces[i] = new GameSpace("fork", redSpaces[i][0], greenSpaces[i][0]);
@@ -49,7 +52,7 @@ public class GameBoard {
 		for(int i = 0; i < joinSpaces.length-1; ++i){
 			joinSpaces[i] = new GameSpace("join", commonSpaces[i+1][0], null);
 		}
-		joinSpaces[joinSpaces.length-1] = new GameSpace("join", endSpace, null);
+		joinSpaces[joinSpaces.length-1] = new GameSpace("end", null, null);
 		
 		//Attach each chunk of spaces with each other
 		attachSpaces2(greenSpaces, joinSpaces);
@@ -67,7 +70,8 @@ public class GameBoard {
 
 		assignPositions2(-256, 470);
 		
-
+		assignPaydayType();
+		//assignMileStoneType();
 		playerSpace = startSpace;
 		
 	}
@@ -88,14 +92,25 @@ public class GameBoard {
 	//Moves the player across the board
 	//Stops is the space is a fork, milestone, payday, or end space
 	public void movePlayer(int moveAmount){
+		if(playerSpace.getType().equals("end")){
+			moveAmount = 0;
+		}
 		for(int i = 0; i < moveAmount; ++i){
-			playerSpace = playerSpace.getNextSpace();
-			if(playerSpace.getType().equals("fork") &&
-			playerSpace.getType().equals("milestone") &&
-			playerSpace.getType().equals("payday") &&
-			playerSpace.getType().equals("end")){
-				i = moveAmount;
+			if(playerSpace.getNextSpace() != null){
+				playerSpace = playerSpace.getNextSpace();
 			}
+			if(playerSpace != null){
+				if("fork".equals(playerSpace.getType()) &&
+				"milestone".equals(playerSpace.getType()) &&
+				"payday".equals(playerSpace.getType()) &&
+				"end".equals(playerSpace.getType())){
+					i = moveAmount;
+				}	
+			}
+		}
+		
+		if(playerSpace.getType().equals("join")){
+			playerSpace = playerSpace.getNextSpace();
 		}
 	}
 	
@@ -225,8 +240,8 @@ public class GameBoard {
 		//set green spaces
 		currentSpace = currentSpace.getAlternativeSpace();
 		assignPositionToGreenChunk(x, y, -2);
-		x = currentSpace.getPosX();
-		y = currentSpace.getPosY();
+		//x = currentSpace.getPosX();
+		//y = currentSpace.getPosY();
 	
 	}
 	
@@ -300,7 +315,7 @@ public class GameBoard {
 	//Used for assigning milestone type to the appropriate spaces
 	public static void assignMileStoneType(){
 		commonSpaces[1][0].setType("milestone");
-		commonSpaces[1][6].setType("milestone");
+		commonSpaces[1][7].setType("milestone");
 		commonSpaces[3][0].setType("milestone");
 		commonSpaces[4][0].setType("milestone");	
 	}
