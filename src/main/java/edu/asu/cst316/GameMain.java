@@ -33,6 +33,7 @@ public class GameMain extends BasicGameState{
 	GameBoard gameboard = GameBoard.getInstance();
 	Player playerObj = Player.getInstance();
 	StateBasedGame stateBasedGame;
+	PlayerCardStack pcs = PlayerCardStack.getInstance();
 	
 	public String mouse = "";
 	public String cardText;
@@ -208,29 +209,34 @@ public class GameMain extends BasicGameState{
 				showEventWindow = true;
 				Deck deck = Deck.getInstance();
 				System.out.println(playerObj.getSavedMoney());
+				
 				if(gameboard.getCurrentSpace().getType().equals("common")){
 					Card newCard = deck.getCommonCard();
 					cardText = newCard.getText();
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}else if(gameboard.getCurrentSpace().getType().equals("red")){
 					Card newCard = deck.getRedCard();
 					cardText = newCard.getText();
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}else if(gameboard.getCurrentSpace().getType().equals("green")){
 					Card newCard = deck.getGreenCard();
 					cardText = newCard.getText();
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}else if(gameboard.getCurrentSpace().getType().equals("payday")){
-					//Card newCard = deck.getGreenCard();
-					cardText = "Payday!";
 					int incomeValue = playerObj.payDay();
-					cardText += " You earn "+incomeValue;
+					cardText = "Payday! You earn "+incomeValue;
+					Card newCard = new Card(cardText, incomeValue);
+					newCard.setType("green");
+					pcs.addCard(newCard);
 				}
 				System.out.println(cardText);
 				System.out.println(playerObj.getSavedMoney());
@@ -265,6 +271,7 @@ public class GameMain extends BasicGameState{
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}else if(gameboard.getCurrentSpace().getType().equals("red")){
 					Card newCard = deck.getRedCard();
 					PlayerCardStack playerCard = PlayerCardStack.getInstance();
@@ -272,12 +279,14 @@ public class GameMain extends BasicGameState{
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}else if(gameboard.getCurrentSpace().getType().equals("green")){
 					Card newCard = deck.getGreenCard();
 					cardText = newCard.getText();
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}
 				System.out.println(cardText);
 				System.out.println(playerObj.getSavedMoney());
@@ -421,15 +430,15 @@ public class GameMain extends BasicGameState{
 			}
 			if(cardText.length() > 80){
 				TextField cardTextBox3 = new TextField(gc, trueTypeFont, 190, 140, 420, 120);
-				if(cardText.length() < 101)cardTextBox3.setText(cardText.substring(80));
-				else cardTextBox3.setText(cardText.substring(80, 100)+"-");
+				if(cardText.length() < 121)cardTextBox3.setText(cardText.substring(80));
+				else cardTextBox3.setText(cardText.substring(80, 120)+"-");
 				cardTextBox3.setBorderColor(new Color(0, 0, 0, 0));
 				cardTextBox3.setBackgroundColor(new Color(0, 0, 0, 0));
 				cardTextBox3.render(gc, g);	
 			}
-			if(cardText.length() > 100){
+			if(cardText.length() > 120){
 				TextField cardTextBox4 = new TextField(gc, trueTypeFont, 190, 160, 420, 120);
-				cardTextBox4.setText(cardText.substring(100));
+				cardTextBox4.setText(cardText.substring(120));
 				cardTextBox4.setBorderColor(new Color(0, 0, 0, 0));
 				cardTextBox4.setBackgroundColor(new Color(0, 0, 0, 0));
 				cardTextBox4.render(gc, g);	

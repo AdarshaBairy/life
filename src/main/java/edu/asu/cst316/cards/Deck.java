@@ -60,6 +60,10 @@ public class Deck {
 		commonCards[38] = new Card("You helped a long lost friend move out over the weekend he paid you, you gain $3000", 3000);
 		commonCards[39] = new Card("You have a leak in the roof of you building and heavy rain is expected it costs $3000", -3000);
 		
+		for(int i = 0; i < commonCards.length; ++i){
+			commonCards[i].setType("common");
+		}
+		
 		redCards[0] = new Card("A tornado strikes your building to fix the damage it will cost $6000", -6000);
 		redCards[1] = new Card("You find a lucky penny and it increases business sales, you gain $8000", 8000);
 		redCards[2] = new Card("You find a stray dog that happens to be Bill Gates dog, he is happy and rewards you with $7000", 7000);
@@ -100,7 +104,11 @@ public class Deck {
 		redCards[37] = new Card("A French man tells you he has a great investment opportunity, you say yes and give him money, he is never seen again and scammed you. You lost $9000", -9000);
 		redCards[38] = new Card("Your company got a booth at the country's largest convention center, you gain $7500", 7500);
 		redCards[39] = new Card("A meteorite hits your house, to fix the damage pay $8000", -8000);
-				
+			
+		for(int i = 0; i < redCards.length; ++i){
+			redCards[i].setType("red");
+		}
+		
 		greenCards[0] = new Card("Your water bill for your building was under budget this month, you gain $2000", 2000);
 		greenCards[1] = new Card("You ate bad sushi and must buy medicine pay $1000", -1000);
 		greenCards[2] = new Card("While walking to lunch you see a wad of cash on the ground, you gain $1000", 1000);
@@ -141,6 +149,10 @@ public class Deck {
 		greenCards[37] = new Card("The bees knees flat screen TV just came out and you buy it for $1500", -1500);
 		greenCards[38] = new Card("Your business is booming and you are doing very well, you gain $3000", 3000);
 		greenCards[39] = new Card("You pay for the company electric bill, it costs $2000", -2000);
+	
+		for(int i = 0; i < greenCards.length; ++i){
+			greenCards[i].setType("green");
+		}
 	}
 	
 	public static Deck getInstance(){

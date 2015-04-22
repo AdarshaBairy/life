@@ -12,10 +12,15 @@ public class PlayerCardStack {
 		playerCards.add(currentCard);
 	}
 	
+	public int getSize(){
+		return playerCards.size();
+	}
+	
 	public Card getCurrentCard(int i){
-			if (i >= playerCards.size()){
-				Card card = new Card("No more Cards", i);
-				return card;
+		if (i >= playerCards.size()){
+			Card card = new Card("No more Cards", i);
+			card.setType("no cards");
+			return card;
 		}else
 			return playerCards.get(i);
 	}
