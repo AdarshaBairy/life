@@ -4,11 +4,12 @@ import java.awt.Font;
 import java.util.Random;
 
 import main.java.edu.asu.cst316.cards.Card;
-import main.java.edu.asu.cst316.cards.CardGenerator;
-import main.java.edu.asu.cst316.cards.CardText;
+//import main.java.edu.asu.cst316.cards.CardGenerator;
+//import main.java.edu.asu.cst316.cards.CardText;
 import main.java.edu.asu.cst316.cards.Deck;
+import main.java.edu.asu.cst316.cards.PlayerCardStack;
 import main.java.edu.asu.cst316.gameboard.GameBoard;
-import main.java.edu.asu.cst316.gameboard.GameSpace;
+//import main.java.edu.asu.cst316.gameboard.GameSpace;
 import main.java.edu.asu.cst316.highscore.HighScores;
 
 import org.lwjgl.input.Mouse;
@@ -26,11 +27,13 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 import main.java.edu.asu.cst316.player.*;
-
+import main.java.edu.asu.cst316.gameboard.*;
 public class GameMain extends BasicGameState{
 	
 	GameBoard gameboard = GameBoard.getInstance();
 	Player playerObj = Player.getInstance();
+	StateBasedGame stateBasedGame;
+	PlayerCardStack pcs = PlayerCardStack.getInstance();
 	
 	public String mouse = "";
 	public String cardText;
@@ -43,9 +46,9 @@ public class GameMain extends BasicGameState{
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
-	public Image blueCard;
-	public Image greenCard;
-	public Image redCard;
+
+	//public Spinwheelhelper spinHelp = new Spinwheelhelper(); 
+	
 
 	private int playerX = -256;
 	private int playerY = 464;
@@ -56,7 +59,7 @@ public class GameMain extends BasicGameState{
 	int spinNum = 0; 
 	int	sNum = 0; 
 	int	centerOfImageX = 0; 
-	int	centerOfImageY = 0; 
+	int	centerOfImageY = 0;  
 	int	spinCount = 0;
 	int cardValue = 0;
 	int cardDisplayTime = 0;
@@ -93,6 +96,7 @@ public class GameMain extends BasicGameState{
 
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+		stateBasedGame = sbg;
 		background = new Image("images/u2.png");
 		gameBoard = new Image("images/board5.png");
 		notification = new Image("images/notification_window.png");
@@ -113,16 +117,13 @@ public class GameMain extends BasicGameState{
 		spinningAnimation = new Animation (spinning, 100);
 		flipperAnimation = new Animation (flipperAnim, 75);
 		
-		//assigns the cards to their proper image
-		blueCard = new Image("images/bluecard.png");
-		greenCard = new Image("images/greencard.png");
-		redCard = new Image("images/redcard.png");
+
 	}
 
 	//@Override
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
-
+		boolean updatePlayer = false;
 		int xPosition = Mouse.getX();
 		int yPosition = Mouse.getY();
 		Input input = gc.getInput();
@@ -162,7 +163,11 @@ public class GameMain extends BasicGameState{
 			mouseOverSpin = false;
 		}
 		
-		if(spinClicked){
+
+		updatePlayer = animate(updatePlayer, delta);
+		
+		/*if(spinClicked == true){
+
 			spinningAnimation.update(delta);
 		}
 	
@@ -170,14 +175,12 @@ public class GameMain extends BasicGameState{
 			spinCount += (delta);
 	    }
 		
-		boolean updatePlayer = false;
-		
 		if (spinCount > 3000){
 			spinCount = 0;
 			spinAnimation = false;
 			cardGenerated = true;
 			updatePlayer = true;
-		}
+		}	*/	
 		
 		if(cardGenerated){
 			cardDisplayTime += (delta);
@@ -200,60 +203,49 @@ public class GameMain extends BasicGameState{
 				}
 			}
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-			//CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
-			//cardColor = blueCard.getScaledCopy((float) .8);
-			//cardText = cardgenerator.getFinalCardText();
-			
+
 			if(!gameboard.getCurrentSpace().getType().equals("fork")){
 				showEventWindow = true;
 				Deck deck = Deck.getInstance();
 				System.out.println(playerObj.getSavedMoney());
+				
 				if(gameboard.getCurrentSpace().getType().equals("common")){
 					Card newCard = deck.getCommonCard();
 					cardText = newCard.getText();
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}else if(gameboard.getCurrentSpace().getType().equals("red")){
 					Card newCard = deck.getRedCard();
 					cardText = newCard.getText();
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}else if(gameboard.getCurrentSpace().getType().equals("green")){
 					Card newCard = deck.getGreenCard();
 					cardText = newCard.getText();
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}else if(gameboard.getCurrentSpace().getType().equals("payday")){
-					//Card newCard = deck.getGreenCard();
-					cardText = "Payday!";
 					int incomeValue = playerObj.payDay();
-					cardText += " You earn "+incomeValue;
+					cardText = "Payday! You earn "+incomeValue;
+					Card newCard = new Card(cardText, incomeValue);
+					newCard.setType("green");
+					pcs.addCard(newCard);
 				}
 				System.out.println(cardText);
 				System.out.println(playerObj.getSavedMoney());
 			}
 			updatePlayer = false;
 		}
-		
-		////MAKE an array to store the cards
-		////NEED to store value with card
+
 		//if player clicks spin generate card text and type
 		if (cardSelected) {
-			//CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
 			cardType = gameboard.getCurrentSpace().getType();
-			/*
-			if (cardType == "common"){
-			cardColor = blueCard.getScaledCopy((float) .8);}
-			else if (cardType == "red"){
-				cardColor = redCard.getScaledCopy((float) .8);}
-			else if (cardType == "green"){
-				cardColor = greenCard.getScaledCopy((float) .8);}
-			else{cardType = "fail";}
-			*/
-			//cardText = cardgenerator.getFinalCardText();
 		}
 		
 		//When the player lands on a fork space they will see a window giving 
@@ -278,18 +270,22 @@ public class GameMain extends BasicGameState{
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}else if(gameboard.getCurrentSpace().getType().equals("red")){
 					Card newCard = deck.getRedCard();
+					PlayerCardStack playerCard = PlayerCardStack.getInstance();
 					cardText = newCard.getText();
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}else if(gameboard.getCurrentSpace().getType().equals("green")){
 					Card newCard = deck.getGreenCard();
 					cardText = newCard.getText();
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}
 				System.out.println(cardText);
 				System.out.println(playerObj.getSavedMoney());
@@ -312,18 +308,21 @@ public class GameMain extends BasicGameState{
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}else if(gameboard.getCurrentSpace().getType().equals("red")){
 					Card newCard = deck.getRedCard();
 					cardText = newCard.getText();
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}else if(gameboard.getCurrentSpace().getType().equals("green")){
 					Card newCard = deck.getGreenCard();
 					cardText = newCard.getText();
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}
 				System.out.println(cardText);
 				System.out.println(playerObj.getSavedMoney());
@@ -332,7 +331,6 @@ public class GameMain extends BasicGameState{
 			showNotification = false;
 		}
 
-		
 		if(gameboard.getCurrentSpace().getType().equals("end")){
 			showEndGameWindow = true;
 			if(input.isMouseButtonDown(0) &&
@@ -368,7 +366,7 @@ public class GameMain extends BasicGameState{
 
 			System.out.println(gameboard.getCurrentSpace().getType());
 		}
-		
+	
 		
 		if(showEventWindow){
 			//If the player clicks on close
@@ -382,18 +380,7 @@ public class GameMain extends BasicGameState{
 			}
 		}
 		
-		
-		
-		
-		//checks for user clicking in the cards icon to display its card history.
-		if(input.isMouseButtonDown(0) &&
-		xPosition >= 660 &&
-		xPosition <= 745 &&
-		yPosition >= 50 &&
-		yPosition <= 155){
-			sbg.enterState(6);
-		}
-		
+
 		//If player decides to quit in the middle of the game 
 		//Quit button 
 		if(input.isMouseButtonDown(0) &&
@@ -407,6 +394,7 @@ public class GameMain extends BasicGameState{
 					updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
 					sbg.enterState(0);
 		}
+
 	}
 
 	//@Override
@@ -426,7 +414,7 @@ public class GameMain extends BasicGameState{
 		g.drawImage(player, 336, 136);
 		if(showNotification){
 			g.drawImage(notification, 0, 0);
-			Font font = new Font("Verdana", Font.PLAIN, 28);
+			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 20);
 			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
 			TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 100, 420, 120);
 			cardTextBox.setText("You have a decision to make!");
@@ -435,18 +423,47 @@ public class GameMain extends BasicGameState{
 			cardTextBox.render(gc, g);
 		}
 		if(showEventWindow){
+			
 			g.drawImage(eventWindow, 0, 0);
-			Font font = new Font("Verdana", Font.PLAIN, 20);
+			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 16);
 			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
+			
+			
 			TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 100, 420, 120);
-			cardTextBox.setText(cardText);
+			
+			if(cardText.length() > 40) cardTextBox.setText(cardText.substring(0, 40)+"-");
+			else cardTextBox.setText(cardText);
 			cardTextBox.setBorderColor(new Color(0, 0, 0, 0));
 			cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
 			cardTextBox.render(gc, g);
+			if(cardText.length() > 40){
+				TextField cardTextBox2 = new TextField(gc, trueTypeFont, 190, 120, 420, 120);
+				if(cardText.length() < 81)cardTextBox2.setText(cardText.substring(40));
+				else cardTextBox2.setText(cardText.substring(40, 80)+"-");
+				cardTextBox2.setBorderColor(new Color(0, 0, 0, 0));
+				cardTextBox2.setBackgroundColor(new Color(0, 0, 0, 0));
+				cardTextBox2.render(gc, g);	
+			}
+			if(cardText.length() > 80){
+				TextField cardTextBox3 = new TextField(gc, trueTypeFont, 190, 140, 420, 120);
+				if(cardText.length() < 121)cardTextBox3.setText(cardText.substring(80));
+				else cardTextBox3.setText(cardText.substring(80, 120)+"-");
+				cardTextBox3.setBorderColor(new Color(0, 0, 0, 0));
+				cardTextBox3.setBackgroundColor(new Color(0, 0, 0, 0));
+				cardTextBox3.render(gc, g);	
+			}
+			if(cardText.length() > 120){
+				TextField cardTextBox4 = new TextField(gc, trueTypeFont, 190, 160, 420, 120);
+				cardTextBox4.setText(cardText.substring(120));
+				cardTextBox4.setBorderColor(new Color(0, 0, 0, 0));
+				cardTextBox4.setBackgroundColor(new Color(0, 0, 0, 0));
+				cardTextBox4.render(gc, g);	
+			}
 		}
+		
 		if(showEndGameWindow){
 			g.drawImage(endGameWindow, 0, 0);
-			Font font = new Font("Verdana", Font.PLAIN, 20);
+			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 16);
 			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
 			TextField cardTextBox = new TextField(gc, trueTypeFont, 380, 240, 420, 120);
 			cardTextBox.setText(Integer.toString(playerObj.getSavedMoney()));
@@ -454,8 +471,6 @@ public class GameMain extends BasicGameState{
 			cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
 			cardTextBox.render(gc, g);
 		}
-		
-		
 		
 		//declare the images used
 		wheel = new Image("res/spinwheeldefault.png");
@@ -467,7 +482,12 @@ public class GameMain extends BasicGameState{
 		centerOfImageX = (wheelSpinning.getWidth()/2);
 		centerOfImageY = (wheelSpinning.getHeight()/2);
 		wheelSpinning.setCenterOfRotation(centerOfImageX, centerOfImageY);
-
+		
+		if (defaultImage == true){
+			g.drawImage(wheel, 306, 375);
+			g.drawImage(spinFlipper, 460, 420);
+		}
+		
 		//Display the card the player draws when he lands on a space
 		if (cardGenerated && cardType != "fail") {
 //			g.drawImage(cardColor, 200, 20);
@@ -479,41 +499,37 @@ public class GameMain extends BasicGameState{
 			if(!showEndGameWindow){
 				defaultImage = false;
 				spinClicked = false;
-				spinNum = getSpinNum(sNum);
+				spinNum = getSpinNum();
 				spinAnimation = true;
 			}
+		}
+
+
+		if (mouseOverSpin == true){
+			g.drawImage(wheelHover, 306, 375);
+		}	
+		//clicked spin button procedure
+		if (spinClicked == true){
+			defaultImage = false;
+			spinClicked =false;
+			spinNum = getSpinNum();
+			System.out.println(spinNum);
+			spinAnimation = true;
+
 		}
 		
-		//once the spin is clicked do the animation
-		if (spinClicked == true){
-			if(!showEndGameWindow){
-				defaultImage = false;
-				spinClicked = false;
-				spinNum = getSpinNum(sNum);
-				System.out.println(spinNum);
-				spinAnimation = true;
-			}
-		}
-						
+		
+		//spin animation logic
 		if (spinAnimation){
 			spinningAnimation.draw(329, 415);
 			flipperAnimation.draw(460, 420);
-		//animation is complete now set the number spun	
-		} else{
-			if(!showEndGameWindow){
-				wheelSpinning.setRotation(360-(60*(spinNum-1)));
-				g.drawImage(wheelSpinning, 329, 415);
-				g.drawImage(spinFlipper, 460, 420);
-				spinAnimation = false;
-				spinClicked = false;
-			}
-		} // end else 
+		} else{ drawRotatedResult(spinNum, g);
 		
-		if (mouseOverSpin){
-			if(!showEndGameWindow){
-				g.drawImage(wheelHover, 306, 375);
-			}
-		}		
+
+		spinAnimation = false;
+		spinClicked = false;
+	}      // end else 
+
 		
 	}//end render
 
@@ -534,17 +550,69 @@ public class GameMain extends BasicGameState{
 		playerY = y;
 	}
 	
-	int getSpinNum(int sNum) {
+	public int getSpinNum() {
 		try {
 		    Thread.sleep(250);                 //1000 milliseconds is one second.
 		} catch(InterruptedException ex) {
 		    Thread.currentThread().interrupt();
 		}
 		Random rand = new Random();
-		sNum = (rand.nextInt(6))+1;
-		return sNum;
+		int result = (rand.nextInt(6))+1;
+		return result;
 	}
 	
+	public void drawRotatedResult( int spinNum, Graphics g){
+		if (spinNum == 1){
+			wheelSpinning.setRotation(0);
+			g.drawImage(wheelSpinning, 329, 415);
+			g.drawImage(spinFlipper, 460, 420);
+		}	
+		if (spinNum == 2){
+			wheelSpinning.setRotation(330);
+			g.drawImage(wheelSpinning, 329, 415);
+			g.drawImage(spinFlipper, 460, 420);
+		}
+		if (spinNum == 3){
+			wheelSpinning.setRotation(275);
+			g.drawImage(wheelSpinning, 329, 415);
+			g.drawImage(spinFlipper, 460, 420);
+		}		
+		if (spinNum == 4){
+			wheelSpinning.setRotation(180);
+			g.drawImage(wheelSpinning, 329, 415);
+			g.drawImage(spinFlipper, 460, 420);
+		}
+		if (spinNum == 5){
+			wheelSpinning.setRotation(120);
+			g.drawImage(wheelSpinning, 329, 415);
+			g.drawImage(spinFlipper, 460, 420);
+		}		
+		if (spinNum == 6){
+			wheelSpinning.setRotation(90);
+			g.drawImage(wheelSpinning, 329, 415);
+			g.drawImage(spinFlipper, 460, 420);
+		}	
+		
+	}
+	
+	public boolean animate(boolean updatePlayer, int delta){
+		if(spinClicked == true){
+			spinningAnimation.update(delta);
+		}
+		
+		if (spinAnimation){
+			spinCount += (delta);
+		}
+				
+		if (spinCount > 3000){
+			spinCount = 0;
+			spinAnimation = false;
+			updatePlayer = true;
+		}
+		return updatePlayer;
+	}
+	
+
 	public void recordPlayerScore(){
 		HighScores highScores = HighScores.getInstance();
 		highScores.init();
@@ -556,5 +624,29 @@ public class GameMain extends BasicGameState{
 		highScores.addPlayerRecord(playerObj.getName(), playerObj.getSavedMoney());
 	}
 	
+	@Override
+	public void mousePressed(int button, int x, int y){
+		y = 600 - y;
+		if(button == 0){
+			if(x >= 660 &&
+			x <= 745 &&
+			y >= 50 &&
+			y <= 155){
+				stateBasedGame.enterState(6);
+			}
+		}
+	}
 	
+	public void mileStoneAction(){
+		
+	}
+	
+	public void drawCardText(String text, GameContainer gc, TrueTypeFont trueTypeFont, Graphics g){
+		TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 140, 420, 120);
+		if(cardText.length() < 81)cardTextBox.setText(cardText.substring(80));
+		else cardTextBox.setText(cardText.substring(80, 100)+"-");
+		cardTextBox.setBorderColor(new Color(0, 0, 0, 0));
+		cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
+		cardTextBox.render(gc, g);
+	}
 }

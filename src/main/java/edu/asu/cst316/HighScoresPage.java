@@ -35,36 +35,12 @@ public class HighScoresPage extends BasicGameState{
 	public HighScoresPage(int state){
 	}
 
-	//@Override
+	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		//images used
 		background = new Image("images/highscores.png");
-		/*
-		HighScores highScores = new HighScores();
-		highScores.init();
-		try{
-			highScores.deSerialize();
-		}catch(Exception e){
-			System.out.println("No highscore file saved");
-		}
-		highScores.addPlayerRecord(entrP.getName(), entrP.getSavedMoney());
-		System.out.println(entrP.getName());
-		System.out.println(entrP.getSavedMoney());
-		*/
-		/*
-		HighScores highScores = HighScores.getInstance();
-		List<PlayerRecord> playerRecords = highScores.getHighScoreList();
-		playerRecordEntries = new String[playerRecords.size()];
-		
-		for (int i = 0; i < playerRecords.size() && i < 10; i++) {
-			playerRecordEntries[i] = (i+1)+". "+playerRecords.get(i).getPlayerName()
-					+"    "+playerRecords.get(i).getScore();
-		}
-		highScores.serialize();
-		*/
 	}
 
-	//@Override
+	@Override
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
 		int xPosition = Mouse.getX();
 		int yPosition = Mouse.getY();
@@ -81,25 +57,7 @@ public class HighScoresPage extends BasicGameState{
 			System.out.println(isThisState);
 			sbg.enterState(0);
 		}
-	
-		if(isThisState){
-			/*
-			HighScores highScores = new HighScores();
-			highScores.init();
-			try{
-				highScores.deSerialize();
-			}catch(Exception e){
-				System.out.println("No highscore file saved");
-			}
-			highScores.addPlayerRecord(entrP.getName(), entrP.getSavedMoney());
-			System.out.println(entrP.getName());
-			System.out.println(entrP.getSavedMoney());
-			*/
-			
-			
-			System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-			isThisState = false;
-		}
+
 	}
 
 	//@Override

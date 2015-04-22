@@ -1,11 +1,19 @@
 package main.java.edu.asu.cst316;
 
+import java.awt.Font;
+
+import main.java.edu.asu.cst316.cards.Card;
+import main.java.edu.asu.cst316.cards.PlayerCardStack;
+
 import org.lwjgl.input.Mouse;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.TrueTypeFont;
+import org.newdawn.slick.gui.TextField;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import java.util.ArrayList;
@@ -14,46 +22,64 @@ import java.util.ArrayList;
 
 public class HistoryCards extends BasicGameState{
 	
+	StateBasedGame stateBasedGame;
 	public String mouse = "";
 	public Image background;
-	public Image blueCard;
-	public Image redCard;
-	public Image greenCard;
-	public Image cardDisplay;
-	public ArrayList<Integer> cards = new ArrayList<Integer>();
-	int currentCardIndex = 0;
-	boolean test = false;
-	
-	
-	
-	
+
+	PlayerCardStack pcs = PlayerCardStack.getInstance();
+	int index = 0;
+	Card currentCard;
+	String cardText;
+
 	
 	public HistoryCards(int state){
 	}
 
 	@Override
-	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException {
-		
-		background = new Image("images/HistoryCard.png");
-		blueCard = new Image("images/bluecard.png");
-		redCard = new Image("images/redcard.png");
-		greenCard = new Image("images/greencard.png");
-		
-		cards.add(1);
-		cards.add(2);
-		cards.add(3);
-		cards.add(2);
-		cards.add(3);
-		cards.add(1);
-		
-		cardDisplay = blueCard.getSubImage(0, 0, 400, 500);
+
+	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+		stateBasedGame = sbg;
+		background = new Image("images/historycardnone.png");
+		currentCard = pcs.getCurrentCard(0);
+		cardText = currentCard.getText();
 	}
 
 	@Override
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {	
+	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+		
 		g.drawImage(background, 0, 0);
 		g.drawString(mouse, 10, 10);
-		g.drawImage(cardDisplay, 215, 100);
+		
+		if(pcs.getSize() != 0){
+			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 16);
+			cardText = currentCard.getText();
+			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
+			
+			TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 280, 420, 120);
+			
+			if(cardText.length() > 40) cardTextBox.setText(cardText.substring(0, 40)+"-");
+			else cardTextBox.setText(cardText);
+			cardTextBox.setBorderColor(new Color(0, 0, 0, 0));
+			cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
+			cardTextBox.render(gc, g);
+			for(int i = 40; i < 121; i = i + 40){
+				if(cardText.length() > i){
+					TextField cardTextBox2 = new TextField(gc, trueTypeFont, 190, 280+(i/2), 420, 120);
+					if(cardText.length() < (i+41))cardTextBox2.setText(cardText.substring(i));
+					else cardTextBox2.setText(cardText.substring(i, (i+40))+"-");
+					cardTextBox2.setBorderColor(new Color(0, 0, 0, 0));
+					cardTextBox2.setBackgroundColor(new Color(0, 0, 0, 0));
+					cardTextBox2.render(gc, g);	
+				}
+			}
+			
+			TextField weekText = new TextField(gc, trueTypeFont, 370, 440, 420, 120);
+			weekText.setText("Week: " + index);
+			weekText.setBorderColor(new Color(0, 0, 0, 0));
+			weekText.setBackgroundColor(new Color(0, 0, 0, 0));
+			weekText.render(gc, g);
+		}
+
 	}
 
 	@Override
@@ -61,52 +87,24 @@ public class HistoryCards extends BasicGameState{
 		int xPosition = Mouse.getX();
 		int yPosition = Mouse.getY();
 		Input input = gc.getInput();
-		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;	
-		input.clearMousePressedRecord(); 
+
+		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
 		
 		
-		if(
-				input.isMouseButtonDown(0) &&
-				xPosition >= 50 &&
-				xPosition <= 202 &&
-				yPosition >= 39 &&
-				yPosition <= 85)
-		{
-			sbg.enterState(2);
+		currentCard = pcs.getCurrentCard(index);
+		if(pcs.getSize() == 0){
+			background = new Image("images/historycardnone.png");
 		}
-		
-		if(     //button to left
-				input.isMousePressed(Input.MOUSE_LEFT_BUTTON) &&
-				//input.isMouseButtonDown(0) &&
-				//Mouse.isButtonDown(0) &&
-				xPosition >= 60 &&
-				xPosition <= 113 &&
-				yPosition >= 261 &&
-				yPosition <= 326 &&
-				currentCardIndex >= 1)
-		{
-		
-			currentCardIndex -= 1;
-			updateCard(currentCardIndex);
-			
+		else if(currentCard.getType().equals("common")){
+			background = new Image("images/historycardblue.png");
 		}
-		if(		//button to the right
-				//input.isMousePressed(Input.MOUSE_LEFT_BUTTON) &&
-				//input.isMouseButtonDown(0) && 
-				Mouse.isButtonDown(0) &&
-				xPosition >= 686 &&
-				xPosition <= 740 &&
-				yPosition >= 264 &&
-				yPosition <= 328 &&
-				currentCardIndex <= 4)
-		{
-			
-			currentCardIndex += 1;
-			updateCard(currentCardIndex);
-			
+		else if(currentCard.getType().equals("red")){
+			background = new Image("images/historycardred.png");
 		}
-		
-	
+		else if(currentCard.getType().equals("green")){
+			background = new Image("images/historycardgreen.png");
+		}
+
 	}
 
 	@Override
@@ -114,21 +112,58 @@ public class HistoryCards extends BasicGameState{
 		
 		return 6;
 	}
+	
+	
+	public void mousePressed(int button, int x, int y) {
+		y = 600 - y;
+		System.out.println("click");
+		System.out.println(x);
+		System.out.println(y);
+		if(button == 0){
+			try {
+				backButtonAction(x, y);
+				nextButtonAction(x, y);
+			} catch (SlickException e) {
+				e.printStackTrace();
+			}
+			gameMainAction(x,y);
+		}
+	}
 
-	public void updateCard(int index){
-		 int cardType = cards.get(index);
-		 if (cardType == 1){
-			 cardDisplay = blueCard.getSubImage(0, 0, 400, 500);
-		 }else if(cardType == 2){
-			 cardDisplay = greenCard.getSubImage(0, 0, 400, 500);			
-		 }else if (cardType == 3){
-			 cardDisplay = redCard.getSubImage(0, 0, 400, 500);
-		 }
+
+	public void backButtonAction(int x, int y) throws SlickException{
+		if(x > 50 && 
+		x < 100 &&
+		y > 190 &&
+		y < 340){
+			index--;
+			if(index == -1){
+				index = pcs.getSize()-1;
+				currentCard = pcs.getCurrentCard(index);		
+			}
+			
+		}
 	}
 	
-	
-    public void cardsHold(){
-		
+	public void nextButtonAction(int x, int y) throws SlickException{
+		if(x > 700 && 
+		x < 750 &&
+		y > 190 &&
+		y < 340){
+			index++;
+			if(index == pcs.getSize()){
+				index = 0;				
+				currentCard = pcs.getCurrentCard(index);
+			}
+		}
 	}
 	
+	public void gameMainAction(int x, int y){
+		if(x > 20 &&
+		x < 172 &&
+		y > 20 &&
+		y < 60){
+			stateBasedGame.enterState(2);
+		}
+	}
 }

@@ -5,3 +5,8 @@
 /junit
 jacoco.exec
 /jacoco-report
+.project
+.classpath
+/highscores.list
+pmd_report_fromant.html
+
