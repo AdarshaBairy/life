@@ -15,7 +15,7 @@ import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import main.java.edu.asu.cst316.player.*;
-
+import main.java.edu.asu.cst316.gameboard.*;
 public class GameMain extends BasicGameState{
 	
 	GameBoard gameboard = GameBoard.getInstance();
@@ -28,6 +28,7 @@ public class GameMain extends BasicGameState{
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
+	//public Spinwheelhelper spinHelp = new Spinwheelhelper(); 
 	
 	private int playerX = -256;
 	private int playerY = 464;
@@ -95,7 +96,7 @@ public class GameMain extends BasicGameState{
 	//@Override
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
-
+		boolean updatePlayer = false;
 		int xPosition = Mouse.getX();
 		int yPosition = Mouse.getY();
 		Input input = gc.getInput();
@@ -136,7 +137,9 @@ public class GameMain extends BasicGameState{
 			mouseOverSpin = false;
 		}
 		
-		if(spinClicked == true){
+		updatePlayer = animate(updatePlayer, delta);
+		
+		/*if(spinClicked == true){
 			spinningAnimation.update(delta);
 		}
 	
@@ -144,13 +147,11 @@ public class GameMain extends BasicGameState{
 			spinCount += (delta);
 		}
 		
-		boolean updatePlayer = false;
-		
 		if (spinCount > 3000){
 			spinCount = 0;
 			spinAnimation = false;
 			updatePlayer = true;
-		}
+		}	*/	
 		
 		if(updatePlayer){
 			gameboard.movePlayer(spinNum);
@@ -271,7 +272,6 @@ public class GameMain extends BasicGameState{
 			spinNum = getSpinNum();
 			System.out.println(spinNum);
 			spinAnimation = true;
-			rotate(spinAnimation, spinNum, g);
 		}
 		
 		
@@ -279,8 +279,9 @@ public class GameMain extends BasicGameState{
 		if (spinAnimation){
 			spinningAnimation.draw(329, 415);
 			flipperAnimation.draw(460, 420);
-		} else{
+		} else{ drawRotatedResult(spinNum, g);
 		
+		/*
 		if (spinNum == 1){
 			wheelSpinning.setRotation(0);
 			g.drawImage(wheelSpinning, 329, 415);
@@ -310,7 +311,7 @@ public class GameMain extends BasicGameState{
 			wheelSpinning.setRotation(90);
 			g.drawImage(wheelSpinning, 329, 415);
 			g.drawImage(spinFlipper, 460, 420);
-		}	
+		}*/	
 		spinAnimation = false;
 		spinClicked = false;
 	}      // end else 
@@ -344,11 +345,7 @@ public class GameMain extends BasicGameState{
 		return result;
 	}
 	
-	public void rotate(boolean spinAnimation, int spinNum, Graphics g){
-		if (spinAnimation){
-			spinningAnimation.draw(329, 415);
-			flipperAnimation.draw(460, 420);
-		} else{
+	public void drawRotatedResult( int spinNum, Graphics g){
 		if (spinNum == 1){
 			wheelSpinning.setRotation(0);
 			g.drawImage(wheelSpinning, 329, 415);
@@ -379,11 +376,27 @@ public class GameMain extends BasicGameState{
 			g.drawImage(wheelSpinning, 329, 415);
 			g.drawImage(spinFlipper, 460, 420);
 		}	
-			spinAnimation = false;
-			spinClicked = false;
-		}
 		
 	}
+	
+	public boolean animate(boolean updatePlayer, int delta){
+		if(spinClicked == true){
+			spinningAnimation.update(delta);
+		}
+		
+		if (spinAnimation){
+			spinCount += (delta);
+		}
+				
+		if (spinCount > 3000){
+			spinCount = 0;
+			spinAnimation = false;
+			updatePlayer = true;
+		}
+		return updatePlayer;
+	}
+	
+	
 	
 }
 	

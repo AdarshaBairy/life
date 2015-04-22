@@ -11,11 +11,12 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 
+
 /**
  * @author Owner
  *
  */
-public class Spinwheel {
+public class Spinwheelhelper {
 	int	centerOfImageX = 0; 
 	int	centerOfImageY = 0;
 	
@@ -33,7 +34,7 @@ public class Spinwheel {
 	
 	
 	
-	public Spinwheel(){
+	public Spinwheelhelper(){
 		try {
 			spinner = new Image("images/spinner.png");
 		
@@ -63,6 +64,15 @@ public class Spinwheel {
 		g.drawImage(spinFlipper, 355, 180);
 	}
 	
+	public void drawHover(Graphics g){
+		g.drawImage(wheelHover, 200, 130);
+	}
+	
+	public void spinAnimation(){
+		spinningAnimation.draw(223,172);
+		flipperAnimation.draw(355,180);
+	}
+	
 	public int getSpinNum() {
 		try {
 		    Thread.sleep(250);                 //1000 milliseconds is one second.
@@ -74,11 +84,7 @@ public class Spinwheel {
 		return result;
 	}
 
-	public void rotate(boolean spinAnimation, int spinNum, Graphics g){
-		if (spinAnimation){
-			spinningAnimation.draw(329, 415);
-			flipperAnimation.draw(460, 420);
-		} else{
+	public void drawRotatedResult( int spinNum, Graphics g){
 		if (spinNum == 1){
 			wheelSpinning.setRotation(0);
 			g.drawImage(wheelSpinning, 329, 415);
@@ -108,10 +114,9 @@ public class Spinwheel {
 			wheelSpinning.setRotation(90);
 			g.drawImage(wheelSpinning, 329, 415);
 			g.drawImage(spinFlipper, 460, 420);
-		}	
-		spinAnimation = false;
-		spinClicked = false;
-		}
+		}		
+	}
 	
-		}
+	
+	
 }
