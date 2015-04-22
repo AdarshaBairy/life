@@ -32,6 +32,7 @@ public class CharacterCreationMenu extends BasicGameState{
 	
 	boolean displayWarningText = false;
 	boolean displayWarningVenture = false;
+	boolean ventureSelected = false;
 	
 	AllVentures ventures = AllVentures.getInstance();
 	Venture[] venture = ventures.getVentures();
@@ -71,7 +72,7 @@ public class CharacterCreationMenu extends BasicGameState{
 		if(displayWarningText){
 			trueTypeFont.drawString(200, 550, "Invalid name inputted");
 		}
-		if(displayWarningVenture){
+		else if(displayWarningVenture){
 			trueTypeFont.drawString(200, 550, "Venture must be selected");
 		}
 	}
@@ -132,13 +133,17 @@ public class CharacterCreationMenu extends BasicGameState{
 			careerName.getText().equals("")){
 				displayWarningText = true;
 			}
-			else if(entrP.getCareer() == null){
-				displayWarningVenture = true;
-			}
 			else{
-				entrP.setName(careerName.getText());
-				stateBasedGame.enterState(2);
+				displayWarningText = false;
+				if(entrP.getCareer() == null){
+					displayWarningVenture = true;
+				}
+				else{
+					entrP.setName(careerName.getText());
+					stateBasedGame.enterState(2);
+				}
 			}
+			
 		}
 	}	
 	
@@ -155,6 +160,7 @@ public class CharacterCreationMenu extends BasicGameState{
 			background = new Image(venture[0].getImageName());
 			displayWarningText = false;
 			displayWarningVenture = false;
+			
 		}
 		else if(x > 330 &&
 		x < 460 &&
