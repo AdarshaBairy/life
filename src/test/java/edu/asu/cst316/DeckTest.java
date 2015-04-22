@@ -10,7 +10,6 @@ public class DeckTest {
 	@Test
 	public void test() {
 		//check that the cards give the correct card color
-
 		Deck deck = Deck.getInstance();
 		for (int i=0; i<=100; i++){
 			assertTrue(deck.getCommonCard().getValue() < 5001);

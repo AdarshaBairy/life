@@ -7,6 +7,7 @@ import main.java.edu.asu.cst316.cards.Card;
 import main.java.edu.asu.cst316.cards.CardGenerator;
 import main.java.edu.asu.cst316.cards.CardText;
 import main.java.edu.asu.cst316.cards.Deck;
+import main.java.edu.asu.cst316.cards.PlayerCardStack;
 import main.java.edu.asu.cst316.gameboard.GameBoard;
 import main.java.edu.asu.cst316.gameboard.GameSpace;
 import main.java.edu.asu.cst316.highscore.HighScores;
@@ -264,6 +265,7 @@ public class GameMain extends BasicGameState{
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
 				}else if(gameboard.getCurrentSpace().getType().equals("red")){
 					Card newCard = deck.getRedCard();
+					PlayerCardStack playerCard = PlayerCardStack.getInstance();
 					cardText = newCard.getText();
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();

@@ -1,16 +1,27 @@
 package main.java.edu.asu.cst316.cards;
 
-public class PlayerCardStack {
+import java.util.ArrayList;
 
-	int cardCount = 0;
-	String cardText = " ";
+public class PlayerCardStack {
 	
-	public PlayerCardStack getPlayerCard = new PlayerCardStack();
-	public Card playerCards[];
+	private static PlayerCardStack pcs = new PlayerCardStack();
+
+	ArrayList<Card> playerCards = new ArrayList<Card>();
 	
-	public void getPlayerCard(){
-	//playerCards[cardCount] = new Card(Card.getText(), Card.getValue());	
-	//cardCount++;
-	//System.out.println(cardCount);
+	public void addCard(Card currentCard){
+		playerCards.add(currentCard);
 	}
+	
+	public Card getCurrentCard(int i){
+			if (i >= playerCards.size()){
+				Card card = new Card("No more Cards", i);
+				return card;
+		}else
+			return playerCards.get(i);
+	}
+
+	public static PlayerCardStack getInstance(){
+		return pcs;
+	}
+	
 }
