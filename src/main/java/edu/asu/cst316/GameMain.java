@@ -393,6 +393,20 @@ public class GameMain extends BasicGameState{
 		yPosition <= 155){
 			sbg.enterState(6);
 		}
+		
+		//If player decides to quit in the middle of the game 
+		//Quit button 
+		if(input.isMouseButtonDown(0) &&
+				xPosition > 585 &&
+				xPosition < 718 &&
+				yPosition < 36 &&
+				yPosition > 7){
+					recordPlayerScore();
+					showEndGameWindow = false;
+					gameboard.reset();
+					updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+					sbg.enterState(0);
+		}
 	}
 
 	//@Override
