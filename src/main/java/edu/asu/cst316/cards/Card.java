@@ -1,13 +1,13 @@
 package main.java.edu.asu.cst316.cards;
 
 public class Card {
-	private String text;
-	private int value;
+	public String text;
+	public int value;
 	
 	public Card(String text, int value){
 		//throw exception if string is blank
-			if (text.equals(null) || text.equals(" ")){
-				throw  new IllegalArgumentException("Test must not be empty");
+			if (text.equals(" ")){
+				throw  new IllegalArgumentException("Text must not be empty");
 			}
 
 		this.text = text;

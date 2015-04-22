@@ -2,9 +2,12 @@ package main.java.edu.asu.cst316.cards;
 
 import java.util.Random;
 
+import main.java.edu.asu.cst316.GameMain;
+
 public class Deck {
 	
 	private static Deck deck = new Deck();
+	int cardNum;
 	
 	private Card commonCards[];
 	private Card redCards[];
@@ -143,26 +146,29 @@ public class Deck {
 	public static Deck getInstance(){
 		return deck;
 	}
-
 	
 	//Get a random common card from the deck
 	public Card getCommonCard(){
-		Random randomInt = new Random();
-		int cardIndex = randomInt.nextInt(39);
+		int cardIndex = getCardNum(cardNum);
 		return commonCards[cardIndex];
 	}
 	
 	//Get a random red card from the deck
 	public Card getRedCard(){
-		Random randomInt = new Random();
-		int cardIndex = randomInt.nextInt(39);
+		int cardIndex = getCardNum(cardNum);
 		return redCards[cardIndex];
 	}
 	
 	//Get a random green card from the deck
 	public Card getGreenCard(){
-		Random randomInt = new Random();
-		int cardIndex = randomInt.nextInt(39);
+		int cardIndex = getCardNum(cardNum);
 		return greenCards[cardIndex];
 	}
+	
+	int getCardNum(int cardNum) {
+		Random rand = new Random();
+		cardNum = (rand.nextInt(39));
+		return cardNum;
+	}
+	
 }

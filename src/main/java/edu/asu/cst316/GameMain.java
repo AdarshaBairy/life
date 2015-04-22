@@ -200,10 +200,7 @@ public class GameMain extends BasicGameState{
 				}
 			}
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-			//CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
-			//cardColor = blueCard.getScaledCopy((float) .8);
-			//cardText = cardgenerator.getFinalCardText();
-			
+
 			if(!gameboard.getCurrentSpace().getType().equals("fork")){
 				showEventWindow = true;
 				Deck deck = Deck.getInstance();
@@ -237,23 +234,10 @@ public class GameMain extends BasicGameState{
 			}
 			updatePlayer = false;
 		}
-		
-		////MAKE an array to store the cards
-		////NEED to store value with card
+
 		//if player clicks spin generate card text and type
 		if (cardSelected) {
-			//CardGenerator cardgenerator = new CardGenerator(gameboard.getCurrentSpace().getType(), cardText, cardValue);
 			cardType = gameboard.getCurrentSpace().getType();
-			/*
-			if (cardType == "common"){
-			cardColor = blueCard.getScaledCopy((float) .8);}
-			else if (cardType == "red"){
-				cardColor = redCard.getScaledCopy((float) .8);}
-			else if (cardType == "green"){
-				cardColor = greenCard.getScaledCopy((float) .8);}
-			else{cardType = "fail";}
-			*/
-			//cardText = cardgenerator.getFinalCardText();
 		}
 		
 		//When the player lands on a fork space they will see a window giving 
@@ -367,7 +351,7 @@ public class GameMain extends BasicGameState{
 
 			System.out.println(gameboard.getCurrentSpace().getType());
 		}
-		
+	
 		
 		if(showEventWindow){
 			//If the player clicks on close
@@ -380,9 +364,6 @@ public class GameMain extends BasicGameState{
 				showEventWindow = false;
 			}
 		}
-		
-		
-		
 		
 		//checks for user clicking in the cards icon to display its card history.
 		if(input.isMouseButtonDown(0) &&
@@ -439,8 +420,6 @@ public class GameMain extends BasicGameState{
 			cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
 			cardTextBox.render(gc, g);
 		}
-		
-		
 		
 		//declare the images used
 		wheel = new Image("res/spinwheeldefault.png");
