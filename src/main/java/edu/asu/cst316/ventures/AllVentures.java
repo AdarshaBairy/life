@@ -2,36 +2,39 @@ package main.java.edu.asu.cst316.ventures;
 
 
 public class AllVentures {
-	private Venture ventures[];
+	
+	private static AllVentures ventures = new AllVentures();
 
+	private static Venture venture[];
+	
 	public AllVentures(){
-		ventures = new Venture[3];
+		venture = new Venture[3];
 		
-		ventures[0] = new Venture();
-		ventures[0].setIncome(10000);
-		ventures[0].setStartingMoney(50000);
-		ventures[0].setImageName("images/charCreationInt1.png");
-		ventures[0].setRisk(4);
+		venture[0] = new Venture();
+		venture[0].setIncome(10000);
+		venture[0].setStartingMoney(50000);
+		venture[0].setImageName("images/charCreationInt1.png");
+		venture[0].setRisk(4);
 		
-		ventures[1] = new Venture();
-		ventures[1].setIncome(15000);
-		ventures[1].setStartingMoney(50000);
-		ventures[1].setImageName("images/charCreationInt2.png");
-		ventures[1].setRisk(6);
+		venture[1] = new Venture();
+		venture[1].setIncome(15000);
+		venture[1].setStartingMoney(50000);
+		venture[1].setImageName("images/charCreationInt2.png");
+		venture[1].setRisk(6);
 		
-		ventures[2] = new Venture();
-		ventures[2].setIncome(20000);
-		ventures[2].setStartingMoney(50000);
-		ventures[2].setImageName("images/charCreationInt3.png");
-		ventures[2].setRisk(8);
+		venture[2] = new Venture();
+		venture[2].setIncome(20000);
+		venture[2].setStartingMoney(50000);
+		venture[2].setImageName("images/charCreationInt3.png");
+		venture[2].setRisk(8);
 	}
 	
 	public Venture[] getVentures() {
-		return ventures;
+		return venture;
 	}
-
-	public void setVentures(Venture[] ventures) {
-		this.ventures = ventures;
+	
+	public static AllVentures getInstance() {
+		return ventures;
 	}
 	
 }

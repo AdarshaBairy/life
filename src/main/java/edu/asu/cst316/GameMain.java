@@ -542,5 +542,12 @@ public class GameMain extends BasicGameState{
 		highScores.addPlayerRecord(playerObj.getName(), playerObj.getSavedMoney());
 	}
 	
+	@Override
+	public void mouseClicked(int button, int x, int y, int clickCount){
+		
+	}
 	
+	public void mileStoneAction(){
+		
+	}
 }

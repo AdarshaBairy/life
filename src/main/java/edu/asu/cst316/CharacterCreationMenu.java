@@ -16,10 +16,13 @@ import org.newdawn.slick.Color;
 import java.awt.Font;
 
 import main.java.edu.asu.cst316.player.*;
+import main.java.edu.asu.cst316.ventures.AllVentures;
+import main.java.edu.asu.cst316.ventures.Venture;
 
 
 
 public class CharacterCreationMenu extends BasicGameState{
+	StateBasedGame stateBasedGame;
 	public String mouse = "";
 	
 	public Image background;
@@ -30,8 +33,9 @@ public class CharacterCreationMenu extends BasicGameState{
 	public CharacterCreationMenu(int state){
 	}
 	
-	//@Override
+	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+		stateBasedGame = sbg;
 		background = new Image("images/charCreationInt.png");
 		Font font = new Font("Verdana", Font.PLAIN, 26);
 		TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
@@ -42,7 +46,7 @@ public class CharacterCreationMenu extends BasicGameState{
 		careerName.setText("");
 	}
 
-	//@Override
+	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
 		// TODO Auto-generated method stub
@@ -57,84 +61,20 @@ public class CharacterCreationMenu extends BasicGameState{
 		trueTypeFont.drawString(333, 316, "Venture 1");
 		trueTypeFont.drawString(333, 366, "Venture 2");
 		trueTypeFont.drawString(333, 416, "Venture 3");
-		//g.drawString("Venture 2", 330, 350);
-		//g.drawString("Venture 3", 330, 405);
-		//g.drawString("Select Business Venture", 50, 300);
 
 	}
 
-	//@Override
+	@Override
 	public void update(GameContainer gc, StateBasedGame sbg, int i)
 			throws SlickException {
 		// TODO Auto-generated method stub
 		int xPosition = Mouse.getX();
 		int yPosition = Mouse.getY();
+		yPosition = 600 - yPosition;
 		Input input = gc.getInput();
 		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;
 		
 		
-		//create text fields and combo boxes to get info
-		careerName.setFocus(false);
-		//back button
-		if(input.isMouseButtonDown(0) &&
-		xPosition > 22 &&
-		xPosition < 172 &&
-		yPosition < 64 &&
-		yPosition > 18){
-			sbg.enterState(0);
-		}
-		//next button
-		if(input.isMouseButtonDown(0) &&
-		xPosition > 621 &&
-		xPosition < 773 &&
-		yPosition < 64 &&
-		yPosition > 18){
-			entrP.setName(careerName.getText());
-			sbg.enterState(2);
-		}
-		
-		//venture 1
-		if(input.isMouseButtonDown(0) &&
-		xPosition > 330 &&
-		xPosition < 460 &&
-		yPosition < 285 &&
-		yPosition > 250){
-			
-			System.out.println(careerName.getText());
-			entrP.setName(careerName.getText());
-			entrP.setCareer("Venture 1");
-			entrP.setIncome(10000);
-			entrP.setSavedMoney(50000);
-			entrP.setRisk(4);
-			background = new Image("images/charCreationInt1.png");
-		}
-		//venture 2
-		if(input.isMouseButtonDown(0) &&
-		xPosition > 330 &&
-		xPosition < 460 &&
-		yPosition < 235 &&
-		yPosition > 200){
-			System.out.println(careerName.getText());
-			entrP.setName(careerName.getText());
-			entrP.setCareer("Venture 2");
-			entrP.setIncome(15000);
-			entrP.setSavedMoney(50000);
-			entrP.setRisk(6);
-			background = new Image("images/charCreationInt2.png");	
-		}
-		//venture 3
-		if(input.isMouseButtonDown(0) &&
-		xPosition > 330 &&
-		xPosition < 460 &&
-		yPosition < 185 &&
-		yPosition > 150){
-			entrP.setCareer("Venture 3");
-			entrP.setIncome(20000);
-			entrP.setSavedMoney(50000);
-			entrP.setRisk(8);
-			background = new Image("images/charCreationInt3.png");
-		}
-		careerName.setFocus(true);
 	}
 
 	@Override
@@ -143,6 +83,73 @@ public class CharacterCreationMenu extends BasicGameState{
 		return 5;
 	}
 	
-	
+	public void mousePressed(int button, int x, int y) {
+		y = 600 - y;
+		System.out.println("click");
+		System.out.println(x);
+		System.out.println(y);
+		if(button == 0){
+			backButtonAction(x, y);
+			nextButtonAction(x, y);
+			try {
+				ventureAction(x, y);
+			} catch (SlickException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
+	public void backButtonAction(int x, int y){
+		if(x > 22 &&
+		x < 172 &&
+		y < 64 &&
+		y > 18){
+			stateBasedGame.enterState(0);
+		}
+	}
+	
+	public void nextButtonAction(int x, int y){
+		if(x > 621 &&
+		x < 773 &&
+		y < 64 &&
+		y > 18){
+			entrP.setName(careerName.getText());
+			stateBasedGame.enterState(2);
+		}
+	}	
+	
+	public void ventureAction(int x, int y) throws SlickException{
+		AllVentures ventures = AllVentures.getInstance();
+		Venture[] venture = ventures.getVentures();
+		if(x > 330 &&
+		x < 460 &&
+		y < 285 &&
+		y > 250){
+			entrP.setCareer(venture[0].getCareer());
+			entrP.setIncome(venture[0].getIncome());
+			entrP.setSavedMoney(venture[0].getStartingMoney());
+			entrP.setRisk(venture[0].getRisk());
+			background = new Image(venture[0].getImageName());
+		}
+		else if(x > 330 &&
+		x < 460 &&
+		y < 235 &&
+		y > 200){
+			entrP.setCareer(venture[1].getCareer());
+			entrP.setIncome(venture[1].getIncome());
+			entrP.setSavedMoney(venture[1].getStartingMoney());
+			entrP.setRisk(venture[1].getRisk());
+			background = new Image(venture[1].getImageName());
+		}
+		else if(x > 330 &&
+		x < 460 &&
+		y < 185 &&
+		y > 150){
+			entrP.setCareer(venture[2].getCareer());
+			entrP.setIncome(venture[2].getIncome());
+			entrP.setSavedMoney(venture[2].getStartingMoney());
+			entrP.setRisk(venture[2].getRisk());
+			background = new Image(venture[2].getImageName());
+		}
+	}
 }
