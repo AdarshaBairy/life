@@ -10,6 +10,8 @@ public class PlayerCardStack {
 	
 	public void addCard(Card currentCard){
 		playerCards.add(currentCard);
+		System.out.println(playerCards.get(playerCards.size()-1).getText());
+		System.out.println(playerCards.get(playerCards.size()-1).getType());
 	}
 	
 	public int getSize(){
@@ -29,4 +31,10 @@ public class PlayerCardStack {
 		return pcs;
 	}
 	
+	public void printOutAll(){
+		for(int i = 0; i < playerCards.size(); ++i){
+			System.out.print(playerCards.get(i).getType());
+			System.out.print(playerCards.get(i).getText());
+		}
+	}
 }

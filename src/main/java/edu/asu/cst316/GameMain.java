@@ -309,18 +309,21 @@ public class GameMain extends BasicGameState{
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}else if(gameboard.getCurrentSpace().getType().equals("red")){
 					Card newCard = deck.getRedCard();
 					cardText = newCard.getText();
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}else if(gameboard.getCurrentSpace().getType().equals("green")){
 					Card newCard = deck.getGreenCard();
 					cardText = newCard.getText();
 					int cardMoneyValue = newCard.getValue();
 					int currentMoney = playerObj.getSavedMoney();
 					playerObj.setSavedMoney(currentMoney+cardMoneyValue);
+					pcs.addCard(newCard);
 				}
 				System.out.println(cardText);
 				System.out.println(playerObj.getSavedMoney());
@@ -398,7 +401,7 @@ public class GameMain extends BasicGameState{
 		g.drawImage(player, 336, 136);
 		if(showNotification){
 			g.drawImage(notification, 0, 0);
-			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 28);
+			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 20);
 			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
 			TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 100, 420, 120);
 			cardTextBox.setText("You have a decision to make!");
@@ -409,7 +412,7 @@ public class GameMain extends BasicGameState{
 		if(showEventWindow){
 			
 			g.drawImage(eventWindow, 0, 0);
-			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 20);
+			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 16);
 			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
 			
 			
@@ -447,7 +450,7 @@ public class GameMain extends BasicGameState{
 		
 		if(showEndGameWindow){
 			g.drawImage(endGameWindow, 0, 0);
-			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 20);
+			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 16);
 			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
 			TextField cardTextBox = new TextField(gc, trueTypeFont, 380, 240, 420, 120);
 			cardTextBox.setText(Integer.toString(playerObj.getSavedMoney()));

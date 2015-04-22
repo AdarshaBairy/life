@@ -168,7 +168,6 @@ public class CharacterCreationMenu extends BasicGameState{
 			background = new Image(venture[1].getImageName());
 			displayWarningText = false;
 			displayWarningVenture = false;
-			System.out.println("wtf?");
 			System.out.println(entrP.getCareer());
 		}
 		else if(x > 330 &&

@@ -27,6 +27,7 @@ public class HistoryCards extends BasicGameState{
 	PlayerCardStack pcs = PlayerCardStack.getInstance();
 	int index = 0;
 	Card currentCard;
+	String cardText;
 	
 	public HistoryCards(int state){
 	}
@@ -34,8 +35,9 @@ public class HistoryCards extends BasicGameState{
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		stateBasedGame = sbg;
-		background = new Image("images/HistoryCard.png");
-		
+		background = new Image("images/historycardnone.png");
+		currentCard = pcs.getCurrentCard(0);
+		cardText = currentCard.getText();
 	}
 
 	@Override
@@ -45,8 +47,8 @@ public class HistoryCards extends BasicGameState{
 		g.drawString(mouse, 10, 10);
 		
 		if(pcs.getSize() != 0){
-			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 20);
-			String cardText = currentCard.getText();
+			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 16);
+			cardText = currentCard.getText();
 			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
 			
 			TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 280, 420, 120);
@@ -66,6 +68,12 @@ public class HistoryCards extends BasicGameState{
 					cardTextBox2.render(gc, g);	
 				}
 			}
+			
+			TextField weekText = new TextField(gc, trueTypeFont, 370, 440, 420, 120);
+			weekText.setText("Week: " + index);
+			weekText.setBorderColor(new Color(0, 0, 0, 0));
+			weekText.setBackgroundColor(new Color(0, 0, 0, 0));
+			weekText.render(gc, g);
 		}
 	}
 
@@ -77,11 +85,18 @@ public class HistoryCards extends BasicGameState{
 		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
 		
 		
+		currentCard = pcs.getCurrentCard(index);
 		if(pcs.getSize() == 0){
 			background = new Image("images/historycardnone.png");
 		}
-		else{
-			
+		else if(currentCard.getType().equals("common")){
+			background = new Image("images/historycardblue.png");
+		}
+		else if(currentCard.getType().equals("red")){
+			background = new Image("images/historycardred.png");
+		}
+		else if(currentCard.getType().equals("green")){
+			background = new Image("images/historycardgreen.png");
 		}
 	}
 
@@ -110,58 +125,36 @@ public class HistoryCards extends BasicGameState{
 
 	public void backButtonAction(int x, int y) throws SlickException{
 		if(x > 50 && 
-		x < 80 &&
-		y > 100 &&
-		y < 500){
+		x < 100 &&
+		y > 190 &&
+		y < 340){
 			index--;
-			if(index == 0){
+			if(index == -1){
 				index = pcs.getSize()-1;
-				
-				currentCard = pcs.getCurrentCard(index);
-				if(currentCard.getType().equals("common")){
-					background = new Image("images/historycardblue.png");
-				}
-				else if(currentCard.getType().equals("red")){
-					background = new Image("images/historycardred.png");
-				}
-				else if(currentCard.getType().equals("green")){
-					background = new Image("images/historycardgreen.png");
-				}
+				currentCard = pcs.getCurrentCard(index);		
 			}
 			
 		}
 	}
 	
 	public void nextButtonAction(int x, int y) throws SlickException{
-		if(x > 720 && 
+		if(x > 700 && 
 		x < 750 &&
-		y > 100 &&
-		y < 500){
+		y > 190 &&
+		y < 340){
 			index++;
 			if(index == pcs.getSize()){
-				index = 0;
-				
+				index = 0;				
 				currentCard = pcs.getCurrentCard(index);
-				if(currentCard.getType().equals("common")){
-					background = new Image("images/historycardblue.png");
-				}
-				else if(currentCard.getType().equals("red")){
-					background = new Image("images/historycardred.png");
-				}
-				else if(currentCard.getType().equals("green")){
-					background = new Image("images/historycardgreen.png");
-				}
 			}
-			
-
 		}
 	}
 	
 	public void gameMainAction(int x, int y){
-		if(x >= 50 &&
-		x <= 202 &&
-		y >= 39 &&
-		y <= 85){
+		if(x > 20 &&
+		x < 172 &&
+		y > 20 &&
+		y < 60){
 			stateBasedGame.enterState(2);
 		}
 	}
