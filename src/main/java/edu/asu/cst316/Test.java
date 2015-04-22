@@ -1,19 +1,19 @@
 package main.java.edu.asu.cst316;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+//import java.sql.Connection;
+//import java.sql.ResultSet;
+//import java.sql.Statement;
 //import org.apache.commons.math3.distribution.*;
 
 public class Test {
     public static void main(String[] args) {
-        Connection c;
-        Statement stmt;
-        ResultSet rs;
-        int mean = 55294; // Mean assuming all score positive
-        int stdev = 54263;
-        int min = -70000;
-        int max = 200000;
+        //Connection c;
+        //Statement stmt;
+        //ResultSet rs;
+        //int mean = 55294; // Mean assuming all score positive
+        //int stdev = 54263;
+        //int min = -70000;
+       // int max = 200000;
 
         try {
 //            Class.forName("org.sqlite.JDBC");
