@@ -32,6 +32,7 @@ public class GameMain extends BasicGameState{
 	
 	GameBoard gameboard = GameBoard.getInstance();
 	Player playerObj = Player.getInstance();
+	StateBasedGame stateBasedGame;
 	
 	public String mouse = "";
 	public String cardText;
@@ -94,6 +95,7 @@ public class GameMain extends BasicGameState{
 
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+		stateBasedGame = sbg;
 		background = new Image("images/u2.png");
 		gameBoard = new Image("images/board5.png");
 		notification = new Image("images/notification_window.png");
@@ -367,14 +369,7 @@ public class GameMain extends BasicGameState{
 			}
 		}
 		
-		//checks for user clicking in the cards icon to display its card history.
-		if(input.isMouseButtonDown(0) &&
-		xPosition >= 660 &&
-		xPosition <= 745 &&
-		yPosition >= 50 &&
-		yPosition <= 155){
-			sbg.enterState(6);
-		}
+	
 	}
 
 	//@Override
@@ -394,7 +389,7 @@ public class GameMain extends BasicGameState{
 		g.drawImage(player, 336, 136);
 		if(showNotification){
 			g.drawImage(notification, 0, 0);
-			Font font = new Font("Verdana", Font.PLAIN, 28);
+			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 28);
 			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
 			TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 100, 420, 120);
 			cardTextBox.setText("You have a decision to make!");
@@ -403,18 +398,47 @@ public class GameMain extends BasicGameState{
 			cardTextBox.render(gc, g);
 		}
 		if(showEventWindow){
+			
 			g.drawImage(eventWindow, 0, 0);
-			Font font = new Font("Verdana", Font.PLAIN, 20);
+			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 20);
 			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
+			
+			
 			TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 100, 420, 120);
-			cardTextBox.setText(cardText);
+			
+			if(cardText.length() > 40) cardTextBox.setText(cardText.substring(0, 40)+"-");
+			else cardTextBox.setText(cardText);
 			cardTextBox.setBorderColor(new Color(0, 0, 0, 0));
 			cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
 			cardTextBox.render(gc, g);
+			if(cardText.length() > 40){
+				TextField cardTextBox2 = new TextField(gc, trueTypeFont, 190, 120, 420, 120);
+				if(cardText.length() < 81)cardTextBox2.setText(cardText.substring(40));
+				else cardTextBox2.setText(cardText.substring(40, 80)+"-");
+				cardTextBox2.setBorderColor(new Color(0, 0, 0, 0));
+				cardTextBox2.setBackgroundColor(new Color(0, 0, 0, 0));
+				cardTextBox2.render(gc, g);	
+			}
+			if(cardText.length() > 80){
+				TextField cardTextBox3 = new TextField(gc, trueTypeFont, 190, 140, 420, 120);
+				if(cardText.length() < 101)cardTextBox3.setText(cardText.substring(80));
+				else cardTextBox3.setText(cardText.substring(80, 100)+"-");
+				cardTextBox3.setBorderColor(new Color(0, 0, 0, 0));
+				cardTextBox3.setBackgroundColor(new Color(0, 0, 0, 0));
+				cardTextBox3.render(gc, g);	
+			}
+			if(cardText.length() > 100){
+				TextField cardTextBox4 = new TextField(gc, trueTypeFont, 190, 160, 420, 120);
+				cardTextBox4.setText(cardText.substring(100));
+				cardTextBox4.setBorderColor(new Color(0, 0, 0, 0));
+				cardTextBox4.setBackgroundColor(new Color(0, 0, 0, 0));
+				cardTextBox4.render(gc, g);	
+			}
 		}
+		
 		if(showEndGameWindow){
 			g.drawImage(endGameWindow, 0, 0);
-			Font font = new Font("Verdana", Font.PLAIN, 20);
+			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 20);
 			TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
 			TextField cardTextBox = new TextField(gc, trueTypeFont, 380, 240, 420, 120);
 			cardTextBox.setText(Integer.toString(playerObj.getSavedMoney()));
@@ -523,11 +547,28 @@ public class GameMain extends BasicGameState{
 	}
 	
 	@Override
-	public void mouseClicked(int button, int x, int y, int clickCount){
-		
+	public void mousePressed(int button, int x, int y){
+		y = 600 - y;
+		if(button == 0){
+			if(x >= 660 &&
+			x <= 745 &&
+			y >= 50 &&
+			y <= 155){
+				stateBasedGame.enterState(6);
+			}
+		}
 	}
 	
 	public void mileStoneAction(){
 		
+	}
+	
+	public void drawCardText(String text, GameContainer gc, TrueTypeFont trueTypeFont, Graphics g){
+		TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 140, 420, 120);
+		if(cardText.length() < 81)cardTextBox.setText(cardText.substring(80));
+		else cardTextBox.setText(cardText.substring(80, 100)+"-");
+		cardTextBox.setBorderColor(new Color(0, 0, 0, 0));
+		cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
+		cardTextBox.render(gc, g);
 	}
 }

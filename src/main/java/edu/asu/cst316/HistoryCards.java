@@ -13,15 +13,17 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class HistoryCards extends BasicGameState{
 	
+	StateBasedGame stateBasedGame;
 	public String mouse = "";
 	public Image background;
+	
 	
 	public HistoryCards(int state){
 	}
 
 	@Override
-	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException {
-		
+	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+		stateBasedGame = sbg;
 		background = new Image("images/HistoryCard.png");
 		
 	}
@@ -37,17 +39,7 @@ public class HistoryCards extends BasicGameState{
 		int xPosition = Mouse.getX();
 		int yPosition = Mouse.getY();
 		Input input = gc.getInput();
-		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
-		if(
-				input.isMouseButtonDown(0) &&
-				xPosition >= 50 &&
-				xPosition <= 202 &&
-				yPosition >= 39 &&
-				yPosition <= 85)
-		{
-			sbg.enterState(2);
-		}
-		
+		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;				
 	}
 
 	@Override
@@ -55,5 +47,34 @@ public class HistoryCards extends BasicGameState{
 		
 		return 6;
 	}
+	
+	
+	public void mousePressed(int button, int x, int y) {
+		y = 600 - y;
+		System.out.println("click");
+		System.out.println(x);
+		System.out.println(y);
+		if(button == 0){
+			backButtonAction(x, y);
+			nextButtonAction(x, y);
+			gameMainAction(x,y);
+		}
+	}
 
+	public void backButtonAction(int x, int y){
+		
+	}
+	
+	public void nextButtonAction(int x, int y){
+		
+	}
+	
+	public void gameMainAction(int x, int y){
+		if(x >= 50 &&
+		x <= 202 &&
+		y >= 39 &&
+		y <= 85){
+			stateBasedGame.enterState(2);
+		}
+	}
 }

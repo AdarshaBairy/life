@@ -37,7 +37,6 @@ public class HighScoresPage extends BasicGameState{
 
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-
 		background = new Image("images/highscores.png");
 	}
 

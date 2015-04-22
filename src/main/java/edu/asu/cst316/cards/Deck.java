@@ -22,7 +22,7 @@ public class Deck {
 		commonCards[0] = new Card("You find a lucky penny and it increases business sales, you gain $4000", 4000);
 		commonCards[1] = new Card("Your significant other wants a divorce and takes your money, you lose $3500", -3500);
 		commonCards[2] = new Card("While at a rodeo a horse kicks you in the chest and breaks your ribs, for medical you pay $4000", -4000);
-		commonCards[3] = new Card("Monkey’s escaped the local zoo and you brought them back, you are rewarded $3500", 3500);
+		commonCards[3] = new Card("Monkey escaped the local zoo and you brought them back, you are rewarded $3500", 3500);
 		commonCards[4] = new Card("Your kids fought the law and the law won, pay $5000", -5000);
 		commonCards[5] = new Card("Your company is not making much revenue you lose $3000", -3000);
 		commonCards[6] = new Card("You decide to buy a painting from goodwill, turns out its worth a lot of money, you gain $4000", 4000);
@@ -31,7 +31,7 @@ public class Deck {
 		commonCards[9] = new Card("You find a stray dog that happens to be Bill Gates dog, he is happy and rewards you with $3000", 3000);
 		commonCards[10] = new Card("While fighting a bear you notice something shiny, it turns out to be gold worth $4000", 4000);
 		commonCards[11] = new Card("The bees knees flat screen TV just came out and you buy it for $3500", -3500);
-		commonCards[12] = new Card("You see a watch in a trash can and pull it out, it’s a Rolex and you sell if for $4000", 4000);
+		commonCards[12] = new Card("You see a watch in a trash can and pull it out, it's a Rolex and you sell if for $4000", 4000);
 		commonCards[13] = new Card("You win a new car and other gifts on the Price is Right, you gain $3500", 3500);
 		commonCards[14] = new Card("A new smartphone has been released and you buy it for $5000", -5000);
 		commonCards[15] = new Card("To fund your new hobby of hat collecting you pay $3000", -3000);
@@ -68,7 +68,7 @@ public class Deck {
 		redCards[5] = new Card("A hurricane caused flooding in your building to fix the damage it costs $9000", -9000);
 		redCards[6] = new Card("Your internet went down and you can no longer reach clients you lose $6000", -6000);
 		redCards[7] = new Card("Your employees are demanding more pay, to keep them happy you pay them $9000", -9000);
-		redCards[8] = new Card("You see a watch in a trash can and pull it out, it’s a Rolex and you sell if for $7500", 7500);
+		redCards[8] = new Card("You see a watch in a trash can and pull it out, it's a Rolex and you sell if for $7500", 7500);
 		redCards[9] = new Card("You have been the victim of Identity theft they stole $8000", -8000);
 		redCards[10] = new Card("You have a leak in the roof of you building and heavy rain is expected it costs $6500", -6500);
 		redCards[11] = new Card("Your company had record sales this month, you get a bonus of $8000", 8000);
@@ -94,11 +94,11 @@ public class Deck {
 		redCards[31] = new Card("You won an award for how well you are running your business you get a bonus of $8000", 8000);
 		redCards[32] = new Card("Your employees are happy to work for you and their work improves, you gain $7000", 7000);
 		redCards[33] = new Card("You just made an outstanding business decision that increased revenue, you gain $11000", 11000);
-		redCards[34] = new Card("An employee is angry with you and takes you to court for mal practices, lawyer’s fees are $5000", -5000);
+		redCards[34] = new Card("An employee is angry with you and takes you to court for mal practices, lawyer's fees are $5000", -5000);
 		redCards[35] = new Card("You develop a new hobby of collecting rare space rocks, for funding your hobby you pay $9000", -9000);
 		redCards[36] = new Card("Your car needs a new transmission to get a new one you pay $6000", -6000);
 		redCards[37] = new Card("A French man tells you he has a great investment opportunity, you say yes and give him money, he is never seen again and scammed you. You lost $9000", -9000);
-		redCards[38] = new Card("Your company got a booth at the country’s largest convention center, you gain $7500", 7500);
+		redCards[38] = new Card("Your company got a booth at the country's largest convention center, you gain $7500", 7500);
 		redCards[39] = new Card("A meteorite hits your house, to fix the damage pay $8000", -8000);
 				
 		greenCards[0] = new Card("Your water bill for your building was under budget this month, you gain $2000", 2000);
@@ -115,11 +115,11 @@ public class Deck {
 		greenCards[11] = new Card("Tall figures in an alley are staring at you, you give them your wallet to leave you alone, you lose $1000", -1000);
 		greenCards[12] = new Card("Your car gets a flat tire, a new tire costs $1000", -1000);
 		greenCards[13] = new Card("A mysterious shrouded man approaches you and gives you $2000", 2000);
-		greenCards[14] = new Card("Monkey’s escaped the local zoo and you are bitten by one, the medical bill costs $2500", -2500);
+		greenCards[14] = new Card("Monkey's escaped the local zoo and you are bitten by one, the medical bill costs $2500", -2500);
 		greenCards[15] = new Card("Your company was featured on a commercial and business increased, you gain $3000", 3000);
 		greenCards[16] = new Card("You want to see the pre-screening of a movie, it costs $500", -500);
 		greenCards[17] = new Card("While at an aquarium the glass breaks and you are stung by a jelly fish, medical costs $1500", -1500);
-		greenCards[18] = new Card("Your company got a booth at the country’s largest convention center, you gain $3000", 3000);
+		greenCards[18] = new Card("Your company got a booth at the country's largest convention center, you gain $3000", 3000);
 		greenCards[19] = new Card("The economy is booming and sales have increased, you gain $2000", 2000);
 		greenCards[20] = new Card("You have been running a very successful business, you gain $2000", 2000);
 		greenCards[21] = new Card("You pay someone to make a website for your business, it cost $1000", -1000);
