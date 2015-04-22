@@ -150,7 +150,7 @@ public class CharacterCreationMenu extends BasicGameState{
 	public void ventureAction(int x, int y) throws SlickException{
 		
 		if(x > 330 &&
-		x < 460 &&
+		x < 660 &&
 		y < 285 &&
 		y > 250){
 			entrP.setCareer(venture[0].getCareer());
@@ -163,7 +163,7 @@ public class CharacterCreationMenu extends BasicGameState{
 			
 		}
 		else if(x > 330 &&
-		x < 460 &&
+		x < 660 &&
 		y < 235 &&
 		y > 200){
 			System.out.println(venture[1].getCareer());
@@ -177,7 +177,7 @@ public class CharacterCreationMenu extends BasicGameState{
 			System.out.println(entrP.getCareer());
 		}
 		else if(x > 330 &&
-		x < 460 &&
+		x < 660 &&
 		y < 185 &&
 		y > 150){
 			entrP.setCareer(venture[2].getCareer());
