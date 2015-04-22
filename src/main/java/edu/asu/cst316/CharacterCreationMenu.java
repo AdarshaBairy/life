@@ -30,6 +30,12 @@ public class CharacterCreationMenu extends BasicGameState{
 	public TextField careerName;
 	public Player entrP = Player.getInstance();
 	
+	boolean displayWarningText = false;
+	boolean displayWarningVenture = false;
+	
+	AllVentures ventures = AllVentures.getInstance();
+	Venture[] venture = ventures.getVentures();
+	
 	public CharacterCreationMenu(int state){
 	}
 	
@@ -58,10 +64,16 @@ public class CharacterCreationMenu extends BasicGameState{
 		Font font = new Font("Verdana", Font.PLAIN, 26);
 		TrueTypeFont trueTypeFont = new TrueTypeFont(font, true);
 		
-		trueTypeFont.drawString(333, 316, "Venture 1");
-		trueTypeFont.drawString(333, 366, "Venture 2");
-		trueTypeFont.drawString(333, 416, "Venture 3");
+		trueTypeFont.drawString(333, 316, venture[0].getCareer());
+		trueTypeFont.drawString(333, 366, venture[1].getCareer());
+		trueTypeFont.drawString(333, 416, venture[2].getCareer());
 
+		if(displayWarningText){
+			trueTypeFont.drawString(200, 550, "Invalid name inputted");
+		}
+		if(displayWarningVenture){
+			trueTypeFont.drawString(200, 550, "Venture must be selected");
+		}
 	}
 
 	@Override
@@ -113,14 +125,25 @@ public class CharacterCreationMenu extends BasicGameState{
 		x < 773 &&
 		y < 64 &&
 		y > 18){
-			entrP.setName(careerName.getText());
-			stateBasedGame.enterState(2);
+			System.out.println(careerName.getText().equals(null));
+			System.out.println(careerName.getText().equals(""));
+			System.out.println(entrP.getCareer() == null);
+			if(careerName.getText().equals(null) || 
+			careerName.getText().equals("")){
+				displayWarningText = true;
+			}
+			else if(entrP.getCareer() == null){
+				displayWarningVenture = true;
+			}
+			else{
+				entrP.setName(careerName.getText());
+				stateBasedGame.enterState(2);
+			}
 		}
 	}	
 	
 	public void ventureAction(int x, int y) throws SlickException{
-		AllVentures ventures = AllVentures.getInstance();
-		Venture[] venture = ventures.getVentures();
+		
 		if(x > 330 &&
 		x < 460 &&
 		y < 285 &&
@@ -130,16 +153,23 @@ public class CharacterCreationMenu extends BasicGameState{
 			entrP.setSavedMoney(venture[0].getStartingMoney());
 			entrP.setRisk(venture[0].getRisk());
 			background = new Image(venture[0].getImageName());
+			displayWarningText = false;
+			displayWarningVenture = false;
 		}
 		else if(x > 330 &&
 		x < 460 &&
 		y < 235 &&
 		y > 200){
+			System.out.println(venture[1].getCareer());
 			entrP.setCareer(venture[1].getCareer());
 			entrP.setIncome(venture[1].getIncome());
 			entrP.setSavedMoney(venture[1].getStartingMoney());
 			entrP.setRisk(venture[1].getRisk());
 			background = new Image(venture[1].getImageName());
+			displayWarningText = false;
+			displayWarningVenture = false;
+			System.out.println("wtf?");
+			System.out.println(entrP.getCareer());
 		}
 		else if(x > 330 &&
 		x < 460 &&
@@ -150,6 +180,9 @@ public class CharacterCreationMenu extends BasicGameState{
 			entrP.setSavedMoney(venture[2].getStartingMoney());
 			entrP.setRisk(venture[2].getRisk());
 			background = new Image(venture[2].getImageName());
+			displayWarningText = false;
+			displayWarningVenture = false;
 		}
+		
 	}
 }
