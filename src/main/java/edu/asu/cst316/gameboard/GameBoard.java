@@ -71,7 +71,7 @@ public class GameBoard {
 		assignPositions2(-256, 470);
 		
 		assignPaydayType();
-		assignMileStoneType();
+		//assignMileStoneType();
 		playerSpace = startSpace;
 		
 	}
