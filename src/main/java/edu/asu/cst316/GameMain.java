@@ -381,19 +381,7 @@ public class GameMain extends BasicGameState{
 		}
 		
 
-		//If player decides to quit in the middle of the game 
-		//Quit button 
-		if(input.isMouseButtonDown(0) &&
-				xPosition > 585 &&
-				xPosition < 718 &&
-				yPosition < 36 &&
-				yPosition > 7){
-					recordPlayerScore();
-					showEndGameWindow = false;
-					gameboard.reset();
-					updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
-					sbg.enterState(0);
-		}
+		
 
 	}
 
@@ -634,12 +622,20 @@ public class GameMain extends BasicGameState{
 			y <= 155){
 				stateBasedGame.enterState(6);
 			}
+			else if(x > 585 &&
+			x < 718 &&
+			y < 36 &&
+			y > 7){
+				recordPlayerScore();
+				showEndGameWindow = false;
+				gameboard.reset();
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+				stateBasedGame.enterState(0);
+			}
 		}
 	}
 	
-	public void mileStoneAction(){
-		
-	}
+
 	
 	public void drawCardText(String text, GameContainer gc, TrueTypeFont trueTypeFont, Graphics g){
 		TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 140, 420, 120);
