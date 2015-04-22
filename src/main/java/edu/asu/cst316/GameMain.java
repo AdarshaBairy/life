@@ -35,7 +35,7 @@ public class GameMain extends BasicGameState{
 	int spinNum = 0; 
 	int	sNum = 0; 
 	int	centerOfImageX = 0; 
-	int	centerOfImageY = 0; 
+	int	centerOfImageY = 0;  
 	int	spinCount = 0;
 	
 	Image wheel; 
@@ -264,17 +264,18 @@ public class GameMain extends BasicGameState{
 		if (mouseOverSpin == true){
 			g.drawImage(wheelHover, 306, 375);
 		}	
-		
+		//clicked spin button procedure
 		if (spinClicked == true){
 			defaultImage = false;
 			spinClicked =false;
 			spinNum = getSpinNum();
 			System.out.println(spinNum);
 			spinAnimation = true;
+			rotate(spinAnimation, spinNum, g);
 		}
 		
-		//rotate(spinNum, g);
 		
+		//spin animation logic
 		if (spinAnimation){
 			spinningAnimation.draw(329, 415);
 			flipperAnimation.draw(460, 420);
@@ -343,7 +344,11 @@ public class GameMain extends BasicGameState{
 		return result;
 	}
 	
-	public void rotate(int spinNum, Graphics g){
+	public void rotate(boolean spinAnimation, int spinNum, Graphics g){
+		if (spinAnimation){
+			spinningAnimation.draw(329, 415);
+			flipperAnimation.draw(460, 420);
+		} else{
 		if (spinNum == 1){
 			wheelSpinning.setRotation(0);
 			g.drawImage(wheelSpinning, 329, 415);
@@ -379,4 +384,6 @@ public class GameMain extends BasicGameState{
 		}
 		
 	}
+	
+}
 	
