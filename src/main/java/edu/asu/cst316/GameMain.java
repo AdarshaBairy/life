@@ -471,7 +471,7 @@ public class GameMain extends BasicGameState{
 		centerOfImageY = (wheelSpinning.getHeight()/2);
 		wheelSpinning.setCenterOfRotation(centerOfImageX, centerOfImageY);
 		
-		if (defaultImage == true){
+		if (defaultImage == true && !showEndGameWindow){
 			g.drawImage(wheel, 306, 375);
 			g.drawImage(spinFlipper, 460, 420);
 		}
@@ -493,7 +493,7 @@ public class GameMain extends BasicGameState{
 		}
 
 
-		if (mouseOverSpin == true){
+		if (mouseOverSpin && !showEndGameWindow){
 			g.drawImage(wheelHover, 306, 375);
 		}	
 		//clicked spin button procedure
@@ -508,10 +508,11 @@ public class GameMain extends BasicGameState{
 		
 		
 		//spin animation logic
-		if (spinAnimation){
+		if (spinAnimation && !showEndGameWindow){
 			spinningAnimation.draw(329, 415);
 			flipperAnimation.draw(460, 420);
-		} else{ drawRotatedResult(spinNum, g);
+		} else if(!spinAnimation && !showEndGameWindow){ 
+			drawRotatedResult(spinNum, g);
 		
 
 		spinAnimation = false;
