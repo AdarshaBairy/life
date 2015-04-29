@@ -127,8 +127,9 @@ public class GameMain extends BasicGameState{
 		int xPosition = Mouse.getX();
 		int yPosition = Mouse.getY();
 		Input input = gc.getInput();
-		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;		
-		
+		mouse = "Mouse position x: " + xPosition + " y: " + yPosition;	
+		// Cheat code
+		/*
 		if(input.isMousePressed(0) && !gameboard.getCurrentSpace().getType().equals("end") &&
 		xPosition > 333 &&
 		xPosition < 490 &&
@@ -138,7 +139,7 @@ public class GameMain extends BasicGameState{
 			updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
 			System.out.println(gameboard.getCurrentSpace().getType());
 		}
-		
+		*/
 		if(input.isMouseButtonDown(0) &&
 		xPosition > 564 &&
 		xPosition < 715 &&
@@ -150,7 +151,9 @@ public class GameMain extends BasicGameState{
 		//recognize if the mouse is over spin and if spin is clicked
 		if(xPosition > 340 && 
 		xPosition < 470 && 
-		yPosition > 190 && yPosition < 220){
+		yPosition > 190 && 
+		yPosition < 220 &&
+		!showNotification){
 			mouseOverSpin = true;
 			if(Mouse.isButtonDown(0)){
 				spinClicked = true;
@@ -252,6 +255,7 @@ public class GameMain extends BasicGameState{
 		//of which way they want to go
 		if(gameboard.getCurrentSpace().getType().equals("fork")){
 			showNotification = true;
+			showEventWindow = false;
 			//If the player clicks on safe
 			if(input.isMouseButtonDown(0) &&
 			xPosition > 175 &&
@@ -419,7 +423,7 @@ public class GameMain extends BasicGameState{
 			
 			TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 100, 420, 120);
 			
-			if(cardText.length() > 40) cardTextBox.setText(cardText.substring(0, 40)+"-");
+			if(cardText.length() > 40) cardTextBox.setText(cardText.substring(0, 40));
 			else cardTextBox.setText(cardText);
 			cardTextBox.setBorderColor(new Color(0, 0, 0, 0));
 			cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
@@ -427,7 +431,7 @@ public class GameMain extends BasicGameState{
 			if(cardText.length() > 40){
 				TextField cardTextBox2 = new TextField(gc, trueTypeFont, 190, 120, 420, 120);
 				if(cardText.length() < 81)cardTextBox2.setText(cardText.substring(40));
-				else cardTextBox2.setText(cardText.substring(40, 80)+"-");
+				else cardTextBox2.setText(cardText.substring(40, 80));
 				cardTextBox2.setBorderColor(new Color(0, 0, 0, 0));
 				cardTextBox2.setBackgroundColor(new Color(0, 0, 0, 0));
 				cardTextBox2.render(gc, g);	
@@ -435,7 +439,7 @@ public class GameMain extends BasicGameState{
 			if(cardText.length() > 80){
 				TextField cardTextBox3 = new TextField(gc, trueTypeFont, 190, 140, 420, 120);
 				if(cardText.length() < 121)cardTextBox3.setText(cardText.substring(80));
-				else cardTextBox3.setText(cardText.substring(80, 120)+"-");
+				else cardTextBox3.setText(cardText.substring(80, 120));
 				cardTextBox3.setBorderColor(new Color(0, 0, 0, 0));
 				cardTextBox3.setBackgroundColor(new Color(0, 0, 0, 0));
 				cardTextBox3.render(gc, g);	

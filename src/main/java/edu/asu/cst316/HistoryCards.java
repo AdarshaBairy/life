@@ -57,7 +57,7 @@ public class HistoryCards extends BasicGameState{
 			
 			TextField cardTextBox = new TextField(gc, trueTypeFont, 190, 280, 420, 120);
 			
-			if(cardText.length() > 40) cardTextBox.setText(cardText.substring(0, 40)+"-");
+			if(cardText.length() > 40) cardTextBox.setText(cardText.substring(0, 40));
 			else cardTextBox.setText(cardText);
 			cardTextBox.setBorderColor(new Color(0, 0, 0, 0));
 			cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
@@ -66,7 +66,7 @@ public class HistoryCards extends BasicGameState{
 				if(cardText.length() > i){
 					TextField cardTextBox2 = new TextField(gc, trueTypeFont, 190, 280+(i/2), 420, 120);
 					if(cardText.length() < (i+41))cardTextBox2.setText(cardText.substring(i));
-					else cardTextBox2.setText(cardText.substring(i, (i+40))+"-");
+					else cardTextBox2.setText(cardText.substring(i, (i+40)));
 					cardTextBox2.setBorderColor(new Color(0, 0, 0, 0));
 					cardTextBox2.setBackgroundColor(new Color(0, 0, 0, 0));
 					cardTextBox2.render(gc, g);	

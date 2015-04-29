@@ -19,16 +19,16 @@ public class Deck {
 		greenCards = new Card[40];
 		
 		//Populate the deck with cards
-		commonCards[0] = new Card("You find a lucky penny and it increases  business sales, you gain $4000", 4000);
-		commonCards[1] = new Card("Your significant other wants a divorce   and takes your money, you lose $3500", -3500);
-		commonCards[2] = new Card("While at a rodeo a horse kicks you in    the chest and breaks your ribs, for     medical you pay $4000", -4000);
-		commonCards[3] = new Card("Monkey escaped the local zoo and you     brought them back, you are rewarded     $3500", 3500);
-		commonCards[4] = new Card("Your kids fought the law and the law     won, pay $5000", -5000);
-		commonCards[5] = new Card("Your company is not making much revenue  you lose $3000", -3000);
-		commonCards[6] = new Card("You decide to buy a painting from        goodwill, turns out its worth a lot     of money, you gain $4000", 4000);
-		commonCards[7] = new Card("A very loud horn shatters the windows    of your building, to have them fixed    it costs $2000", -2000);
-		commonCards[8] = new Card("While at the aquarium you see a leak in  the glass, for telling the staff you    are rewarded $3000", 3000);
-		commonCards[9] = new Card("You find a stray dog that happens to be  Bill Gates dog, he is happy and         rewards you with $3000", 3000);
+		commonCards[0] = new Card("You find a lucky penny and it increases business sales, you gain $4000", 4000);
+		commonCards[1] = new Card("Your significant other wants a divorce  and takes your money, you lose $3500", -3500);
+		commonCards[2] = new Card("While at a rodeo a horse kicks you in   the chest and breaks your ribs, for     medical you pay $4000", -4000);
+		commonCards[3] = new Card("Monkey escaped the local zoo and you    brought them back, you are rewarded     $3500", 3500);
+		commonCards[4] = new Card("Your kids fought the law and the law    won, pay $5000", -5000);
+		commonCards[5] = new Card("Your company is not making much revenue you lose $3000", -3000);
+		commonCards[6] = new Card("You decide to buy a painting from       goodwill, turns out its worth a lot     of money, you gain $4000", 4000);
+		commonCards[7] = new Card("A very loud horn shatters the windows   of your building, to have them fixed    it costs $2000", -2000);
+		commonCards[8] = new Card("While at the aquarium you see a leak in the glass, for telling the staff you    are rewarded $3000", 3000);
+		commonCards[9] = new Card("You find a stray dog that happens to be Bill Gates dog, he is happy and         rewards you with $3000", 3000);
 		commonCards[10] = new Card("While fighting a bear you notice        something shiny, it turns out to be     gold worth $4000", 4000);
 		commonCards[11] = new Card("The bees knees flat screen TV just      came out and you buy it for $3500", -3500);
 		commonCards[12] = new Card("You see a watch in a trash can and      pull it out, it's a Rolex and you       sell it for $4000", 4000);
@@ -64,16 +64,16 @@ public class Deck {
 			commonCards[i].setType("common");
 		}
 		
-		redCards[0] = new Card("A tornado strikes your building to fix   the damage it will cost $6000", -6000);
-		redCards[1] = new Card("You find a lucky penny and it increases  business sales, you gain $8000", 8000);
-		redCards[2] = new Card("You find a stray dog that happens to be  Bill Gates dog, he is happy and         rewards you with $7000", 7000);
+		redCards[0] = new Card("A tornado strikes your building to fix  the damage it will cost $6000", -6000);
+		redCards[1] = new Card("You find a lucky penny and it increases business sales, you gain $8000", 8000);
+		redCards[2] = new Card("You find a stray dog that happens to be Bill Gates dog, he is happy and         rewards you with $7000", 7000);
 		redCards[3] = new Card("You win the lottery, you gain $11000", 11000);
-		redCards[4] = new Card("An earthquake hits the city and damages  your offices the cost is $7000", -7000);
-		redCards[5] = new Card("A hurricane caused flooding in your      building to fix the damage it           costs $9000", -9000);
-		redCards[6] = new Card("Your internet went down and you can no   longer reach clients you lose $6000", -6000);
-		redCards[7] = new Card("Employees are demanding more pay, to     keep them happy you pay them $9000", -9000);
-		redCards[8] = new Card("You see a watch in a trash can and pull  it out, it's a Rolex and you sell it    for $7500", 7500);
-		redCards[9] = new Card("You have been the victim of Identity     theft they stole $8000", -8000);
+		redCards[4] = new Card("An earthquake hits the city and damages your offices the cost is $7000", -7000);
+		redCards[5] = new Card("A hurricane caused flooding in your     building to fix the damage it           costs $9000", -9000);
+		redCards[6] = new Card("Your internet went down and you can no  longer reach clients you lose $6000", -6000);
+		redCards[7] = new Card("Employees are demanding more pay, to    keep them happy you pay them $9000", -9000);
+		redCards[8] = new Card("You see a watch in a trash can and pull it out, it's a Rolex and you sell it    for $7500", 7500);
+		redCards[9] = new Card("You have been the victim of Identity    theft they stole $8000", -8000);
 		redCards[10] = new Card("You have a leak in the roof of you      building and heavy rain is              expected it costs $6500", -6500);
 		redCards[11] = new Card("Your company had record sales this      month, you get a bonus of $8000", 8000);
 		redCards[12] = new Card("You're an awesome person, you gain $7000", 7000);
@@ -109,16 +109,16 @@ public class Deck {
 			redCards[i].setType("red");
 		}
 		
-		greenCards[0] = new Card("Your water bill for your building was    under budget this month, you gain       $2000", 2000);
-		greenCards[1] = new Card("You ate bad sushi and must buy medicine  pay $1000", -1000);
-		greenCards[2] = new Card("While walking to lunch you see a wad of  cash on the ground, you gain            $1000", 1000);
-		greenCards[3] = new Card("You catch a little kids lollipop before  it hits the ground, the parent          rewards you with $2000", 2000);
-		greenCards[4] = new Card("You ate bad sushi and must buy medicine  pay $2500", -2500);
-		greenCards[5] = new Card("You scare away muggers while they were   chasing someone, you are rewarded       $3000", 3000);
-		greenCards[6] = new Card("A cat walks into your house and you      want to keep it, for vet fees pay       $500", -500);
-		greenCards[7] = new Card("You rescue an old ladies cat from a      tree, she rewards you with cookies      and $1500", 1500);
-		greenCards[8] = new Card("For being a good customer your internet  provider gives you a month free of      internet, you gain $3000", 3000);
-		greenCards[9] = new Card("A mysterious drifter convinces you to    buy magical beans to buy them you       pay $2000", -2000);
+		greenCards[0] = new Card("Your water bill for your building was   under budget this month, you gain       $2000", 2000);
+		greenCards[1] = new Card("You ate bad sushi and must buy medicine pay $1000", -1000);
+		greenCards[2] = new Card("While walking to lunch you see a wad of cash on the ground, you gain            $1000", 1000);
+		greenCards[3] = new Card("You catch a little kids lollipop before it hits the ground, the parent          rewards you with $2000", 2000);
+		greenCards[4] = new Card("You ate bad sushi and must buy medicine pay $2500", -2500);
+		greenCards[5] = new Card("You scare away muggers while they were  chasing someone, you are rewarded       $3000", 3000);
+		greenCards[6] = new Card("A cat walks into your house and you     want to keep it, for vet fees pay       $500", -500);
+		greenCards[7] = new Card("You rescue an old ladies cat from a     tree, she rewards you with cookies      and $1500", 1500);
+		greenCards[8] = new Card("For being a good customer your internet provider gives you a month free of      internet, you gain $3000", 3000);
+		greenCards[9] = new Card("A mysterious drifter convinces you to   buy magical beans to buy them you       pay $2000", -2000);
 		greenCards[10] = new Card("Due to having such a great month your   employees decide to give you a bonus,   you gain $2000", 2000);
 		greenCards[11] = new Card("Tall figures in an alley are staring    at you, you give them your wallet       to leave you alone, you lose $1000", -1000);
 		greenCards[12] = new Card("Your car gets a flat tire, a new tire   costs $1000", -1000);
