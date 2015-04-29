@@ -151,6 +151,11 @@ public class GameMain extends BasicGameState{
 			sbg.enterState(4);
 		}
 		
+		if(gameboard.getCurrentSpace().getType().equals("start")){
+			showNotification = false;
+			showEventWindow = false;
+		}
+		
 		//recognize if the mouse is over spin and if spin is clicked
 		if(xPosition > 340 && 
 		xPosition < 470 && 
@@ -347,7 +352,9 @@ public class GameMain extends BasicGameState{
 			yPosition > 235){
 				recordPlayerScore();
 				showEndGameWindow = false;
+				showNotification = false;
 				gameboard.reset();
+				pcs.resetStack();
 				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
 				sbg.enterState(0);
 			}
@@ -358,7 +365,9 @@ public class GameMain extends BasicGameState{
 			yPosition > 160){
 				recordPlayerScore();
 				showEndGameWindow = false;
+				showNotification = false;
 				gameboard.reset();
+				pcs.resetStack();
 				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
 				sbg.enterState(9);
 			}
@@ -660,7 +669,9 @@ public class GameMain extends BasicGameState{
 					quitting){
 				recordPlayerScore();
 				showEndGameWindow = false;
+				showNotification = false;
 				gameboard.reset();
+				pcs.resetStack();
 				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
 				stateBasedGame.enterState(0);
 				quitting = false;

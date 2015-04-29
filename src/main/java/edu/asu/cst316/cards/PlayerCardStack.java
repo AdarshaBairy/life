@@ -18,6 +18,10 @@ public class PlayerCardStack {
 		return playerCards.size();
 	}
 	
+	public void resetStack(){
+		playerCards = new ArrayList<Card>();
+	}
+	
 	public Card getCurrentCard(int i){
 		if (i >= playerCards.size()){
 			Card card = new Card("No more Cards", i);
