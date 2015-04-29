@@ -58,7 +58,7 @@ public class CharacterCreationMenu extends BasicGameState{
 			throws SlickException {
 		// TODO Auto-generated method stub
 		g.drawImage(background, 0, 0);
-		g.drawString(mouse, 10, 10);
+		//g.drawString(mouse, 10, 10);
 		careerName.render(gc, g);
 		careerName.setFocus(true);
 		

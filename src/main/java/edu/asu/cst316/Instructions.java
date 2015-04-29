@@ -88,7 +88,7 @@ public class Instructions extends BasicGameState{
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		g.drawImage(background, 0, 0);
 		g.drawImage(instruc, 40, 175);
-		g.drawString(mouse, 10, 10);
+		//g.drawString(mouse, 10, 10);
 		
 	}
 	

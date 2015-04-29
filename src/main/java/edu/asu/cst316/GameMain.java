@@ -46,6 +46,7 @@ public class GameMain extends BasicGameState{
 	public Image gameBoardZoom;
 	public Image spinner;
 	public Image player;
+	public Image quit;
 
 	//public Spinwheelhelper spinHelp = new Spinwheelhelper(); 
 	
@@ -90,6 +91,7 @@ public class GameMain extends BasicGameState{
 	boolean showEndGameWindow = false;
 	boolean cardGenerated = false;
 	boolean cardSelected = false;
+	boolean quitting = false;
 	
 	public GameMain(int state){
 	}
@@ -100,6 +102,7 @@ public class GameMain extends BasicGameState{
 		background = new Image("images/u2.png");
 		gameBoard = new Image("images/board5.png");
 		notification = new Image("images/notification_window.png");
+		quit = new Image("images/quit_image.png");
 		eventWindow = new Image("images/event_window.png");
 		endGameWindow = new Image("images/endGame.png");
 		
@@ -393,7 +396,7 @@ public class GameMain extends BasicGameState{
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		g.drawImage(background, 0, 0);
 		g.drawImage(gameBoardZoom, 62, 53);
-		g.drawString(mouse, 10, 10);
+		//g.drawString(mouse, 10, 10);
 		
 		//todo status initial render
 
@@ -414,6 +417,11 @@ public class GameMain extends BasicGameState{
 			cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
 			cardTextBox.render(gc, g);
 		}
+		
+		if(quitting){
+			g.drawImage(quit, 0, 0);
+		}
+		
 		if(showEventWindow){
 			
 			g.drawImage(eventWindow, 0, 0);
@@ -631,11 +639,32 @@ public class GameMain extends BasicGameState{
 			x < 718 &&
 			y < 36 &&
 			y > 7){
+				quitting = true;
+				/*recordPlayerScore();
+				showEndGameWindow = false;
+				gameboard.reset();
+				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
+				stateBasedGame.enterState(0);*/
+			}
+			else if(x > 175 &&
+					x < 302 &&
+					y > 332 &&
+					y < 370 &&
+					quitting){
+				quitting = false;
+				}
+			else if(x > 500 &&
+					x < 630 &&
+					y > 332 &&
+					y < 370 &&
+					quitting){
 				recordPlayerScore();
 				showEndGameWindow = false;
 				gameboard.reset();
 				updateBoardView(gameboard.getCurrentSpace().getPosX(), gameboard.getCurrentSpace().getPosY());
 				stateBasedGame.enterState(0);
+				quitting = false;
+				
 			}
 		}
 	}

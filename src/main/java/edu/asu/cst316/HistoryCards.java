@@ -48,7 +48,7 @@ public class HistoryCards extends BasicGameState{
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		
 		g.drawImage(background, 0, 0);
-		g.drawString(mouse, 10, 10);
+		//g.drawString(mouse, 10, 10);
 		
 		if(pcs.getSize() != 0){
 			Font font = new Font(Font.MONOSPACED, Font.PLAIN, 16);

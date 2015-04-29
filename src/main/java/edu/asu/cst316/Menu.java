@@ -53,7 +53,7 @@ public class Menu extends BasicGameState{
 	//@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		g.drawImage(background, 0, 0);
-		g.drawString(mouse, 10, 10);
+		//g.drawString(mouse, 10, 10);
 	}
 	
 	public int getID(){
