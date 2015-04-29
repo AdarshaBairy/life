@@ -111,7 +111,7 @@ public class Deck {
 		
 		greenCards[0] = new Card("Your water bill for your building was   under budget this month, you gain       $2000", 2000);
 		greenCards[1] = new Card("You ate bad sushi and must buy medicine pay $1000", -1000);
-		greenCards[2] = new Card("While walking to lunch you see a wad of cash on the ground, you gain            $1000", 1000);
+		greenCards[2] = new Card("While walking to lunch you see a wad of cash on the ground, you gain $1000", 1000);
 		greenCards[3] = new Card("You catch a little kids lollipop before it hits the ground, the parent          rewards you with $2000", 2000);
 		greenCards[4] = new Card("You ate bad sushi and must buy medicine pay $2500", -2500);
 		greenCards[5] = new Card("You scare away muggers while they were  chasing someone, you are rewarded       $3000", 3000);

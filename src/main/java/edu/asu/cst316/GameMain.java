@@ -1,6 +1,7 @@
 package main.java.edu.asu.cst316;
 
 import java.awt.Font;
+import java.util.List;
 import java.util.Random;
 
 import main.java.edu.asu.cst316.cards.Card;
@@ -11,6 +12,7 @@ import main.java.edu.asu.cst316.cards.PlayerCardStack;
 import main.java.edu.asu.cst316.gameboard.GameBoard;
 //import main.java.edu.asu.cst316.gameboard.GameSpace;
 import main.java.edu.asu.cst316.highscore.HighScores;
+import main.java.edu.asu.cst316.highscore.PlayerRecord;
 
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Animation;
@@ -161,7 +163,8 @@ public class GameMain extends BasicGameState{
 		xPosition < 470 && 
 		yPosition > 190 && 
 		yPosition < 220 &&
-		!showNotification){
+		!showNotification &&
+		!quitting){
 			mouseOverSpin = true;
 			if(Mouse.isButtonDown(0)){
 				spinClicked = true;
@@ -427,9 +430,7 @@ public class GameMain extends BasicGameState{
 			cardTextBox.render(gc, g);
 		}
 		
-		if(quitting){
-			g.drawImage(quit, 0, 0);
-		}
+		
 		
 		if(showEventWindow){
 			
@@ -479,6 +480,10 @@ public class GameMain extends BasicGameState{
 			cardTextBox.setBorderColor(new Color(0, 0, 0, 0));
 			cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
 			cardTextBox.render(gc, g);
+		}
+		
+		if(quitting){
+			g.drawImage(quit, 0, 0);
 		}
 		
 		//declare the images used
@@ -689,5 +694,10 @@ public class GameMain extends BasicGameState{
 		cardTextBox.setBorderColor(new Color(0, 0, 0, 0));
 		cardTextBox.setBackgroundColor(new Color(0, 0, 0, 0));
 		cardTextBox.render(gc, g);
+	}
+	
+	@Override
+	public void enter(GameContainer container, StateBasedGame game) {
+		spinAnimation = false;
 	}
 }

@@ -70,7 +70,11 @@ public class GameBoard {
 
 		assignPositions2(-256, 470);
 		
+		greenSpaces[4][9].setType("payday");
+		greenSpaces[5][9].setType("payday");
 		assignPaydayType();
+		greenSpaces[4][7].setType("reen");
+		greenSpaces[5][7].setType("green");
 		//assignMileStoneType();
 		playerSpace = startSpace;
 		

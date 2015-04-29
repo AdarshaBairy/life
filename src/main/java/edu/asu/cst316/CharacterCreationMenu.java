@@ -140,6 +140,7 @@ public class CharacterCreationMenu extends BasicGameState{
 				}
 				else{
 					entrP.setName(careerName.getText());
+					entrP.setSavedMoney(50000);
 					stateBasedGame.enterState(2);
 				}
 			}
